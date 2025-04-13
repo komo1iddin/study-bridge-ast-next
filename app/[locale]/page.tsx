@@ -9,6 +9,126 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { HeroSection } from "@/components/home/hero"
 import { SuccessPath } from "@/components/home/success-path"
+import { UniversityFeature } from "@/components/home/university-feature/UniversityFeature"
+
+// Sample universities data
+const sampleUniversities = [
+  {
+    id: "1",
+    name: "Tsinghua University",
+    location: "Beijing, China",
+    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
+    slug: "tsinghua-university",
+    rating: 4.8,
+    programs: 200,
+    students: 50000,
+    faculties: [
+      "Engineering",
+      "Science",
+      "Economics",
+      "Medicine",
+      "Law",
+      "Arts",
+      "Architecture"
+    ]
+  },
+  {
+    id: "2",
+    name: "Peking University",
+    location: "Beijing, China",
+    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
+    slug: "peking-university",
+    rating: 4.7,
+    programs: 180,
+    students: 45000,
+    faculties: [
+      "Liberal Arts",
+      "Science",
+      "Medicine",
+      "Engineering",
+      "Economics",
+      "Management"
+    ]
+  },
+  {
+    id: "3",
+    name: "Fudan University",
+    location: "Shanghai, China",
+    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
+    slug: "fudan-university",
+    rating: 4.6,
+    programs: 150,
+    students: 40000,
+    faculties: [
+      "Economics",
+      "Management",
+      "Law",
+      "Medicine",
+      "Engineering",
+      "Arts"
+    ]
+  },
+  {
+    id: "4",
+    name: "Shanghai Jiao Tong University",
+    location: "Shanghai, China",
+    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
+    slug: "shanghai-jiao-tong-university",
+    rating: 4.5,
+    programs: 160,
+    students: 42000,
+    faculties: [
+      "Engineering",
+      "Medicine",
+      "Science",
+      "Agriculture",
+      "Business",
+      "Law"
+    ]
+  },
+  {
+    id: "5",
+    name: "Shanghai Jiao Tong University",
+    location: "Shanghai, China",
+    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
+    slug: "shanghai-jiao-tong-university",
+    rating: 4.5,
+    programs: 160,
+    students: 42000,
+    faculties: [
+      "Engineering",
+      "Medicine",
+      "Science",
+      "Agriculture",
+      "Business",
+      "Law"
+    ]
+  },
+  {
+    id: "6",
+    name: "Shanghai Jiao Tong University",
+    location: "Shanghai, China",
+    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
+    slug: "shanghai-jiao-tong-university",
+    rating: 4.5,
+    programs: 160,
+    students: 42000,
+    faculties: [
+      "Engineering",
+      "Medicine",
+      "Science",
+      "Agriculture",
+      "Business",
+      "Law"
+    ]
+  }
+]
 
 export default async function Home(props: {
   params: { locale: string };
@@ -66,6 +186,12 @@ export default async function Home(props: {
             </div>
           </div>
         </section>
+
+        {/* Featured Universities */}
+        <UniversityFeature 
+          universities={sampleUniversities}
+          lang={locale}
+        />
 
         {/* Success Path Section */}
         <SuccessPath />

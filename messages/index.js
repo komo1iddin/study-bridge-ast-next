@@ -15,6 +15,10 @@ import faqEn from './components/faq/en.json';
 import faqRu from './components/faq/ru.json';
 import faqUz from './components/faq/uz.json';
 
+import universityFeatureEn from './components/university-feature/en.json';
+import universityFeatureRu from './components/university-feature/ru.json';
+import universityFeatureUz from './components/university-feature/uz.json';
+
 // Import page translations
 import homeEn from './pages/home/en.json';
 import homeRu from './pages/home/ru.json';
@@ -28,6 +32,10 @@ import programsEn from './pages/programs/en.json';
 import programsRu from './pages/programs/ru.json';
 import programsUz from './pages/programs/uz.json';
 
+import universitiesEn from './pages/universities/en.json';
+import universitiesRu from './pages/universities/ru.json';
+import universitiesUz from './pages/universities/uz.json';
+
 // Import common translations
 import commonEn from './common/en.json';
 import commonRu from './common/ru.json';
@@ -40,10 +48,12 @@ export const messages = {
     footer: footerEn,
     contactForm: contactFormEn,
     faq: faqEn,
+    universityFeature: universityFeatureEn,
     common: commonEn,
     home: homeEn,
     whyChina: whyChinaEn,
     programs: programsEn,
+    universities: universitiesEn,
     // Add other sections as they're created
   },
   ru: {
@@ -51,10 +61,12 @@ export const messages = {
     footer: footerRu,
     contactForm: contactFormRu,
     faq: faqRu,
+    universityFeature: universityFeatureRu,
     common: commonRu,
     home: homeRu,
     whyChina: whyChinaRu,
     programs: programsRu,
+    universities: universitiesRu,
     // Add other sections as they're created
   },
   uz: {
@@ -62,10 +74,12 @@ export const messages = {
     footer: footerUz,
     contactForm: contactFormUz,
     faq: faqUz,
+    universityFeature: universityFeatureUz,
     common: commonUz,
     home: homeUz,
     whyChina: whyChinaUz,
     programs: programsUz,
+    universities: universitiesUz,
     // Add other sections as they're created
   },
 };
