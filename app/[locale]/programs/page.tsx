@@ -19,7 +19,8 @@ export type Program = {
   featured: boolean
 }
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const locale = params.locale
   const t = await getTranslations({ locale, namespace: "programs.meta" })
   
   return {
