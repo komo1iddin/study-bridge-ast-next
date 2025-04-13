@@ -15,6 +15,11 @@ import faqEn from './components/faq/en.json';
 import faqRu from './components/faq/ru.json';
 import faqUz from './components/faq/uz.json';
 
+// Import page translations
+import homeEn from './pages/home/en.json';
+import homeRu from './pages/home/ru.json';
+import homeUz from './pages/home/uz.json';
+
 // Import common translations
 import commonEn from './common/en.json';
 import commonRu from './common/ru.json';
@@ -28,7 +33,7 @@ export const messages = {
     contactForm: contactFormEn,
     faq: faqEn,
     common: commonEn,
-    // home: homeEn,
+    home: homeEn,
     // Add other sections as they're created
   },
   ru: {
@@ -37,7 +42,7 @@ export const messages = {
     contactForm: contactFormRu,
     faq: faqRu,
     common: commonRu,
-    // home: homeRu,
+    home: homeRu,
     // Add other sections as they're created
   },
   uz: {
@@ -46,7 +51,7 @@ export const messages = {
     contactForm: contactFormUz,
     faq: faqUz,
     common: commonUz,
-    // home: homeUz,
+    home: homeUz,
     // Add other sections as they're created
   },
 };

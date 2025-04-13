@@ -1,1 +1,48 @@
- 
+{
+  "hero": {
+    "title": "Trusted Partner for Studying in China",
+    "subtitle": "We help Uzbek students get admitted to the best universities in China",
+    "cta": "View Programs",
+    "contactUs": "Contact Us"
+  },
+  "stats": {
+    "universities": "Universities",
+    "students": "Students",
+    "experience": "Years Experience",
+    "programs": "Programs"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "We provide all the services you need to study in China",
+    "application": "Application Assistance",
+    "applicationDesc": "We help you choose the right university and submit your application",
+    "visa": "Visa Consultation",
+    "visaDesc": "We assist you in the visa process and prepare the necessary documents",
+    "accommodation": "Accommodation",
+    "accommodationDesc": "We help you find comfortable and affordable accommodation in China",
+    "guidance": "Academic Guidance",
+    "guidanceDesc": "We provide you with necessary advice and guidance during your studies"
+  },
+  "universities": {
+    "title": "Partner Universities",
+    "subtitle": "We collaborate with the best universities in China",
+    "viewAll": "View All"
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Our experienced specialists are ready to help you",
+    "position": {
+      "director": "Director",
+      "consultant": "Education Consultant",
+      "manager": "Program Manager",
+      "coordinator": "Student Coordinator"
+    }
+  },
+  "cta": {
+    "title": "Apply for Studying in China",
+    "subtitle": "Our specialists will help you choose the right program and guide you through the application process",
+    "button": "Contact Us",
+    "programs": "View Programs",
+    "imageAlt": "Students in a Chinese university"
+  }
+} 

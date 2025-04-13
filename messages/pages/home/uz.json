@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "title": "Xitoyda o'qish uchun ishonchli hamkor",
+    "subtitle": "O'zbekistonlik talabalarni Xitoyning eng nufuzli universitetlariga o'qishga kirishiga yordam beramiz",
+    "cta": "Dasturlarni ko'rish",
+    "contactUs": "Bog'lanish"
+  },
+  "stats": {
+    "universities": "Universitetlar",
+    "students": "Talabalar",
+    "experience": "Yillik tajriba",
+    "programs": "Dasturlar"
+  },
+  "services": {
+    "title": "Bizning xizmatlar",
+    "subtitle": "Xitoyda o'qish uchun kerak bo'lgan barcha xizmatlarni taqdim etamiz",
+    "application": "Ariza topshirishda yordam",
+    "applicationDesc": "Eng mos universitetni tanlash va ariza topshirishda yordam beramiz",
+    "visa": "Viza maslahatlar",
+    "visaDesc": "Viza olish jarayonida va kerakli hujjatlarni tayyorlashda yordam beramiz",
+    "accommodation": "Turar joy",
+    "accommodationDesc": "Xitoyda qulay va arzon turar joy topishda yordam beramiz",
+    "guidance": "Akademik maslahatlar",
+    "guidanceDesc": "O'qish davomida zarur maslahat va ko'rsatmalar beramiz"
+  },
+  "universities": {
+    "title": "Hamkor universitetlar",
+    "subtitle": "Xitoyning eng yaxshi universitetlari bilan hamkorlik qilamiz",
+    "viewAll": "Barchasini ko'rish"
+  },
+  "team": {
+    "title": "Bizning jamoa",
+    "subtitle": "Tajribali mutaxassislarimiz sizga yordam berishga tayyor",
+    "position": {
+      "director": "Direktor",
+      "consultant": "Ta'lim maslahatchisi",
+      "manager": "Dastur menejeri",
+      "coordinator": "Talabalar koordinatori"
+    }
+  },
+  "cta": {
+    "title": "Xitoyda o'qish uchun ariza topshiring",
+    "subtitle": "Mutaxassislarimiz mos dasturni tanlashda va ariza topshirish jarayonida yo'l ko'rsatadilar",
+    "button": "Biz bilan bog'laning",
+    "programs": "Dasturlarni ko'rish",
+    "imageAlt": "Xitoy universitetidagi talabalar"
+  }
+} 
