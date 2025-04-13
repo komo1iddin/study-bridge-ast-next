@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { HeroSection } from "@/components/home/hero"
+import { SuccessPath } from "@/components/home/success-path"
 
 export default async function Home(props: {
   params: { locale: string };
@@ -31,8 +32,11 @@ export default async function Home(props: {
       <Navbar />
 
       <main className="flex-1">
-        {/* Hero Section - Using the new component */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-gray-100 flex items-center min-h-[calc(100vh-4rem)]">
+        {/* Hero Section - Adjusted padding and centering */}
+        <section 
+          className="w-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-gray-100 py-16 md:py-24 lg:py-32"
+          style={{ minHeight: 'calc(90vh - 4rem)' }}
+        >
           <div className="container mx-auto px-4 md:px-6">
             <HeroSection />
           </div>
@@ -62,6 +66,9 @@ export default async function Home(props: {
             </div>
           </div>
         </section>
+
+        {/* Success Path Section */}
+        <SuccessPath />
 
         {/* Services Section */}
         <section

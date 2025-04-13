@@ -13,15 +13,15 @@
   },
   "services": {
     "title": "Bizning xizmatlar",
-    "subtitle": "Xitoyda o'qish uchun kerak bo'lgan barcha xizmatlarni taqdim etamiz",
+    "subtitle": "Xitoyda ta'lim olish yo'lingizda to'liq qo'llab-quvvatlash xizmatlarini taqdim etamiz",
     "application": "Ariza topshirishda yordam",
-    "applicationDesc": "Eng mos universitetni tanlash va ariza topshirishda yordam beramiz",
-    "visa": "Viza maslahatlar",
-    "visaDesc": "Viza olish jarayonida va kerakli hujjatlarni tayyorlashda yordam beramiz",
-    "accommodation": "Turar joy",
+    "applicationDesc": "Sizga mos universitetni tanlashga va ariza topshirish jarayonida yordam beramiz",
+    "visa": "Viza maslahat xizmati",
+    "visaDesc": "Viza olish va barcha zarur hujjatlarni tayyorlashda ko'maklashamiz",
+    "accommodation": "Turar joy topish",
     "accommodationDesc": "Xitoyda qulay va arzon turar joy topishda yordam beramiz",
-    "guidance": "Akademik maslahatlar",
-    "guidanceDesc": "O'qish davomida zarur maslahat va ko'rsatmalar beramiz"
+    "guidance": "O'quv jarayonida ko'maklashish",
+    "guidanceDesc": "O'qish davomida zarur maslahat va qo'llab-quvvatlashni ta'minlaymiz"
   },
   "universities": {
     "title": "Hamkor universitetlar",
@@ -44,5 +44,72 @@
     "button": "Biz bilan bog'laning",
     "programs": "Dasturlarni ko'rish",
     "imageAlt": "Xitoy universitetidagi talabalar"
+  },
+  "successPath": {
+    "title": "Xitoyda o'qishga olti bosqichli yo'l",
+    "subtitle": "O'zbekistondan Xitoy universitetlariga o'qishga kirish uchun eng ishonchli va samarali usul",
+    "detailsButtonText": "Batafsil ma'lumot",
+    "steps": {
+      "1": {
+        "title": "Universitet tanlash",
+        "description": "Sizning maqsadlaringiz va talablaringizga mos keladigan universitet va dasturni tanlash",
+        "benefits": [
+          "Eng yaxshi universitetlarni tanlash",
+          "Kvota va stipendiyalarni aniqlash",
+          "Hujjatlarni tayyorlash rejasini tuzish",
+          "Kutilayotgan xarajatlarni hisoblash"
+        ]
+      },
+      "2": {
+        "title": "Hujjatlarni tayyorlash",
+        "description": "Barcha kerakli hujjatlarni tayyorlash va tarjima qilish",
+        "benefits": [
+          "Pasport va shaxsiy hujjatlar",
+          "Diplom va o'qish transkriptlari",
+          "Sertifikatlar va yutuqlar",
+          "Motivatsiya xatini tayyorlash"
+        ]
+      },
+      "3": {
+        "title": "Universitetga topshirish",
+        "description": "Tanlangan universitetlarga hujjatlarni topshirish va muloqot o'rnatish",
+        "benefits": [
+          "Ariza shakllarini to'ldirish",
+          "Hujjatlarni tekshirish va topshirish",
+          "Ariza holatini kuzatib borish",
+          "Universitetlar bilan muloqot qilish"
+        ]
+      },
+      "4": {
+        "title": "Viza olish",
+        "description": "Xitoy vizasini olish uchun zarur hujjatlarni tayyorlash",
+        "benefits": [
+          "Viza anketasini to'ldirish",
+          "Sug'urta va moliyaviy kafolatlar",
+          "Tibbiy tekshiruvga tayyorgarlik",
+          "Suhbatga tayyorgarlik"
+        ]
+      },
+      "5": {
+        "title": "Xitoyga jo'nashga tayyorgarlik",
+        "description": "Xitoyga sayohat qilish uchun so'nggi tayyorgarliklar va maslahatlar",
+        "benefits": [
+          "Parvozlar va marshrutlar",
+          "Turar joy tanlash",
+          "Bank hisobraqami va to'lovlar",
+          "Zarur narsalar ro'yxati"
+        ]
+      },
+      "6": {
+        "title": "Xitoyga kelgandan so'ng qo'llab-quvvatlash",
+        "description": "Xitoyda moslashish va o'qish jarayonida qo'llab-quvvatlash",
+        "benefits": [
+          "Aeroportda kutib olish",
+          "Ro'yxatdan o'tkazish jarayoni",
+          "Turmush sharoitlarini tashkil qilish",
+          "O'quv jarayoniga moslashish"
+        ]
+      }
+    }
   }
 } 
