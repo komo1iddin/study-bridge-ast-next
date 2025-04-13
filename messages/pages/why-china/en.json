@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Why Study in China?",
+    "description": "China offers not only quality and affordable education, but also rich culture, modern technologies, and extensive career opportunities."
+  },
+  "hero": {
+    "title": "Why Study in China?",
+    "subtitle": "China offers not only quality and affordable education, but also rich culture, modern technologies, and extensive career opportunities.",
+    "viewPrograms": "View Programs",
+    "requestInfo": "Request Information"
+  },
+  "statistics": {
+    "title": "Key Statistics",
+    "items": [
+      {
+        "value": "3000+",
+        "label": "International Universities"
+      },
+      {
+        "value": "500,000+",
+        "label": "International Students"
+      },
+      {
+        "value": "70+",
+        "label": "Countries Represented"
+      },
+      {
+        "value": "Top 5",
+        "label": "Education System Ranking"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Main Benefits of Studying in China",
+    "subtitle": "Studying in China means not only quality education but also extensive opportunities for the future.",
+    "items": [
+      {
+        "title": "High-Quality Education",
+        "description": "Chinese universities rank highly in global rankings and are equipped with modern curricula and highly qualified teachers."
+      },
+      {
+        "title": "Affordable Prices",
+        "description": "Much more affordable tuition and living costs compared to Western countries, along with numerous scholarship opportunities."
+      },
+      {
+        "title": "Internationally Recognized Degrees",
+        "description": "Degrees from Chinese universities are recognized worldwide and highly valued in the international job market."
+      },
+      {
+        "title": "Career Opportunities",
+        "description": "China's economy is one of the fastest growing in the world, offering graduates extensive career opportunities."
+      },
+      {
+        "title": "Learning Chinese Language",
+        "description": "Opportunity to learn one of the most spoken languages in the world, which provides a significant advantage in the future."
+      },
+      {
+        "title": "Cultural Experience",
+        "description": "Opportunity to learn about a rich culture with 5,000 years of history and make international friends."
+      }
+    ]
+  },
+  "topUniversities": {
+    "title": "Top Chinese Universities",
+    "subtitle": "Chinese universities rank highly in global rankings and provide quality education.",
+    "columns": {
+      "university": "University",
+      "worldRanking": "World Ranking",
+      "location": "Location"
+    },
+    "viewAll": "View All Universities"
+  },
+  "costComparison": {
+    "title": "Education Cost Comparison",
+    "subtitle": "Studying in China is much more affordable compared to other popular education destinations",
+    "columns": {
+      "country": "Country",
+      "tuition": "Tuition (Annual)",
+      "living": "Living Expenses (Annual)",
+      "total": "Total (Annual)"
+    },
+    "disclaimer": "* Prices are approximate and may vary depending on university and program"
+  },
+  "careerOpportunities": {
+    "title": "Career Opportunities",
+    "subtitle": "Studying in China opens up a wide range of career opportunities for graduates",
+    "chinaUzbekistan": {
+      "title": "China-Uzbekistan Relations",
+      "description": "China is one of Uzbekistan's largest trading partners. Trade and economic relations between the two countries are continuously developing, increasing the demand for specialists educated in China.",
+      "badge": "Great Opportunity"
+    }
+  },
+  "culturalExperience": {
+    "title": "Cultural Experience",
+    "subtitle": "Studying in China is not only about education but also an opportunity to learn about rich culture and traditions"
+  },
+  "testimonials": {
+    "title": "Student Testimonials",
+    "subtitle": "Experiences of Uzbek students studying in China"
+  },
+  "studyOptions": {
+    "title": "Study Options",
+    "subtitle": "There are various study options available in China",
+    "tabs": {
+      "bachelor": {
+        "title": "Bachelor",
+        "heading": "Bachelor Programs",
+        "description": "Bachelor programs typically last 4-5 years, and students gain in-depth knowledge and skills in their fields. Many programs are taught in English.",
+        "features": [
+          "4-5 years of study",
+          "Taught in English or Chinese",
+          "Scholarship opportunities",
+          "Practical experience"
+        ]
+      },
+      "master": {
+        "title": "Master",
+        "heading": "Master Programs",
+        "description": "Master programs typically last 2-3 years, and students gain specialized knowledge and research skills in their fields.",
+        "features": [
+          "2-3 years of study",
+          "Research opportunities",
+          "Higher scholarship opportunities",
+          "Career development"
+        ]
+      },
+      "phd": {
+        "title": "PhD",
+        "heading": "PhD Programs",
+        "description": "PhD programs typically last 3-5 years, and students conduct in-depth research in their fields and prepare for academic degrees.",
+        "features": [
+          "3-5 years of research",
+          "Full scholarship opportunities",
+          "International academic collaboration",
+          "Academic career"
+        ]
+      },
+      "language": {
+        "title": "Language Courses",
+        "heading": "Chinese Language Courses",
+        "description": "In Chinese language courses, students learn Chinese and immerse themselves in the culture. These courses can last from 6 months to 2 years.",
+        "features": [
+          "6 months to 2 years",
+          "Courses for all levels",
+          "Cultural activities",
+          "HSK exam preparation"
+        ]
+      }
+    }
+  },
+  "facts": {
+    "title": "Facts About China",
+    "subtitle": "Interesting information about China",
+    "items": [
+      {
+        "value": "2nd place",
+        "label": "In world economy"
+      },
+      {
+        "value": "2,900+",
+        "label": "Higher education institutions"
+      },
+      {
+        "value": "1.4 billion",
+        "label": "Population"
+      },
+      {
+        "value": "60,000+",
+        "label": "International scholarships"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Apply to Study in China",
+    "description": "Our specialists will help you choose the right program and assist you in the application process.",
+    "viewPrograms": "View Programs",
+    "contactUs": "Contact Us"
+  }
+} 

@@ -1,0 +1,70 @@
+'use client'
+
+import React from 'react'
+import { motion } from 'framer-motion'
+import { cn } from '@/lib/utils'
+
+interface StatItemProps {
+  value: string
+  label: string
+  delay?: number
+}
+
+const StatItem = ({ value, label, delay = 0 }: StatItemProps) => {
+  // Simple animation variant
+  const itemVariant = {
+    hidden: { opacity: 0, y: 15 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.6, 
+        delay,
+        ease: "easeOut" 
+      }
+    },
+    hover: {
+      y: -5,
+      boxShadow: "0 8px 15px -5px rgba(0, 0, 0, 0.1)",
+      transition: { duration: 0.2 }
+    }
+  }
+
+  return (
+    <motion.div
+      variants={itemVariant}
+      initial="hidden"
+      animate="visible"
+      whileHover="hover"
+      className={cn(
+        'bg-white rounded-xl px-6 py-4',
+        'shadow-sm',
+        'border border-gray-100 flex flex-col items-center'
+      )}
+    >
+      <div
+        className={cn('text-3xl font-bold')}
+        style={{
+          background: 'linear-gradient(90deg, #2463EB, #3b82f6)',
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          color: 'transparent',
+          position: 'relative'
+        }}
+      >
+        {value}
+        <div
+          className="absolute bottom-[-4px] left-0 w-full h-[3px]"
+          style={{
+            background: 'linear-gradient(90deg, #2463EB, #3b82f6)'
+          }}
+        />
+      </div>
+      <div className={cn('text-sm text-gray-600 mt-1 font-medium')}>
+        {label}
+      </div>
+    </motion.div>
+  )
+}
+
+export default StatItem 

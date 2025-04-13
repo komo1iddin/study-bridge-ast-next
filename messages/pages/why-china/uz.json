@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Nima uchun Xitoyda o'qish kerak?",
+    "description": "Xitoy nafaqat sifatli va arzon ta'lim, balki boy madaniyat, zamonaviy texnologiyalar va keng karyera imkoniyatlarini ham taqdim etadi."
+  },
+  "hero": {
+    "title": "Nima uchun Xitoyda o'qish kerak?",
+    "subtitle": "Xitoy nafaqat sifatli va arzon ta'lim, balki boy madaniyat, zamonaviy texnologiyalar va keng karyera imkoniyatlarini ham taqdim etadi.",
+    "viewPrograms": "Dasturlarni ko'rish",
+    "requestInfo": "Batafsil ma'lumot so'rash"
+  },
+  "statistics": {
+    "title": "Asosiy statistika",
+    "items": [
+      {
+        "value": "3000+",
+        "label": "Xalqaro universitetlar"
+      },
+      {
+        "value": "500,000+",
+        "label": "Xalqaro talabalar"
+      },
+      {
+        "value": "70+",
+        "label": "Davlatlardan talabalar"
+      },
+      {
+        "value": "Top 5",
+        "label": "Ta'lim tizimi reytingi"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Xitoyda o'qishning asosiy afzalliklari",
+    "subtitle": "Xitoyda o'qish nafaqat sifatli ta'lim, balki kelajak uchun keng imkoniyatlar ham demakdir.",
+    "items": [
+      {
+        "title": "Yuqori sifatli ta'lim",
+        "description": "Xitoy universitetlari jahon reytinglarida yuqori o'rinlarni egallab, zamonaviy o'quv dasturlari va yuqori malakali o'qituvchilar bilan ta'minlangan."
+      },
+      {
+        "title": "Arzon narxlar",
+        "description": "G'arb mamlakatlariga qaraganda ancha arzon o'qish va yashash xarajatlari, hamda ko'plab stipendiya imkoniyatlari mavjud."
+      },
+      {
+        "title": "Xalqaro tan olingan diplom",
+        "description": "Xitoy universitetlari diplomlari butun dunyo bo'ylab tan olinadi va xalqaro mehnat bozorida yuqori baholanadi."
+      },
+      {
+        "title": "Karyera imkoniyatlari",
+        "description": "Xitoy iqtisodiyoti dunyoda eng tez rivojlanayotgan iqtisodiyotlardan biri bo'lib, bitiruvchilar uchun keng karyera imkoniyatlarini taqdim etadi."
+      },
+      {
+        "title": "Xitoy tilini o'rganish",
+        "description": "Dunyoda eng ko'p so'zlashuvchi tillardan birini o'rganish imkoniyati, bu kelajakda katta ustunlik beradi."
+      },
+      {
+        "title": "Madaniy tajriba",
+        "description": "5000 yillik tarixga ega bo'lgan boy madaniyatni o'rganish va xalqaro do'stlar orttirish imkoniyati."
+      }
+    ]
+  },
+  "topUniversities": {
+    "title": "Xitoyning eng yaxshi universitetlari",
+    "subtitle": "Xitoy universitetlari jahon reytinglarida yuqori o'rinlarni egallaydi va sifatli ta'lim beradi.",
+    "columns": {
+      "university": "Universitet",
+      "worldRanking": "Jahon reytingi",
+      "location": "Joylashuv"
+    },
+    "viewAll": "Barcha universitetlarni ko'rish"
+  },
+  "costComparison": {
+    "title": "Ta'lim narxlari taqqoslanishi",
+    "subtitle": "Xitoyda o'qish boshqa mashhur ta'lim yo'nalishlariga qaraganda ancha arzon",
+    "columns": {
+      "country": "Davlat",
+      "tuition": "O'quv to'lovi (yillik)",
+      "living": "Yashash xarajatlari (yillik)",
+      "total": "Jami (yillik)"
+    },
+    "disclaimer": "* Narxlar taxminiy bo'lib, universitet va dasturga qarab farq qilishi mumkin"
+  },
+  "careerOpportunities": {
+    "title": "Karyera imkoniyatlari",
+    "subtitle": "Xitoyda o'qish bitiruvchilarga keng ko'lamli karyera imkoniyatlarini ochib beradi",
+    "chinaUzbekistan": {
+      "title": "Xitoy-O'zbekiston aloqalari",
+      "description": "Xitoy O'zbekistonning eng yirik savdo hamkorlaridan biri hisoblanadi. Ikki davlat o'rtasidagi savdo-iqtisodiy aloqalar tobora rivojlanib bormoqda, bu esa Xitoyda ta'lim olgan mutaxassislarga bo'lgan talabni oshirmoqda.",
+      "badge": "Katta imkoniyat"
+    }
+  },
+  "culturalExperience": {
+    "title": "Madaniy tajriba",
+    "subtitle": "Xitoyda o'qish - bu nafaqat ta'lim, balki boy madaniyat va an'analarni o'rganish imkoniyati ham"
+  },
+  "testimonials": {
+    "title": "Talabalarimiz fikrlari",
+    "subtitle": "Xitoyda o'qiyotgan O'zbekistonlik talabalar tajribasi"
+  },
+  "studyOptions": {
+    "title": "O'qish imkoniyatlari",
+    "subtitle": "Xitoyda turli xil o'qish imkoniyatlari mavjud",
+    "tabs": {
+      "bachelor": {
+        "title": "Bakalavr",
+        "heading": "Bakalavr dasturlari",
+        "description": "Bakalavr dasturlari odatda 4-5 yil davom etadi va talabalar o'z sohalari bo'yicha chuqur bilim va ko'nikmalarni egallaydilar. Ko'plab dasturlar ingliz tilida o'qitiladi.",
+        "features": [
+          "4-5 yillik o'qish",
+          "Ingliz yoki xitoy tilida o'qitish",
+          "Stipendiya imkoniyatlari",
+          "Amaliy tajriba"
+        ]
+      },
+      "master": {
+        "title": "Magistratura",
+        "heading": "Magistratura dasturlari",
+        "description": "Magistratura dasturlari odatda 2-3 yil davom etadi va talabalar o'z sohalari bo'yicha ixtisoslashgan bilim va tadqiqot ko'nikmalarini egallaydilar.",
+        "features": [
+          "2-3 yillik o'qish",
+          "Tadqiqot imkoniyatlari",
+          "Yuqori stipendiya imkoniyatlari",
+          "Karyera rivojlantirish"
+        ]
+      },
+      "phd": {
+        "title": "Doktorantura",
+        "heading": "Doktorantura dasturlari",
+        "description": "Doktorantura dasturlari odatda 3-5 yil davom etadi va talabalar o'z sohalari bo'yicha chuqur tadqiqot olib boradilar va ilmiy daraja olishga tayyorlanadilar.",
+        "features": [
+          "3-5 yillik tadqiqot",
+          "To'liq stipendiya imkoniyatlari",
+          "Xalqaro ilmiy hamkorlik",
+          "Akademik karyera"
+        ]
+      },
+      "language": {
+        "title": "Til kurslari",
+        "heading": "Xitoy tili kurslari",
+        "description": "Xitoy tili kurslarida talabalar xitoy tilini o'rganadilar va madaniyatni o'zlashtiradilar. Bu kurslar 6 oydan 2 yilgacha davom etishi mumkin.",
+        "features": [
+          "6 oydan 2 yilgacha",
+          "Barcha darajalar uchun kurslar",
+          "Madaniy tadbirlar",
+          "HSK imtihoniga tayyorgarlik"
+        ]
+      }
+    }
+  },
+  "facts": {
+    "title": "Xitoy haqida faktlar",
+    "subtitle": "Xitoy haqida qiziqarli ma'lumotlar",
+    "items": [
+      {
+        "value": "2-o'rin",
+        "label": "Dunyo iqtisodiyotida"
+      },
+      {
+        "value": "2,900+",
+        "label": "Oliy ta'lim muassasalari"
+      },
+      {
+        "value": "1.4 mlrd",
+        "label": "Aholi soni"
+      },
+      {
+        "value": "60,000+",
+        "label": "Xalqaro stipendiyalar"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Xitoyda o'qish uchun ariza topshiring",
+    "description": "Bizning mutaxassislarimiz sizga eng mos dasturni tanlashda va ariza topshirish jarayonida yordam berishadi.",
+    "viewPrograms": "Dasturlarni ko'rish",
+    "contactUs": "Biz bilan bog'laning"
+  }
+} 

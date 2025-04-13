@@ -274,7 +274,8 @@ const programs = {
   },
 }
 
-export default function ProgramDetailPage({ params }: { params: { id: string } }) {
+export default async function ProgramDetailPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const program = programs[params.id as keyof typeof programs] || programs["business-management"]
 
   return (
