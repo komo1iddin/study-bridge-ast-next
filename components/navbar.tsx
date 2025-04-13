@@ -98,7 +98,9 @@ export default function Navbar() {
               onClick={toggleMenu}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
-              aria-label={isMenuOpen ? t("closeMenu") : t("openMenu")}
+              aria-label={isMenuOpen ? 
+                (t("closeMenu") ?? "Close menu") : 
+                (t("openMenu") ?? "Open menu")}
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" aria-hidden="true" />
