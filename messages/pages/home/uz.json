@@ -11,6 +11,44 @@
     "experience": "Yillik tajriba",
     "programs": "Dasturlar"
   },
+  "whyChina": {
+    "title": {
+      "main": "Nima uchun",
+      "highlight": "Xitoyda o'qish?"
+    },
+    "subtitle": "Xitoy xalqaro talabalar uchun taklif qiladigan noyob afzalliklar va imkoniyatlarni kashf eting.",
+    "reasons": {
+      "1": {
+        "title": "Jahon darajasidagi ta'lim",
+        "description": "Eng yuqori darajadagi universitetlarga, zamonaviy tadqiqot markazlariga va akademik imtiyozlarga kirish imkoniyati."
+      },
+      "2": {
+        "title": "Innovatsiya markazi",
+        "description": "Texnologiya va ilm-fan sohasidagi yutuqlar bilan dunyoning yetakchi innovatsiya markazlaridan birida bo'lish tajribasi."
+      },
+      "3": {
+        "title": "Arzon o'qish to'lovi",
+        "description": "G'arb mamlakatlariga qaraganda ancha arzon narxda sifatli ta'lim, turli stipendiya imkoniyatlari bilan."
+      },
+      "4": {
+        "title": "Global istiqbol",
+        "description": "Dunyoning eng yirik iqtisodiyotlaridan birida qimmatli xalqaro tajriba va madaniy tushunchalarni qo'lga kiriting."
+      },
+      "5": {
+        "title": "Karyera imkoniyatlari",
+        "description": "Dunyoning eng tez rivojlanayotgan katta iqtisodiyotida tajriba orttirish bilan karyera imkoniyatlaringizni kengaytiring."
+      },
+      "6": {
+        "title": "Turli dasturlar",
+        "description": "Ko'plab soha va ixtisoslashuvlar bo'yicha ingliz tilida keng ko'lamdagi dasturlar mavjud."
+      }
+    },
+    "cta": {
+      "title": "Sayohatingizni boshlashga tayyormisiz?",
+      "description": "Ariza topshirish jarayonida yordam berishimizga va siz uchun Xitoydagi mukammal universitetni topishimizga ruxsat bering.",
+      "button": "Xitoy haqida ko'proq ma'lumot"
+    }
+  },
   "services": {
     "title": "Bizning xizmatlar",
     "subtitle": "Xitoyda ta'lim olish yo'lingizda to'liq qo'llab-quvvatlash xizmatlarini taqdim etamiz",

@@ -9,6 +9,7 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { HeroSection } from "@/components/home/hero"
 import { SuccessPath } from "@/components/home/success-path"
+import { WhyChina } from "@/components/home/why-china"
 import { UniversityFeature } from "@/components/home/university-feature/UniversityFeature"
 
 // Sample universities data
@@ -17,8 +18,8 @@ const sampleUniversities = [
     id: "1",
     name: "Tsinghua University",
     location: "Beijing, China",
-    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
+    image: "/images/universities/tsinghua.jpg",
+    logo: "/images/universities/logos/tsinghua-logo.png",
     slug: "tsinghua-university",
     rating: 4.8,
     programs: 200,
@@ -37,8 +38,8 @@ const sampleUniversities = [
     id: "2",
     name: "Peking University",
     location: "Beijing, China",
-    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
+    image: "/images/universities/peking.jpg",
+    logo: "/images/universities/logos/peking-logo.png",
     slug: "peking-university",
     rating: 4.7,
     programs: 180,
@@ -56,8 +57,8 @@ const sampleUniversities = [
     id: "3",
     name: "Fudan University",
     location: "Shanghai, China",
-    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
+    image: "/images/universities/fudan.jpg",
+    logo: "/images/universities/logos/fudan-logo.png",
     slug: "fudan-university",
     rating: 4.6,
     programs: 150,
@@ -75,8 +76,8 @@ const sampleUniversities = [
     id: "4",
     name: "Shanghai Jiao Tong University",
     location: "Shanghai, China",
-    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
+    image: "/images/universities/sjtu.jpg",
+    logo: "/images/universities/logos/sjtu-logo.png",
     slug: "shanghai-jiao-tong-university",
     rating: 4.5,
     programs: 160,
@@ -152,7 +153,7 @@ export default async function Home(props: {
       <Navbar />
 
       <main className="flex-1">
-        {/* Hero Section - Adjusted padding and centering */}
+        {/* Hero Section */}
         <section 
           className="w-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-gray-100 py-16 md:py-24 lg:py-32"
           style={{ minHeight: 'calc(90vh - 4rem)' }}
@@ -161,6 +162,9 @@ export default async function Home(props: {
             <HeroSection />
           </div>
         </section>
+
+        {/* Why China Section */}
+        <WhyChina lang={locale} />
 
         {/* Key Statistics */}
         <section className="w-full py-12 md:py-16">

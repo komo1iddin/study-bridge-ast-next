@@ -11,6 +11,44 @@
     "experience": "Years Experience",
     "programs": "Programs"
   },
+  "whyChina": {
+    "title": {
+      "main": "Why Study in",
+      "highlight": "China?"
+    },
+    "subtitle": "Discover the unique advantages and opportunities that China offers for international students.",
+    "reasons": {
+      "1": {
+        "title": "World-Class Education",
+        "description": "Access to top-ranked universities with cutting-edge research facilities and academic excellence."
+      },
+      "2": {
+        "title": "Innovation Hub",
+        "description": "Experience one of the world's leading innovation centers with advancements in technology and science."
+      },
+      "3": {
+        "title": "Affordable Tuition",
+        "description": "High-quality education at a fraction of the cost compared to Western countries, with various scholarship opportunities."
+      },
+      "4": {
+        "title": "Global Perspective",
+        "description": "Gain valuable international experience and cultural insights in one of the world's largest economies."
+      },
+      "5": {
+        "title": "Career Opportunities",
+        "description": "Enhance your career prospects with experience from the fastest-growing major economy in the world."
+      },
+      "6": {
+        "title": "Diverse Programs",
+        "description": "Wide range of programs available in English across numerous disciplines and specializations."
+      }
+    },
+    "cta": {
+      "title": "Ready to Begin Your Journey?",
+      "description": "Let us help you navigate the application process and find the perfect university in China for you.",
+      "button": "Explore Why China"
+    }
+  },
   "services": {
     "title": "Our Services",
     "subtitle": "We provide comprehensive support for your education journey in China",
