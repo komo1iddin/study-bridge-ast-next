@@ -1,18 +1,23 @@
-"use client"
-
-import { useState } from "react"
 import { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
 
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import { HeroSection } from "@/components/programs/hero-section"
-import { Filters } from "@/components/programs/filters"
-import { FeaturedPrograms, Program } from "@/components/programs/featured-programs"
-import { Categories } from "@/components/programs/categories"
-import { AllPrograms } from "@/components/programs/all-programs"
-import { ApplicationProcess } from "@/components/programs/application-process"
-import { CtaSection } from "@/components/programs/cta-section"
+import { ProgramsContent } from "@/components/programs/programs-content"
+
+// Program data type
+export type Program = {
+  id: string
+  title: string
+  university: string
+  level: string
+  duration: string
+  language: string
+  category: string
+  scholarship: boolean
+  image: string
+  featured: boolean
+}
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "programs.meta" })
@@ -124,65 +129,12 @@ const programs = [
 ]
 
 export default function ProgramsPage() {
-  const [searchQuery, setSearchQuery] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState("all")
-  const [selectedLevel, setSelectedLevel] = useState("all")
-  const [selectedLanguage, setSelectedLanguage] = useState("all")
-  
-  // Filter programs based on search query and filters
-  const filteredPrograms = programs.filter((program) => {
-    // Search query filter
-    const matchesSearch = searchQuery === "" || 
-      program.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      program.university.toLowerCase().includes(searchQuery.toLowerCase())
-    
-    // Category filter
-    const matchesCategory = selectedCategory === "all" || program.category === selectedCategory
-    
-    // Level filter
-    const matchesLevel = selectedLevel === "all" || 
-      program.level.toLowerCase() === selectedLevel.toLowerCase()
-    
-    // Language filter
-    const matchesLanguage = selectedLanguage === "all" || 
-      (selectedLanguage === "english" && program.language === "Ingliz") ||
-      (selectedLanguage === "chinese" && program.language === "Xitoy")
-    
-    return matchesSearch && matchesCategory && matchesLevel && matchesLanguage
-  })
-  
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
-
       <main className="flex-1">
-        {/* Hero Section */}
-        <HeroSection />
-        
-        {/* Filters Section */}
-        <Filters 
-          onSearch={setSearchQuery}
-          onCategoryChange={setSelectedCategory}
-          onLevelChange={setSelectedLevel}
-          onLanguageChange={setSelectedLanguage}
-        />
-        
-        {/* Featured Programs Section */}
-        <FeaturedPrograms programs={programs} />
-        
-        {/* Categories Section */}
-        <Categories />
-        
-        {/* All Programs Section */}
-        <AllPrograms programs={programs} filteredPrograms={filteredPrograms} />
-        
-        {/* Application Process Section */}
-        <ApplicationProcess />
-        
-        {/* CTA Section */}
-        <CtaSection />
+        <ProgramsContent programs={programs} />
       </main>
-
       <Footer />
     </div>
   )

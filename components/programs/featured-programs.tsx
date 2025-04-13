@@ -6,20 +6,7 @@ import { useTranslations } from "next-intl"
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-
-// Sample program data type
-export type Program = {
-  id: string
-  title: string
-  university: string
-  level: string
-  duration: string
-  language: string
-  category: string
-  scholarship: boolean
-  image: string
-  featured: boolean
-}
+import { Program } from "@/app/[locale]/programs/page"
 
 interface FeaturedProgramsProps {
   className?: string
