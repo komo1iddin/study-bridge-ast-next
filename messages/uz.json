@@ -7,7 +7,9 @@
     "testimonials": "Fikrlar",
     "aboutUs": "Biz haqimizda",
     "contact": "Aloqa",
-    "applyNow": "Ariza topshirish"
+    "applyNow": "Ariza topshirish",
+    "openMenu": "Menyuni ochish",
+    "closeMenu": "Menyuni yopish"
   },
   "home": {
     "hero": {

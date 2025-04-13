@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getRequestConfig } from 'next-intl/server';
 import { locales, defaultLocale } from "./navigation"; // Import known locales and default
+import messages from '../messages'; // Import our combined messages
 
 export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
@@ -10,6 +11,6 @@ export default getRequestConfig(async ({ locale }) => {
 
   return {
     locale: finalLocale, // Return the validated/default locale
-    messages: (await import(`../messages/${finalLocale}.json`)).default
+    messages: messages[finalLocale as keyof typeof messages] || messages[defaultLocale]
   };
 });
