@@ -1,0 +1,33 @@
+{
+  "copyright": "© {0} EduChina. Все права защищены.",
+  "navigation": {
+    "home": "Главная",
+    "programs": "Программы",
+    "services": "Услуги",
+    "aboutUs": "О нас",
+    "contact": "Контакты"
+  },
+  "legal": {
+    "privacyPolicy": "Политика конфиденциальности",
+    "termsOfService": "Условия использования"
+  },
+  "contact": {
+    "title": "Контакты",
+    "address": "Адрес",
+    "phone": "Телефон",
+    "email": "Эл. почта"
+  },
+  "social": {
+    "followUs": "Подписывайтесь на нас",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "telegram": "Telegram"
+  },
+  "newsletter": {
+    "title": "Подпишитесь на нашу рассылку",
+    "placeholder": "Введите ваш email",
+    "button": "Подписаться",
+    "success": "Спасибо за подписку!"
+  }
+} 

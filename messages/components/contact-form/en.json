@@ -1,0 +1,46 @@
+{
+  "title": "Contact Us",
+  "subtitle": "We'd love to hear from you. Please fill out the form below.",
+  "fields": {
+    "firstName": {
+      "label": "First Name",
+      "placeholder": "Enter your first name"
+    },
+    "lastName": {
+      "label": "Last Name",
+      "placeholder": "Enter your last name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your email address"
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": "Enter your phone number"
+    },
+    "program": {
+      "label": "Interested Program",
+      "placeholder": "Select a program",
+      "options": {
+        "default": "Select a program",
+        "business": "Business",
+        "it": "IT",
+        "medicine": "Medicine",
+        "engineering": "Engineering",
+        "other": "Other"
+      }
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Write your message here..."
+    }
+  },
+  "actions": {
+    "submit": "Submit",
+    "reset": "Reset"
+  },
+  "notifications": {
+    "success": "Thank you for your message. We will get back to you soon.",
+    "error": "There was an error submitting your message. Please try again."
+  }
+} 

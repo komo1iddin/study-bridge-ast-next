@@ -1,0 +1,33 @@
+{
+  "copyright": "© {0} EduChina. All rights reserved.",
+  "navigation": {
+    "home": "Home",
+    "programs": "Programs",
+    "services": "Services",
+    "aboutUs": "About Us",
+    "contact": "Contact Us"
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "contact": {
+    "title": "Contact",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "social": {
+    "followUs": "Follow Us",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "telegram": "Telegram"
+  },
+  "newsletter": {
+    "title": "Subscribe to Our Newsletter",
+    "placeholder": "Enter your email",
+    "button": "Subscribe",
+    "success": "Thank you for subscribing!"
+  }
+} 

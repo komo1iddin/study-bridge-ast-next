@@ -1,0 +1,33 @@
+{
+  "copyright": "© {0} EduChina. Barcha huquqlar himoyalangan.",
+  "navigation": {
+    "home": "Bosh sahifa",
+    "programs": "Dasturlar",
+    "services": "Xizmatlar",
+    "aboutUs": "Biz haqimizda",
+    "contact": "Aloqa"
+  },
+  "legal": {
+    "privacyPolicy": "Maxfiylik siyosati",
+    "termsOfService": "Foydalanish shartlari"
+  },
+  "contact": {
+    "title": "Aloqa",
+    "address": "Manzil",
+    "phone": "Telefon",
+    "email": "Email"
+  },
+  "social": {
+    "followUs": "Bizni kuzatib boring",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "telegram": "Telegram"
+  },
+  "newsletter": {
+    "title": "Yangiliklar ro'yxatiga yoziling",
+    "placeholder": "Email manzilingizni kiriting",
+    "button": "Obuna bo'lish",
+    "success": "Obuna bo'lganingiz uchun rahmat!"
+  }
+} 

@@ -1,0 +1,28 @@
+{
+  "buttons": {
+    "submit": "Yuborish",
+    "cancel": "Bekor qilish",
+    "save": "Saqlash",
+    "edit": "Tahrirlash",
+    "delete": "O'chirish",
+    "view": "Ko'rish",
+    "close": "Yopish",
+    "back": "Ortga",
+    "next": "Keyingi"
+  },
+  "validation": {
+    "required": "Bu maydon to'ldirilishi shart",
+    "email": "Iltimos, to'g'ri elektron pochta manzilini kiriting",
+    "minLength": "Kamida {0} ta belgi bo'lishi kerak",
+    "maxLength": "{0} ta belgidan oshmasligi kerak",
+    "passwordMatch": "Parollar mos kelmadi"
+  },
+  "status": {
+    "loading": "Yuklanmoqda...",
+    "success": "Muvaffaqiyatli!",
+    "error": "Xatolik yuz berdi",
+    "notFound": "Topilmadi",
+    "saving": "Saqlanmoqda...",
+    "deleting": "O'chirilmoqda..."
+  }
+} 
