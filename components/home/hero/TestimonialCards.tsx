@@ -92,24 +92,56 @@ const TestimonialCards = () => {
       transition={{ duration: 0.5 }}
       className={cn('relative h-full w-full overflow-hidden')}
     >
-      {/* Left column with scroll animation */}
+      {/* Mobile view - single column scrolling */}
       <motion.div 
-        className={cn('absolute left-0 w-1/2 pr-2 h-full overflow-hidden')}
+        className={cn(
+          'sm:hidden absolute left-0 w-full h-full overflow-hidden'
+        )}
         style={{
           maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
           WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
         }}
       >
         <motion.div
-          animate={{ 
-            y: [0, -1000], // Only move in one direction
-          }}
+          animate={{ y: [0, -1800] }}
           transition={{ 
-            duration: 60, // Slower animation
+            duration: 80,
             repeat: Infinity,
             repeatType: "loop",
             ease: "linear"
           }}
+          className="px-2"
+        >
+          {extendedTestimonials.map((testimonial, index) => (
+            <TestimonialCard 
+              key={`mobile-${testimonial.id}-${index}`} 
+              testimonial={testimonial} 
+              isInView={isInView}
+            />
+          ))}
+        </motion.div>
+      </motion.div>
+
+      {/* Left column container with padding - desktop only */}
+      <motion.div 
+        className={cn(
+          'hidden sm:block absolute left-0 w-[calc(50%+1rem)] pr-6 h-full overflow-hidden'
+        )}
+        style={{
+          maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
+        }}
+      >
+        {/* Scrolling content */}
+        <motion.div
+          animate={{ y: [0, -1000] }}
+          transition={{ 
+            duration: 60,
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "linear"
+          }}
+          className="pr-2"
         >
           {leftColumnCards.map((testimonial, index) => (
             <TestimonialCard 
@@ -121,24 +153,26 @@ const TestimonialCards = () => {
         </motion.div>
       </motion.div>
 
-      {/* Right column with delayed scroll animation */}
+      {/* Right column container with padding - desktop only */}
       <motion.div 
-        className={cn('absolute right-0 w-1/2 pl-2 h-full overflow-hidden')}
+        className={cn(
+          'hidden sm:block absolute right-0 w-[calc(50%+1rem)] pl-6 h-full overflow-hidden'
+        )}
         style={{
           maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
           WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
         }}
       >
+        {/* Scrolling content */}
         <motion.div
-          animate={{ 
-            y: [-500, -1500], // Only move in one direction
-          }}
+          animate={{ y: [-500, -1500] }}
           transition={{ 
-            duration: 60, // Slower animation
+            duration: 60,
             repeat: Infinity,
             repeatType: "loop",
             ease: "linear"
           }}
+          className="pl-2"
         >
           {rightColumnCards.map((testimonial, index) => (
             <TestimonialCard 
@@ -166,27 +200,27 @@ const TestimonialCard = ({ testimonial, isInView }: TestimonialCardProps) => {
       animate={{ opacity: isInView ? 1 : 0 }}
       transition={{ duration: 0.3 }}
       className={cn(
-        'bg-white rounded-lg shadow-sm mb-4 p-4 border border-gray-100'
+        'bg-white rounded-lg shadow-sm mb-4 p-3 sm:p-4 border border-gray-100'
       )}
     >
-      <div className={cn('flex items-center gap-3 mb-2')}>
+      <div className={cn('flex items-center gap-2 sm:gap-3 mb-2')}>
         <Image
           src={testimonial.imageUrl}
           alt={testimonial.name}
           width={40}
           height={40}
           className={cn(
-            'w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm'
+            'w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-white shadow-sm'
           )}
         />
         <div>
-          <h3 className={cn('font-semibold text-gray-800 text-sm')}>
+          <h3 className={cn('font-semibold text-gray-800 text-xs sm:text-sm')}>
             {testimonial.name}
           </h3>
           <p className={cn('text-blue-600 text-xs')}>{testimonial.university}</p>
         </div>
       </div>
-      <p className={cn('text-gray-600 text-sm')}>{testimonial.comment}</p>
+      <p className={cn('text-gray-600 text-xs sm:text-sm')}>{testimonial.comment}</p>
     </motion.div>
   )
 }

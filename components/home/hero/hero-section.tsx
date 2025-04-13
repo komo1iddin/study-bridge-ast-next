@@ -49,17 +49,17 @@ export default function HeroSection() {
       className="relative"
     >
       {/* Hero Section - Removed container, assuming parent provides layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 py-12 lg:py-20 relative">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8 pt-1 pb-8 md:pt-4 md:pb-12 lg:pt-8 lg:pb-20 relative px-4 md:px-6 lg:px-0">
         {/* Left Content */}
-        <div className="lg:col-span-7 z-10">
-          <motion.div variants={itemVariants}>
+        <div className="lg:col-span-7 z-10 flex flex-col items-center lg:items-start">
+          <motion.div variants={itemVariants} className="w-full flex justify-center lg:justify-start">
             <TypingBadge />
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
             className={cn(
-              'text-4xl md:text-5xl lg:text-6xl font-bold mt-6 leading-tight'
+              'text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 sm:mt-6 leading-tight text-center lg:text-left'
             )}
             style={{ fontFamily: "'Raleway', sans-serif" }}
           >
@@ -78,7 +78,7 @@ export default function HeroSection() {
           <motion.p
             variants={itemVariants}
             className={cn(
-              'mt-6 text-gray-700 text-lg leading-relaxed max-w-lg'
+              'mt-4 sm:mt-6 text-gray-600 text-sm sm:text-lg leading-relaxed max-w-lg text-center lg:text-left mx-auto lg:mx-0'
             )}
           >
             Обучение в лучших университетах Китая для узбекских студентов.
@@ -92,7 +92,7 @@ export default function HeroSection() {
           <motion.div
             variants={itemVariants}
             className={cn(
-              'flex flex-wrap justify-center lg:justify-start gap-6 mt-12'
+              'flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12'
             )}
           >
             <StatItem value="5000+" label="Студентов" delay={0.2} />
@@ -104,18 +104,18 @@ export default function HeroSection() {
         {/* Right Side - Scrolling Testimonials */}
         <motion.div 
           variants={itemVariants}
-          className="lg:col-span-5 relative min-h-[400px] lg:min-h-[600px]"
+          className="lg:col-span-5 relative min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[600px] mt-4 lg:mt-0"
         >
           <TestimonialCards />
 
           {/* Decorative elements */}
           <motion.div 
             variants={decorativeVariants}
-            className="absolute top-[10%] right-[10%] w-32 h-32 bg-blue-100/50 rounded-full"
+            className="absolute top-[10%] right-[10%] w-20 h-20 md:w-32 md:h-32 bg-blue-100/50 rounded-full hidden sm:block"
           />
           <motion.div 
             variants={decorativeVariants}
-            className="absolute bottom-[20%] right-[30%] w-16 h-16 bg-amber-100/40 rounded-full"
+            className="absolute bottom-[20%] right-[30%] w-10 h-10 md:w-16 md:h-16 bg-amber-100/40 rounded-full hidden sm:block"
           />
         </motion.div>
       </div>

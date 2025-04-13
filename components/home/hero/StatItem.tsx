@@ -37,13 +37,13 @@ const StatItem = ({ value, label, delay = 0 }: StatItemProps) => {
       animate="visible"
       whileHover="hover"
       className={cn(
-        'bg-white rounded-xl px-6 py-4',
+        'bg-white rounded-xl px-4 sm:px-6 py-3 sm:py-4',
         'shadow-sm',
         'border border-gray-100 flex flex-col items-center'
       )}
     >
       <div
-        className={cn('text-3xl font-bold')}
+        className={cn('text-2xl sm:text-3xl font-bold')}
         style={{
           background: 'linear-gradient(90deg, #2463EB, #3b82f6)',
           backgroundClip: 'text',
@@ -54,13 +54,13 @@ const StatItem = ({ value, label, delay = 0 }: StatItemProps) => {
       >
         {value}
         <div
-          className="absolute bottom-[-4px] left-0 w-full h-[3px]"
+          className="absolute bottom-[-3px] sm:bottom-[-4px] left-0 w-full h-[2px] sm:h-[3px]"
           style={{
             background: 'linear-gradient(90deg, #2463EB, #3b82f6)'
           }}
         />
       </div>
-      <div className={cn('text-sm text-gray-600 mt-1 font-medium')}>
+      <div className={cn('text-xs sm:text-sm text-gray-600 mt-1 font-medium')}>
         {label}
       </div>
     </motion.div>
