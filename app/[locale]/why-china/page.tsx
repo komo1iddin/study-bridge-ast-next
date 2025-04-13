@@ -13,8 +13,8 @@ import { FactsSection } from "@/components/why-china/facts-section"
 import { CtaSection } from "@/components/why-china/cta-section"
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const locale = params.locale
-  const t = await getTranslations({ locale, namespace: "whyChina.meta" })
+  const resolvedParams = await params
+  const t = await getTranslations({ locale: resolvedParams.locale, namespace: "whyChina.meta" })
   
   return {
     title: t("title"),
