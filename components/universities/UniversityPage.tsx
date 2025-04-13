@@ -35,25 +35,15 @@ const UniversityPage = ({ universities, cities }: UniversityPageProps) => {
 
   // Filter change handler
   const handleFilterChange = (key: keyof Filters, value: string) => {
-    setIsLoading(true)
-    
-    // Simulate filter processing time
-    setTimeout(() => {
-      setFilters(prevFilters => ({
-        ...prevFilters,
-        [key]: value
-      }))
-      setIsLoading(false)
-    }, 500)
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      [key]: value
+    }))
   }
 
   // Reset all filters
   const resetFilters = () => {
-    setIsLoading(true)
-    setTimeout(() => {
-      setFilters(DEFAULT_FILTERS)
-      setIsLoading(false)
-    }, 500)
+    setFilters(DEFAULT_FILTERS)
   }
 
   return (
