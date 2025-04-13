@@ -1,0 +1,85 @@
+{
+  "navbar": {
+    "home": "Home",
+    "programs": "Programs",
+    "services": "Services",
+    "whyChina": "Why China",
+    "testimonials": "Testimonials",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "applyNow": "Apply Now"
+  },
+  "home": {
+    "hero": {
+      "title": "Trusted Partner for Studying in China",
+      "subtitle": "We help Uzbek students get admitted to the best universities in China",
+      "cta": "View Programs",
+      "contactUs": "Contact Us"
+    },
+    "stats": {
+      "universities": "Universities",
+      "students": "Students",
+      "experience": "Years Experience",
+      "programs": "Programs"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "We provide all the services you need to study in China",
+      "application": "Application Assistance",
+      "applicationDesc": "We help you choose the right university and submit your application",
+      "visa": "Visa Consultation",
+      "visaDesc": "We assist you in the visa process and prepare the necessary documents",
+      "accommodation": "Accommodation",
+      "accommodationDesc": "We help you find comfortable and affordable accommodation in China",
+      "guidance": "Academic Guidance",
+      "guidanceDesc": "We provide you with necessary advice and guidance during your studies"
+    },
+    "universities": {
+      "title": "Partner Universities",
+      "subtitle": "We collaborate with the best universities in China",
+      "viewAll": "View All"
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "Our experienced specialists are ready to help you",
+      "position": {
+        "director": "Director",
+        "consultant": "Education Consultant",
+        "manager": "Program Manager",
+        "coordinator": "Student Coordinator"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Answers to the most common questions about studying in China",
+      "questions": {
+        "cost": {
+          "question": "How much does it cost to study in China?",
+          "answer": "The cost of studying in China varies depending on the university and program. On average, annual tuition fees for bachelor's programs range from $2,000-$4,000, and for master's programs from $3,000-$6,000. Living expenses are around $300-$600 per month depending on the city."
+        },
+        "scholarship": {
+          "question": "What are the scholarship opportunities?",
+          "answer": "The Chinese government and universities offer numerous scholarships. The most famous is the Chinese Government Scholarship (CSC), which covers full tuition, accommodation, and medical insurance. Additionally, Confucius Institute scholarships, university scholarships, and other opportunities are available."
+        },
+        "language": {
+          "question": "Do I need to know Chinese?",
+          "answer": "It depends on the program. Many universities offer programs taught in English, especially at the master's and doctoral levels. However, learning Chinese will give you a significant advantage and make your daily life easier. Many students first study in one-year language courses."
+        },
+        "visa": {
+          "question": "How does the visa process work?",
+          "answer": "To obtain a Chinese study visa (X1 or X2), you need an admission letter from the university, JW201/JW202 form, and other documents. Our agency provides full support in the visa process and helps prepare all necessary documents."
+        },
+        "work": {
+          "question": "Can students work in China?",
+          "answer": "Yes, international students can work in a limited capacity during their studies. Typically, on-campus jobs, English teaching, or internship opportunities are available. However, it's important to focus on your studies."
+        }
+      }
+    },
+    "cta": {
+      "title": "Apply for Studying in China",
+      "subtitle": "Our specialists will help you choose the right program and guide you through the application process",
+      "button": "Contact Us",
+      "programs": "View Programs"
+    }
+  }
+}

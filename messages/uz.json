@@ -1,0 +1,85 @@
+{
+  "navbar": {
+    "home": "Bosh sahifa",
+    "programs": "Dasturlar",
+    "services": "Xizmatlar",
+    "whyChina": "Nima uchun Xitoy",
+    "testimonials": "Fikrlar",
+    "aboutUs": "Biz haqimizda",
+    "contact": "Aloqa",
+    "applyNow": "Ariza topshirish"
+  },
+  "home": {
+    "hero": {
+      "title": "Xitoyda o'qish uchun ishonchli hamkor",
+      "subtitle": "Biz O'zbekistonlik talabalarni Xitoyning eng yaxshi universitetlariga o'qishga kirishlariga yordam beramiz",
+      "cta": "Dasturlarni ko'rish",
+      "contactUs": "Biz bilan bog'laning"
+    },
+    "stats": {
+      "universities": "Universitetlar",
+      "students": "Talabalar",
+      "experience": "Yillik tajriba",
+      "programs": "Dasturlar"
+    },
+    "services": {
+      "title": "Bizning xizmatlarimiz",
+      "subtitle": "Biz sizga Xitoyda o'qish uchun kerak bo'lgan barcha xizmatlarni taqdim etamiz",
+      "application": "Ariza topshirish",
+      "applicationDesc": "Biz sizga eng mos universitetni tanlashda va ariza topshirishda yordam beramiz",
+      "visa": "Viza maslahatlar",
+      "visaDesc": "Biz sizga viza olish jarayonida yordam beramiz va kerakli hujjatlarni tayyorlashda maslahat beramiz",
+      "accommodation": "Turar joy",
+      "accommodationDesc": "Biz sizga Xitoyda qulay va arzon turar joy topishda yordam beramiz",
+      "guidance": "O'quv yo'riqnoma",
+      "guidanceDesc": "Biz sizga o'qish davomida kerakli maslahatlar va yo'riqnomalar beramiz"
+    },
+    "universities": {
+      "title": "Hamkor universitetlar",
+      "subtitle": "Biz Xitoyning eng yaxshi universitetlari bilan hamkorlik qilamiz",
+      "viewAll": "Barchasini ko'rish"
+    },
+    "team": {
+      "title": "Bizning jamoa",
+      "subtitle": "Bizning tajribali mutaxassislar sizga yordam berishga tayyor",
+      "position": {
+        "director": "Direktor",
+        "consultant": "Ta'lim maslahatchisi",
+        "manager": "Dastur menejeri",
+        "coordinator": "Talabalar koordinatori"
+      }
+    },
+    "faq": {
+      "title": "Ko'p so'raladigan savollar",
+      "subtitle": "Xitoyda o'qish haqida eng ko'p so'raladigan savollarga javoblar",
+      "questions": {
+        "cost": {
+          "question": "Xitoyda o'qish qancha turadi?",
+          "answer": "Xitoyda o'qish narxi universitet va dasturga qarab farq qiladi. O'rtacha, bakalavr dasturlari uchun yillik o'quv to'lovi 2,000-4,000 dollar, magistratura uchun 3,000-6,000 dollar atrofida. Yashash xarajatlari shaharga qarab oyiga 300-600 dollar atrofida."
+        },
+        "scholarship": {
+          "question": "Stipendiya olish imkoniyatlari qanday?",
+          "answer": "Xitoy hukumati va universitetlar tomonidan ko'plab stipendiyalar taqdim etiladi. Eng mashhuri Xitoy hukumati stipendiyasi (CSC) bo'lib, u to'liq o'quv to'lovi, yashash xarajatlari va tibbiy sug'urtani qoplaydi. Bundan tashqari, Konfutsiy instituti stipendiyasi, universitet stipendiyalari va boshqa imkoniyatlar mavjud."
+        },
+        "language": {
+          "question": "Xitoy tilini bilish shartmi?",
+          "answer": "Bu dasturga bog'liq. Ko'plab universitetlar ingliz tilida o'qitiladigan dasturlarni taklif qiladi, ayniqsa magistratura va doktorantura darajasida. Ammo, Xitoy tilini o'rganish sizga katta ustunlik beradi va kundalik hayotingizni osonlashtiradi. Ko'plab talabalar avval 1 yillik til kurslarida o'qishadi."
+        },
+        "visa": {
+          "question": "Viza olish jarayoni qanday?",
+          "answer": "Xitoy o'quv vizasi (X1 yoki X2) olish uchun universitetdan qabul xati, JW201/JW202 formasi va boshqa hujjatlar talab qilinadi. Bizning agentligimiz sizga viza olish jarayonida to'liq yordam beradi va kerakli barcha hujjatlarni tayyorlashda maslahat beradi."
+        },
+        "work": {
+          "question": "Talabalar Xitoyda ishlashi mumkinmi?",
+          "answer": "Ha, xalqaro talabalar o'qish davomida cheklangan miqdorda ishlashlari mumkin. Odatda, kampus ichida ishlash, ingliz tili o'qituvchiligi yoki internship imkoniyatlari mavjud. Ammo, asosiy e'tiborni o'qishga qaratish muhim."
+        }
+      }
+    },
+    "cta": {
+      "title": "Xitoyda o'qish uchun ariza topshiring",
+      "subtitle": "Bizning mutaxassislarimiz sizga eng mos dasturni tanlashda va ariza topshirish jarayonida yordam berishadi",
+      "button": "Biz bilan bog'laning",
+      "programs": "Dasturlarni ko'rish"
+    }
+  }
+}
