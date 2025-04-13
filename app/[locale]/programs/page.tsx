@@ -3,30 +3,12 @@ import { getTranslations } from "next-intl/server"
 
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import { ProgramsContent } from "@/components/programs/programs-content"
+import { HeroSection } from "@/components/programs/hero-section"
+import { Program } from "@/components/programs/featured-programs"
+import ProgramsClient from "@/components/programs/programs-client"
 
-// Program data type
-export type Program = {
-  id: string
-  title: string
-  university: string
-  level: string
-  duration: string
-  language: string
-  category: string
-  scholarship: boolean
-  image: string
-  featured: boolean
-}
-
-export async function generateMetadata(
-  { params }: { params: { locale: string } }
-): Promise<Metadata> {
-  // Pass the params to getTranslations without extracting locale first
-  const t = await getTranslations({
-    locale: params.locale,
-    namespace: "programs.meta"
-  })
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "programs.meta" })
   
   return {
     title: t("title"),
@@ -35,7 +17,7 @@ export async function generateMetadata(
 }
 
 // Sample program data
-const programs = [
+const programs: Program[] = [
   {
     id: "business-management",
     title: "Biznes boshqaruvi",
@@ -138,9 +120,15 @@ export default function ProgramsPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
+
       <main className="flex-1">
-        <ProgramsContent programs={programs} />
+        {/* Hero Section */}
+        <HeroSection />
+        
+        {/* Render the client component for filtering and program lists */}
+        <ProgramsClient programs={programs} />
       </main>
+
       <Footer />
     </div>
   )
