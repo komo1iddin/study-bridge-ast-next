@@ -12,9 +12,14 @@ import { StudyOptions } from "@/components/why-china/study-options"
 import { CostComparison } from "@/components/why-china/cost-comparison"
 import { CtaSection } from "@/components/why-china/cta-section"
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const locale = params.locale
-  const t = await getTranslations({ locale, namespace: "whyChina.meta" })
+export async function generateMetadata(
+  { params }: { params: { locale: string } }
+): Promise<Metadata> {
+  // Pass the params to getTranslations without extracting locale first
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "whyChina.meta"
+  })
   
   return {
     title: t("title"),
