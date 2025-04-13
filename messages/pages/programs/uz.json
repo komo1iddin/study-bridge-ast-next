@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Xitoyda o'quv dasturlari",
+    "description": "Xitoyning eng yaxshi universitetlarida xalqaro talabalar uchun keng ko'lamli o'quv dasturlarini o'rganing."
+  },
+  "hero": {
+    "title": "Xitoyda o'quv dasturlari",
+    "subtitle": "Xitoyning eng yaxshi universitetlarida xalqaro talabalar uchun keng ko'lamli o'quv dasturlarini o'rganing."
+  },
+  "filters": {
+    "search": {
+      "label": "Qidirish",
+      "placeholder": "Dastur nomi..."
+    },
+    "category": {
+      "label": "Yo'nalish",
+      "all": "Barcha yo'nalishlar",
+      "business": "Biznes",
+      "it": "IT",
+      "medicine": "Tibbiyot",
+      "engineering": "Muhandislik"
+    },
+    "level": {
+      "label": "Daraja",
+      "all": "Barcha darajalar",
+      "bachelor": "Bakalavr",
+      "master": "Magistr",
+      "phd": "Doktorantura"
+    },
+    "language": {
+      "label": "O'qitish tili",
+      "all": "Barcha tillar",
+      "english": "Ingliz",
+      "chinese": "Xitoy"
+    }
+  },
+  "featuredPrograms": {
+    "title": "Tavsiya etilgan dasturlar",
+    "subtitle": "Yuqori sifatli va stipendiya imkoniyatlari mavjud bo'lgan eng yaxshi dasturlarimiz",
+    "viewDetails": "Batafsil ma'lumot",
+    "scholarshipAvailable": "Stipendiya mavjud"
+  },
+  "categories": {
+    "title": "Dastur yo'nalishlari",
+    "subtitle": "Yo'nalishlar bo'yicha dasturlarni ko'rish",
+    "business": {
+      "title": "Biznes va boshqaruv",
+      "description": "Biznes boshqaruvi, moliya, marketing va xalqaro biznes dasturlari"
+    },
+    "it": {
+      "title": "Axborot texnologiyalari",
+      "description": "Kompyuter fanlari, sun'iy intellekt, ma'lumotlar ilmi va dasturiy ta'minot muhandisligi dasturlari"
+    },
+    "medicine": {
+      "title": "Tibbiyot va sog'liqni saqlash",
+      "description": "Tibbiyot, hamshiralik, farmatsevtika va an'anaviy xitoy tibbiyoti dasturlari"
+    },
+    "engineering": {
+      "title": "Muhandislik",
+      "description": "Fuqarolik, mexanika, elektr va kimyoviy muhandislik dasturlari"
+    },
+    "viewPrograms": "Dasturlarni ko'rish"
+  },
+  "allPrograms": {
+    "title": "Barcha dasturlar",
+    "subtitle": "Xitoyning eng yaxshi universitetlarida mavjud bo'lgan barcha o'quv dasturlari",
+    "viewDetails": "Batafsil ma'lumot",
+    "scholarshipAvailable": "Stipendiya mavjud"
+  },
+  "applicationProcess": {
+    "title": "Ariza topshirish jarayoni",
+    "subtitle": "Xitoyda o'qish uchun ariza topshirishning oddiy bosqichlari",
+    "steps": [
+      {
+        "title": "Dasturni tanlash",
+        "description": "Dasturlarimizni ko'rib chiqing va sizning qiziqishlaringiz va malakangizga mos keluvchi dasturni toping."
+      },
+      {
+        "title": "Hujjatlarni tayyorlash",
+        "description": "Akademik transkriptlar, til sertifikatlari va pasport nusxasi kabi zarur hujjatlarni tayyorlang."
+      },
+      {
+        "title": "Ariza topshirish",
+        "description": "Ariza shaklini to'ldiring va barcha kerakli hujjatlarni toping."
+      },
+      {
+        "title": "Arizani ko'rib chiqish",
+        "description": "Arizangiz universitet tomonidan ko'rib chiqiladi (4-6 hafta)."
+      },
+      {
+        "title": "Qabul xati",
+        "description": "Agar qabul qilingan bo'lsangiz, universitetdan qabul xatini olasiz."
+      },
+      {
+        "title": "Viza uchun ariza topshirish",
+        "description": "O'z mamlakatingizdagi Xitoy elchixonasi yoki konsulligida talaba vizasi uchun ariza topshiring."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Xitoyda ta'lim olish sayohatingizni boshlashga tayyormisiz?",
+    "description": "Bizning ta'lim maslahatchilari sizga mos dasturni tanlashda yordam berishadi va ariza topshirish jarayonida yo'l-yo'riq ko'rsatishadi.",
+    "applyNow": "Hozir ariza topshiring",
+    "contactUs": "Biz bilan bog'laning"
+  }
+} 

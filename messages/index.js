@@ -20,6 +20,14 @@ import homeEn from './pages/home/en.json';
 import homeRu from './pages/home/ru.json';
 import homeUz from './pages/home/uz.json';
 
+import whyChinaEn from './pages/why-china/en.json';
+import whyChinaRu from './pages/why-china/ru.json';
+import whyChinaUz from './pages/why-china/uz.json';
+
+import programsEn from './pages/programs/en.json';
+import programsRu from './pages/programs/ru.json';
+import programsUz from './pages/programs/uz.json';
+
 // Import common translations
 import commonEn from './common/en.json';
 import commonRu from './common/ru.json';
@@ -34,6 +42,8 @@ export const messages = {
     faq: faqEn,
     common: commonEn,
     home: homeEn,
+    whyChina: whyChinaEn,
+    programs: programsEn,
     // Add other sections as they're created
   },
   ru: {
@@ -43,6 +53,8 @@ export const messages = {
     faq: faqRu,
     common: commonRu,
     home: homeRu,
+    whyChina: whyChinaRu,
+    programs: programsRu,
     // Add other sections as they're created
   },
   uz: {
@@ -52,6 +64,8 @@ export const messages = {
     faq: faqUz,
     common: commonUz,
     home: homeUz,
+    whyChina: whyChinaUz,
+    programs: programsUz,
     // Add other sections as they're created
   },
 };

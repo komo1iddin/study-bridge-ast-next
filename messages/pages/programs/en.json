@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Study Programs in China",
+    "description": "Explore a wide range of study programs at China's top universities for international students."
+  },
+  "hero": {
+    "title": "Study Programs in China",
+    "subtitle": "Explore a wide range of study programs at China's top universities for international students."
+  },
+  "filters": {
+    "search": {
+      "label": "Search",
+      "placeholder": "Program name..."
+    },
+    "category": {
+      "label": "Category",
+      "all": "All categories",
+      "business": "Business",
+      "it": "IT",
+      "medicine": "Medicine",
+      "engineering": "Engineering"
+    },
+    "level": {
+      "label": "Level",
+      "all": "All levels",
+      "bachelor": "Bachelor",
+      "master": "Master",
+      "phd": "PhD"
+    },
+    "language": {
+      "label": "Teaching Language",
+      "all": "All languages",
+      "english": "English",
+      "chinese": "Chinese"
+    }
+  },
+  "featuredPrograms": {
+    "title": "Featured Programs",
+    "subtitle": "Our top recommended programs with high quality and scholarship opportunities",
+    "viewDetails": "View Details",
+    "scholarshipAvailable": "Scholarship Available"
+  },
+  "categories": {
+    "title": "Program Categories",
+    "subtitle": "Browse programs by category",
+    "business": {
+      "title": "Business & Management",
+      "description": "Business administration, finance, marketing, and international business programs"
+    },
+    "it": {
+      "title": "Information Technology",
+      "description": "Computer science, AI, data science, and software engineering programs"
+    },
+    "medicine": {
+      "title": "Medicine & Health",
+      "description": "Medicine, nursing, pharmacy, and traditional Chinese medicine programs"
+    },
+    "engineering": {
+      "title": "Engineering",
+      "description": "Civil, mechanical, electrical, and chemical engineering programs"
+    },
+    "viewPrograms": "View Programs"
+  },
+  "allPrograms": {
+    "title": "All Programs",
+    "subtitle": "All available study programs at China's top universities",
+    "viewDetails": "View Details",
+    "scholarshipAvailable": "Scholarship Available"
+  },
+  "applicationProcess": {
+    "title": "Application Process",
+    "subtitle": "Simple steps to apply for programs in China",
+    "steps": [
+      {
+        "title": "Choose a Program",
+        "description": "Browse our programs and find the one that fits your interests and qualifications."
+      },
+      {
+        "title": "Prepare Documents",
+        "description": "Prepare necessary documents including academic transcripts, language certificates, and passport copy."
+      },
+      {
+        "title": "Submit Application",
+        "description": "Complete the application form and submit all required documents."
+      },
+      {
+        "title": "Application Review",
+        "description": "Your application will be reviewed by the university (4-6 weeks)."
+      },
+      {
+        "title": "Admission Letter",
+        "description": "If accepted, you'll receive an admission letter from the university."
+      },
+      {
+        "title": "Visa Application",
+        "description": "Apply for a student visa at the Chinese embassy or consulate in your country."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Start Your Education Journey in China?",
+    "description": "Our education consultants will help you choose the right program and guide you through the application process.",
+    "applyNow": "Apply Now",
+    "contactUs": "Contact Us"
+  }
+} 
