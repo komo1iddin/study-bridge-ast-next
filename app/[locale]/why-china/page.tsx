@@ -4,15 +4,16 @@ import { getTranslations } from "next-intl/server"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { HeroSection } from "@/components/why-china/hero-section"
+import { FactsSection } from "@/components/why-china/facts-section"
 import { Statistics } from "@/components/why-china/statistics"
 import { Benefits } from "@/components/why-china/benefits"
 import { TopUniversities } from "@/components/why-china/top-universities"
-import { CostComparison } from "@/components/why-china/cost-comparison"
 import { StudyOptions } from "@/components/why-china/study-options"
-import { FactsSection } from "@/components/why-china/facts-section"
+import { CostComparison } from "@/components/why-china/cost-comparison"
 import { CtaSection } from "@/components/why-china/cta-section"
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const locale = params.locale
   const t = await getTranslations({ locale, namespace: "whyChina.meta" })
   
   return {
@@ -30,6 +31,9 @@ export default function WhyChinaPage() {
         {/* Hero Section */}
         <HeroSection />
         
+        {/* Facts Section */}
+        <FactsSection />
+        
         {/* Statistics Section */}
         <Statistics />
         
@@ -39,14 +43,11 @@ export default function WhyChinaPage() {
         {/* Top Universities Section */}
         <TopUniversities />
         
-        {/* Cost Comparison Section */}
-        <CostComparison />
-        
         {/* Study Options Section */}
         <StudyOptions />
         
-        {/* Facts Section */}
-        <FactsSection />
+        {/* Cost Comparison Section */}
+        <CostComparison />
         
         {/* CTA Section */}
         <CtaSection />
