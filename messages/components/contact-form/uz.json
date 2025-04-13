@@ -1,0 +1,46 @@
+{
+  "title": "Biz bilan bog'laning",
+  "subtitle": "Sizdan xabar olishdan xursand bo'lamiz. Iltimos, quyidagi formani to'ldiring.",
+  "fields": {
+    "firstName": {
+      "label": "Ism",
+      "placeholder": "Ismingizni kiriting"
+    },
+    "lastName": {
+      "label": "Familiya",
+      "placeholder": "Familiyangizni kiriting"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Email manzilingizni kiriting"
+    },
+    "phone": {
+      "label": "Telefon",
+      "placeholder": "Telefon raqamingizni kiriting"
+    },
+    "program": {
+      "label": "Qiziqtirgan dastur",
+      "placeholder": "Dasturni tanlang",
+      "options": {
+        "default": "Dasturni tanlang",
+        "business": "Biznes",
+        "it": "IT",
+        "medicine": "Tibbiyot",
+        "engineering": "Muhandislik",
+        "other": "Boshqa"
+      }
+    },
+    "message": {
+      "label": "Xabar",
+      "placeholder": "Xabaringizni shu yerga yozing..."
+    }
+  },
+  "actions": {
+    "submit": "Yuborish",
+    "reset": "Tozalash"
+  },
+  "notifications": {
+    "success": "Xabaringiz uchun rahmat. Tez orada siz bilan bog'lanamiz.",
+    "error": "Xabaringizni yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko'ring."
+  }
+} 

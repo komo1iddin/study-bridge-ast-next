@@ -1,0 +1,45 @@
+{
+  "title": "Ko'p so'raladigan savollar",
+  "subtitle": "Xitoyda o'qish bo'yicha eng ko'p so'raladigan savollarga javoblar",
+  "searchPlaceholder": "Savol qidirish...",
+  "questions": {
+    "cost": {
+      "question": "Xitoyda o'qish qancha turadi?",
+      "answer": "Xitoyda o'qish narxi universitet va dasturga qarab farq qiladi. O'rtacha, bakalavr dasturlari uchun yillik o'qish to'lovi 2,000-4,000$, magistratura dasturlari uchun esa 3,000-6,000$ atrofida. Yashash xarajatlari shahardan kelib chiqib oyiga 300-600$ atrofida bo'ladi."
+    },
+    "scholarship": {
+      "question": "Qanday stipendiya imkoniyatlari mavjud?",
+      "answer": "Xitoy hukumati va universitetlari ko'plab stipendiyalar taklif etadi. Eng mashhuri Xitoy Hukumati Stipendiyasi (CSC) bo'lib, u to'liq o'qish to'lovi, yashash joyi va tibbiy sug'urtani qoplaydi. Bundan tashqari, Konfutsiy Instituti stipendiyalari, universitet stipendiyalari va boshqa imkoniyatlar mavjud."
+    },
+    "language": {
+      "question": "Xitoy tilini bilishim kerakmi?",
+      "answer": "Bu dasturga bog'liq. Ko'p universitetlar ingliz tilida o'qitiladigan dasturlarni taklif etadi, ayniqsa magistratura va doktorantura darajalarida. Biroq, xitoy tilini o'rganish sizga sezilarli afzallik beradi va kundalik hayotingizni osonlashtiradi. Ko'p talabalar avval bir yillik til kurslarida o'qishadi."
+    },
+    "visa": {
+      "question": "Viza olish jarayoni qanday ishlaydi?",
+      "answer": "Xitoy o'quv vizasini (X1 yoki X2) olish uchun universitetdan qabul xati, JW201/JW202 shakli va boshqa hujjatlar kerak. Bizning agentlik viza olish jarayonida to'liq ko'maklashadi va barcha zarur hujjatlarni tayyorlashda yordam beradi."
+    },
+    "work": {
+      "question": "Talabalar Xitoyda ishlashi mumkinmi?",
+      "answer": "Ha, xalqaro talabalar o'qish paytida cheklangan miqdorda ishlashi mumkin. Odatda, kampus ichidagi ishlar, ingliz tili o'qitish yoki amaliyot imkoniyatlari mavjud. Biroq, o'qishga e'tibor berish muhim."
+    },
+    "accommodation": {
+      "question": "Qanday yashash joyi variantlari mavjud?",
+      "answer": "Ko'pgina universitetlar xalqaro talabalar uchun kampus yotoqxonalarini taklif etadi, bu odatda eng qulay va arzon variant hisoblanadi. Shuningdek, kampusdan tashqarida kvartira ijaraga olishingiz mumkin, bu ko'proq erkinlik beradi, lekin odatda qimmatroq."
+    },
+    "application": {
+      "question": "Ariza berish jarayoni qanday?",
+      "answer": "Ariza berish jarayoni odatda akademik transkriptlar, til bilimini tasdiqlovchi hujjat, motivatsion xat, tavsiya xatlari va universitet tomonidan belgilangan boshqa hujjatlarni topshirishni o'z ichiga oladi. Bizning agentlik sizni har bir bosqichda yo'naltiradi va arizangizni tayyorlash va topshirishda yordam beradi."
+    },
+    "timeframe": {
+      "question": "Qachon ariza berish kerak?",
+      "answer": "Sentyabrda boshlanadigan dasturlar uchun ko'pchilik universitetlar dekabrdan maygacha arizalarni qabul qiladi. Martda boshlanadigan dasturlar uchun arizalar odatda iyuldan noyabrgacha qabul qilinadi. Biroq, ayniqsa stipendiya izlayotgan bo'lsangiz, iloji boricha ertaroq ariza berishingiz tavsiya etiladi."
+    }
+  },
+  "actions": {
+    "showMore": "Ko'proq ko'rsatish",
+    "showLess": "Kamroq ko'rsatish",
+    "viewAll": "Barcha savollarni ko'rish",
+    "contactUs": "Savollaringiz bormi? Biz bilan bog'laning"
+  }
+} 
