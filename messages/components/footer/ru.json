@@ -1,5 +1,5 @@
 {
-  "copyright": "© {0} EduChina. Все права защищены.",
+  "copyright": "© {year} EduChina. Все права защищены.",
   "navigation": {
     "home": "Главная",
     "programs": "Программы",
@@ -15,17 +15,17 @@
     "title": "Контакты",
     "address": "Адрес",
     "phone": "Телефон",
-    "email": "Эл. почта"
+    "email": "Email"
   },
   "social": {
-    "followUs": "Подписывайтесь на нас",
+    "followUs": "Следите за нами",
     "facebook": "Facebook",
     "twitter": "Twitter",
     "instagram": "Instagram",
     "telegram": "Telegram"
   },
   "newsletter": {
-    "title": "Подпишитесь на нашу рассылку",
+    "title": "Подпишитесь на новости",
     "placeholder": "Введите ваш email",
     "button": "Подписаться",
     "success": "Спасибо за подписку!"

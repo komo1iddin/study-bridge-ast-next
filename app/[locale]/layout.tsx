@@ -5,9 +5,11 @@ import { Inter } from "next/font/google"
 import { notFound } from "next/navigation"
 import { NextIntlClientProvider } from "next-intl"
 import { getTranslations, setRequestLocale } from "next-intl/server"
+import type { Metadata } from 'next'
 
 import "../globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import messages from "@/messages"
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] })
 
@@ -15,8 +17,7 @@ export async function generateStaticParams() {
   return [{ locale: "uz" }, { locale: "ru" }, { locale: "en" }]
 }
 
-export async function generateMetadata(props: { params: { locale: string } }) {
-  // In Next.js 15, await the entire params object first
+export async function generateMetadata(props: { params: { locale: string } }): Promise<Metadata> {
   const params = await props.params;
   const { locale } = params;
   
@@ -25,6 +26,7 @@ export async function generateMetadata(props: { params: { locale: string } }) {
   return {
     title: "EduChina - Educational Agency",
     description: t("hero.subtitle"),
+    generator: "Next.js",
   }
 }
 
@@ -32,7 +34,6 @@ export default async function RootLayout(props: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  // In Next.js 15, await the entire params object first
   const params = await props.params;
   const { locale } = params;
   
@@ -43,18 +44,14 @@ export default async function RootLayout(props: {
   // Enable static rendering
   setRequestLocale(locale)
 
-  let messages
-  try {
-    messages = (await import(`../../messages/${locale}.json`)).default
-  } catch (error) {
-    notFound()
-  }
+  // Get messages from our modular translation system
+  const localeMessages = messages[locale as keyof typeof messages]
+  if (!localeMessages) notFound()
 
-  // Use a static HTML element to avoid hydration mismatch
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={localeMessages}>
           <ThemeProvider>
             {props.children}
           </ThemeProvider>

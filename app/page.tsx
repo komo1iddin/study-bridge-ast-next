@@ -1,13 +1,7 @@
-import Navbar from "@/components/navbar"
+import { redirect } from "next/navigation"
+import { defaultLocale } from "@/i18n/navigation"
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen flex-col">
-      <Navbar />
-
-      <main className="flex-1">
-        {/* Main content will go here */}
-      </main>
-    </div>
-  )
+export default function RootPage() {
+  // This ensures we redirect to the default locale using the configuration
+  redirect(`/${defaultLocale}`)
 }

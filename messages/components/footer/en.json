@@ -1,11 +1,11 @@
 {
-  "copyright": "© {0} EduChina. All rights reserved.",
+  "copyright": "© {year} EduChina. All rights reserved.",
   "navigation": {
     "home": "Home",
     "programs": "Programs",
     "services": "Services",
     "aboutUs": "About Us",
-    "contact": "Contact Us"
+    "contact": "Contact"
   },
   "legal": {
     "privacyPolicy": "Privacy Policy",
@@ -25,7 +25,7 @@
     "telegram": "Telegram"
   },
   "newsletter": {
-    "title": "Subscribe to Our Newsletter",
+    "title": "Subscribe to Newsletter",
     "placeholder": "Enter your email",
     "button": "Subscribe",
     "success": "Thank you for subscribing!"

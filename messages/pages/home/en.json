@@ -1,7 +1,7 @@
 {
   "hero": {
-    "title": "Trusted Partner for Studying in China",
-    "subtitle": "We help Uzbek students get admitted to the best universities in China",
+    "title": "Your Trusted Partner for Studying in China",
+    "subtitle": "We help students get admitted to China's most prestigious universities",
     "cta": "View Programs",
     "contactUs": "Contact Us"
   },
@@ -13,24 +13,24 @@
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "We provide all the services you need to study in China",
-    "application": "Application Assistance",
-    "applicationDesc": "We help you choose the right university and submit your application",
+    "subtitle": "We provide comprehensive support for your education journey in China",
+    "application": "Application Support",
+    "applicationDesc": "We help you choose the right university and guide you through the application process",
     "visa": "Visa Consultation",
-    "visaDesc": "We assist you in the visa process and prepare the necessary documents",
+    "visaDesc": "We assist with visa applications and required documentation",
     "accommodation": "Accommodation",
     "accommodationDesc": "We help you find comfortable and affordable accommodation in China",
     "guidance": "Academic Guidance",
-    "guidanceDesc": "We provide you with necessary advice and guidance during your studies"
+    "guidanceDesc": "We provide necessary guidance and support throughout your studies"
   },
   "universities": {
     "title": "Partner Universities",
-    "subtitle": "We collaborate with the best universities in China",
+    "subtitle": "We collaborate with China's top universities",
     "viewAll": "View All"
   },
   "team": {
     "title": "Our Team",
-    "subtitle": "Our experienced specialists are ready to help you",
+    "subtitle": "Our experienced professionals are ready to help you",
     "position": {
       "director": "Director",
       "consultant": "Education Consultant",
@@ -39,10 +39,10 @@
     }
   },
   "cta": {
-    "title": "Apply for Studying in China",
-    "subtitle": "Our specialists will help you choose the right program and guide you through the application process",
+    "title": "Apply to Study in China",
+    "subtitle": "Our experts will guide you in choosing the right program and assist with the application process",
     "button": "Contact Us",
     "programs": "View Programs",
-    "imageAlt": "Students in a Chinese university"
+    "imageAlt": "Students at a Chinese university"
   }
 } 

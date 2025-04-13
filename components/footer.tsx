@@ -97,7 +97,7 @@ export default function Footer() {
         {/* Bottom Copyright and Social */}
         <div className="border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-slate-400 text-sm">
-            {t("copyright").replace("{0}", currentYear.toString())}
+            {t("copyright", { year: currentYear })}
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a href="#" className="text-slate-400 hover:text-blue-400 transition">
