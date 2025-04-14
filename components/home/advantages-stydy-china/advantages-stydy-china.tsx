@@ -93,8 +93,8 @@ const Reason = ({ title, description, icon: Icon, color, index }: ReasonProps) =
   )
 }
 
-export function WhyChina({ lang }: { lang: string }) {
-  const t = useTranslations('pages.home.whyChina')
+export function AdvantagesStudyChina({ lang }: { lang: string }) {
+  const t = useTranslations('pages.home.components.advantagesStudyChina')
   const [reasons, setReasons] = useState<any[]>([])
 
   useEffect(() => {

@@ -10,7 +10,7 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { HeroSection } from "@/components/home/hero"
 import { SuccessPath } from "@/components/home/success-path"
-import { WhyChina } from "@/components/home/advantages-stydy-china"
+import { AdvantagesStudyChina } from "@/components/home/advantages-stydy-china"
 import { UniversityFeature } from "@/components/home/university-feature/UniversityFeature"
 import { OurTeam, OurPartners, HowWeWork, MissionStats, Testimonials, ComparisonSection } from "@/components/home"
 
@@ -176,8 +176,8 @@ export default async function Home(props: {
           </div>
         </section>
 
-        {/* Why China Section */}
-        <WhyChina lang={locale} />
+        {/* Advantages Study China Section */}
+        <AdvantagesStudyChina lang={locale} />
 
         {/* Replace the Key Statistics with MissionStats component */}
         <MissionStats />

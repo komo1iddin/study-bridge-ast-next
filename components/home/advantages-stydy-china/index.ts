@@ -1,1 +1,1 @@
-export * from './WhyChina' 
+export { AdvantagesStudyChina } from './advantages-stydy-china' 

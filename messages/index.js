@@ -117,7 +117,7 @@ export const messages = {
         howWeWork: howWeWorkEn,
         missionStats: missionStatsEn,
         testimonials: testimonialsEn,
-        whyChina: whyChinaCompEn,
+        advantagesStudyChina: whyChinaCompEn,
         services: servicesEn,
         universities: universitiesCompEn,
         successPath: successPathEn,
@@ -125,7 +125,8 @@ export const messages = {
         comparison: comparisonEn,
         components: {
           ourTeam: ourTeamEn,
-          ourPartners: ourPartnersEn
+          ourPartners: ourPartnersEn,
+          advantagesStudyChina: whyChinaCompEn
         }
       },
       whyChina: whyChinaEn,
@@ -149,7 +150,7 @@ export const messages = {
         howWeWork: howWeWorkRu,
         missionStats: missionStatsRu,
         testimonials: testimonialsRu,
-        whyChina: whyChinaCompRu,
+        advantagesStudyChina: whyChinaCompRu,
         services: servicesRu,
         universities: universitiesCompRu,
         successPath: successPathRu,
@@ -157,7 +158,8 @@ export const messages = {
         comparison: comparisonRu,
         components: {
           ourTeam: ourTeamRu,
-          ourPartners: ourPartnersRu
+          ourPartners: ourPartnersRu,
+          advantagesStudyChina: whyChinaCompRu
         }
       },
       whyChina: whyChinaRu,
@@ -181,7 +183,7 @@ export const messages = {
         howWeWork: howWeWorkUz,
         missionStats: missionStatsUz,
         testimonials: testimonialsUz,
-        whyChina: whyChinaCompUz,
+        advantagesStudyChina: whyChinaCompUz,
         services: servicesUz,
         universities: universitiesCompUz,
         successPath: successPathUz,
@@ -189,7 +191,8 @@ export const messages = {
         comparison: comparisonUz,
         components: {
           ourTeam: ourTeamUz,
-          ourPartners: ourPartnersUz
+          ourPartners: ourPartnersUz,
+          advantagesStudyChina: whyChinaCompUz
         }
       },
       whyChina: whyChinaUz,
