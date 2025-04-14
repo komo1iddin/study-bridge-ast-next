@@ -54,13 +54,24 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
   const [visibleUniversities, setVisibleUniversities] = useState<UniversityFeatureItem[]>([])
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [swipeAnimationActive, setSwipeAnimationActive] = useState(true)
+  const [hasAutoplay, setHasAutoplay] = useState(false)
 
-  // Refs
-  // @ts-ignore - Ignoring type conflicts between different versions of embla-carousel
-  const autoplayRef = useRef(Autoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: false }))
+  // Check if mobile at mount - do this before creating carousel
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT)
+    }
+    checkMobile()
+  }, [])
 
-  // Initialize carousel
-  // @ts-ignore - Ignoring type conflicts between different versions of embla-carousel
+  // Create autoplay only for desktop
+  // @ts-ignore - Ignoring type conflicts
+  const autoplayPlugin = !isMobile 
+    ? Autoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: false })
+    : null
+
+  // Initialize carousel only after we've checked for mobile
+  // @ts-ignore - Ignoring type conflicts
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
@@ -70,21 +81,32 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
     dragFree: false,
     containScroll: "trimSnaps",
     watchDrag: true
-  }, [autoplayRef.current])
+  }, autoplayPlugin ? [autoplayPlugin] : [])
+
+  // Handle resize with simple mobile check
+  const handleResize = useCallback(() => {
+    const wasMobile = isMobile
+    const isMobileNow = window.innerWidth <= MOBILE_BREAKPOINT
+    
+    // Only update if the device type changed
+    if (wasMobile !== isMobileNow) {
+      setIsMobile(isMobileNow)
+      
+      // We need to reload the page when transitioning between mobile and desktop
+      // since embla-carousel doesn't support adding/removing plugins dynamically
+      window.location.reload()
+    }
+  }, [isMobile])
 
   // Create a debounced resize handler
   const debouncedResize = useCallback(
-    debounce(() => {
-      setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT);
-    }, 150),
-    []
-  );
+    debounce(handleResize, 150),
+    [handleResize]
+  )
 
   // Effects
   useEffect(() => {
-    // Check if mobile - with debounced handler
-    const checkIfMobile = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT)
-    checkIfMobile()
+    // Listen for resize events
     window.addEventListener('resize', debouncedResize)
 
     // Load universities with delay for loading effect
