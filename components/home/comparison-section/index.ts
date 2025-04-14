@@ -1,1 +1,1 @@
-export { default } from './ComparisonSection' 
+export { ComparisonSection } from './ComparisonSection' 

@@ -69,7 +69,7 @@ const Reason = ({ title, description, icon: Icon, color, index }: ReasonProps) =
     <motion.div
       className="flex-1 min-w-[calc(100%-2rem)] md:min-w-[calc(50%-1.5rem)] lg:min-w-[calc(33.333%-1.75rem)]
                 shadow-md hover:shadow-xl rounded-xl border border-blue-100 hover:border-blue-200
-                bg-gradient-to-br from-white/90 to-white/80 backdrop-blur-md
+                bg-white
                 p-6 transition-all duration-300 hover:-translate-y-1"
       variants={fadeIn}
       initial="hidden"

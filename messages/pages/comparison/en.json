@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "title": "Education Comparison - China vs Local Education",
+    "description": "Compare studying in China with local education options. Review academic, financial, living, career and cultural differences."
+  },
+  "pageHeader": {
+    "badge": "Comparison",
+    "title": "China vs Local Education: Complete Comparison",
+    "description": "Compare the advantages of studying in China vs local education options"
+  },
+  "tabs": {
+    "academic": "Academic",
+    "financial": "Financial",
+    "living": "Living",
+    "career": "Career",
+    "cultural": "Cultural"
+  },
+  "comparison": {
+    "academic": [
+      {
+        "aspect": "University Rankings",
+        "china": "Multiple universities in world top 100 rankings",
+        "uzbekistan": "Few universities in international rankings",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Teaching Quality",
+        "china": "Modern teaching methodologies with international standards",
+        "uzbekistan": "Traditional teaching methods with limited resources",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Degree Recognition",
+        "china": "Globally recognized degrees from top universities",
+        "uzbekistan": "Limited international recognition",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Research Opportunities",
+        "china": "Cutting-edge research facilities and funding",
+        "uzbekistan": "Limited research infrastructure and funding",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Academic Resources",
+        "china": "Advanced libraries, labs and digital resources",
+        "uzbekistan": "Basic academic resources with limited access",
+        "chinaAdvantage": "true"
+      }
+    ],
+    "financial": [
+      {
+        "aspect": "Scholarship Availability",
+        "china": "Numerous full scholarships covering tuition and living expenses",
+        "uzbekistan": "Limited scholarship opportunities",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Tuition Costs",
+        "china": "Affordable tuition with scholarship options",
+        "uzbekistan": "Lower tuition but fewer scholarship options",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Living Costs",
+        "china": "Reasonable living costs with stipend support",
+        "uzbekistan": "Lower living costs but no stipend support",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Work Opportunities",
+        "china": "Part-time work opportunities and internships",
+        "uzbekistan": "Limited international work opportunities",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Return on Investment",
+        "china": "Higher earning potential with international degree",
+        "uzbekistan": "Lower earning potential with local degree",
+        "chinaAdvantage": "true"
+      }
+    ],
+    "living": [
+      {
+        "aspect": "Accommodation",
+        "china": "Modern dormitories with all amenities",
+        "uzbekistan": "Basic accommodation with limited facilities",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Transportation",
+        "china": "Excellent public transport infrastructure",
+        "uzbekistan": "Developing public transport systems",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Food Options",
+        "china": "Diverse international and local cuisine",
+        "uzbekistan": "Primarily local cuisine options",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Safety",
+        "china": "High safety standards and security",
+        "uzbekistan": "Generally safe but variable by area",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Healthcare",
+        "china": "Modern healthcare facilities with student insurance",
+        "uzbekistan": "Basic healthcare services",
+        "chinaAdvantage": "true"
+      }
+    ],
+    "career": [
+      {
+        "aspect": "Job Prospects",
+        "china": "Global job opportunities with international degree",
+        "uzbekistan": "Primarily local job market access",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Salary Potential",
+        "china": "Higher earning potential with international experience",
+        "uzbekistan": "Lower average salaries",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Networking",
+        "china": "International connections and alumni networks",
+        "uzbekistan": "Local connections with limited international exposure",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Skill Development",
+        "china": "Global perspective and cross-cultural competence",
+        "uzbekistan": "Local market familiarity",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Language Skills",
+        "china": "Bilingual or multilingual capabilities",
+        "uzbekistan": "Limited foreign language exposure",
+        "chinaAdvantage": "true"
+      }
+    ],
+    "cultural": [
+      {
+        "aspect": "Cultural Exposure",
+        "china": "Immersion in a rich, diverse culture",
+        "uzbekistan": "Familiarity with local culture",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "International Community",
+        "china": "Diverse international student community",
+        "uzbekistan": "Primarily local student community",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Global Perspective",
+        "china": "Broader worldview and cultural adaptability",
+        "uzbekistan": "Limited international perspective",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Cultural Activities",
+        "china": "Rich cultural events and travel opportunities",
+        "uzbekistan": "Local cultural experiences",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Cultural Understanding",
+        "china": "Deep understanding of a major global culture",
+        "uzbekistan": "Familiar cultural environment",
+        "chinaAdvantage": "true"
+      }
+    ]
+  },
+  "detailedComparison": {
+    "badge": "Detailed",
+    "title": "Comprehensive Comparison",
+    "subtitle": "Detailed comparison of education systems in China and locally",
+    "table": {
+      "aspect": "Aspect",
+      "china": "China",
+      "local": "Local"
+    }
+  },
+  "keyDifferences": {
+    "badge": "Key Differences",
+    "title": "Important Differences",
+    "subtitle": "The most significant differences between education systems",
+    "china": "China",
+    "local": "Local",
+    "localCode": "LC",
+    "0": {
+      "title": "Education Quality",
+      "china": "Access to world-class education with modern teaching methods and resources",
+      "uzbekistan": "Traditional education system with limited resources and international standards"
+    },
+    "1": {
+      "title": "Opportunities",
+      "china": "Global career opportunities with international network and recognition",
+      "uzbekistan": "Primarily local career paths with limited international recognition"
+    },
+    "2": {
+      "title": "Investment",
+      "china": "Higher long-term return on investment with better career prospects",
+      "uzbekistan": "Lower initial costs but potentially limited career growth"
+    },
+    "3": {
+      "title": "Experience",
+      "china": "Rich cultural experience and global perspective development",
+      "uzbekistan": "Familiar environment without significant cultural adjustment"
+    }
+  },
+  "testimonials": {
+    "badge": "Experiences",
+    "title": "Student Testimonials",
+    "subtitle": "Hear from students who experienced both education systems",
+    "0": {
+      "name": "Alisher Karimov",
+      "image": "/images/testimonials/student1.jpg",
+      "quote": "Studying in China opened doors I never knew existed. The quality of education, international connections, and the scholarship support made it the best decision of my life.",
+      "university": "Tsinghua University"
+    },
+    "1": {
+      "name": "Malika Rustamova",
+      "image": "/images/testimonials/student2.jpg",
+      "quote": "The scholarship covered everything from tuition to accommodation. I've grown professionally and personally in ways that wouldn't have been possible at home.",
+      "university": "Fudan University"
+    },
+    "2": {
+      "name": "Jasur Umarov",
+      "image": "/images/testimonials/student3.jpg",
+      "quote": "After comparing my experience with friends who studied locally, I'm convinced studying in China gave me a significant advantage in the job market. The investment in my future was worth it.",
+      "university": "Shanghai Jiao Tong University"
+    }
+  },
+  "funFacts": {
+    "badge": "Fun Facts",
+    "title": "Interesting Facts About Studying in China",
+    "subtitle": "Interesting information you should know about studying in China",
+    "factTitle": "Fun Fact #{{number}}",
+    "0": "China has more than 40 universities in the global top 500 rankings, offering world-class education.",
+    "1": "Many international students in China receive full scholarships covering tuition, accommodation, and monthly stipends.",
+    "2": "China is investing heavily in becoming an education hub with over $10 billion annually in international education.",
+    "3": "Students in China gain exposure to the world's second-largest economy and fastest-growing job market.",
+    "4": "The Chinese government offers over 50,000 scholarships to international students annually."
+  },
+  "cta": {
+    "title": "Don't Miss Your Opportunity to Study in China",
+    "description": "Our experts will help you choose the right university and guide you through the application process.",
+    "primaryButton": "Apply Now",
+    "secondaryButton": "Contact Us"
+  }
+} 

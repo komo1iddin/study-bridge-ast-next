@@ -1,0 +1,264 @@
+{
+  "meta": {
+    "title": "Ta'lim solishtirmasi - Xitoy va mahalliy ta'lim",
+    "description": "Xitoydagi ta'limni mahalliy ta'lim imkoniyatlari bilan solishtiring. Akademik, moliyaviy, yashash, karyera va madaniy farqlarni ko'rib chiqing."
+  },
+  "metadata": {
+    "title": "Ta'lim solishtirmasi - Xitoy va mahalliy ta'lim",
+    "description": "Xitoydagi ta'limni mahalliy ta'lim imkoniyatlari bilan solishtiring. Akademik, moliyaviy, yashash, karyera va madaniy farqlarni ko'rib chiqing."
+  },
+  "pageHeader": {
+    "badge": "Solishtirma",
+    "title": "Xitoy va mahalliy ta'lim: To'liq solishtirma",
+    "description": "Xitoydagi ta'lim afzalliklarini mahalliy ta'lim imkoniyatlari bilan solishtiring"
+  },
+  "tabs": {
+    "academic": "Akademik",
+    "financial": "Moliyaviy",
+    "living": "Yashash",
+    "career": "Karyera",
+    "cultural": "Madaniy"
+  },
+  "comparison": {
+    "academic": [
+      {
+        "aspect": "Universitet reytinglari",
+        "china": "Jahon top-100 reytingidagi ko'plab universitetlar",
+        "uzbekistan": "Xalqaro reytinglardagi kam sonli universitetlar",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "O'qitish sifati",
+        "china": "Xalqaro standartlardagi zamonaviy o'qitish metodikalari",
+        "uzbekistan": "Cheklangan resurslarga ega an'anaviy o'qitish usullari",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Diplom tan olinishi",
+        "china": "Nufuzli universitetlarning xalqaro tan olingan diplomlari",
+        "uzbekistan": "Cheklangan xalqaro tan olish",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Tadqiqot imkoniyatlari",
+        "china": "Zamonaviy tadqiqot inshootlari va moliyalashtirish",
+        "uzbekistan": "Cheklangan tadqiqot infratuzilmasi va moliyalashtirish",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Akademik resurslar",
+        "china": "Zamonaviy kutubxonalar, laboratoriyalar va raqamli resurslar",
+        "uzbekistan": "Cheklangan kirishga ega asosiy akademik resurslar",
+        "chinaAdvantage": "true"
+      }
+    ],
+    "financial": [
+      {
+        "aspect": "Stipendiya imkoniyatlari",
+        "china": "O'qish va yashash xarajatlarini qoplaydigan ko'plab to'liq stipendiyalar",
+        "uzbekistan": "Cheklangan stipendiya imkoniyatlari",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "O'qish narxlari",
+        "china": "Stipendiya imkoniyatlari bilan arzon o'qish narxlari",
+        "uzbekistan": "Pastroq o'qish narxlari, ammo kam stipendiya imkoniyatlari",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Yashash xarajatlari",
+        "china": "Stipendiya yordami bilan oqilona yashash xarajatlari",
+        "uzbekistan": "Pastroq yashash xarajatlari, ammo stipendiya yordamisiz",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Ish imkoniyatlari",
+        "china": "Yarim stavkada ishlash va amaliyot imkoniyatlari",
+        "uzbekistan": "Cheklangan xalqaro ish imkoniyatlari",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Investitsiya qaytishi",
+        "china": "Xalqaro diplom bilan yuqori daromad imkoniyati",
+        "uzbekistan": "Mahalliy diplom bilan pastroq daromad imkoniyati",
+        "chinaAdvantage": "true"
+      }
+    ],
+    "living": [
+      {
+        "aspect": "Turar joy",
+        "china": "Barcha qulayliklarga ega zamonaviy talabalar yotoqxonalari",
+        "uzbekistan": "Cheklangan qulayliklarga ega asosiy turar joy",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Transport",
+        "china": "Ajoyib jamoat transporti infratuzilmasi",
+        "uzbekistan": "Rivojlanayotgan jamoat transporti tizimlari",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Ovqatlanish imkoniyatlari",
+        "china": "Xilma-xil xalqaro va mahalliy taomlar",
+        "uzbekistan": "Asosan mahalliy oshxona variantlari",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Xavfsizlik",
+        "china": "Yuqori xavfsizlik standartlari va himoya",
+        "uzbekistan": "Umuman olganda xavfsiz, ammo hududlar bo'yicha o'zgaradi",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Sog'liqni saqlash",
+        "china": "Talabalar sug'urtasi bilan zamonaviy tibbiy muassasalar",
+        "uzbekistan": "Asosiy tibbiy xizmatlar",
+        "chinaAdvantage": "true"
+      }
+    ],
+    "career": [
+      {
+        "aspect": "Ish istiqbollari",
+        "china": "Xalqaro diplom bilan global ish imkoniyatlari",
+        "uzbekistan": "Asosan mahalliy mehnat bozoriga kirish",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Maosh imkoniyati",
+        "china": "Xalqaro tajriba bilan yuqori daromad imkoniyati",
+        "uzbekistan": "O'rtacha past maoshlar",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Networking",
+        "china": "Xalqaro aloqalar va bitiruvchilar tarmoqlari",
+        "uzbekistan": "Cheklangan xalqaro aloqalarga ega mahalliy bog'lanishlar",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Ko'nikmalar rivojlanishi",
+        "china": "Global istiqbol va madaniyatlararo malaka",
+        "uzbekistan": "Mahalliy bozorni bilish",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Til ko'nikmalari",
+        "china": "Ikki yoki ko'p tillilik imkoniyatlari",
+        "uzbekistan": "Cheklangan chet tili ta'siri",
+        "chinaAdvantage": "true"
+      }
+    ],
+    "cultural": [
+      {
+        "aspect": "Madaniy ta'sir",
+        "china": "Boy va xilma-xil madaniyatga chuqur kirib borish",
+        "uzbekistan": "Mahalliy madaniyat bilan tanishlik",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Xalqaro jamiyat",
+        "china": "Xilma-xil xalqaro talabalar jamoasi",
+        "uzbekistan": "Asosan mahalliy talabalar jamoasi",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Global istiqbol",
+        "china": "Keng dunyoqarash va madaniy moslashuvchanlik",
+        "uzbekistan": "Cheklangan xalqaro istiqbol",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Madaniy tadbirlar",
+        "china": "Boy madaniy tadbirlar va sayohat imkoniyatlari",
+        "uzbekistan": "Mahalliy madaniy tajribalar",
+        "chinaAdvantage": "true"
+      },
+      {
+        "aspect": "Madaniy tushunish",
+        "china": "Asosiy global madaniyatni chuqur tushunish",
+        "uzbekistan": "Tanish madaniy muhit",
+        "chinaAdvantage": "true"
+      }
+    ]
+  },
+  "detailedComparison": {
+    "badge": "Batafsil",
+    "title": "Keng qamrovli solishtirma",
+    "subtitle": "Xitoy va mahalliy ta'lim tizimlarining batafsil solishtirmasi",
+    "table": {
+      "aspect": "Jihat",
+      "china": "Xitoy",
+      "local": "Mahalliy"
+    }
+  },
+  "keyDifferences": {
+    "badge": "Asosiy farqlar",
+    "title": "Muhim farqlar",
+    "subtitle": "Ta'lim tizimlari o'rtasidagi eng muhim farqlar",
+    "china": "Xitoy",
+    "local": "Mahalliy",
+    "localCode": "MH",
+    "0": {
+      "title": "Ta'lim sifati",
+      "china": "Zamonaviy o'qitish metodlari va resurslar bilan jahon darajasidagi ta'limga kirish",
+      "uzbekistan": "Cheklangan resurslar va xalqaro standartlarga ega an'anaviy ta'lim tizimi"
+    },
+    "1": {
+      "title": "Imkoniyatlar",
+      "china": "Xalqaro aloqalar va tan olish bilan global karyera imkoniyatlari",
+      "uzbekistan": "Asosan cheklangan xalqaro tan olishga ega mahalliy karyera yo'llari"
+    },
+    "2": {
+      "title": "Investitsiya",
+      "china": "Yaxshiroq karyera istiqbollari bilan yuqori uzoq muddatli investitsiya qaytishi",
+      "uzbekistan": "Dastlabki xarajatlar past, ammo karyera o'sishi cheklangan bo'lishi mumkin"
+    },
+    "3": {
+      "title": "Tajriba",
+      "china": "Boy madaniy tajriba va global istiqbolni rivojlantirish",
+      "uzbekistan": "Sezilarli madaniy moslashishsiz tanish muhit"
+    }
+  },
+  "testimonials": {
+    "badge": "Tajribalar",
+    "title": "Talabalar fikrlari",
+    "subtitle": "Ikki ta'lim tizimini ham tajriba qilgan talabalar fikrlarini eshiting",
+    "0": {
+      "name": "Alisher Karimov",
+      "image": "/images/testimonials/student1.jpg",
+      "quote": "Xitoyda o'qish men bilmagan eshiklarni ochdi. Ta'lim sifati, xalqaro aloqalar va stipendiya yordami uni hayotimdagi eng yaxshi qaror qildi.",
+      "university": "Tsinghua Universiteti"
+    },
+    "1": {
+      "name": "Malika Rustamova",
+      "image": "/images/testimonials/student2.jpg",
+      "quote": "Stipendiya o'qish to'lovidan tortib yashash joyigacha hamma narsani qopladi. Men uyda mumkin bo'lmagan yo'llar bilan kasbiy va shaxsiy jihatdan o'sdim.",
+      "university": "Fudan Universiteti"
+    },
+    "2": {
+      "name": "Jasur Umarov",
+      "image": "/images/testimonials/student3.jpg",
+      "quote": "Mahalliy o'qigan do'stlarim bilan tajribamni solishtirganimda, Xitoyda o'qish menga ish bozorida sezilarli ustunlik berganiga ishonchim komil. Kelajagimga investitsiya qilish bunga arzidi.",
+      "university": "Shanxay Jiao Tong Universiteti"
+    }
+  },
+  "funFacts": {
+    "badge": "Qiziqarli faktlar",
+    "title": "Xitoyda o'qish haqida qiziqarli faktlar",
+    "subtitle": "Xitoyda o'qish haqida bilishingiz kerak bo'lgan qiziqarli ma'lumotlar",
+    "factTitle": "Qiziqarli fakt #{number}",
+    "0": "Xitoyda jahon darajasidagi ta'lim taklif etuvchi 40 dan ortiq universitet global top-500 reytingiga kiradi.",
+    "1": "Xitoydagi ko'plab xalqaro talabalar o'qish, yashash va oylik stipendiyani qoplaydigan to'liq stipendiyalarni olishadi.",
+    "2": "Xitoy har yili xalqaro ta'limga 10 milliard dollardan ortiq mablag' sarflab, ta'lim markaziga aylanishga katta investitsiyalar qilmoqda.",
+    "3": "Xitoydagi talabalar dunyoning ikkinchi eng katta iqtisodiyoti va eng tez o'sayotgan ish bozoriga kirish imkoniyatiga ega bo'lishadi.",
+    "4": "Xitoy hukumati har yili xalqaro talabalarga 50,000 dan ortiq stipendiya taklif qiladi."
+  },
+  "cta": {
+    "title": "Xitoydagi imkoniyatlarni o'rganishga tayyormisiz?",
+    "description": "Biz bilan bog'laning va Xitoyda o'qishning barcha afzalliklaridan qanday foydalanishingizni bilib oling.",
+    "primaryButton": "Hozir Murojaat Qiling",
+    "secondaryButton": "Biz Bilan Bog'laning",
+    "button": "Bepul konsultatsiya",
+    "note": "Biz sizga 24 soat ichida javob beramiz"
+  }
+} 

@@ -78,6 +78,11 @@ import comparisonEn from './pages/home/components/comparison/en.json';
 import comparisonRu from './pages/home/components/comparison/ru.json';
 import comparisonUz from './pages/home/components/comparison/uz.json';
 
+// Import comparison page translations
+import comparisonPageEn from './pages/comparison/en.json';
+import comparisonPageRu from './pages/comparison/ru.json';
+import comparisonPageUz from './pages/comparison/uz.json';
+
 import whyChinaEn from './pages/why-china/en.json';
 import whyChinaRu from './pages/why-china/ru.json';
 import whyChinaUz from './pages/why-china/uz.json';
@@ -126,6 +131,7 @@ export const messages = {
       whyChina: whyChinaEn,
       programs: programsEn,
       universities: universitiesEn,
+      comparison: comparisonPageEn
     }
   },
   ru: {
@@ -157,6 +163,7 @@ export const messages = {
       whyChina: whyChinaRu,
       programs: programsRu,
       universities: universitiesRu,
+      comparison: comparisonPageRu
     }
   },
   uz: {
@@ -188,6 +195,7 @@ export const messages = {
       whyChina: whyChinaUz,
       programs: programsUz,
       universities: universitiesUz,
+      comparison: comparisonPageUz
     }
   },
 };

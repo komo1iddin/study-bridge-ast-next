@@ -41,6 +41,7 @@ export default function Navbar() {
     { href: "/universities", label: t("universities") },
     { href: "/#services", label: t("services") },
     { href: "/why-china", label: t("whyChina") },
+    { href: "/comparison", label: t("comparison") },
     { href: "/#testimonials", label: t("testimonials") },
     { href: "/#about", label: t("aboutUs") },
     { href: "/#contact", label: t("contact") }

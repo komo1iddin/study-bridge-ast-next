@@ -9,7 +9,7 @@ interface ComparisonSectionProps {
   className?: string
 }
 
-export default function ComparisonSection({ className }: ComparisonSectionProps) {
+export function ComparisonSection({ className }: ComparisonSectionProps) {
   const t = useTranslations('pages.home.comparison')
 
   // Animation variants

@@ -141,7 +141,7 @@ export default function MissionStats({ className }: MissionStatsProps) {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg shadow-blue-500/5 border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1 flex flex-col h-full"
+              className="bg-white rounded-2xl p-6 shadow-md border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1 flex flex-col h-full"
               data-aos="fade-up"
               data-aos-delay={100 * index}
             >
@@ -178,7 +178,7 @@ export default function MissionStats({ className }: MissionStatsProps) {
               data-aos-delay={150 * index}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
-              <div className="relative bg-white rounded-2xl p-8 shadow-lg shadow-blue-500/5 border border-blue-100 hover:border-blue-200 transition-all duration-300 group-hover:translate-y-[-2px] group-hover:shadow-xl h-full flex flex-col">
+              <div className="relative bg-white rounded-2xl p-8 shadow-md border border-blue-100 hover:border-blue-200 transition-all duration-300 group-hover:translate-y-[-2px] group-hover:shadow-xl h-full flex flex-col">
                 <div className="text-blue-600 mb-4 transition-transform duration-300 group-hover:scale-110">
                   <advantage.icon className="w-8 h-8" />
                 </div>
