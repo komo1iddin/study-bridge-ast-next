@@ -63,7 +63,7 @@ export default function MissionStats({ className }: MissionStatsProps) {
   const statsGridRef = useRef<HTMLDivElement>(null)
   
   useEffect(() => {
-    // Animation for counter
+    // Animation for counter - optimized for performance
     const initCounters = () => {
       const counterElements = statsGridRef.current?.querySelectorAll('.counter-value')
       
@@ -72,15 +72,22 @@ export default function MissionStats({ className }: MissionStatsProps) {
       counterElements.forEach(element => {
         if (element instanceof HTMLElement) {
           const target = parseInt(element.dataset.target?.replace(/\D/g, '') || '0')
-          const duration = 1000
-          const step = target / (duration / 16)
+          const duration = 1500 // Slightly longer duration to reduce CPU usage
+          const frames = 20 // Reduced number of frames to improve performance
+          const frameStep = duration / frames
+          const valueStep = target / frames
           let current = 0
+          let frame = 0
           
+          // Use fewer animation frames for better performance
           const updateCounter = () => {
-            current += step
-            if (current < target) {
-              element.textContent = Math.ceil(current).toLocaleString() + '+'
-              requestAnimationFrame(updateCounter)
+            frame++
+            if (frame <= frames) {
+              current = Math.ceil(valueStep * frame)
+              element.textContent = Math.min(current, target).toLocaleString() + '+'
+              
+              // Schedule next frame with less frequent updates
+              setTimeout(updateCounter, frameStep)
             } else {
               element.textContent = target.toLocaleString() + '+'
             }
@@ -96,14 +103,17 @@ export default function MissionStats({ className }: MissionStatsProps) {
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            initCounters()
+            // Small delay to help with overall page performance
+            setTimeout(() => {
+              initCounters()
+            }, 100)
             observer.unobserve(entry.target)
           }
         })
       },
       {
-        threshold: 0.1,
-        rootMargin: '50px'
+        threshold: 0.2, // Higher threshold to ensure element is more visible
+        rootMargin: '0px' // Reduced margin
       }
     )
     
@@ -142,8 +152,11 @@ export default function MissionStats({ className }: MissionStatsProps) {
             <div 
               key={index}
               className="bg-white rounded-2xl p-6 shadow-md border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1 flex flex-col h-full"
-              data-aos="fade-up"
-              data-aos-delay={100 * index}
+              style={{
+                transform: 'translateZ(0)', // Force GPU acceleration
+                willChange: 'transform',
+                transitionDelay: `${index * 50}ms` // Use CSS instead of data-aos
+              }}
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white">
@@ -174,8 +187,11 @@ export default function MissionStats({ className }: MissionStatsProps) {
             <div 
               key={index}
               className="relative group h-full"
-              data-aos="fade-up"
-              data-aos-delay={150 * index}
+              style={{
+                transform: 'translateZ(0)', // Force GPU acceleration
+                willChange: 'transform, opacity',
+                transitionDelay: `${index * 50}ms` // Use CSS instead of data-aos
+              }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
               <div className="relative bg-white rounded-2xl p-8 shadow-md border border-blue-100 hover:border-blue-200 transition-all duration-300 group-hover:translate-y-[-2px] group-hover:shadow-xl h-full flex flex-col">

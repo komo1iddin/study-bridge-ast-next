@@ -29,11 +29,13 @@ interface StepItemProps {
 
 const StepItem = ({ step, index, isLast, visibleSteps, setVisibleSteps }: StepItemProps) => {
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
   
   useEffect(() => {
     if (isInView && !visibleSteps.includes(step.id)) {
-      setVisibleSteps(prev => [...prev, step.id])
+      setTimeout(() => {
+        setVisibleSteps(prev => [...prev, step.id])
+      }, 50)
     }
   }, [isInView, step.id, visibleSteps, setVisibleSteps])
 
@@ -50,7 +52,12 @@ const StepItem = ({ step, index, isLast, visibleSteps, setVisibleSteps }: StepIt
         className="flex items-start gap-6 md:gap-8 mb-8 md:mb-12"
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
+        transition={{ duration: 0.4, delay: index * 0.08 }}
+        style={{
+          willChange: "opacity, transform", 
+          transform: "translateZ(0)", 
+          backfaceVisibility: "hidden"
+        }}
       >
         {/* Step Number and Line */}
         <div className="hidden md:flex flex-col items-center">
@@ -69,7 +76,11 @@ const StepItem = ({ step, index, isLast, visibleSteps, setVisibleSteps }: StepIt
         <div className="flex-1">
           <div 
             className="bg-white rounded-xl p-5 md:p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
-            style={{ borderLeftColor: stepColor, borderLeftWidth: '4px' }}
+            style={{ 
+              borderLeftColor: stepColor, 
+              borderLeftWidth: '4px',
+              transform: "translateZ(0)"  
+            }}
           >
             <div className="flex items-center gap-4 mb-4">
               <div className="md:hidden w-10 h-10 rounded-full flex items-center justify-center text-white text-lg font-bold" style={{ backgroundColor: stepColor }}>

@@ -19,14 +19,14 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
     setIsMounted(true)
   }, [])
 
-  // Animation variants
+  // Animation variants - optimized for performance
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+        staggerChildren: 0.05, // Reduced from 0.1
+        delayChildren: 0.1 // Reduced from 0.2
       }
     }
   }
@@ -37,7 +37,7 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5
+        duration: 0.3 // Reduced from 0.5
       }
     }
   }
@@ -48,6 +48,11 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
       <motion.div
         variants={itemVariants}
         className="bg-white border border-gray-200 rounded-xl p-6 order-2 md:order-1"
+        style={{
+          willChange: "opacity, transform",
+          transform: "translateZ(0)",
+          backfaceVisibility: "hidden"
+        }}
       >
         <div className="text-center mb-6">
           <h3 className="text-xl font-bold text-gray-700 mb-2">{t('alternatives.title')}</h3>
@@ -68,6 +73,11 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
       <motion.div
         variants={itemVariants}
         className="bg-gradient-to-b from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl p-8 shadow-lg relative z-10 -mt-4 md:mt-[-2rem] order-1 md:order-2"
+        style={{
+          willChange: "opacity, transform",
+          transform: "translateZ(0)",
+          backfaceVisibility: "hidden"
+        }}
       >
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <span className="bg-blue-600 text-white text-xs font-bold uppercase py-1 px-3 rounded-full">
@@ -94,6 +104,11 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
       <motion.div
         variants={itemVariants}
         className="bg-white border border-gray-200 rounded-xl p-6 order-3"
+        style={{
+          willChange: "opacity, transform",
+          transform: "translateZ(0)",
+          backfaceVisibility: "hidden"
+        }}
       >
         <div className="text-center mb-6">
           <h3 className="text-xl font-bold text-gray-700 mb-2">{t('selfApplication.title')}</h3>
@@ -141,7 +156,8 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
+          style={{ willChange: "opacity, transform", transform: "translateZ(0)" }}
         >
           <h2 className="text-3xl font-bold mb-4">
             {t('title.main')} <span className="text-blue-600">{t('title.highlight')}</span>
@@ -156,6 +172,7 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          style={{ willChange: "opacity", transform: "translateZ(0)" }}
         >
           <ComparisonTable />
         </motion.div>
