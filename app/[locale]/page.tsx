@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Image from "next/image"
 import Link from "next/link"
 import { getTranslations } from "next-intl/server"
@@ -308,6 +309,7 @@ export default async function Home(props: {
       </main>
 
       <Footer />
+      <SpeedInsights />
     </div>
   )
 }
