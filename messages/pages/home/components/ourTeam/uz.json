@@ -1,0 +1,29 @@
+{
+  "badge": "Bizning jamoa",
+  "team": {
+    "title": "Bizning jamoamiz bilan tanishing",
+    "description": "Bizning tajribali mutaxassislarimiz sizning ta'lim maqsadlaringizga erishishda yordam berishga tayyor"
+  },
+  "positions": {
+    "position1": "Direktor",
+    "position2": "Ta'lim maslahatchisi",
+    "position3": "Dastur menejeri",
+    "position4": "Talaba koordinatori"
+  },
+  "values": {
+    "mainTitle": "Bizning qadriyatlarimiz",
+    "description": "Ishimizni yo'naltiruvchi va talabalarga bo'lgan sadoqatimizni ta'minlovchi tamoyillar",
+    "value1": {
+      "title": "Mukammallik",
+      "description": "Biz talabalarga ko'rsatadigan har bir xizmatda mukammallikka intilamiz"
+    },
+    "value2": {
+      "title": "Halollik",
+      "description": "Biz barcha ishlarimizda halollik va shaffoflik bilan ish yuritamiz"
+    },
+    "value3": {
+      "title": "Talabaga yo'naltirilganlik",
+      "description": "Talabalarimizning muvaffaqiyati va farovonligi biz qiladigan barcha ishlarning asosida turadi"
+    }
+  }
+} 

@@ -38,6 +38,7 @@ export default function Navbar() {
   const navItems = [
     { href: "/", label: t("home") },
     { href: "/programs", label: t("programs") },
+    { href: "/universities", label: t("universities") },
     { href: "/#services", label: t("services") },
     { href: "/why-china", label: t("whyChina") },
     { href: "/#testimonials", label: t("testimonials") },

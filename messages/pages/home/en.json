@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Study in China - Your Trusted Partner",
+    "description": "Find the best universities and programs for studying in China with expert guidance"
+  },
   "hero": {
     "title": "Your Trusted Partner for Studying in China",
     "subtitle": "We help students get admitted to China's most prestigious universities",
@@ -12,35 +16,36 @@
     "programs": "Programs"
   },
   "whyChina": {
+    "badge": "Why China?",
     "title": {
-      "main": "Why Study in",
-      "highlight": "China?"
+      "main": "Six key advantages",
+      "highlight": "of studying in China"
     },
-    "subtitle": "Discover the unique advantages and opportunities that China offers for international students.",
+    "subtitle": "Studying in China is not just quality education, but opening the door to wide opportunities for your future",
     "reasons": {
       "1": {
-        "title": "World-Class Education",
-        "description": "Access to top-ranked universities with cutting-edge research facilities and academic excellence."
+        "title": "High-quality education",
+        "description": "Chinese universities are ranked in the TOP-100 worldwide and have the most modern scientific and technical base"
       },
       "2": {
-        "title": "Innovation Hub",
-        "description": "Experience one of the world's leading innovation centers with advancements in technology and science."
+        "title": "Innovation center",
+        "description": "The world's most advanced country in artificial intelligence, IT, robotics, and business"
       },
       "3": {
-        "title": "Affordable Tuition",
-        "description": "High-quality education at a fraction of the cost compared to Western countries, with various scholarship opportunities."
+        "title": "Affordable study costs",
+        "description": "2-3 times cheaper than Europe and the USA. Starting from $2000-4000 per year + scholarships"
       },
       "4": {
-        "title": "Global Perspective",
-        "description": "Gain valuable international experience and cultural insights in one of the world's largest economies."
+        "title": "Cultural diversity",
+        "description": "5000 years of history, modern technology, and rich culture - this is not only education but also a school of life"
       },
       "5": {
-        "title": "Career Opportunities",
-        "description": "Enhance your career prospects with experience from the fastest-growing major economy in the world."
+        "title": "Wide opportunities",
+        "description": "Chinese language, international experience, and high salary in the future - jobs starting from $2000-5000"
       },
       "6": {
-        "title": "Diverse Programs",
-        "description": "Wide range of programs available in English across numerous disciplines and specializations."
+        "title": "Modern infrastructure",
+        "description": "Campus, laboratories, and sports complexes equipped with the latest technologies"
       }
     },
     "cta": {

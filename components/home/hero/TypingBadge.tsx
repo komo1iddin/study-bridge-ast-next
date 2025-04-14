@@ -9,8 +9,8 @@ const TypingBadge = () => {
   const [displayedText, setDisplayedText] = useState("")
   const [cursorVisible, setCursorVisible] = useState(true)
   const text = "Набор открыт до 15 мая 2025"
-  const typingSpeed = 40 // Faster typing (was 80)
-  const pauseBeforeRepeat = 3000 // Milliseconds
+  const typingSpeed = 60 
+  const pauseBeforeRepeat = 3000 
 
   useEffect(() => {
     let charIndex = 0

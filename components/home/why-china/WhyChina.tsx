@@ -77,7 +77,7 @@ const Reason = ({ title, description, icon: Icon, color, index }: ReasonProps) =
 }
 
 export function WhyChina({ lang }: { lang: string }) {
-  const t = useTranslations('home.whyChina')
+  const t = useTranslations('pages.home.whyChina')
   const [reasons, setReasons] = useState<any[]>([])
 
   useEffect(() => {
@@ -99,6 +99,13 @@ export function WhyChina({ lang }: { lang: string }) {
       <BackgroundElements />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Badge */}
+        <div className="flex justify-center mb-4">
+          <div className="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-semibold">
+            {t('badge')}
+          </div>
+        </div>
+        
         {/* Section Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">

@@ -24,6 +24,15 @@ import homeEn from './pages/home/en.json';
 import homeRu from './pages/home/ru.json';
 import homeUz from './pages/home/uz.json';
 
+// Import home components translations
+import ourTeamEn from './pages/home/components/ourTeam/en.json';
+import ourTeamRu from './pages/home/components/ourTeam/ru.json';
+import ourTeamUz from './pages/home/components/ourTeam/uz.json';
+
+import ourPartnersEn from './pages/home/components/ourPartners/en.json';
+import ourPartnersRu from './pages/home/components/ourPartners/ru.json';
+import ourPartnersUz from './pages/home/components/ourPartners/uz.json';
+
 import whyChinaEn from './pages/why-china/en.json';
 import whyChinaRu from './pages/why-china/ru.json';
 import whyChinaUz from './pages/why-china/uz.json';
@@ -50,11 +59,18 @@ export const messages = {
     faq: faqEn,
     universityFeature: universityFeatureEn,
     common: commonEn,
-    home: homeEn,
-    whyChina: whyChinaEn,
-    programs: programsEn,
-    universities: universitiesEn,
-    // Add other sections as they're created
+    pages: {
+      home: {
+        ...homeEn,
+        components: {
+          ourTeam: ourTeamEn,
+          ourPartners: ourPartnersEn
+        }
+      },
+      whyChina: whyChinaEn,
+      programs: programsEn,
+      universities: universitiesEn,
+    }
   },
   ru: {
     navbar: navbarRu,
@@ -63,11 +79,18 @@ export const messages = {
     faq: faqRu,
     universityFeature: universityFeatureRu,
     common: commonRu,
-    home: homeRu,
-    whyChina: whyChinaRu,
-    programs: programsRu,
-    universities: universitiesRu,
-    // Add other sections as they're created
+    pages: {
+      home: {
+        ...homeRu,
+        components: {
+          ourTeam: ourTeamRu,
+          ourPartners: ourPartnersRu
+        }
+      },
+      whyChina: whyChinaRu,
+      programs: programsRu,
+      universities: universitiesRu,
+    }
   },
   uz: {
     navbar: navbarUz,
@@ -76,11 +99,18 @@ export const messages = {
     faq: faqUz,
     universityFeature: universityFeatureUz,
     common: commonUz,
-    home: homeUz,
-    whyChina: whyChinaUz,
-    programs: programsUz,
-    universities: universitiesUz,
-    // Add other sections as they're created
+    pages: {
+      home: {
+        ...homeUz,
+        components: {
+          ourTeam: ourTeamUz,
+          ourPartners: ourPartnersUz
+        }
+      },
+      whyChina: whyChinaUz,
+      programs: programsUz,
+      universities: universitiesUz,
+    }
   },
 };
 

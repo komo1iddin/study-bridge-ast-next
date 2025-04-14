@@ -10,7 +10,7 @@ import {
 } from './components'
 
 const SuccessPath = () => {
-  const t = useTranslations('home.successPath')
+  const t = useTranslations('pages.home.successPath')
   const [visibleSteps, setVisibleSteps] = useState<number[]>([])
   
   // Get steps from translations

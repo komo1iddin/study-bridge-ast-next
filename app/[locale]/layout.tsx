@@ -17,11 +17,13 @@ export async function generateStaticParams() {
   return [{ locale: "uz" }, { locale: "ru" }, { locale: "en" }]
 }
 
-export async function generateMetadata(props: { params: { locale: string } }): Promise<Metadata> {
-  const params = await props.params;
+export async function generateMetadata(
+  { params: propsParams }: { params: { locale: string } }
+): Promise<Metadata> {
+  const params = await propsParams; 
   const { locale } = params;
   
-  const t = await getTranslations({ locale, namespace: "home" })
+  const t = await getTranslations({ locale, namespace: "pages.home" })
 
   return {
     title: "EduChina - Educational Agency",

@@ -1,0 +1,40 @@
+{
+  "title": "Universitetlar",
+  "description": "Xalqaro talabalar uchun Xitoydagi eng yaxshi universitetlarni ko'ring",
+  "breadcrumb": {
+    "universities": "Universitetlar"
+  },
+  "filters": {
+    "title": "Filtrlar",
+    "all": "Barchasi",
+    "reset": "Tozalash",
+    "educationType": "Ta'lim darajasi",
+    "city": "Shahar",
+    "hasGrants": "Stipendiya mavjud",
+    "ranking": "Reytingi",
+    "featured": "Tavsiya etilgan"
+  },
+  "sidebar": {
+    "title": "Universitetingizni toping",
+    "needHelp": "Tanlashda yordam kerakmi?",
+    "contactUs": "Ta'lim maslahatchilarimiz sizga eng mos universitetni topishga yordam berishga tayyor.",
+    "getConsultation": "Bepul maslahat olish"
+  },
+  "list": {
+    "title": "Xitoydagi universitetlar",
+    "found": "universitet topildi",
+    "noResults": "Sizning filtringizga mos universitet topilmadi. Mezonlarni o'zgartirib ko'ring.",
+    "loadMore": "Ko'proq yuklash"
+  },
+  "card": {
+    "featured": "Tavsiya etilgan",
+    "grants": "Stipendiyalar",
+    "ranking": "Reyting",
+    "founded": "Tashkil etilgan",
+    "students": "Talabalar",
+    "international": "Xalqaro talabalar",
+    "details": "Batafsil",
+    "programs": "Dasturlar",
+    "apply": "Ariza topshirish"
+  }
+} 

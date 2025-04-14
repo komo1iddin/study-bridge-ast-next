@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Xitoyda o'qish - Ishonchli hamkoringiz",
+    "description": "Ekspert ko'rsatmasi bilan Xitoyda ta'lim olish uchun eng yaxshi universitetlar va dasturlarni toping"
+  },
   "hero": {
     "title": "Xitoyda o'qish uchun ishonchli hamkor",
     "subtitle": "O'zbekistonlik talabalarni Xitoyning eng nufuzli universitetlariga o'qishga kirishiga yordam beramiz",
@@ -12,35 +16,36 @@
     "programs": "Dasturlar"
   },
   "whyChina": {
+    "badge": "Nima uchun aynan Xitoy?",
     "title": {
-      "main": "Nima uchun",
-      "highlight": "Xitoyda o'qish?"
+      "main": "Xitoyda o'qishning",
+      "highlight": "6 ta asosiy afzalligi"
     },
-    "subtitle": "Xitoy xalqaro talabalar uchun taklif qiladigan noyob afzalliklar va imkoniyatlarni kashf eting.",
+    "subtitle": "Bu nafaqat diplom, balki butun dunyo tan oladigan tajriba",
     "reasons": {
       "1": {
-        "title": "Jahon darajasidagi ta'lim",
-        "description": "Eng yuqori darajadagi universitetlarga, zamonaviy tadqiqot markazlariga va akademik imtiyozlarga kirish imkoniyati."
+        "title": "Yuqori sifatli ta'lim",
+        "description": "Xitoy universitetlari jahon reytinglarida TOP-100 ga kiradi va eng zamonaviy ilmiy-texnik bazaga ega"
       },
       "2": {
         "title": "Innovatsiya markazi",
-        "description": "Texnologiya va ilm-fan sohasidagi yutuqlar bilan dunyoning yetakchi innovatsiya markazlaridan birida bo'lish tajribasi."
+        "description": "Sun'iy intellekt, IT, robototexnika va biznes sohasida dunyoning eng ilg'or davlati"
       },
       "3": {
-        "title": "Arzon o'qish to'lovi",
-        "description": "G'arb mamlakatlariga qaraganda ancha arzon narxda sifatli ta'lim, turli stipendiya imkoniyatlari bilan."
+        "title": "Arzon o'qish xarajatlari",
+        "description": "Yevropa va AQShga nisbatan 2-3 barobar arzon. Yiliga $2000-4000 dan boshlanadi + grantlar"
       },
       "4": {
-        "title": "Global istiqbol",
-        "description": "Dunyoning eng yirik iqtisodiyotlaridan birida qimmatli xalqaro tajriba va madaniy tushunchalarni qo'lga kiriting."
+        "title": "Madaniy rang-baranglik",
+        "description": "5000 yillik tarix, zamonaviy texnologiyalar va boy madaniyat – bu nafaqat ta'lim, balki hayot maktabi"
       },
       "5": {
-        "title": "Karyera imkoniyatlari",
-        "description": "Dunyoning eng tez rivojlanayotgan katta iqtisodiyotida tajriba orttirish bilan karyera imkoniyatlaringizni kengaytiring."
+        "title": "Keng imkoniyatlar",
+        "description": "Xitoy tili, xalqaro tajriba va kelajakda yuqori maosh - $2000-5000 dan boshlangan ish o'rinlari"
       },
       "6": {
-        "title": "Turli dasturlar",
-        "description": "Ko'plab soha va ixtisoslashuvlar bo'yicha ingliz tilida keng ko'lamdagi dasturlar mavjud."
+        "title": "Zamonaviy infratuzilma",
+        "description": "Eng so'nggi texnologiyalar bilan jihozlangan kampus, laboratoriyalar va sport majmualar"
       }
     },
     "cta": {

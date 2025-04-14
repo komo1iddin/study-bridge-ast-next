@@ -1,0 +1,40 @@
+{
+  "title": "Universities",
+  "description": "Explore top universities in China for international students",
+  "breadcrumb": {
+    "universities": "Universities"
+  },
+  "filters": {
+    "title": "Filters",
+    "all": "All",
+    "reset": "Reset",
+    "educationType": "Education Level",
+    "city": "City",
+    "hasGrants": "Scholarships Available",
+    "ranking": "Ranking",
+    "featured": "Featured"
+  },
+  "sidebar": {
+    "title": "Find Your University",
+    "needHelp": "Need Help Choosing?",
+    "contactUs": "Our education consultants are ready to help you find the perfect university.",
+    "getConsultation": "Get Free Consultation"
+  },
+  "list": {
+    "title": "Universities in China",
+    "found": "universities found",
+    "noResults": "No universities match your filters. Try adjusting your criteria.",
+    "loadMore": "Load More"
+  },
+  "card": {
+    "featured": "Featured",
+    "grants": "Scholarships",
+    "ranking": "Rank",
+    "founded": "Founded",
+    "students": "Students",
+    "international": "Int'l Students",
+    "details": "Details",
+    "programs": "Programs",
+    "apply": "Apply Now"
+  }
+} 

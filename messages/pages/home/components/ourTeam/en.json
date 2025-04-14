@@ -1,0 +1,29 @@
+{
+  "badge": "Our Team",
+  "team": {
+    "title": "Meet Our Team",
+    "description": "Our experienced professionals are ready to help you achieve your educational goals"
+  },
+  "positions": {
+    "position1": "Director",
+    "position2": "Education Consultant",
+    "position3": "Program Manager",
+    "position4": "Student Coordinator"
+  },
+  "values": {
+    "mainTitle": "Our Values",
+    "description": "The principles that guide our work and commitment to students",
+    "value1": {
+      "title": "Excellence",
+      "description": "We strive for excellence in every service we provide to our students"
+    },
+    "value2": {
+      "title": "Integrity",
+      "description": "We operate with honesty and transparency in all our dealings"
+    },
+    "value3": {
+      "title": "Student-Centered",
+      "description": "Our students' success and well-being are at the heart of everything we do"
+    }
+  }
+} 

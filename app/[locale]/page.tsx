@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { getTranslations } from "next-intl/server"
 import { ChevronRight, GraduationCap, Building2, Users, Clock, BookOpen } from "lucide-react"
+import { Metadata } from "next"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -11,6 +12,7 @@ import { HeroSection } from "@/components/home/hero"
 import { SuccessPath } from "@/components/home/success-path"
 import { WhyChina } from "@/components/home/why-china"
 import { UniversityFeature } from "@/components/home/university-feature/UniversityFeature"
+import { OurTeam, OurPartners } from "@/components/home"
 
 // Sample universities data
 const sampleUniversities = [
@@ -131,6 +133,18 @@ const sampleUniversities = [
   }
 ]
 
+export async function generateMetadata(
+  { params: propsParams }: { params: { locale: string } }
+): Promise<Metadata> {
+  const params = await propsParams;
+  const t = await getTranslations({ locale: params.locale, namespace: "pages.home" })
+
+  return {
+    title: t("metadata.title", { default: "Study in China - Your Trusted Partner" }),
+    description: t("metadata.description", { default: "Find the best universities and programs to study in China with expert guidance" })
+  }
+}
+
 export default async function Home(props: {
   params: { locale: string };
 }) {
@@ -138,7 +152,7 @@ export default async function Home(props: {
   const params = await props.params;
   const { locale } = params;
   
-  const t = await getTranslations({ locale, namespace: "home" })
+  const t = await getTranslations({ locale, namespace: "pages.home" })
 
   // Sample statistics data
   const statistics = [
@@ -264,6 +278,12 @@ export default async function Home(props: {
             </div>
           </div>
         </section>
+        
+        {/* Our Partners Section */}
+        <OurPartners lang={locale} />
+
+        {/* Our Team Section */}
+        <OurTeam lang={locale} />
 
         {/* CTA Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-slate-50">
