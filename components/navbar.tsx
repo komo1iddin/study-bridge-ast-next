@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { usePathname } from "next/navigation"
@@ -9,26 +9,64 @@ import { Button } from "@/components/ui/button"
 import LanguageSwitcher from "@/components/language-switcher"
 import { cn } from "@/lib/utils"
 
+// Throttle function to limit how often a function runs
+function throttle<T extends (...args: any[]) => any>(
+  func: T,
+  limit: number
+): (...args: Parameters<T>) => void {
+  let inThrottle: boolean
+  return function(this: any, ...args: Parameters<T>) {
+    if (!inThrottle) {
+      func.apply(this, args)
+      inThrottle = true
+      setTimeout(() => (inThrottle = false), limit)
+    }
+  }
+}
+
 export default function Navbar() {
   const t = useTranslations("navbar")
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
 
-  // Handle scroll effect for navbar
-  useEffect(() => {
-    const handleScroll = () => {
+  // Throttled scroll handler to prevent excessive updates
+  const handleScroll = useCallback(
+    throttle(() => {
       setScrolled(window.scrollY > 10)
-    }
+    }, 100), // Only run at most once every 100ms
+    []
+  )
+
+  // Handle scroll effect for navbar with throttling
+  useEffect(() => {
+    // Set initial scroll state
+    handleScroll()
     
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    setIsMounted(true)
+    
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [handleScroll])
 
   // Close mobile menu when route changes
   useEffect(() => {
     setIsMenuOpen(false)
   }, [pathname])
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMenuOpen])
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -52,14 +90,23 @@ export default function Navbar() {
     return pathname?.startsWith(href)
   }
 
+  // Avoid rendering transitions until client-side hydration is complete
+  const shouldRenderTransitions = isMounted
+
   return (
     <header 
       className={cn(
-        "sticky top-0 z-40 w-full transition-all duration-200",
+        "sticky top-0 z-40 w-full",
+        shouldRenderTransitions ? "transition-all duration-200" : "",
         scrolled 
           ? "border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm" 
           : "bg-background/80 backdrop-blur-sm"
       )}
+      style={{ 
+        transform: 'translateZ(0)',
+        backfaceVisibility: 'hidden',
+        willChange: scrolled ? 'transform, backdrop-filter, background' : 'auto'
+      }}
       aria-label="Main navigation"
     >
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
@@ -74,7 +121,8 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href} 
                 className={cn(
-                  "text-sm font-medium transition-colors",
+                  "text-sm font-medium",
+                  shouldRenderTransitions ? "transition-colors" : "",
                   isActive(item.href) 
                     ? "text-primary font-semibold" 
                     : "text-muted-foreground hover:text-primary"
@@ -114,32 +162,40 @@ export default function Navbar() {
         </div>
       </div>
       
-      {/* Mobile menu */}
+      {/* Mobile menu - using opacity and visibility instead of max-height for better performance */}
       <div 
         id="mobile-menu"
         className={cn(
-          "md:hidden overflow-hidden transition-all duration-300 ease-in-out", 
-          isMenuOpen ? "max-h-screen" : "max-h-0"
+          "md:hidden fixed inset-x-0 top-16 bottom-0 bg-background z-30",
+          shouldRenderTransitions ? "transition-opacity duration-200" : "",
+          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         )}
+        style={{ 
+          transform: 'translateZ(0)',
+          willChange: isMenuOpen ? 'opacity, visibility' : 'auto' 
+        }}
       >
-        <div className="space-y-1 px-4 pb-3 pt-2">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "block rounded-md px-3 py-2 text-base font-medium transition-colors",
-                isActive(item.href)
-                  ? "bg-blue-50 text-blue-600 font-semibold"
-                  : "hover:bg-blue-50 hover:text-blue-600"
-              )}
-              onClick={toggleMenu}
-            >
-              {item.label}
-            </Link>
-          ))}
-          <div className="pt-4">
-            <Button className="w-full">{t("applyNow")}</Button>
+        <div className="h-full overflow-y-auto overscroll-contain pb-safe">
+          <div className="space-y-1 px-4 pb-3 pt-2">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "block rounded-md px-3 py-2 text-base font-medium",
+                  shouldRenderTransitions ? "transition-colors" : "",
+                  isActive(item.href)
+                    ? "bg-blue-50 text-blue-600 font-semibold"
+                    : "hover:bg-blue-50 hover:text-blue-600"
+                )}
+                onClick={toggleMenu}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <div className="pt-4">
+              <Button className="w-full">{t("applyNow")}</Button>
+            </div>
           </div>
         </div>
       </div>
