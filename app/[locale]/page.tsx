@@ -12,74 +12,73 @@ import { HeroSection } from "@/components/home/hero"
 import { SuccessPath } from "@/components/home/success-path"
 import { WhyChina } from "@/components/home/why-china"
 import { UniversityFeature } from "@/components/home/university-feature/UniversityFeature"
-import { OurTeam, OurPartners } from "@/components/home"
+import { OurTeam, OurPartners, HowWeWork, MissionStats, Testimonials } from "@/components/home"
 
 // Sample universities data
 const sampleUniversities = [
   {
     id: "1",
-    name: "Tsinghua University",
-    location: "Beijing, China",
-    image: "/images/universities/tsinghua.jpg",
-    logo: "/images/universities/logos/tsinghua-logo.png",
-    slug: "tsinghua-university",
-    rating: 4.8,
-    programs: 200,
-    students: 50000,
+    name: "Shanghai Jiao Tong University",
+    location: "Shanghai, China",
+    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
+    slug: "shanghai-jiao-tong-university",
+    rating: 4.5,
+    programs: 160,
+    students: 42000,
     faculties: [
       "Engineering",
-      "Science",
-      "Economics",
       "Medicine",
-      "Law",
-      "Arts",
-      "Architecture"
+      "Science",
+      "Agriculture",
+      "Business",
+      "Law"
     ]
   },
   {
     id: "2",
-    name: "Peking University",
-    location: "Beijing, China",
-    image: "/images/universities/peking.jpg",
-    logo: "/images/universities/logos/peking-logo.png",
-    slug: "peking-university",
-    rating: 4.7,
-    programs: 180,
-    students: 45000,
+    name: "Shanghai Jiao Tong University",
+    location: "Shanghai, China",
+    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
+    slug: "shanghai-jiao-tong-university",
+    rating: 4.5,
+    programs: 160,
+    students: 42000,
     faculties: [
-      "Liberal Arts",
-      "Science",
-      "Medicine",
       "Engineering",
-      "Economics",
-      "Management"
+      "Medicine",
+      "Science",
+      "Agriculture",
+      "Business",
+      "Law"
     ]
   },
   {
     id: "3",
-    name: "Fudan University",
+    name: "Shanghai Jiao Tong University",
     location: "Shanghai, China",
-    image: "/images/universities/fudan.jpg",
-    logo: "/images/universities/logos/fudan-logo.png",
-    slug: "fudan-university",
-    rating: 4.6,
-    programs: 150,
-    students: 40000,
+    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
+    slug: "shanghai-jiao-tong-university",
+    rating: 4.5,
+    programs: 160,
+    students: 42000,
     faculties: [
-      "Economics",
-      "Management",
-      "Law",
-      "Medicine",
       "Engineering",
-      "Arts"
+      "Medicine",
+      "Science",
+      "Agriculture",
+      "Business",
+      "Law"
     ]
   },
   {
     id: "4",
     name: "Shanghai Jiao Tong University",
     location: "Shanghai, China",
-    image: "/images/universities/sjtu.jpg",
-    logo: "/images/universities/logos/sjtu-logo.png",
+    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
     slug: "shanghai-jiao-tong-university",
     rating: 4.5,
     programs: 160,
@@ -180,30 +179,8 @@ export default async function Home(props: {
         {/* Why China Section */}
         <WhyChina lang={locale} />
 
-        {/* Key Statistics */}
-        <section className="w-full py-12 md:py-16">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {statistics.map((stat, index) => {
-                const Icon = stat.icon
-                return (
-                  <Card
-                    key={index}
-                    className="border-2 border-blue-100 transition-all duration-200 hover:border-blue-600"
-                  >
-                    <CardContent className="p-6 text-center">
-                      <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                        <Icon className="h-8 w-8 text-blue-600" />
-                      </div>
-                      <div className="text-3xl font-bold text-blue-600">{stat.value}</div>
-                      <p className="text-sm text-muted-foreground">{stat.label}</p>
-                    </CardContent>
-                  </Card>
-                )
-              })}
-            </div>
-          </div>
-        </section>
+        {/* Replace the Key Statistics with MissionStats component */}
+        <MissionStats />
 
         {/* Featured Universities */}
         <UniversityFeature 
@@ -213,6 +190,9 @@ export default async function Home(props: {
 
         {/* Success Path Section */}
         <SuccessPath />
+
+        {/* How We Work Section */}
+        <HowWeWork />
 
         {/* Services Section */}
         <section
@@ -279,11 +259,14 @@ export default async function Home(props: {
           </div>
         </section>
         
+        {/* Testimonials Section */}
+        <Testimonials />
+
+        {/* Team Section */}
+        <OurTeam lang={locale} />
+        
         {/* Our Partners Section */}
         <OurPartners lang={locale} />
-
-        {/* Our Team Section */}
-        <OurTeam lang={locale} />
 
         {/* CTA Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-slate-50">

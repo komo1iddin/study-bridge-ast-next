@@ -15,6 +15,68 @@
     "experience": "Yillik tajriba",
     "programs": "Dasturlar"
   },
+  "missionStats": {
+    "title": "Talabalarning ta'lim olish orzularini ro'yobga chiqarishga yordam berish",
+    "subtitle": "Minglab talabalarni Xitoyning eng nufuzli universitetlariga qabul qilishga yordam berdik",
+    "stats": {
+      "students": {
+        "label": "Mamnun talabalar",
+        "description": "Bizning yordamimiz bilan Xitoy universitetlariga muvaffaqiyatli kirgan talabalar"
+      },
+      "universities": {
+        "label": "Hamkor universitetlar",
+        "description": "Eng yaxshi imkoniyatlarni taqdim etish uchun hamkorlik qiladigan yetakchi Xitoy universitetlari"
+      },
+      "programs": {
+        "label": "O'quv dasturlari",
+        "description": "Turli xil fanlar va ta'lim darajalari bo'yicha dasturlar"
+      },
+      "countries": {
+        "label": "Davlatlar",
+        "description": "Dunyo bo'ylab turli davlatlardan kelgan talabalar bilan xalqaro doirada ish olib borish"
+      }
+    },
+    "advantages": {
+      "education": {
+        "title": "Sifatli ta'lim",
+        "description": "Jahon reyting top-100 likka kiruvchi nufuzli Xitoy universitetlarida sifatli ta'lim olish imkoniyati"
+      },
+      "price": {
+        "title": "Arzon ta'lim xarajatlari",
+        "description": "G'arb davlatlariga nisbatan ancha kam ta'lim to'lovlari va grant olish imkoniyatlari"
+      },
+      "opportunity": {
+        "title": "Karyera imkoniyatlari",
+        "description": "Dunyoning eng tez rivojlanayotgan iqtisodiyatlaridan birida ajoyib ish istiqbollari"
+      }
+    }
+  },
+  "howWeWork": {
+    "title": "Qanday ishlaymiz",
+    "subtitle": "Xitoyda o'qishingizga yordam berish uchun sinovdan o'tgan jarayonimiz",
+    "steps": {
+      "step1": {
+        "title": "Dastlabki maslahat",
+        "description": "Sizning akademik maqsadlaringiz, afzalliklaringiz va budjetingizni tushunib, mukammal moslikni topamiz"
+      },
+      "step2": {
+        "title": "Hujjatlarni tayyorlash",
+        "description": "Arizangiz uchun barcha kerakli hujjatlarni tayyorlash va tarjima qilishda yordam beramiz"
+      },
+      "step3": {
+        "title": "Universitetga ariza topshirish",
+        "description": "Sizning arizangizni tanlangan universitetlarga topshiramiz va sizning nomingizdan jarayonni kuzatib boramiz"
+      },
+      "step4": {
+        "title": "Yo'lga chiqishdan oldingi yordam",
+        "description": "Viza olish, turar joy va sayohat tashkil qilishda yordam beramiz"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Talabalarimiz nima deyishadi",
+    "subtitle": "Bizning yordamimiz bilan Xitoy universitetlariga muvaffaqiyatli qabul qilingan talabalar fikrlari"
+  },
   "whyChina": {
     "badge": "Nima uchun aynan Xitoy?",
     "title": {
