@@ -1,6 +1,23 @@
 {
-  "title": "Xitoyda o'qish uchun ishonchli hamkor",
-  "subtitle": "O'zbekistonlik talabalarni Xitoyning eng nufuzli universitetlariga o'qishga kirishiga yordam beramiz",
+  "title": "O'zbekiston va Xitoy o'rtasidagi <highlight>ishonchli ko'prik</highlight>",
+  "subtitle": "O'zbek talabalar uchun Xitoyning eng yaxshi universitetlarida ta'lim olish. Hujjatlarni topshirishdan to diplomni olishgacha to'liq ko'mak.",
   "cta": "Dasturlarni ko'rish",
-  "contactUs": "Bog'lanish"
+  "contactUs": "Bog'lanish",
+  "leaveRequest": "Ariza qoldirish",
+  "viewUniversities": "Universitetlarni ko'rish",
+  "typingBadge": "Qabul 2025-yil 15-maygacha ochiq",
+  "stats": {
+    "students": {
+      "value": "5000+",
+      "label": "Talabalar"
+    },
+    "universities": {
+      "value": "50+",
+      "label": "Universitetlar"
+    },
+    "experience": {
+      "value": "10+",
+      "label": "Yillik tajriba"
+    }
+  }
 } 

@@ -7,10 +7,12 @@ import { cn } from '@/lib/utils'
 import { Send, BookOpen } from 'lucide-react'
 
 interface HeroButtonsProps {
-  onOpenForm: () => void
+  onOpenForm: () => void;
+  leaveRequestText: string;
+  viewUniversitiesText: string;
 }
 
-const HeroButtons = ({ onOpenForm }: HeroButtonsProps) => {
+const HeroButtons = ({ onOpenForm, leaveRequestText, viewUniversitiesText }: HeroButtonsProps) => {
   const buttonVariants = {
     hover: { 
       scale: 1.05,
@@ -50,7 +52,7 @@ const HeroButtons = ({ onOpenForm }: HeroButtonsProps) => {
             'bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 sm:px-8 py-5 sm:py-6 rounded-xl text-sm sm:text-base shadow-md transition duration-300 w-full sm:w-auto'
           )}
         >
-          Оставить заявку
+          {leaveRequestText}
           <motion.span 
             className="ml-2 inline-flex"
             variants={iconVariants}
@@ -77,7 +79,7 @@ const HeroButtons = ({ onOpenForm }: HeroButtonsProps) => {
             'border-gray-300 hover:bg-gray-100 font-medium px-6 sm:px-8 py-5 sm:py-6 rounded-xl text-sm sm:text-base shadow-sm transition duration-300 w-full sm:w-auto'
           )}
         >
-          Просмотреть университеты
+          {viewUniversitiesText}
           <motion.span 
             className="ml-2 inline-flex"
             variants={iconVariants}

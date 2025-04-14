@@ -1,6 +1,23 @@
 {
-  "title": "Your Trusted Partner for Studying in China",
-  "subtitle": "We help students get admitted to China's most prestigious universities",
+  "title": "Your <highlight>bridge</highlight> between <underline>Uzbekistan</underline> and <underline>China</underline>",
+  "subtitle": "Education at top Chinese universities for Uzbek students. Full support from application to graduation.",
   "cta": "View Programs",
-  "contactUs": "Contact Us"
+  "contactUs": "Contact Us",
+  "leaveRequest": "Submit Application",
+  "viewUniversities": "View Universities",
+  "typingBadge": "Applications open until May 15, 2025",
+  "stats": {
+    "students": {
+      "value": "5000+",
+      "label": "Students"
+    },
+    "universities": {
+      "value": "50+",
+      "label": "Universities"
+    },
+    "experience": {
+      "value": "10+",
+      "label": "Years of Experience"
+    }
+  }
 } 

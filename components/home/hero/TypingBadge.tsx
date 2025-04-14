@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Clock } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
 
 const TypingBadge = () => {
+  const t = useTranslations('pages.home.hero')
   const [displayedText, setDisplayedText] = useState("")
   const [cursorVisible, setCursorVisible] = useState(true)
-  const text = "Набор открыт до 15 мая 2025"
+  const text = t('typingBadge')
   const typingSpeed = 60 
   const pauseBeforeRepeat = 3000 
 

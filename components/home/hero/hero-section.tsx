@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import TypingBadge from './TypingBadge'
 import TestimonialCards from './TestimonialCards'
 import HeroButtons from './HeroButtons'
@@ -10,6 +11,7 @@ import StatItem from './StatItem'
 import { cn } from '@/lib/utils'
 
 export default function HeroSection() {
+  const t = useTranslations('pages.home.hero')
   const [isFormOpen, setIsFormOpen] = useState(false)
 
   const containerVariants = {
@@ -41,6 +43,31 @@ export default function HeroSection() {
     }
   }
 
+  // Helper function to render title with highlights and underlines
+  const renderTitle = () => {
+    const title = t('title');
+    
+    // Replace highlight tags with span elements
+    const withHighlights = title.replace(
+      /<highlight>(.*?)<\/highlight>/g, 
+      '<span class="text-blue-600">$1</span>'
+    );
+    
+    // Replace underline tags with underlined spans
+    const withUnderlines = withHighlights.replace(
+      /<underline>(.*?)<\/underline>/g,
+      '<span class="relative">$1<span class="absolute bottom-2 left-0 w-full h-2 bg-amber-300/40 -z-10"></span></span>'
+    );
+    
+    // Split by <br> for line breaks
+    return withUnderlines.split('<br>').map((line, index) => (
+      <React.Fragment key={index}>
+        <span dangerouslySetInnerHTML={{ __html: line }} />
+        {index < withUnderlines.split('<br>').length - 1 && <br />}
+      </React.Fragment>
+    ));
+  };
+
   return (
     <motion.div
       variants={containerVariants}
@@ -63,16 +90,7 @@ export default function HeroSection() {
             )}
             style={{ fontFamily: "'Raleway', sans-serif" }}
           >
-            <span className="text-blue-600">Ваш мост</span> между <br />
-            <span className="relative">
-              Узбекистаном
-              <span className="absolute bottom-2 left-0 w-full h-2 bg-amber-300/40 -z-10"></span>
-            </span>{' '}
-            и <br />
-            <span className="relative">
-              Китаем
-              <span className="absolute bottom-2 left-0 w-full h-2 bg-amber-300/40 -z-10"></span>
-            </span>
+            {renderTitle()}
           </motion.h1>
 
           <motion.p
@@ -81,12 +99,15 @@ export default function HeroSection() {
               'mt-4 sm:mt-6 text-gray-600 text-sm sm:text-lg leading-relaxed max-w-lg text-center lg:text-left mx-auto lg:mx-0'
             )}
           >
-            Обучение в лучших университетах Китая для узбекских студентов.
-            Полное сопровождение от подачи документов до получения диплома.
+            {t('subtitle')}
           </motion.p>
 
           <motion.div variants={itemVariants}>
-            <HeroButtons onOpenForm={() => setIsFormOpen(true)} />
+            <HeroButtons 
+              onOpenForm={() => setIsFormOpen(true)} 
+              leaveRequestText={t('leaveRequest')}
+              viewUniversitiesText={t('viewUniversities')}
+            />
           </motion.div>
 
           <motion.div
@@ -95,9 +116,21 @@ export default function HeroSection() {
               'flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12'
             )}
           >
-            <StatItem value="5000+" label="Студентов" delay={0.2} />
-            <StatItem value="50+" label="Университетов" delay={0.4} />
-            <StatItem value="10+" label="Лет опыта" delay={0.6} />
+            <StatItem 
+              value={t('stats.students.value')} 
+              label={t('stats.students.label')} 
+              delay={0.2} 
+            />
+            <StatItem 
+              value={t('stats.universities.value')} 
+              label={t('stats.universities.label')} 
+              delay={0.4} 
+            />
+            <StatItem 
+              value={t('stats.experience.value')} 
+              label={t('stats.experience.label')} 
+              delay={0.6} 
+            />
           </motion.div>
         </div>
 
