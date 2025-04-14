@@ -1,11 +1,15 @@
 "use client"
 
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
 import { Star } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { motion, useInView } from 'framer-motion'
+
+// Mobile breakpoint
+const MOBILE_BREAKPOINT = 768
 
 interface TestimonialsProps {
   className?: string
@@ -71,6 +75,22 @@ export default function Testimonials({ className }: TestimonialsProps) {
   const t = useTranslations('pages.home')
   const locale = useLocale()
   const [testimonials, setTestimonials] = useState<Testimonial[]>([])
+  const containerRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 })
+  const [isMobile, setIsMobile] = useState(false)
+  
+  // Check if mobile device
+  useEffect(() => {
+    const checkIfMobile = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT)
+    checkIfMobile()
+    
+    // Add resize listener
+    window.addEventListener('resize', checkIfMobile)
+    
+    return () => {
+      window.removeEventListener('resize', checkIfMobile)
+    }
+  }, [])
   
   useEffect(() => {
     // In a real app, this would be an API call
@@ -82,7 +102,14 @@ export default function Testimonials({ className }: TestimonialsProps) {
     <section className={cn("w-full py-12 md:py-24 lg:py-32 bg-white", className)}>
       <div className="container px-4 md:px-6 mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-10">
+        <motion.div 
+          ref={containerRef}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-center justify-center space-y-4 text-center mb-10"
+          style={{ willChange: "opacity, transform" }}
+        >
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               {t('testimonials.title')}
@@ -91,17 +118,30 @@ export default function Testimonials({ className }: TestimonialsProps) {
               {t('testimonials.subtitle')}
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div 
+            <motion.div 
               key={testimonial.id}
-              className="animate-in fade-in slide-in-from-bottom-5 duration-500 ease-in-out"
-              style={{ animationDelay: `${index * 100}ms` }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ 
+                duration: 0.4, 
+                delay: index * 0.1, // Stagger the animations
+                ease: "easeOut" 
+              }}
+              style={{ 
+                willChange: "opacity, transform",
+                transform: "translateZ(0)",
+                backfaceVisibility: "hidden"
+              }}
             >
-              <div className="bg-gradient-to-br from-slate-50 to-blue-50 p-6 rounded-2xl shadow-lg border border-blue-100 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div className={cn(
+                "bg-gradient-to-br from-slate-50 to-blue-50 p-6 rounded-2xl shadow-lg border border-blue-100 h-full flex flex-col transition-all duration-300",
+                !isMobile && "hover:shadow-xl hover:-translate-y-1"
+              )}>
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md">
                     <img 
@@ -133,7 +173,7 @@ export default function Testimonials({ className }: TestimonialsProps) {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
