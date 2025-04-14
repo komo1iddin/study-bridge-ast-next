@@ -1,0 +1,39 @@
+{
+  "badge": "Nima uchun aynan Xitoy?",
+  "title": {
+    "main": "Xitoyda o'qishning",
+    "highlight": "6 ta asosiy afzalligi"
+  },
+  "subtitle": "Bu nafaqat diplom, balki butun dunyo tan oladigan tajriba",
+  "reasons": {
+    "1": {
+      "title": "Yuqori sifatli ta'lim",
+      "description": "Xitoy universitetlari jahon reytinglarida TOP-100 ga kiradi va eng zamonaviy ilmiy-texnik bazaga ega"
+    },
+    "2": {
+      "title": "Innovatsiya markazi",
+      "description": "Sun'iy intellekt, IT, robototexnika va biznes sohasida dunyoning eng ilg'or davlati"
+    },
+    "3": {
+      "title": "Arzon o'qish xarajatlari",
+      "description": "Yevropa va AQShga nisbatan 2-3 barobar arzon. Yiliga $2000-4000 dan boshlanadi + grantlar"
+    },
+    "4": {
+      "title": "Madaniy rang-baranglik",
+      "description": "5000 yillik tarix, zamonaviy texnologiyalar va boy madaniyat – bu nafaqat ta'lim, balki hayot maktabi"
+    },
+    "5": {
+      "title": "Keng imkoniyatlar",
+      "description": "Xitoy tili, xalqaro tajriba va kelajakda yuqori maosh - $2000-5000 dan boshlangan ish o'rinlari"
+    },
+    "6": {
+      "title": "Zamonaviy infratuzilma",
+      "description": "Eng so'nggi texnologiyalar bilan jihozlangan kampus, laboratoriyalar va sport majmualar"
+    }
+  },
+  "cta": {
+    "title": "Sayohatingizni boshlashga tayyormisiz?",
+    "description": "Ariza topshirish jarayonida yordam berishimizga va siz uchun Xitoydagi mukammal universitetni topishimizga ruxsat bering.",
+    "button": "Xitoy haqida ko'proq ma'lumot"
+  }
+} 

@@ -16,16 +16,16 @@
     "programs": "Dasturlar"
   },
   "missionStats": {
-    "title": "Talabalarning ta'lim olish orzularini ro'yobga chiqarishga yordam berish",
-    "subtitle": "Minglab talabalarni Xitoyning eng nufuzli universitetlariga qabul qilishga yordam berdik",
+    "title": "Nega aynan biz ?",
+    "subtitle": "Xitoyda sifatli va hamyonbop ta'lim olish imkoniyatini taqdim etamiz",
     "stats": {
       "students": {
-        "label": "Mamnun talabalar",
-        "description": "Bizning yordamimiz bilan Xitoy universitetlariga muvaffaqiyatli kirgan talabalar"
+        "label": "Yuborilgan talabalar",
+        "description": "Xitoyning yetakchi universitetlarida muvaffaqiyatli tahsil olmoqda"
       },
       "universities": {
         "label": "Hamkor universitetlar",
-        "description": "Eng yaxshi imkoniyatlarni taqdim etish uchun hamkorlik qiladigan yetakchi Xitoy universitetlari"
+        "description": "Top universitetlar bilan to'g'ridan-to'g'ri shartnomalar"
       },
       "programs": {
         "label": "O'quv dasturlari",
@@ -39,15 +39,15 @@
     "advantages": {
       "education": {
         "title": "Sifatli ta'lim",
-        "description": "Jahon reyting top-100 likka kiruvchi nufuzli Xitoy universitetlarida sifatli ta'lim olish imkoniyati"
+        "description": "Xitoy universitetlari jahon reytingida top-100 ga kiradi"
       },
       "price": {
-        "title": "Arzon ta'lim xarajatlari",
-        "description": "G'arb davlatlariga nisbatan ancha kam ta'lim to'lovlari va grant olish imkoniyatlari"
+        "title": "Hamyonbop narxlar",
+        "description": "O'qish narxi yiliga $2000 dan + stipendiyalar"
       },
       "opportunity": {
-        "title": "Karyera imkoniyatlari",
-        "description": "Dunyoning eng tez rivojlanayotgan iqtisodiyatlaridan birida ajoyib ish istiqbollari"
+        "title": "Karyera istiqbollari",
+        "description": "Talab yuqori mutaxassisliklar va xalqaro diplom"
       }
     }
   },

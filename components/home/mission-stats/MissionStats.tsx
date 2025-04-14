@@ -1,5 +1,6 @@
 "use client"
 
+import React from 'react'
 import { useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { 
@@ -57,7 +58,7 @@ const advantages = [
   }
 ]
 
-export function MissionStats({ className }: MissionStatsProps) {
+export default function MissionStats({ className }: MissionStatsProps) {
   const t = useTranslations('pages.home')
   const statsGridRef = useRef<HTMLDivElement>(null)
   

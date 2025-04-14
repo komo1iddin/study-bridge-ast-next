@@ -1,1 +1,1 @@
-export * from './index' 
+export { default as MissionStats } from './MissionStats' 

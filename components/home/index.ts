@@ -13,6 +13,6 @@
 
 export { default as OurTeam } from './our-team'
 export { default as OurPartners } from './our-partners'
-export { HowWeWork } from './how-we-work'
-export { MissionStats } from './mission-stats'
-export { Testimonials } from './testimonials' 
+export { default as HowWeWork } from './how-we-work/HowWeWork'
+export { default as MissionStats } from './mission-stats/MissionStats'
+export { default as Testimonials } from './testimonials/Testimonials' 

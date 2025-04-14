@@ -1,5 +1,6 @@
 "use client"
 
+import React from 'react'
 import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { UserRound, Files, Languages, Send } from 'lucide-react'
@@ -18,7 +19,7 @@ const stepsWithIcons = [
   { icon: Send }
 ]
 
-export function HowWeWork({ className }: HowWeWorkProps) {
+export default function HowWeWork({ className }: HowWeWorkProps) {
   const t = useTranslations('pages.home')
   const [features, setFeatures] = useState<any[]>([])
 

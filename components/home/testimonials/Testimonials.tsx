@@ -67,7 +67,7 @@ const sampleTestimonials: Testimonial[] = [
   }
 ]
 
-export function Testimonials({ className }: TestimonialsProps) {
+export default function Testimonials({ className }: TestimonialsProps) {
   const t = useTranslations('pages.home')
   const locale = useLocale()
   const [testimonials, setTestimonials] = useState<Testimonial[]>([])

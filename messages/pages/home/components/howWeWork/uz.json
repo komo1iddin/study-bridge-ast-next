@@ -1,0 +1,22 @@
+{
+  "title": "Qanday ishlaymiz",
+  "subtitle": "Xitoyda o'qishingizga yordam berish uchun sinovdan o'tgan jarayonimiz",
+  "steps": {
+    "step1": {
+      "title": "Dastlabki maslahat",
+      "description": "Sizning akademik maqsadlaringiz, afzalliklaringiz va budjetingizni tushunib, mukammal moslikni topamiz"
+    },
+    "step2": {
+      "title": "Hujjatlarni tayyorlash",
+      "description": "Arizangiz uchun barcha kerakli hujjatlarni tayyorlash va tarjima qilishda yordam beramiz"
+    },
+    "step3": {
+      "title": "Universitetga ariza topshirish",
+      "description": "Sizning arizangizni tanlangan universitetlarga topshiramiz va sizning nomingizdan jarayonni kuzatib boramiz"
+    },
+    "step4": {
+      "title": "Yo'lga chiqishdan oldingi yordam",
+      "description": "Viza olish, turar joy va sayohat tashkil qilishda yordam beramiz"
+    }
+  }
+} 

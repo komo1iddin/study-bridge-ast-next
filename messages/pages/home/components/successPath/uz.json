@@ -1,0 +1,67 @@
+{
+  "title": "Xitoyda o'qishga olti bosqichli yo'l",
+  "subtitle": "O'zbekistondan Xitoy universitetlariga o'qishga kirish uchun eng ishonchli va samarali usul",
+  "detailsButtonText": "Batafsil ma'lumot",
+  "steps": {
+    "1": {
+      "title": "Universitet tanlash",
+      "description": "Sizning maqsadlaringiz va talablaringizga mos keladigan universitet va dasturni tanlash",
+      "benefits": [
+        "Eng yaxshi universitetlarni tanlash",
+        "Kvota va stipendiyalarni aniqlash",
+        "Hujjatlarni tayyorlash rejasini tuzish",
+        "Kutilayotgan xarajatlarni hisoblash"
+      ]
+    },
+    "2": {
+      "title": "Hujjatlarni tayyorlash",
+      "description": "Barcha kerakli hujjatlarni tayyorlash va tarjima qilish",
+      "benefits": [
+        "Pasport va shaxsiy hujjatlar",
+        "Diplom va o'qish transkriptlari",
+        "Sertifikatlar va yutuqlar",
+        "Motivatsiya xatini tayyorlash"
+      ]
+    },
+    "3": {
+      "title": "Universitetga topshirish",
+      "description": "Tanlangan universitetlarga hujjatlarni topshirish va muloqot o'rnatish",
+      "benefits": [
+        "Ariza shakllarini to'ldirish",
+        "Hujjatlarni tekshirish va topshirish",
+        "Ariza holatini kuzatib borish",
+        "Universitetlar bilan muloqot qilish"
+      ]
+    },
+    "4": {
+      "title": "Viza olish",
+      "description": "Xitoy vizasini olish uchun zarur hujjatlarni tayyorlash",
+      "benefits": [
+        "Viza anketasini to'ldirish",
+        "Sug'urta va moliyaviy kafolatlar",
+        "Tibbiy tekshiruvga tayyorgarlik",
+        "Suhbatga tayyorgarlik"
+      ]
+    },
+    "5": {
+      "title": "Xitoyga jo'nashga tayyorgarlik",
+      "description": "Xitoyga sayohat qilish uchun so'nggi tayyorgarliklar va maslahatlar",
+      "benefits": [
+        "Parvozlar va marshrutlar",
+        "Turar joy tanlash",
+        "Bank hisobraqami va to'lovlar",
+        "Zarur narsalar ro'yxati"
+      ]
+    },
+    "6": {
+      "title": "Xitoyga kelgandan so'ng qo'llab-quvvatlash",
+      "description": "Xitoyda moslashish va o'qish jarayonida qo'llab-quvvatlash",
+      "benefits": [
+        "Aeroportda kutib olish",
+        "Ro'yxatdan o'tkazish jarayoni",
+        "Turmush sharoitlarini tashkil qilish",
+        "O'quv jarayoniga moslashish"
+      ]
+    }
+  }
+} 
