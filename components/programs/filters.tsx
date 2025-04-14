@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 interface FiltersProps {
   className?: string
-  onSearch?: (value: string) => void
+  onSearchChange?: (value: string) => void
   onCategoryChange?: (value: string) => void
   onLevelChange?: (value: string) => void
   onLanguageChange?: (value: string) => void
@@ -16,12 +16,12 @@ interface FiltersProps {
 
 export function Filters({ 
   className, 
-  onSearch, 
+  onSearchChange, 
   onCategoryChange, 
   onLevelChange, 
   onLanguageChange 
 }: FiltersProps) {
-  const t = useTranslations("programs.filters")
+  const t = useTranslations("pages.programs")
   
   return (
     <section className={`w-full py-8 border-b ${className || ""}`}>
@@ -32,16 +32,16 @@ export function Filters({
               htmlFor="search"
               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
             >
-              {t("search.label")}
+              {t("filters.search.label")}
             </label>
             <div className="relative">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input 
                 id="search" 
                 type="search" 
-                placeholder={t("search.placeholder")} 
+                placeholder={t("filters.search.placeholder")} 
                 className="pl-8" 
-                onChange={(e) => onSearch?.(e.target.value)}
+                onChange={(e) => onSearchChange?.(e.target.value)}
               />
             </div>
           </div>
@@ -50,18 +50,18 @@ export function Filters({
               htmlFor="category"
               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
             >
-              {t("category.label")}
+              {t("filters.category.label")}
             </label>
             <Select defaultValue="all" onValueChange={onCategoryChange}>
               <SelectTrigger id="category">
-                <SelectValue placeholder={t("category.all")} />
+                <SelectValue placeholder={t("filters.category.all")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">{t("category.all")}</SelectItem>
-                <SelectItem value="business">{t("category.business")}</SelectItem>
-                <SelectItem value="it">{t("category.it")}</SelectItem>
-                <SelectItem value="medicine">{t("category.medicine")}</SelectItem>
-                <SelectItem value="engineering">{t("category.engineering")}</SelectItem>
+                <SelectItem value="all">{t("filters.category.all")}</SelectItem>
+                <SelectItem value="business">{t("filters.category.business")}</SelectItem>
+                <SelectItem value="it">{t("filters.category.it")}</SelectItem>
+                <SelectItem value="medicine">{t("filters.category.medicine")}</SelectItem>
+                <SelectItem value="engineering">{t("filters.category.engineering")}</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -70,17 +70,17 @@ export function Filters({
               htmlFor="level"
               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
             >
-              {t("level.label")}
+              {t("filters.level.label")}
             </label>
             <Select defaultValue="all" onValueChange={onLevelChange}>
               <SelectTrigger id="level">
-                <SelectValue placeholder={t("level.all")} />
+                <SelectValue placeholder={t("filters.level.all")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">{t("level.all")}</SelectItem>
-                <SelectItem value="bachelor">{t("level.bachelor")}</SelectItem>
-                <SelectItem value="master">{t("level.master")}</SelectItem>
-                <SelectItem value="phd">{t("level.phd")}</SelectItem>
+                <SelectItem value="all">{t("filters.level.all")}</SelectItem>
+                <SelectItem value="bachelor">{t("filters.level.bachelor")}</SelectItem>
+                <SelectItem value="master">{t("filters.level.master")}</SelectItem>
+                <SelectItem value="phd">{t("filters.level.phd")}</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -89,16 +89,16 @@ export function Filters({
               htmlFor="language"
               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
             >
-              {t("language.label")}
+              {t("filters.language.label")}
             </label>
             <Select defaultValue="all" onValueChange={onLanguageChange}>
               <SelectTrigger id="language">
-                <SelectValue placeholder={t("language.all")} />
+                <SelectValue placeholder={t("filters.language.all")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">{t("language.all")}</SelectItem>
-                <SelectItem value="english">{t("language.english")}</SelectItem>
-                <SelectItem value="chinese">{t("language.chinese")}</SelectItem>
+                <SelectItem value="all">{t("filters.language.all")}</SelectItem>
+                <SelectItem value="english">{t("filters.language.english")}</SelectItem>
+                <SelectItem value="chinese">{t("filters.language.chinese")}</SelectItem>
               </SelectContent>
             </Select>
           </div>

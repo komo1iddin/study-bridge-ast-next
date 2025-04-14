@@ -6,6 +6,7 @@ import Footer from "@/components/footer"
 import { HeroSection } from "@/components/programs/hero-section"
 import { Program } from "@/components/programs/featured-programs"
 import ProgramsClient from "@/components/programs/programs-client"
+import { Locale } from "@/i18n/navigation"
 
 export async function generateMetadata(
   props: {
@@ -14,11 +15,11 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const params = await props.params;
   const locale = params.locale;
-  const t = await getTranslations({ locale, namespace: "programs.meta" })
+  const t = await getTranslations({ locale, namespace: "pages.programs" })
   
   return {
-    title: t("title"),
-    description: t("description"),
+    title: t("meta.title"),
+    description: t("meta.description"),
   }
 }
 

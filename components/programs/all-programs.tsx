@@ -15,7 +15,7 @@ interface AllProgramsProps {
 }
 
 export function AllPrograms({ className, programs, filteredPrograms }: AllProgramsProps) {
-  const t = useTranslations("programs.allPrograms")
+  const t = useTranslations("pages.programs.allPrograms")
   
   // Use filtered programs if provided, otherwise use all programs
   const displayPrograms = filteredPrograms || programs

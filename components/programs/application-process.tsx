@@ -10,13 +10,13 @@ interface ApplicationProcessProps {
 }
 
 export function ApplicationProcess({ className }: ApplicationProcessProps) {
-  const t = useTranslations("programs.applicationProcess")
+  const t = useTranslations("pages.programs")
   
   // Step icons
   const stepIcons = [FileSpreadsheet, FolderInput, ClipboardList, Clock, MailOpen, Plane]
   
   // Get steps from translations
-  const steps = t.raw("steps") as Array<{ title: string, description: string }>
+  const steps = t.raw("applicationProcess.steps") as Array<{ title: string, description: string }>
   
   // Add icons to steps
   const stepsWithIcons = steps.map((step, index) => ({
@@ -29,9 +29,9 @@ export function ApplicationProcess({ className }: ApplicationProcessProps) {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t("title")}</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t("applicationProcess.title")}</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {t("subtitle")}
+              {t("applicationProcess.subtitle")}
             </p>
           </div>
         </div>

@@ -12,7 +12,7 @@ interface CategoriesProps {
 }
 
 export function Categories({ className }: CategoriesProps) {
-  const t = useTranslations("programs.categories")
+  const t = useTranslations("pages.programs")
   
   // Category data with icons
   const categories = [
@@ -39,9 +39,9 @@ export function Categories({ className }: CategoriesProps) {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t("title")}</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t("categories.title")}</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {t("subtitle")}
+              {t("categories.subtitle")}
             </p>
           </div>
         </div>
@@ -54,15 +54,15 @@ export function Categories({ className }: CategoriesProps) {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
                     <Icon className="h-6 w-6 text-blue-600" />
                   </div>
-                  <h3 className="text-xl font-bold">{t(`${category.id}.title`)}</h3>
+                  <h3 className="text-xl font-bold">{t(`categories.${category.id}.title`)}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    {t(`${category.id}.description`)}
+                    {t(`categories.${category.id}.description`)}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild variant="ghost" className="text-blue-600">
                     <Link href={`/programs?category=${category.id}`}>
-                      {t("viewPrograms")}
+                      {t("categories.viewPrograms")}
                       <ChevronRight className="ml-1 h-4 w-4" />
                     </Link>
                   </Button>

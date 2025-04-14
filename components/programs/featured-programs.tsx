@@ -27,7 +27,7 @@ interface FeaturedProgramsProps {
 }
 
 export function FeaturedPrograms({ className, programs }: FeaturedProgramsProps) {
-  const t = useTranslations("programs.featuredPrograms")
+  const t = useTranslations("pages.programs")
   
   // Filter featured programs
   const featuredPrograms = programs.filter((program) => program.featured)
@@ -37,9 +37,9 @@ export function FeaturedPrograms({ className, programs }: FeaturedProgramsProps)
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t("title")}</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t("featuredPrograms.title")}</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {t("subtitle")}
+              {t("featuredPrograms.subtitle")}
             </p>
           </div>
         </div>
@@ -56,7 +56,7 @@ export function FeaturedPrograms({ className, programs }: FeaturedProgramsProps)
                     className="aspect-[2/1] w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   {program.scholarship && (
-                    <Badge className="absolute right-2 top-2 bg-blue-600">{t("scholarshipAvailable")}</Badge>
+                    <Badge className="absolute right-2 top-2 bg-blue-600">{t("featuredPrograms.scholarshipAvailable")}</Badge>
                   )}
                 </div>
                 <CardContent className="grid gap-2 p-4">
@@ -69,7 +69,7 @@ export function FeaturedPrograms({ className, programs }: FeaturedProgramsProps)
                   </div>
                   <div className="pt-4">
                     <span className="text-sm font-medium text-blue-600 underline-offset-4 hover:underline">
-                      {t("viewDetails")} →
+                      {t("featuredPrograms.viewDetails")} →
                     </span>
                   </div>
                 </CardContent>
