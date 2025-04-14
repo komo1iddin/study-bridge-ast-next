@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import './globals.css';
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Study Bridge',
@@ -18,7 +19,7 @@ export default function RootLayout({
         {/* Netlify Identity Widget - REMOVED */}
         {/* <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script> */}
       </head>
-      <body suppressHydrationWarning>
+      <body className={cn('')}>
         {children}
         
         {/* Script to redirect to admin after login - REMOVED */}
