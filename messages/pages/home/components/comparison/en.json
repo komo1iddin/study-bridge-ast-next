@@ -1,0 +1,42 @@
+{
+  "title": {
+    "main": "Why Choose",
+    "highlight": "Our Service?"
+  },
+  "subtitle": "Compare our comprehensive support with alternatives and see why thousands of students trust us for their study abroad journey.",
+  "alternatives": {
+    "title": "Other Agencies",
+    "description": "What you might experience elsewhere",
+    "points": {
+      "1": "Limited university options based on commission partnerships",
+      "2": "Hidden fees that appear during the process",
+      "3": "Lack of personalized attention and support",
+      "4": "Language barriers in communication",
+      "5": "No support after university admission"
+    }
+  },
+  "ourService": {
+    "badge": "Recommended",
+    "title": "Study Bridge",
+    "description": "Full-service support from application to graduation",
+    "points": {
+      "1": "Access to 20+ top Chinese universities with multiple program options",
+      "2": "100% transparent pricing with no hidden fees",
+      "3": "Personalized education consulting and program matching",
+      "4": "Multilingual support team fluent in English, Russian, and Uzbek",
+      "5": "Complete application handling and document preparation",
+      "6": "Visa application assistance and pre-departure orientation",
+      "7": "Ongoing support throughout your entire study program"
+    }
+  },
+  "selfApplication": {
+    "title": "Self-Application",
+    "description": "Doing everything on your own",
+    "points": {
+      "1": "Complex application processes in a foreign language",
+      "2": "No guidance on program selection or requirements",
+      "3": "Time-consuming document preparation and verification",
+      "4": "High risk of application rejection or delays"
+    }
+  }
+} 

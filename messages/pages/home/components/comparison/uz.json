@@ -1,0 +1,42 @@
+{
+  "title": {
+    "main": "Nima uchun",
+    "highlight": "bizni tanlash kerak?"
+  },
+  "subtitle": "Bizning keng qamrovli yordamimizni boshqa variantlar bilan taqqoslang va minglab talabalar chet elda o'qish uchun nima uchun bizga ishonishlarini ko'ring.",
+  "alternatives": {
+    "title": "Boshqa agentliklar",
+    "description": "Boshqa joylarda nimaga duch kelishingiz mumkin",
+    "points": {
+      "1": "Komissiya hamkorligi asosida cheklangan universitet tanlovlari",
+      "2": "Jarayon davomida paydo bo'ladigan yashirin to'lovlar",
+      "3": "Shaxsiy e'tibor va qo'llab-quvvatlashning yo'qligi",
+      "4": "Muloqotda til to'siqlari",
+      "5": "Universitetga qabul qilingandan keyin qo'llab-quvvatlashning yo'qligi"
+    }
+  },
+  "ourService": {
+    "badge": "Tavsiya etiladi",
+    "title": "Study Bridge",
+    "description": "Ariza topshirishdan bitiruvgacha to'liq xizmat ko'rsatish",
+    "points": {
+      "1": "Ko'p dastur tanlovlari bilan 20+ dan ortiq Xitoyning eng yaxshi universitetlariga kirish imkoniyati",
+      "2": "Yashirin to'lovlarsiz 100% shaffof narxlash",
+      "3": "Shaxsiy ta'lim maslahatlarni va dasturni tanlashda yordam",
+      "4": "Ingliz, rus va o'zbek tillarida erkin so'zlashadigan ko'p tilli yordam guruhi",
+      "5": "To'liq ariza topshirish va hujjatlarni tayyorlash",
+      "6": "Viza olishda yordam va jo'nashdan oldin yo'l-yo'riq ko'rsatish",
+      "7": "Butun o'qish dasturi davomida doimiy yordam"
+    }
+  },
+  "selfApplication": {
+    "title": "Mustaqil ariza topshirish",
+    "description": "Hamma narsani o'zingiz qilish",
+    "points": {
+      "1": "Chet tilida murakkab ariza topshirish jarayonlari",
+      "2": "Dastur tanlovida yo'l-yo'riq ko'rsatish yoki talablarning yo'qligi",
+      "3": "Ko'p vaqt talab qiladigan hujjatlarni tayyorlash va tekshirish",
+      "4": "Ariza rad etilishi yoki kechikish xavfi yuqori"
+    }
+  }
+} 

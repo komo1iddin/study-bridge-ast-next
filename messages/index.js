@@ -19,10 +19,10 @@ import universityFeatureEn from './components/university-feature/en.json';
 import universityFeatureRu from './components/university-feature/ru.json';
 import universityFeatureUz from './components/university-feature/uz.json';
 
-// Import page translations
-import homeEn from './pages/home/en.json';
-import homeRu from './pages/home/ru.json';
-import homeUz from './pages/home/uz.json';
+// Create empty objects to replace removed home translation files
+const homeEn = {};
+const homeRu = {};
+const homeUz = {};
 
 // Import home components translations
 import ourTeamEn from './pages/home/components/ourTeam/en.json';
@@ -74,6 +74,10 @@ import missionStatsEn from './pages/home/components/missionStats/en.json';
 import missionStatsRu from './pages/home/components/missionStats/ru.json';
 import missionStatsUz from './pages/home/components/missionStats/uz.json';
 
+import comparisonEn from './pages/home/components/comparison/en.json';
+import comparisonRu from './pages/home/components/comparison/ru.json';
+import comparisonUz from './pages/home/components/comparison/uz.json';
+
 import whyChinaEn from './pages/why-china/en.json';
 import whyChinaRu from './pages/why-china/ru.json';
 import whyChinaUz from './pages/why-china/uz.json';
@@ -102,6 +106,7 @@ export const messages = {
     common: commonEn,
     pages: {
       home: {
+        ...homeEn,
         metadata: metadataEn,
         hero: heroEn,
         howWeWork: howWeWorkEn,
@@ -112,6 +117,7 @@ export const messages = {
         universities: universitiesCompEn,
         successPath: successPathEn,
         cta: ctaEn,
+        comparison: comparisonEn,
         components: {
           ourTeam: ourTeamEn,
           ourPartners: ourPartnersEn
@@ -131,6 +137,7 @@ export const messages = {
     common: commonRu,
     pages: {
       home: {
+        ...homeRu,
         metadata: metadataRu,
         hero: heroRu,
         howWeWork: howWeWorkRu,
@@ -141,6 +148,7 @@ export const messages = {
         universities: universitiesCompRu,
         successPath: successPathRu,
         cta: ctaRu,
+        comparison: comparisonRu,
         components: {
           ourTeam: ourTeamRu,
           ourPartners: ourPartnersRu
@@ -160,6 +168,7 @@ export const messages = {
     common: commonUz,
     pages: {
       home: {
+        ...homeUz,
         metadata: metadataUz,
         hero: heroUz,
         howWeWork: howWeWorkUz,
@@ -170,6 +179,7 @@ export const messages = {
         universities: universitiesCompUz,
         successPath: successPathUz,
         cta: ctaUz,
+        comparison: comparisonUz,
         components: {
           ourTeam: ourTeamUz,
           ourPartners: ourPartnersUz
