@@ -154,12 +154,12 @@ export default async function Home(props: {
   const t = await getTranslations({ locale, namespace: "pages.home" })
 
   // Sample statistics data
-  const statistics = [
-    { value: "100+", label: t("stats.universities"), icon: Building2 },
-    { value: "5000+", label: t("stats.students"), icon: Users },
-    { value: "10+", label: t("stats.experience"), icon: Clock },
-    { value: "200+", label: t("stats.programs"), icon: BookOpen },
-  ]
+  // const statistics = [
+  //   { value: "100+", label: t("stats.universities"), icon: Building2 },
+  //   { value: "5000+", label: t("stats.students"), icon: Users },
+  //   { value: "10+", label: t("stats.experience"), icon: Clock },
+  //   { value: "200+", label: t("stats.programs"), icon: BookOpen },
+  // ]
 
   return (
     <div className="flex min-h-screen flex-col">

@@ -9,10 +9,26 @@ import HeroButtons from './HeroButtons'
 import ApplicationForm from './ApplicationForm'
 import StatItem from './StatItem'
 import { cn } from '@/lib/utils'
+import { Building2, Users, Clock, BookOpen } from 'lucide-react'
+
+// Define the type for rich text elements more explicitly if needed
+type RichTextElements = {
+  highlight: (chunks: React.ReactNode) => JSX.Element;
+  underline: (chunks: React.ReactNode) => JSX.Element;
+  br: () => JSX.Element;
+}
 
 export default function HeroSection() {
   const t = useTranslations('pages.home.hero')
   const [isFormOpen, setIsFormOpen] = useState(false)
+
+  // Define statistics array internally using the component's translation scope
+  const statistics = [
+    { key: 'universities', icon: Building2 },
+    { key: 'students', icon: Users },
+    { key: 'experience', icon: Clock },
+    { key: 'programs', icon: BookOpen }
+  ]
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -43,31 +59,6 @@ export default function HeroSection() {
     }
   }
 
-  // Helper function to render title with highlights and underlines
-  const renderTitle = () => {
-    const title = t('title');
-    
-    // Replace highlight tags with span elements
-    const withHighlights = title.replace(
-      /<highlight>(.*?)<\/highlight>/g, 
-      '<span class="text-blue-600">$1</span>'
-    );
-    
-    // Replace underline tags with underlined spans
-    const withUnderlines = withHighlights.replace(
-      /<underline>(.*?)<\/underline>/g,
-      '<span class="relative">$1<span class="absolute bottom-2 left-0 w-full h-2 bg-amber-300/40 -z-10"></span></span>'
-    );
-    
-    // Split by <br> for line breaks
-    return withUnderlines.split('<br>').map((line, index) => (
-      <React.Fragment key={index}>
-        <span dangerouslySetInnerHTML={{ __html: line }} />
-        {index < withUnderlines.split('<br>').length - 1 && <br />}
-      </React.Fragment>
-    ));
-  };
-
   return (
     <motion.div
       variants={containerVariants}
@@ -90,7 +81,16 @@ export default function HeroSection() {
             )}
             style={{ fontFamily: "'Raleway', sans-serif" }}
           >
-            {renderTitle()}
+            {t.rich('title', {
+              highlight: (chunks) => <span className="text-blue-600">{chunks}</span>,
+              underline: (chunks) => (
+                <span className="relative">
+                  {chunks}
+                  <span className="absolute bottom-2 left-0 w-full h-2 bg-amber-300/40 -z-10"></span>
+                </span>
+              ),
+              br: () => <br />
+            })}
           </motion.h1>
 
           <motion.p
@@ -116,21 +116,14 @@ export default function HeroSection() {
               'flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12'
             )}
           >
-            <StatItem 
-              value={t('stats.students.value')} 
-              label={t('stats.students.label')} 
-              delay={0.2} 
-            />
-            <StatItem 
-              value={t('stats.universities.value')} 
-              label={t('stats.universities.label')} 
-              delay={0.4} 
-            />
-            <StatItem 
-              value={t('stats.experience.value')} 
-              label={t('stats.experience.label')} 
-              delay={0.6} 
-            />
+            {statistics.map((stat, index) => (
+              <StatItem
+                key={stat.key}
+                value={t(`stats.${stat.key}.value`)}
+                label={t(`stats.${stat.key}.label`)}
+                delay={0.2 * (index + 1)}
+              />
+            ))}
           </motion.div>
         </div>
 

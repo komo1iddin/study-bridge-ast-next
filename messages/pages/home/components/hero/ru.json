@@ -18,6 +18,10 @@
     "experience": {
       "value": "10+",
       "label": "Лет опыта"
+    },
+    "programs": {
+      "value": "200+",
+      "label": "Программы"
     }
   }
 } 

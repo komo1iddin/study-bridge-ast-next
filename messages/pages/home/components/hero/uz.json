@@ -1,5 +1,5 @@
 {
-  "title": "O'zbekiston va Xitoy o'rtasidagi <highlight>ishonchli ko'prik</highlight>",
+  "title": "<underline>O'zbekiston</underline> va <underline>Xitoy</underline> o'rtasidagi <highlight>ishonchli ko'prik</highlight>",
   "subtitle": "O'zbek talabalar uchun Xitoyning eng yaxshi universitetlarida ta'lim olish. Hujjatlarni topshirishdan to diplomni olishgacha to'liq ko'mak.",
   "cta": "Dasturlarni ko'rish",
   "contactUs": "Bog'lanish",
@@ -18,6 +18,10 @@
     "experience": {
       "value": "10+",
       "label": "Yillik tajriba"
+    },
+    "programs": {
+      "value": "200+",
+      "label": "Dasturlar"
     }
   }
 } 

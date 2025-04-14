@@ -54,7 +54,7 @@ const TypingBadge = () => {
       transition={{ duration: 0.4 }}
       className={cn(
         'inline-flex items-center rounded-full bg-blue-100 py-1.5 px-4',
-        'border border-blue-200 shadow-sm w-[280px]'
+        'border border-blue-200 shadow-sm'
       )}
     >
       <motion.div
@@ -63,7 +63,7 @@ const TypingBadge = () => {
       >
         <Clock className="mr-2 h-4 w-4 text-blue-700 flex-shrink-0" />
       </motion.div>
-      <div className="font-medium text-sm text-blue-700 flex-grow text-left">
+      <div className="font-medium text-sm text-blue-700 flex-grow text-left whitespace-nowrap">
         <div className="h-[1.2em] relative">
           {displayedText}
           <motion.span 
