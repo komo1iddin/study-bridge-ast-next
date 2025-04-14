@@ -5,14 +5,13 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 interface CTAProps {
-  namespace: string // e.g. 'pages.home.whyChina'
   className?: string
   lang: string
   linkHref?: string // Optional custom link path, defaults to `/${lang}/why-china`
 }
 
-export default function CTA({ namespace, className, lang, linkHref }: CTAProps) {
-  const t = useTranslations(namespace)
+export default function CTA({ className, lang, linkHref }: CTAProps) {
+  const t = useTranslations('pages.home.cta')
   
   return (
     <div 
@@ -20,14 +19,14 @@ export default function CTA({ namespace, className, lang, linkHref }: CTAProps) 
     >
       <div className="max-w-3xl mx-auto text-center">
         <h3 className="text-2xl md:text-3xl font-bold mb-4">
-          {t('cta.title')}
+          {t('title')}
         </h3>
         <p className="text-lg mb-6 text-blue-100">
-          {t('cta.description')}
+          {t('subtitle')}
         </p>
         <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50" asChild>
           <Link href={linkHref || `/${lang}/why-china`}>
-            {t('cta.button')}
+            {t('button')}
           </Link>
         </Button>
       </div>

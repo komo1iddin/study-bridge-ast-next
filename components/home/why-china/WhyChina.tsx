@@ -178,7 +178,6 @@ export function WhyChina({ lang }: { lang: string }) {
           transition={{ duration: 0.6 }}
         >
           <CTA 
-            namespace="pages.home.whyChina" 
             lang={lang} 
           />
         </motion.div>
