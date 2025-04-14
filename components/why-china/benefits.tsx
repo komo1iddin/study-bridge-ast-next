@@ -1,8 +1,8 @@
 "use client"
 
 import { 
-  Award, DollarSign, Globe, Briefcase, 
-  BookOpen, Users, LucideIcon 
+  GraduationCap, DollarSign, Globe, 
+  Building2, Languages, PenTool, LucideIcon 
 } from "lucide-react"
 import { useTranslations } from "next-intl"
 
@@ -13,66 +13,53 @@ interface BenefitsProps {
 }
 
 export function Benefits({ className }: BenefitsProps) {
-  const t = useTranslations("whyChina.benefits")
+  const t = useTranslations("pages.whyChina")
   
-  // Icon mapping based on benefit title keywords
-  const getIconForBenefit = (title: string): LucideIcon => {
-    const lowerTitle = title.toLowerCase()
-    if (lowerTitle.includes("education") || lowerTitle.includes("quality") || 
-        lowerTitle.includes("ta'lim") || lowerTitle.includes("образование")) {
-      return Award
-    } else if (lowerTitle.includes("price") || lowerTitle.includes("cost") || 
-              lowerTitle.includes("narx") || lowerTitle.includes("цен")) {
-      return DollarSign
-    } else if (lowerTitle.includes("diploma") || lowerTitle.includes("international") || 
-              lowerTitle.includes("diplom") || lowerTitle.includes("диплом")) {
-      return Globe
-    } else if (lowerTitle.includes("career") || lowerTitle.includes("karyera") || 
-              lowerTitle.includes("карьер")) {
-      return Briefcase
-    } else if (lowerTitle.includes("language") || lowerTitle.includes("chinese") || 
-              lowerTitle.includes("til") || lowerTitle.includes("язык")) {
-      return BookOpen
-    } else if (lowerTitle.includes("cultural") || lowerTitle.includes("experience") || 
-              lowerTitle.includes("madaniy") || lowerTitle.includes("культур")) {
-      return Users
-    }
-    
-    // Default icon
-    return Award
+  // Map of icon names to icon components
+  const iconMap = {
+    GraduationCap,
+    DollarSign,
+    Globe,
+    Building2,
+    Languages,
+    PenTool
   }
   
   // Get benefits from translations
-  const benefits = t.raw("items") as Array<{ title: string, description: string }>
+  const benefits = t.raw("benefits.items") as Array<{ title: string, description: string }>
+
+  // Assign icons to benefits
+  const iconNames = [GraduationCap, DollarSign, Globe, Building2, Languages, PenTool]
+  const benefitsWithIcons = benefits.map((benefit, index) => ({
+    ...benefit,
+    icon: iconNames[index % iconNames.length]
+  }))
 
   return (
-    <section className={`w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-blue-600 to-blue-800 text-white ${className || ""}`}>
+    <section className={`w-full py-12 md:py-24 bg-gray-50 ${className || ""}`}>
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              {t("title")}
-            </h2>
-            <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {t("subtitle")}
-            </p>
-          </div>
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            {t("benefits.title")}
+          </h2>
+          <p className="max-w-[700px] text-gray-500 md:text-xl">
+            {t("benefits.subtitle")}
+          </p>
         </div>
-        <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit, index) => {
-            const Icon = getIconForBenefit(benefit.title)
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {benefitsWithIcons.map((benefit, index) => {
+            const Icon = benefit.icon
             return (
-              <Card key={index} className="bg-white/10 backdrop-blur-sm border-0 text-white">
+              <Card 
+                key={index}
+                className="border-2 border-blue-100 transition-all duration-200 hover:border-blue-600"
+              >
                 <CardContent className="p-6">
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <Icon className="h-5 w-5" />
-                      <h3 className="text-xl font-bold">{benefit.title}</h3>
-                    </div>
-                    <p className="text-white/80">
-                      {benefit.description}
-                    </p>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 mb-4">
+                    <Icon className="h-6 w-6 text-blue-600" />
                   </div>
+                  <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
+                  <p className="text-gray-500">{benefit.description}</p>
                 </CardContent>
               </Card>
             )

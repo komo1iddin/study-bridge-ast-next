@@ -1,95 +1,100 @@
 "use client"
 
-import { useTranslations, useLocale } from "next-intl"
+import { useTranslations } from "next-intl"
+
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 interface CostComparisonProps {
   className?: string
 }
 
-// Sample cost comparison data - in a real app, this would come from an API or database
-const costComparison = [
-  { country: "AQSh", tuition: "$25,000-$50,000", living: "$15,000-$25,000", total: "$40,000-$75,000" },
-  { country: "Buyuk Britaniya", tuition: "$20,000-$35,000", living: "$12,000-$20,000", total: "$32,000-$55,000" },
-  { country: "Avstraliya", tuition: "$20,000-$40,000", living: "$10,000-$20,000", total: "$30,000-$60,000" },
-  { country: "Kanada", tuition: "$15,000-$35,000", living: "$8,000-$15,000", total: "$23,000-$50,000" },
-  { country: "Xitoy", tuition: "$3,000-$10,000", living: "$3,000-$6,000", total: "$6,000-$16,000" },
+// Sample cost comparison data
+const costData = [
+  {
+    country: "China",
+    tuition: "$2,000 - $10,000",
+    living: "$3,000 - $6,000",
+    total: "$5,000 - $16,000"
+  },
+  {
+    country: "USA",
+    tuition: "$20,000 - $50,000",
+    living: "$10,000 - $20,000",
+    total: "$30,000 - $70,000"
+  },
+  {
+    country: "UK",
+    tuition: "$15,000 - $40,000",
+    living: "$12,000 - $18,000",
+    total: "$27,000 - $58,000"
+  },
+  {
+    country: "Australia",
+    tuition: "$15,000 - $35,000",
+    living: "$10,000 - $15,000",
+    total: "$25,000 - $50,000"
+  },
+  {
+    country: "Canada",
+    tuition: "$10,000 - $30,000",
+    living: "$8,000 - $12,000",
+    total: "$18,000 - $42,000"
+  }
 ]
 
-// Country name translations for different locales
-const countryTranslations: Record<string, Record<string, string>> = {
-  "AQSh": {
-    "en": "USA",
-    "ru": "США",
-    "uz": "AQSh"
-  },
-  "Buyuk Britaniya": {
-    "en": "United Kingdom",
-    "ru": "Великобритания",
-    "uz": "Buyuk Britaniya"
-  },
-  "Avstraliya": {
-    "en": "Australia",
-    "ru": "Австралия",
-    "uz": "Avstraliya"
-  },
-  "Kanada": {
-    "en": "Canada",
-    "ru": "Канада",
-    "uz": "Kanada"
-  },
-  "Xitoy": {
-    "en": "China",
-    "ru": "Китай",
-    "uz": "Xitoy"
-  }
-}
-
 export function CostComparison({ className }: CostComparisonProps) {
-  const t = useTranslations("whyChina.costComparison")
-  const locale = useLocale() as string
-  
-  // Translate country names based on current locale
-  const getCountryName = (country: string) => {
-    return countryTranslations[country]?.[locale] || country
-  }
+  const t = useTranslations("pages.whyChina")
   
   return (
-    <section className={`w-full py-12 md:py-24 lg:py-32 bg-slate-50 ${className || ""}`}>
+    <section className={`w-full py-12 md:py-24 bg-gray-50 ${className || ""}`}>
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t("title")}</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {t("subtitle")}
-            </p>
-          </div>
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            {t("costComparison.title")}
+          </h2>
+          <p className="max-w-[700px] text-gray-500 md:text-xl">
+            {t("costComparison.subtitle")}
+          </p>
         </div>
-        <div className="mx-auto max-w-5xl py-12">
-          <div className="relative overflow-hidden rounded-xl border bg-background p-2">
-            <div className="grid grid-cols-4 gap-2 text-center text-sm font-medium">
-              <div className="bg-blue-600 text-white rounded-lg py-3">{t("columns.country")}</div>
-              <div className="bg-blue-600 text-white rounded-lg py-3">{t("columns.tuition")}</div>
-              <div className="bg-blue-600 text-white rounded-lg py-3">{t("columns.living")}</div>
-              <div className="bg-blue-600 text-white rounded-lg py-3">{t("columns.total")}</div>
-            </div>
-            {costComparison.map((country, index) => (
-              <div
-                key={index}
-                className={`grid grid-cols-4 gap-2 text-center text-sm mt-2 hover:bg-muted rounded-lg transition-colors ${
-                  country.country === "Xitoy" ? "bg-blue-50" : ""
-                }`}
-              >
-                <div className="py-3 font-medium">{getCountryName(country.country)}</div>
-                <div className="py-3">{country.tuition}</div>
-                <div className="py-3">{country.living}</div>
-                <div className="py-3 font-medium">{country.total}</div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 text-center text-sm text-muted-foreground">
-            {t("disclaimer")}
-          </div>
+        
+        <div className="overflow-x-auto">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-blue-600 text-white">
+                <TableHead className="text-white">{t("costComparison.columns.country")}</TableHead>
+                <TableHead className="text-white">{t("costComparison.columns.tuition")}</TableHead>
+                <TableHead className="text-white">{t("costComparison.columns.living")}</TableHead>
+                <TableHead className="text-white">{t("costComparison.columns.total")}</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {costData.map((item, index) => (
+                <TableRow 
+                  key={index}
+                  className={item.country === "China" ? "bg-blue-50" : undefined}
+                >
+                  <TableCell className="font-bold">
+                    {item.country}
+                  </TableCell>
+                  <TableCell>{item.tuition}</TableCell>
+                  <TableCell>{item.living}</TableCell>
+                  <TableCell className="font-bold">{item.total}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </div>
+        
+        <p className="text-sm text-gray-500 mt-4 text-center">
+          {t("costComparison.disclaimer")}
+        </p>
       </div>
     </section>
   )

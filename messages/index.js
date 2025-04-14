@@ -50,9 +50,9 @@ import testimonialsEn from './pages/home/components/testimonials/en.json';
 import testimonialsRu from './pages/home/components/testimonials/ru.json';
 import testimonialsUz from './pages/home/components/testimonials/uz.json';
 
-import whyChinaCompEn from './pages/home/components/whyChina/en.json';
-import whyChinaCompRu from './pages/home/components/whyChina/ru.json';
-import whyChinaCompUz from './pages/home/components/whyChina/uz.json';
+import whyChinaCompEn from './pages/home/components/advantages-stydy-china/en.json';
+import whyChinaCompRu from './pages/home/components/advantages-stydy-china/ru.json';
+import whyChinaCompUz from './pages/home/components/advantages-stydy-china/uz.json';
 
 import servicesEn from './pages/home/components/services/en.json';
 import servicesRu from './pages/home/components/services/ru.json';

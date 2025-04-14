@@ -10,7 +10,7 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { HeroSection } from "@/components/home/hero"
 import { SuccessPath } from "@/components/home/success-path"
-import { WhyChina } from "@/components/home/why-china"
+import { WhyChina } from "@/components/home/advantages-stydy-china"
 import { UniversityFeature } from "@/components/home/university-feature/UniversityFeature"
 import { OurTeam, OurPartners, HowWeWork, MissionStats, Testimonials, ComparisonSection } from "@/components/home"
 

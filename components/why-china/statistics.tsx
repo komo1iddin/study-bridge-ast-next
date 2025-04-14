@@ -19,7 +19,7 @@ type StatItem = {
 }
 
 export function Statistics({ className }: StatisticsProps) {
-  const t = useTranslations("whyChina.statistics")
+  const t = useTranslations("pages.whyChina")
   
   // Map of icon names to icon components
   const iconMap = {
@@ -31,7 +31,7 @@ export function Statistics({ className }: StatisticsProps) {
   }
   
   // Get statistics from translations
-  const statistics = t.raw("items") as Array<{ value: string, label: string }>
+  const statistics = t.raw("statistics.items") as Array<{ value: string, label: string }>
 
   // Assign icons to statistics
   const iconNames = [Building2, Users, Globe, Award]
