@@ -17,7 +17,7 @@ interface MobileFiltersProps {
 
 const MobileFilters = ({ filters, cities, onFilterChange, onResetFilters }: MobileFiltersProps) => {
   const [open, setOpen] = React.useState(false)
-  const t = useTranslations('universities')
+  const t = useTranslations('pages.universities')
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>

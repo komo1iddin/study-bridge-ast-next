@@ -22,7 +22,7 @@ interface FilterSidebarProps {
 }
 
 const FilterSidebar = ({ filters, cities, onFilterChange, onResetFilters }: FilterSidebarProps) => {
-  const t = useTranslations('universities')
+  const t = useTranslations('pages.universities')
 
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-4 md:p-6">

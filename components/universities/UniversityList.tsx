@@ -14,7 +14,7 @@ interface UniversityListProps {
 
 const UniversityList = ({ universities, filters }: UniversityListProps) => {
   // Get translations for the page
-  const t = useTranslations('universities')
+  const t = useTranslations('pages.universities')
   
   const [filteredUniversities, setFilteredUniversities] = useState<University[]>([])
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)

@@ -133,7 +133,7 @@ const CITIES = ["Beijing", "Shanghai", "Hangzhou", "Nanjing", "Wuhan", "Xiamen"]
 
 export async function generateMetadata({ params }: { params: { locale: string } }) {
   const resolvedParams = await Promise.resolve(params);
-  const t = await getTranslations({ locale: resolvedParams.locale, namespace: 'universities' });
+  const t = await getTranslations({ locale: resolvedParams.locale, namespace: 'pages.universities' });
   
   return {
     title: t('title'),

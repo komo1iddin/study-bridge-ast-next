@@ -15,7 +15,7 @@ interface UniversityCardProps {
 }
 
 const UniversityCard = ({ university }: UniversityCardProps) => {
-  const t = useTranslations('universities')
+  const t = useTranslations('pages.universities')
 
   // Format large numbers with commas
   const formatNumber = (num: number | undefined): string => {
