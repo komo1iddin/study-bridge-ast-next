@@ -143,4 +143,7 @@ export function UniversityPage({ universities, cities }: UniversityPageProps) {
       </div>
     </div>
   )
-} 
+}
+
+// Add default export for backward compatibility
+export default UniversityPage 
