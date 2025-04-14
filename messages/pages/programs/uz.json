@@ -18,27 +18,34 @@
       "business": "Biznes",
       "it": "IT",
       "medicine": "Tibbiyot",
-      "engineering": "Muhandislik"
+      "engineering": "Muhandislik",
+      "arts": "San'at va gumanitar",
+      "science": "Fan",
+      "social": "Ijtimoiy fanlar"
     },
     "level": {
       "label": "Daraja",
       "all": "Barcha darajalar",
       "bachelor": "Bakalavr",
       "master": "Magistr",
-      "phd": "Doktorantura"
+      "phd": "Doktorantura",
+      "language": "Til kursi",
+      "oneplus": "1+2 Dasturi"
     },
     "language": {
       "label": "O'qitish tili",
       "all": "Barcha tillar",
       "english": "Ingliz",
-      "chinese": "Xitoy"
+      "chinese": "Xitoy",
+      "russian": "Rus"
     }
   },
   "featuredPrograms": {
     "title": "Tavsiya etilgan dasturlar",
     "subtitle": "Yuqori sifatli va stipendiya imkoniyatlari mavjud bo'lgan eng yaxshi dasturlarimiz",
     "viewDetails": "Batafsil ma'lumot",
-    "scholarshipAvailable": "Stipendiya mavjud"
+    "scholarshipAvailable": "Stipendiya mavjud",
+    "years": "yil"
   },
   "categories": {
     "title": "Dastur yo'nalishlari",
@@ -59,13 +66,26 @@
       "title": "Muhandislik",
       "description": "Fuqarolik, mexanika, elektr va kimyoviy muhandislik dasturlari"
     },
+    "arts": {
+      "title": "San'at va gumanitar",
+      "description": "San'at, til, adabiyot va tarix dasturlari"
+    },
+    "science": {
+      "title": "Fan",
+      "description": "Fizika, kimyo, biologiya va matematika dasturlari"
+    },
+    "social": {
+      "title": "Ijtimoiy fanlar",
+      "description": "Iqtisodiyot, sotsiologiya, psixologiya va siyosatshunoslik dasturlari"
+    },
     "viewPrograms": "Dasturlarni ko'rish"
   },
   "allPrograms": {
     "title": "Barcha dasturlar",
     "subtitle": "Xitoyning eng yaxshi universitetlarida mavjud bo'lgan barcha o'quv dasturlari",
     "viewDetails": "Batafsil ma'lumot",
-    "scholarshipAvailable": "Stipendiya mavjud"
+    "scholarshipAvailable": "Stipendiya mavjud",
+    "years": "yil"
   },
   "applicationProcess": {
     "title": "Ariza topshirish jarayoni",

@@ -18,27 +18,34 @@
       "business": "Business",
       "it": "IT",
       "medicine": "Medicine",
-      "engineering": "Engineering"
+      "engineering": "Engineering",
+      "arts": "Arts & Humanities",
+      "science": "Science",
+      "social": "Social Sciences"
     },
     "level": {
       "label": "Level",
       "all": "All levels",
       "bachelor": "Bachelor",
       "master": "Master",
-      "phd": "PhD"
+      "phd": "PhD",
+      "language": "Language Course",
+      "oneplus": "1+2 Program"
     },
     "language": {
       "label": "Teaching Language",
       "all": "All languages",
       "english": "English",
-      "chinese": "Chinese"
+      "chinese": "Chinese",
+      "russian": "Russian"
     }
   },
   "featuredPrograms": {
     "title": "Featured Programs",
     "subtitle": "Our top recommended programs with high quality and scholarship opportunities",
     "viewDetails": "View Details",
-    "scholarshipAvailable": "Scholarship Available"
+    "scholarshipAvailable": "Scholarship Available",
+    "years": "years"
   },
   "categories": {
     "title": "Program Categories",
@@ -59,13 +66,26 @@
       "title": "Engineering",
       "description": "Civil, mechanical, electrical, and chemical engineering programs"
     },
+    "arts": {
+      "title": "Arts & Humanities",
+      "description": "Arts, languages, literature, and history programs"
+    },
+    "science": {
+      "title": "Science",
+      "description": "Physics, chemistry, biology, and mathematics programs"
+    },
+    "social": {
+      "title": "Social Sciences",
+      "description": "Economics, sociology, psychology, and political science programs"
+    },
     "viewPrograms": "View Programs"
   },
   "allPrograms": {
     "title": "All Programs",
     "subtitle": "All available study programs at China's top universities",
     "viewDetails": "View Details",
-    "scholarshipAvailable": "Scholarship Available"
+    "scholarshipAvailable": "Scholarship Available",
+    "years": "years"
   },
   "applicationProcess": {
     "title": "Application Process",

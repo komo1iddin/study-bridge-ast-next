@@ -62,6 +62,9 @@ export function Filters({
                 <SelectItem value="it">{t("category.it")}</SelectItem>
                 <SelectItem value="medicine">{t("category.medicine")}</SelectItem>
                 <SelectItem value="engineering">{t("category.engineering")}</SelectItem>
+                <SelectItem value="arts">{t("category.arts")}</SelectItem>
+                <SelectItem value="science">{t("category.science")}</SelectItem>
+                <SelectItem value="social">{t("category.social")}</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -81,6 +84,8 @@ export function Filters({
                 <SelectItem value="bachelor">{t("level.bachelor")}</SelectItem>
                 <SelectItem value="master">{t("level.master")}</SelectItem>
                 <SelectItem value="phd">{t("level.phd")}</SelectItem>
+                <SelectItem value="language">{t("level.language")}</SelectItem>
+                <SelectItem value="1+2">{t("level.oneplus")}</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -99,6 +104,7 @@ export function Filters({
                 <SelectItem value="all">{t("language.all")}</SelectItem>
                 <SelectItem value="english">{t("language.english")}</SelectItem>
                 <SelectItem value="chinese">{t("language.chinese")}</SelectItem>
+                <SelectItem value="russian">{t("language.russian")}</SelectItem>
               </SelectContent>
             </Select>
           </div>
