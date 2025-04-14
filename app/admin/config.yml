@@ -1,0 +1,71 @@
+backend:
+  name: github # Use github backend
+  repo: your-github-username/your-repo-name # Replace with your repo path
+  branch: main # Or whichever branch you want to save changes to
+  # Optional: If using a custom domain with Vercel
+  # base_url: https://your-custom-domain.com
+  # auth_endpoint: /api/auth # You'll need to set up an OAuth handler
+
+# These lines should match your project structure
+media_folder: "public/uploads" # Media files will be stored in the repo under public/uploads
+public_folder: "/uploads" # The src attribute for uploaded media will begin with /uploads
+
+# When using a locale folder setup (app/[locale])
+i18n:
+  # Required and can be one of multiple_folders, multiple_files or single_file
+  structure: multiple_folders
+  # Required - same as root locales, but for subpaths
+  locales: [en, zh, ru]
+  # Optional, if specified only default values will be used for the other locales
+  default_locale: en
+
+collections:
+  - name: "universities"
+    label: "Universities"
+    folder: "content/universities"
+    create: true
+    slug: "{{slug}}"
+    i18n: true
+    fields:
+      - { label: "ID", name: "id", widget: "number" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image", media_folder: "/public/universities" }
+      - { label: "Campus Image", name: "image", widget: "image", media_folder: "/public/universities" }
+      - { label: "City", name: "city", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Education Types", name: "educationType", widget: "select", multiple: true, options: ["bachelor", "master", "1+2", "2+2"] }
+      - { label: "Has Grants", name: "hasGrants", widget: "boolean", default: false }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Ranking", name: "ranking", widget: "number" }
+      - { label: "Founded Year", name: "foundedYear", widget: "number" }
+      - { label: "Students Count", name: "studentsCount", widget: "number" }
+      - { label: "International Students", name: "internationalStudents", widget: "number" }
+  
+  - name: "grants"
+    label: "Grants"
+    folder: "content/grants"
+    create: true
+    slug: "{{slug}}"
+    i18n: true
+    fields:
+      - { label: "ID", name: "id", widget: "number" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Amount", name: "amount", widget: "string" }
+      - { label: "Requirements", name: "requirements", widget: "markdown" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
+  - name: "blogs"
+    label: "Blog Posts"
+    folder: "content/blogs"
+    create: true
+    slug: "{{slug}}"
+    i18n: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image", media_folder: "/public/blogs" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" } 

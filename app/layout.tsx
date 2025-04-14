@@ -15,14 +15,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Netlify Identity Widget */}
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
+        {/* Netlify Identity Widget - REMOVED */}
+        {/* <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script> */}
       </head>
       <body suppressHydrationWarning>
         {children}
         
-        {/* Script to redirect to admin after login */}
-        <script dangerouslySetInnerHTML={{
+        {/* Script to redirect to admin after login - REMOVED */}
+        {/* <script dangerouslySetInnerHTML={{
           __html: `
             if (window.netlifyIdentity) {
               window.netlifyIdentity.on("init", user => {
@@ -34,7 +34,7 @@ export default function RootLayout({
               });
             }
           `
-        }} />
+        }} /> */}
       </body>
     </html>
   );

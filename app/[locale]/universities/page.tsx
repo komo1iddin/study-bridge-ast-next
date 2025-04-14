@@ -1,10 +1,27 @@
 import React from 'react'
 import { getTranslations } from 'next-intl/server'
-import { UniversityPage } from '@/components/universities/university-page'
+import { UniversityPage } from '@/components/universities'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import { getContentItems } from '@/lib/decap-cms'
+import { University } from '@/types/content'
 
-// Sample data - in a real application, this would come from an API or CMS
+// This function will try to load universities from Decap CMS content directory
+// If no content is found yet, it will fallback to sample data
+async function getUniversities(locale: string): Promise<University[]> {
+  // Try to get universities from Decap CMS
+  const cmsUniversities = getContentItems<University>('universities', locale);
+  
+  // If we have CMS data, return it
+  if (cmsUniversities && cmsUniversities.length > 0) {
+    return cmsUniversities;
+  }
+  
+  // Otherwise return sample data
+  return SAMPLE_UNIVERSITIES;
+}
+
+// Sample data as fallback before CMS content is created
 const SAMPLE_UNIVERSITIES = [
   {
     id: 1,
@@ -19,7 +36,8 @@ const SAMPLE_UNIVERSITIES = [
     ranking: 1,
     foundedYear: 1898,
     studentsCount: 42000,
-    internationalStudents: 3000
+    internationalStudents: 3000,
+    slug: "peking-university"
   },
   {
     id: 2,
@@ -34,7 +52,8 @@ const SAMPLE_UNIVERSITIES = [
     ranking: 2,
     foundedYear: 1911,
     studentsCount: 36000,
-    internationalStudents: 2500
+    internationalStudents: 2500,
+    slug: "tsinghua-university"
   },
   {
     id: 3,
@@ -49,7 +68,8 @@ const SAMPLE_UNIVERSITIES = [
     ranking: 3,
     foundedYear: 1905,
     studentsCount: 33000,
-    internationalStudents: 3000
+    internationalStudents: 3000,
+    slug: "fudan-university"
   },
   {
     id: 4,
@@ -64,7 +84,8 @@ const SAMPLE_UNIVERSITIES = [
     ranking: 4,
     foundedYear: 1897,
     studentsCount: 54000,
-    internationalStudents: 3500
+    internationalStudents: 3500,
+    slug: "zhejiang-university"
   },
   {
     id: 5,
@@ -79,7 +100,8 @@ const SAMPLE_UNIVERSITIES = [
     ranking: 5,
     foundedYear: 1896,
     studentsCount: 38000,
-    internationalStudents: 2800
+    internationalStudents: 2800,
+    slug: "shanghai-jiao-tong-university"
   },
   {
     id: 6,
@@ -94,7 +116,8 @@ const SAMPLE_UNIVERSITIES = [
     ranking: 8,
     foundedYear: 1902,
     studentsCount: 33000,
-    internationalStudents: 2000
+    internationalStudents: 2000,
+    slug: "nanjing-university"
   },
   {
     id: 7,
@@ -109,7 +132,8 @@ const SAMPLE_UNIVERSITIES = [
     ranking: 11,
     foundedYear: 1893,
     studentsCount: 50000,
-    internationalStudents: 3200
+    internationalStudents: 3200,
+    slug: "wuhan-university"
   },
   {
     id: 8,
@@ -124,12 +148,23 @@ const SAMPLE_UNIVERSITIES = [
     ranking: 24,
     foundedYear: 1921,
     studentsCount: 40000,
-    internationalStudents: 2500
+    internationalStudents: 2500,
+    slug: "xiamen-university"
   }
 ];
 
-// List of cities extracted from universities
-const CITIES = ["Beijing", "Shanghai", "Hangzhou", "Nanjing", "Wuhan", "Xiamen"];
+// Function to extract unique cities from universities
+function extractCities(universities: University[]): string[] {
+  const citySet = new Set<string>();
+  
+  universities.forEach(university => {
+    if (university.city) {
+      citySet.add(university.city);
+    }
+  });
+  
+  return Array.from(citySet);
+}
 
 export async function generateMetadata({ params }: { params: { locale: string } }) {
   const resolvedParams = await Promise.resolve(params);
@@ -143,13 +178,15 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default async function UniversitiesPage({ params }: { params: { locale: string } }) {
   const resolvedParams = await Promise.resolve(params);
+  const universities = await getUniversities(resolvedParams.locale);
+  const cities = extractCities(universities);
   
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <UniversityPage 
-        universities={SAMPLE_UNIVERSITIES}
-        cities={CITIES}
+        universities={universities}
+        cities={cities}
       />
       <Footer />
     </div>

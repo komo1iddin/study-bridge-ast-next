@@ -2,7 +2,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import Image from "next/image"
 import Link from "next/link"
 import { getTranslations } from "next-intl/server"
-import { ChevronRight, GraduationCap, Building2, Users, Clock, BookOpen } from "lucide-react"
+import { GraduationCap } from "lucide-react"
 import { Metadata } from "next"
 import { Suspense } from "react"
 
