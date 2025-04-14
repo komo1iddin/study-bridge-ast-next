@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import { Hand, ChevronRight } from 'lucide-react'
@@ -12,11 +12,31 @@ import { UniversityCard } from './university-card'
 import { BackgroundDecoration } from './background-decoration'
 import type { UniversityFeatureItem } from './types'
 
-const AUTOPLAY_DELAY = 4000
+const AUTOPLAY_DELAY = 5000
 const LOADING_DELAY = 300
-const ANIMATION_INTERVAL = 2000
+const ANIMATION_INTERVAL = 4000
 const MOBILE_BREAKPOINT = 768
 const CAROUSEL_SPEED = 20
+
+// Debounce function to prevent excessive resize handler calls
+function debounce<T extends (...args: any[]) => any>(
+  func: T,
+  wait: number
+): (...args: Parameters<T>) => void {
+  let timeout: ReturnType<typeof setTimeout> | null = null;
+  
+  return function(this: any, ...args: Parameters<T>) {
+    const context = this;
+    
+    if (timeout !== null) {
+      clearTimeout(timeout);
+    }
+    
+    timeout = setTimeout(() => {
+      func.apply(context, args);
+    }, wait);
+  };
+}
 
 interface UniversityFeatureProps {
   universities: UniversityFeatureItem[]
@@ -36,11 +56,11 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
   const [swipeAnimationActive, setSwipeAnimationActive] = useState(true)
 
   // Refs
-  const autoplayRef = useRef(
-    Autoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: false })
-  )
+  // @ts-ignore - Ignoring type conflicts between different versions of embla-carousel
+  const autoplayRef = useRef(Autoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: false }))
 
   // Initialize carousel
+  // @ts-ignore - Ignoring type conflicts between different versions of embla-carousel
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
@@ -52,12 +72,20 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
     watchDrag: true
   }, [autoplayRef.current])
 
+  // Create a debounced resize handler
+  const debouncedResize = useCallback(
+    debounce(() => {
+      setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT);
+    }, 150),
+    []
+  );
+
   // Effects
   useEffect(() => {
-    // Check if mobile
+    // Check if mobile - with debounced handler
     const checkIfMobile = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT)
     checkIfMobile()
-    window.addEventListener('resize', checkIfMobile)
+    window.addEventListener('resize', debouncedResize)
 
     // Load universities with delay for loading effect
     setLoading(true)
@@ -71,7 +99,7 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
       }
     }, LOADING_DELAY)
 
-    // Start swipe animation
+    // Start swipe animation - with reduced frequency
     const animInterval = setInterval(() => {
       setSwipeAnimationActive(prev => !prev)
     }, ANIMATION_INTERVAL)
@@ -85,18 +113,24 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
     }
 
     return () => {
-      window.removeEventListener('resize', checkIfMobile)
+      window.removeEventListener('resize', debouncedResize)
       clearTimeout(timer)
       clearInterval(animInterval)
     }
-  }, [emblaApi, universities, t])
+  }, [emblaApi, universities, t, debouncedResize])
 
   // Navigation functions
   const scrollPrev = () => emblaApi?.scrollPrev()
   const scrollNext = () => emblaApi?.scrollNext()
 
   return (
-    <div className="w-full bg-[#F5F9FB] py-12 relative">
+    <div 
+      className="w-full bg-[#F5F9FB] py-12 relative"
+      style={{ 
+        transform: 'translateZ(0)', 
+        backfaceVisibility: 'hidden' 
+      }}
+    >
       <BackgroundDecoration />
       <div className="w-full max-w-[1920px] mx-auto px-4 relative z-10">
         {/* Section Header */}
@@ -109,13 +143,17 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
           </p>
         </div>
 
-        {/* Swipe Indicator */}
+        {/* Swipe Indicator - GPU accelerated */}
         <div className="flex justify-end mb-4">
           <div
             className={cn(
               "flex items-center gap-2 px-4 py-2 bg-white backdrop-blur-sm rounded-full shadow-sm transition-transform duration-700",
               swipeAnimationActive ? "translate-x-2" : "-translate-x-2"
             )}
+            style={{ 
+              transform: 'translateZ(0)', 
+              willChange: 'transform' 
+            }}
           >
             <Hand className="w-5 h-5 text-primary" />
             <span className="text-sm font-semibold">
@@ -124,9 +162,22 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
           </div>
         </div>
 
-        {/* Carousel */}
-        <div className="relative mb-8 pb-6">
-          <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+        {/* Carousel with GPU acceleration */}
+        <div 
+          className="relative mb-8 pb-6"
+          style={{ 
+            transform: 'translateZ(0)', 
+            backfaceVisibility: 'hidden' 
+          }}
+        >
+          <div 
+            className="overflow-hidden cursor-grab active:cursor-grabbing" 
+            ref={emblaRef}
+            style={{ 
+              willChange: 'transform',
+              transform: 'translateZ(0)'
+            }}
+          >
             <div className="flex">
               {loading ? (
                 // Loading skeletons
@@ -172,16 +223,23 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
 
           {/* Navigation Buttons */}
           {!isMobile && visibleUniversities.length > 0 && (
-            <div className="absolute -bottom-2 left-4 flex items-center gap-2 z-10">
+            <div 
+              className="absolute -bottom-2 left-4 flex items-center gap-2 z-10"
+              style={{
+                transform: 'translateZ(0)'
+              }}
+            >
               <button
                 onClick={scrollPrev}
-                className="bg-white/90 hover:bg-white rounded-full p-2.5 shadow-lg transition-all duration-200 hover:scale-110"
+                className="bg-white/90 hover:bg-white rounded-full p-2.5 shadow-lg transition-colors duration-200"
+                style={{ willChange: 'background-color, transform' }}
               >
                 <ChevronRight className="w-5 h-5 rotate-180" />
               </button>
               <button
                 onClick={scrollNext}
-                className="bg-white/90 hover:bg-white rounded-full p-2.5 shadow-lg transition-all duration-200 hover:scale-110"
+                className="bg-white/90 hover:bg-white rounded-full p-2.5 shadow-lg transition-colors duration-200"
+                style={{ willChange: 'background-color, transform' }}
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -200,6 +258,7 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
               "hover:bg-primary/90 transition-colors duration-200",
               "md:hidden" // Mobile version
             )}
+            style={{ transform: 'translateZ(0)' }}
           >
             {t('viewAll')}
           </Link>
@@ -211,6 +270,7 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
               "bg-primary text-white font-medium",
               "hover:bg-primary/90 transition-colors duration-200"
             )}
+            style={{ transform: 'translateZ(0)' }}
           >
             {t('viewAll')}
           </Link>

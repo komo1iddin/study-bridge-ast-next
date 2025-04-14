@@ -28,15 +28,15 @@ const colors = [
   "indigo"
 ]
 
-// Animation variants
+// Animation variants - simplified for performance
 const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 10 }, // Reduced y distance
   visible: (i: number) => ({
     opacity: 1, 
     y: 0,
     transition: { 
-      delay: i * 0.1,
-      duration: 0.5,
+      delay: i * 0.05, // Reduced delay
+      duration: 0.3, // Reduced duration
       ease: "easeOut"
     }
   })
@@ -70,13 +70,17 @@ const Reason = ({ title, description, icon: Icon, color, index }: ReasonProps) =
       className="flex-1 min-w-[calc(100%-2rem)] md:min-w-[calc(50%-1.5rem)] lg:min-w-[calc(33.333%-1.75rem)]
                 shadow-md hover:shadow-xl rounded-xl border border-blue-100 hover:border-blue-200
                 bg-white
-                p-6 transition-all duration-300 hover:-translate-y-1"
+                p-6 transition-all duration-300"
       variants={fadeIn}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       custom={index}
-      whileHover={{ scale: 1.03 }}
+      style={{ 
+        transform: 'translateZ(0)',
+        backfaceVisibility: 'hidden',
+        willChange: 'opacity, transform'
+      }}
     >
       <div className={`w-14 h-14 rounded-lg ${bg} flex items-center justify-center mb-6`}>
         <Icon className={`w-7 h-7 ${text}`} />
@@ -121,14 +125,12 @@ export function AdvantagesStudyChina({ lang }: { lang: string }) {
           className="flex justify-center mb-4"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.3 }} // Reduced duration
+          style={{ willChange: "opacity, transform" }}
         >
-          <motion.div 
-            className="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-semibold"
-            whileHover={{ scale: 1.05 }}
-          >
+          <div className="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-semibold">
             {t('badge')}
-          </motion.div>
+          </div>
         </motion.div>
         
         {/* Section Title */}
@@ -136,21 +138,24 @@ export function AdvantagesStudyChina({ lang }: { lang: string }) {
           className="text-center mb-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.1 }} // Reduced duration and delay
+          style={{ willChange: "opacity" }}
         >
           <motion.h2 
             className="text-3xl md:text-4xl font-bold mb-4"
-            initial={{ y: 20 }}
+            initial={{ y: 10 }} // Reduced distance
             animate={{ y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.2 }} // Reduced duration and delay
+            style={{ willChange: "transform" }}
           >
             {t('title.main')} <span className="text-blue-600">{t('title.highlight')}</span>
           </motion.h2>
           <motion.p 
             className="text-lg text-gray-600 max-w-3xl mx-auto"
-            initial={{ y: 20 }}
+            initial={{ y: 10 }} // Reduced distance
             animate={{ y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.3, delay: 0.3 }} // Reduced duration and delay
+            style={{ willChange: "transform" }}
           >
             {t('subtitle')}
           </motion.p>
@@ -172,10 +177,11 @@ export function AdvantagesStudyChina({ lang }: { lang: string }) {
 
         {/* CTA Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }} // Reduced distance
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }} // Reduced duration
+          style={{ willChange: "opacity, transform" }}
         >
           <CTA 
             lang={lang} 
