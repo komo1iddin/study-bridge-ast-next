@@ -4,12 +4,13 @@ import Link from "next/link"
 import { getTranslations } from "next-intl/server"
 import { ChevronRight, GraduationCap, Building2, Users, Clock, BookOpen } from "lucide-react"
 import { Metadata } from "next"
+import { Suspense } from "react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import { HeroSection } from "@/components/home/hero"
+import { ClientHeroSection } from "@/components/home/hero/client-hero"
 import { SuccessPath } from "@/components/home/success-path"
 import { AdvantagesStudyChina } from "@/components/home/advantages-stydy-china"
 import { UniversityFeature } from "@/components/home/university-feature/university-feature"
@@ -167,13 +168,15 @@ export default async function Home(props: {
       <Navbar />
 
       <main className="flex-1">
-        {/* Hero Section */}
+        {/* Hero Section - Wrapped in Suspense */}
         <section 
           className="w-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-gray-100 py-16 md:py-24 lg:py-32"
           style={{ minHeight: 'calc(90vh - 4rem)' }}
         >
           <div className="container mx-auto px-4 md:px-6">
-            <HeroSection />
+            <Suspense fallback={<div className="min-h-[500px] flex items-center justify-center">Loading hero...</div>}>
+              <ClientHeroSection />
+            </Suspense>
           </div>
         </section>
 
