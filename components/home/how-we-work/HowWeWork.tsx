@@ -102,7 +102,7 @@ export default function HowWeWork({ className }: HowWeWorkProps) {
         
         {/* Steps */}
         <motion.div 
-          className="flex flex-col md:flex-row flex-wrap gap-8 relative max-w-sm md:max-w-none mx-auto"
+          className="flex flex-col md:flex-row flex-wrap gap-8 relative w-full mx-auto"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -133,7 +133,7 @@ export default function HowWeWork({ className }: HowWeWorkProps) {
               return (
                 <motion.div 
                   key={index} 
-                  className="group relative bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 z-10 flex-1 min-w-[calc(25%-24px)]"
+                  className="group relative bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 z-10 w-full md:flex-1 md:min-w-[calc(25%-24px)]"
                   variants={stepVariant}
                   custom={index}
                   whileHover={{ y: -5, transition: { duration: 0.2 } }}
@@ -178,7 +178,7 @@ export default function HowWeWork({ className }: HowWeWorkProps) {
                 return (
                   <motion.div 
                     key={index} 
-                    className="group relative bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 z-10 flex-1 min-w-[calc(25%-24px)]"
+                    className="group relative bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 z-10 w-full md:flex-1 md:min-w-[calc(25%-24px)]"
                     variants={stepVariant}
                     custom={index}
                     whileHover={{ y: -5, transition: { duration: 0.2 } }}
