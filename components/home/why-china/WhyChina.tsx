@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl'
 import { GraduationCap, Brain, DollarSign, Globe, Rocket, BookOpen } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { BackgroundElements } from './BackgroundElements'
-import { Button } from '@/components/ui/button'
+import { CTA } from '@/components/shared'
 import Link from 'next/link'
 
 // Define icons to use for each reason
@@ -171,46 +171,16 @@ export function WhyChina({ lang }: { lang: string }) {
         </div>
 
         {/* CTA Section */}
-        <motion.div 
-          className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-2xl p-8 md:p-10 shadow-xl"
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.h3 
-              className="text-2xl md:text-3xl font-bold mb-4"
-              initial={{ y: 10, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.4 }}
-            >
-              {t('cta.title')}
-            </motion.h3>
-            <motion.p 
-              className="text-lg mb-6 text-blue-100"
-              initial={{ y: 10, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.4 }}
-            >
-              {t('cta.description')}
-            </motion.p>
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.4 }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50" asChild>
-                <Link href={`/${lang}/why-china`}>
-                  {t('cta.button')}
-                </Link>
-              </Button>
-            </motion.div>
-          </div>
+          <CTA 
+            namespace="pages.home.whyChina" 
+            lang={lang} 
+          />
         </motion.div>
       </div>
     </section>
