@@ -48,4 +48,5 @@ const MobileFilters = ({ filters, cities, onFilterChange, onResetFilters }: Mobi
   )
 }
 
+export { MobileFilters }
 export default MobileFilters 

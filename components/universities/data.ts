@@ -1,17 +1,23 @@
 // Export education types for filter options
-export const educationTypes = [
+export const EDUCATION_TYPES = [
   { value: "bachelor", label: "Bachelor" },
   { value: "master", label: "Master's" },
   { value: "1+2", label: "1+2 Program" },
   { value: "language", label: "Language Course" },
 ]
 
-export const rankingRanges = [
+// Create alias for educationTypes for backward compatibility
+export const educationTypes = EDUCATION_TYPES
+
+export const RANKING_RANGES_OPTIONS = [
   { value: "1-5", label: "Top 5" },
   { value: "6-10", label: "6-10" },
   { value: "11-20", label: "11-20" },
   { value: "21+", label: "21+" },
 ]
+
+// Create alias for rankingRanges for backward compatibility
+export const rankingRanges = RANKING_RANGES_OPTIONS
 
 export interface University {
   id: string | number;
