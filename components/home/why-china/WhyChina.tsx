@@ -28,6 +28,20 @@ const colors = [
   "indigo"
 ]
 
+// Animation variants
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1, 
+    y: 0,
+    transition: { 
+      delay: i * 0.1,
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  })
+}
+
 interface ReasonProps {
   title: string
   description: string
@@ -57,9 +71,12 @@ const Reason = ({ title, description, icon: Icon, color, index }: ReasonProps) =
                 shadow-md hover:shadow-xl rounded-xl border border-blue-100 hover:border-blue-200
                 bg-gradient-to-br from-white/90 to-white/80 backdrop-blur-md
                 p-6 transition-all duration-300 hover:-translate-y-1"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
+      variants={fadeIn}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      custom={index}
+      whileHover={{ scale: 1.03 }}
     >
       <div className={`w-14 h-14 rounded-lg ${bg} flex items-center justify-center mb-6`}>
         <Icon className={`w-7 h-7 ${text}`} />
@@ -100,21 +117,44 @@ export function WhyChina({ lang }: { lang: string }) {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Badge */}
-        <div className="flex justify-center mb-4">
-          <div className="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-semibold">
+        <motion.div 
+          className="flex justify-center mb-4"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <motion.div 
+            className="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-semibold"
+            whileHover={{ scale: 1.05 }}
+          >
             {t('badge')}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         
         {/* Section Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold mb-4"
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             {t('title.main')} <span className="text-blue-600">{t('title.highlight')}</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-600 max-w-3xl mx-auto"
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             {t('subtitle')}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
         {/* Reasons Flex Container */}
         <div className="flex flex-wrap gap-8 mb-12">
@@ -134,21 +174,42 @@ export function WhyChina({ lang }: { lang: string }) {
         <motion.div 
           className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-2xl p-8 md:p-10 shadow-xl"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
         >
           <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+            <motion.h3 
+              className="text-2xl md:text-3xl font-bold mb-4"
+              initial={{ y: 10, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.4 }}
+            >
               {t('cta.title')}
-            </h3>
-            <p className="text-lg mb-6 text-blue-100">
+            </motion.h3>
+            <motion.p 
+              className="text-lg mb-6 text-blue-100"
+              initial={{ y: 10, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.4 }}
+            >
               {t('cta.description')}
-            </p>
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50" asChild>
-              <Link href={`/${lang}/why-china`}>
-                {t('cta.button')}
-              </Link>
-            </Button>
+            </motion.p>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.4 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50" asChild>
+                <Link href={`/${lang}/why-china`}>
+                  {t('cta.button')}
+                </Link>
+              </Button>
+            </motion.div>
           </div>
         </motion.div>
       </div>
