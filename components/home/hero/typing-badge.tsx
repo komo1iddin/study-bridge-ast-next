@@ -56,10 +56,18 @@ const TypingBadge = () => {
         'inline-flex items-center rounded-full bg-blue-100 py-1.5 px-4',
         'border border-blue-200 shadow-sm'
       )}
+      style={{
+        willChange: "opacity, transform",
+        transform: "translateZ(0)"
+      }}
     >
       <motion.div
         animate={{ scale: [1, 1.1, 1] }}
         transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+        style={{
+          willChange: "transform",
+          transform: "translateZ(0)"
+        }}
       >
         <Clock className="mr-2 h-4 w-4 text-blue-700 flex-shrink-0" />
       </motion.div>
@@ -70,6 +78,9 @@ const TypingBadge = () => {
             animate={{ opacity: cursorVisible ? 1 : 0 }}
             transition={{ duration: 0, repeat: Infinity, repeatType: "loop", ease: "linear" }}
             className="absolute top-0 bottom-0 my-auto right-[-2px] inline-block w-[1.5px] h-[0.9em] bg-blue-700"
+            style={{
+              willChange: "opacity"
+            }}
           />
         </div>
       </div>

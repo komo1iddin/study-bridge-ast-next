@@ -24,8 +24,8 @@ const CONTAINER_VARIANTS = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1
+      staggerChildren: 0.1,
+      delayChildren: 0.05
     }
   }
 }
@@ -35,7 +35,7 @@ const ITEM_VARIANTS = {
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.5 }
+    transition: { duration: 0.4 }
   }
 }
 
@@ -44,7 +44,7 @@ const DECORATIVE_VARIANTS = {
   visible: { 
     opacity: 1, 
     scale: 1,
-    transition: { duration: 0.6, delay: 0.3 }
+    transition: { duration: 0.5, delay: 0.2 }
   }
 }
 
@@ -74,11 +74,20 @@ export function ClientHeroSection() {
           initial="hidden"
           animate={isMounted ? "visible" : "hidden"}
           className="relative"
+          style={{
+            transform: "translateZ(0)",
+            backfaceVisibility: "hidden",
+            perspective: 1000
+          }}
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8 pt-1 pb-8 md:pt-4 md:pb-12 lg:pt-8 lg:pb-20 relative px-4 md:px-6 lg:px-0">
             {/* Left Content */}
             <div className="lg:col-span-7 z-10 flex flex-col items-center lg:items-start">
-              <m.div variants={ITEM_VARIANTS} className="w-full flex justify-center lg:justify-start">
+              <m.div 
+                variants={ITEM_VARIANTS} 
+                className="w-full flex justify-center lg:justify-start"
+                style={{ willChange: "opacity, transform" }}
+              >
                 <TypingBadge />
               </m.div>
 
@@ -87,7 +96,11 @@ export function ClientHeroSection() {
                 className={cn(
                   'text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 sm:mt-6 leading-tight text-center lg:text-left'
                 )}
-                style={{ fontFamily: "'Raleway', sans-serif" }}
+                style={{ 
+                  fontFamily: "'Raleway', sans-serif",
+                  willChange: "opacity, transform",
+                  transform: "translateZ(0)"
+                }}
               >
                 {t.rich('title', {
                   highlight: (chunks) => <span className="text-blue-600">{chunks}</span>,
@@ -139,7 +152,12 @@ export function ClientHeroSection() {
             <m.div 
               variants={ITEM_VARIANTS}
               className="lg:col-span-5 relative min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[600px] mt-4 lg:mt-0"
-              style={{ willChange: "transform" }} // Add will-change for GPU acceleration
+              style={{ 
+                willChange: "transform, opacity",
+                transform: "translateZ(0)",
+                backfaceVisibility: "hidden",
+                perspective: 1000
+              }}
             >
               <TestimonialCards />
 
@@ -147,10 +165,12 @@ export function ClientHeroSection() {
               <m.div 
                 variants={DECORATIVE_VARIANTS}
                 className="absolute top-[10%] right-[10%] w-20 h-20 md:w-32 md:h-32 bg-blue-100/50 rounded-full hidden sm:block"
+                style={{ willChange: "opacity, transform" }}
               />
               <m.div 
                 variants={DECORATIVE_VARIANTS}
                 className="absolute bottom-[20%] right-[30%] w-10 h-10 md:w-16 md:h-16 bg-amber-100/40 rounded-full hidden sm:block"
+                style={{ willChange: "opacity, transform" }}
               />
             </m.div>
           </div>

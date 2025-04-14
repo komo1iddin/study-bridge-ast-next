@@ -74,7 +74,7 @@ const testimonials: TestimonialData[] = [
 ]
 
 // Make sure we have enough testimonials to create a continuous, smooth scroll without gaps
-const extendedTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials]
+const extendedTestimonials = [...testimonials, ...testimonials]
 
 const TestimonialCards = () => {
   const containerRef = useRef(null)
@@ -91,6 +91,11 @@ const TestimonialCards = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       className={cn('relative h-full w-full overflow-hidden')}
+      style={{
+        willChange: "opacity",
+        transform: "translateZ(0)",
+        backfaceVisibility: "hidden"
+      }}
     >
       {/* Mobile view - single column scrolling */}
       <motion.div 
@@ -99,18 +104,24 @@ const TestimonialCards = () => {
         )}
         style={{
           maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
+          transform: "translateZ(0)",
+          backfaceVisibility: "hidden"
         }}
       >
         <motion.div
-          animate={{ y: [0, -1800] }}
+          animate={{ y: [0, -900] }}
           transition={{ 
-            duration: 80,
+            duration: 30,
             repeat: Infinity,
             repeatType: "loop",
             ease: "linear"
           }}
           className="px-2"
+          style={{
+            willChange: "transform",
+            transform: "translateZ(0)"
+          }}
         >
           {extendedTestimonials.map((testimonial, index) => (
             <TestimonialCard 
@@ -129,19 +140,25 @@ const TestimonialCards = () => {
         )}
         style={{
           maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
+          transform: "translateZ(0)",
+          backfaceVisibility: "hidden"
         }}
       >
         {/* Scrolling content */}
         <motion.div
-          animate={{ y: [0, -1000] }}
+          animate={{ y: [0, -500] }}
           transition={{ 
-            duration: 60,
+            duration: 25,
             repeat: Infinity,
             repeatType: "loop",
             ease: "linear"
           }}
           className="pr-2"
+          style={{
+            willChange: "transform",
+            transform: "translateZ(0)"
+          }}
         >
           {leftColumnCards.map((testimonial, index) => (
             <TestimonialCard 
@@ -160,19 +177,25 @@ const TestimonialCards = () => {
         )}
         style={{
           maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
+          transform: "translateZ(0)",
+          backfaceVisibility: "hidden"
         }}
       >
         {/* Scrolling content */}
         <motion.div
-          animate={{ y: [-500, -1500] }}
+          animate={{ y: [-250, -750] }}
           transition={{ 
-            duration: 60,
+            duration: 25,
             repeat: Infinity,
             repeatType: "loop",
             ease: "linear"
           }}
           className="pl-2"
+          style={{
+            willChange: "transform",
+            transform: "translateZ(0)"
+          }}
         >
           {rightColumnCards.map((testimonial, index) => (
             <TestimonialCard 
@@ -202,6 +225,10 @@ const TestimonialCard = ({ testimonial, isInView }: TestimonialCardProps) => {
       className={cn(
         'bg-white rounded-lg shadow-sm mb-4 p-3 sm:p-4 border border-gray-100'
       )}
+      style={{
+        willChange: "transform, opacity",
+        transform: "translateZ(0)"
+      }}
     >
       <div className={cn('flex items-center gap-2 sm:gap-3 mb-2')}>
         <Image
