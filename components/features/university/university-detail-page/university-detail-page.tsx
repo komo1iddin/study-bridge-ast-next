@@ -6,20 +6,20 @@ import { useSearchParams } from "next/navigation"
 import type { University } from "@/components/universities/data"
 
 // Import section components
-import { HeaderCard } from "./components/HeaderCard"
-import { OverviewSection } from "./components/OverviewSection"
-import { ProgramsSection } from "./components/ProgramsSection"
-import { AdmissionSection } from "./components/AdmissionSection"
-import { FacilitiesSection } from "./components/FacilitiesSection"
-import { ImagesSection } from "./components/ImagesSection"
-import { DormsSection } from "./components/DormsSection"
-import { FAQSection } from "./components/FAQSection"
-import { BackgroundDecoration } from "./components/BackgroundDecoration"
+import { HeaderCard } from "./components/header-card"
+import { OverviewSection } from "./components/overview-section"
+import { ProgramsSection } from "./components/programs-section"
+import { AdmissionSection } from "./components/admission-section"
+import { FacilitiesSection } from "./components/facilities-section"
+import { ImagesSection } from "./components/images-section"
+import { DormsSection } from "./components/dorms-section"
+import { FAQSection } from "./components/faq-section"
+import { BackgroundDecoration } from "./components/background-decoration"
 
 // Import sidebar components
-import { ApplicationCard } from "./components/sidebar/ApplicationCard"
-import { StatsCard } from "./components/sidebar/StatsCard"
-import { ContactCard } from "./components/sidebar/ContactCard"
+import { ApplicationCard } from "./components/sidebar/application-card"
+import { StatsCard } from "./components/sidebar/stats-card"
+import { ContactCard } from "./components/sidebar/contact-card"
 
 interface UniversityDetailPageProps {
   university: University
@@ -48,6 +48,9 @@ interface UniversityDetailTranslations {
     rank: string
   }
 }
+
+// Define valid tabs as a constant
+const VALID_TABS = ["overview", "programs", "admission", "facilities", "images", "dorms", "faq"]
 
 // Mock translations - in a real app these would come from i18n
 const getUniversityDetailTranslations = (lang: string): UniversityDetailTranslations => {
@@ -97,7 +100,7 @@ export function UniversityDetailPage({ university, lang = "en" }: UniversityDeta
   
   // Validate tab name
   const isValidTab = (tab: string): boolean => {
-    return ["overview", "programs", "admission", "facilities", "images", "dorms", "faq"].includes(tab)
+    return VALID_TABS.includes(tab)
   }
   
   // Tab change handler

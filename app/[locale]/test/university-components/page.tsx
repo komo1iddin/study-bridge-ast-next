@@ -6,20 +6,20 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 // Import section components
-import { HeaderCard } from '@/components/features/university/UniversityDetailPage/components/HeaderCard'
-import { OverviewSection } from '@/components/features/university/UniversityDetailPage/components/OverviewSection'
-import { ProgramsSection } from '@/components/features/university/UniversityDetailPage/components/ProgramsSection'
-import { AdmissionSection } from '@/components/features/university/UniversityDetailPage/components/AdmissionSection'
-import { FacilitiesSection } from '@/components/features/university/UniversityDetailPage/components/FacilitiesSection'
-import { ImagesSection } from '@/components/features/university/UniversityDetailPage/components/ImagesSection'
-import { DormsSection } from '@/components/features/university/UniversityDetailPage/components/DormsSection'
-import { FAQSection } from '@/components/features/university/UniversityDetailPage/components/FAQSection'
-import { BackgroundDecoration } from '@/components/features/university/UniversityDetailPage/components/BackgroundDecoration'
+import { HeaderCard } from '@/components/features/university/university-detail-page/components/header-card'
+import { OverviewSection } from '@/components/features/university/university-detail-page/components/overview-section'
+import { ProgramsSection } from '@/components/features/university/university-detail-page/components/programs-section'
+import { AdmissionSection } from '@/components/features/university/university-detail-page/components/admission-section'
+import { FacilitiesSection } from '@/components/features/university/university-detail-page/components/facilities-section'
+import { ImagesSection } from '@/components/features/university/university-detail-page/components/images-section'
+import { DormsSection } from '@/components/features/university/university-detail-page/components/dorms-section'
+import { FAQSection } from '@/components/features/university/university-detail-page/components/faq-section'
+import { BackgroundDecoration } from '@/components/features/university/university-detail-page/components/background-decoration'
 
 // Import sidebar components
-import { ApplicationCard } from '@/components/features/university/UniversityDetailPage/components/sidebar/ApplicationCard'
-import { StatsCard } from '@/components/features/university/UniversityDetailPage/components/sidebar/StatsCard'
-import { ContactCard } from '@/components/features/university/UniversityDetailPage/components/sidebar/ContactCard'
+import { ApplicationCard } from '@/components/features/university/university-detail-page/components/sidebar/application-card'
+import { StatsCard } from '@/components/features/university/university-detail-page/components/sidebar/stats-card'
+import { ContactCard } from '@/components/features/university/university-detail-page/components/sidebar/contact-card'
 
 // Mock university data for testing
 const mockUniversity = {

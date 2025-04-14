@@ -1,1 +1,1 @@
-export { default as HowWeWork } from './HowWeWork' 
+export { default as HowWeWork } from './how-we-work' 

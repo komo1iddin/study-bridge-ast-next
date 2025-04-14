@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { GraduationCap, Brain, DollarSign, Globe, Rocket, BookOpen } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { BackgroundElements } from './BackgroundElements'
+import { BackgroundElements } from './background-elements'
 import { CTA } from '@/components/shared'
 import Link from 'next/link'
 

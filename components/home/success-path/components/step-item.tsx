@@ -3,10 +3,9 @@
 import React, { useRef, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { CheckCircle2 } from 'lucide-react'
-import StepBenefit from './StepBenefit'
+import StepBenefit from './step-benefit'
 
-// Colors for steps
-const stepColors = [
+const STEP_COLORS = [
   "#2563eb", // Blue
   "#C82220", // Red
   "#16a34a", // Green
@@ -38,7 +37,7 @@ const StepItem = ({ step, index, isLast, visibleSteps, setVisibleSteps }: StepIt
     }
   }, [isInView, step.id, visibleSteps, setVisibleSteps])
 
-  const stepColor = stepColors[index % stepColors.length]
+  const stepColor = STEP_COLORS[index % STEP_COLORS.length]
   const isVisible = visibleSteps.includes(step.id)
 
   return (

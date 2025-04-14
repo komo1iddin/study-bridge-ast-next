@@ -2,17 +2,20 @@
 
 import React, { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
-import UniversityCard from './UniversityCard'
+import { UniversityCard } from './university-card'
 import { RANKING_RANGES, ITEMS_PER_PAGE, type University, type Filters } from './data'
 import { Button } from '@/components/ui/button'
 import { ChevronUp } from 'lucide-react'
+
+// Constants
+const SCROLL_THRESHOLD = 500
 
 interface UniversityListProps {
   universities: University[]
   filters: Filters
 }
 
-const UniversityList = ({ universities, filters }: UniversityListProps) => {
+export function UniversityList({ universities, filters }: UniversityListProps) {
   // Get translations for the page
   const t = useTranslations('pages.universities')
   
@@ -81,7 +84,7 @@ const UniversityList = ({ universities, filters }: UniversityListProps) => {
   // Handle scroll events
   useEffect(() => {
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 500)
+      setShowScrollTop(window.scrollY > SCROLL_THRESHOLD)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -153,6 +156,4 @@ const UniversityList = ({ universities, filters }: UniversityListProps) => {
       )}
     </div>
   )
-}
-
-export default UniversityList 
+} 

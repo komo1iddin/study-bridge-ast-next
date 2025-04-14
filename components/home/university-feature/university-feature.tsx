@@ -8,9 +8,15 @@ import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
 
-import { UniversityCard } from './UniversityCard'
-import { BackgroundDecoration } from './BackgroundDecoration'
+import { UniversityCard } from './university-card'
+import { BackgroundDecoration } from './background-decoration'
 import type { UniversityFeatureItem } from './types'
+
+const AUTOPLAY_DELAY = 4000
+const LOADING_DELAY = 300
+const ANIMATION_INTERVAL = 2000
+const MOBILE_BREAKPOINT = 768
+const CAROUSEL_SPEED = 20
 
 interface UniversityFeatureProps {
   universities: UniversityFeatureItem[]
@@ -31,7 +37,7 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
 
   // Refs
   const autoplayRef = useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: false })
+    Autoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: false })
   )
 
   // Initialize carousel
@@ -43,14 +49,13 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
     inViewThreshold: 0.7,
     dragFree: false,
     containScroll: "trimSnaps",
-    watchDrag: true,
-    speed: 20
+    watchDrag: true
   }, [autoplayRef.current])
 
   // Effects
   useEffect(() => {
     // Check if mobile
-    const checkIfMobile = () => setIsMobile(window.innerWidth <= 768)
+    const checkIfMobile = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT)
     checkIfMobile()
     window.addEventListener('resize', checkIfMobile)
 
@@ -64,12 +69,12 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
         setError(t('error'))
         setLoading(false)
       }
-    }, 300)
+    }, LOADING_DELAY)
 
     // Start swipe animation
     const animInterval = setInterval(() => {
       setSwipeAnimationActive(prev => !prev)
-    }, 2000)
+    }, ANIMATION_INTERVAL)
 
     // Initialize carousel after DOM is ready
     if (emblaApi) {

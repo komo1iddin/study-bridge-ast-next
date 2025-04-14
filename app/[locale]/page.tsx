@@ -11,7 +11,7 @@ import Footer from "@/components/footer"
 import { HeroSection } from "@/components/home/hero"
 import { SuccessPath } from "@/components/home/success-path"
 import { AdvantagesStudyChina } from "@/components/home/advantages-stydy-china"
-import { UniversityFeature } from "@/components/home/university-feature/UniversityFeature"
+import { UniversityFeature } from "@/components/home/university-feature/university-feature"
 import { OurTeam, OurPartners, HowWeWork, MissionStats, Testimonials, ComparisonStudyBridge } from "@/components/home"
 
 // Sample universities data

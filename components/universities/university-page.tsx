@@ -4,20 +4,23 @@ import React, { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { Home } from 'lucide-react'
 import Link from 'next/link'
-import BackgroundDecoration from './BackgroundDecoration'
-import UniversityList from './UniversityList'
-import MobileFilters from './MobileFilters'
-import FilterSidebar from './FilterSidebar'
+import { BackgroundDecoration } from './background-decoration'
+import { UniversityList } from './university-list'
+import { MobileFilters } from './mobile-filters'
+import { FilterSidebar } from './filter-sidebar'
 import { DEFAULT_FILTERS, type University, type Filters } from './data'
+
+// Loading delay constant
+const LOADING_DELAY = 800
 
 interface UniversityPageProps {
   universities: University[]
   cities: string[]
 }
 
-const UniversityPage = ({ universities, cities }: UniversityPageProps) => {
+export function UniversityPage({ universities, cities }: UniversityPageProps) {
   // Get translations for the page
-  const t = useTranslations('universities')
+  const t = useTranslations('pages.universities')
 
   // Set up state
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS)
@@ -28,7 +31,7 @@ const UniversityPage = ({ universities, cities }: UniversityPageProps) => {
     // Simulate loading for better UX
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 800)
+    }, LOADING_DELAY)
     
     return () => clearTimeout(timer)
   }, [])
@@ -140,6 +143,4 @@ const UniversityPage = ({ universities, cities }: UniversityPageProps) => {
       </div>
     </div>
   )
-}
-
-export default UniversityPage 
+} 

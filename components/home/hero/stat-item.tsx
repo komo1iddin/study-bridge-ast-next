@@ -10,23 +10,33 @@ interface StatItemProps {
   delay?: number
 }
 
-const StatItem = ({ value, label, delay = 0 }: StatItemProps) => {
-  // Simple animation variant
+const ITEM_VARIANT = {
+  hidden: { opacity: 0, y: 15 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { 
+      duration: 0.6, 
+      delay: 0,
+      ease: "easeOut" 
+    }
+  },
+  hover: {
+    y: -5,
+    boxShadow: "0 8px 15px -5px rgba(0, 0, 0, 0.1)",
+    transition: { duration: 0.2 }
+  }
+}
+
+function StatItem({ value, label, delay = 0 }: StatItemProps) {
   const itemVariant = {
-    hidden: { opacity: 0, y: 15 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { 
-        duration: 0.6, 
-        delay,
-        ease: "easeOut" 
+    ...ITEM_VARIANT,
+    visible: {
+      ...ITEM_VARIANT.visible,
+      transition: {
+        ...ITEM_VARIANT.visible.transition,
+        delay
       }
-    },
-    hover: {
-      y: -5,
-      boxShadow: "0 8px 15px -5px rgba(0, 0, 0, 0.1)",
-      transition: { duration: 0.2 }
     }
   }
 
@@ -67,4 +77,4 @@ const StatItem = ({ value, label, delay = 0 }: StatItemProps) => {
   )
 }
 
-export default StatItem 
+export { StatItem } 

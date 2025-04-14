@@ -6,7 +6,7 @@ interface StepBenefitProps {
   stepColor: string
 }
 
-const StepBenefit = ({ benefit, stepColor }: StepBenefitProps) => {
+function StepBenefit({ benefit, stepColor }: StepBenefitProps) {
   return (
     <div 
       className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"

@@ -1,1 +1,1 @@
-export { default as MissionStats } from './MissionStats' 
+export { default as MissionStats } from './mission-stats' 

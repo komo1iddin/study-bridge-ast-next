@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import { ComparisonContent } from '@/components/comparison'
+import { ComparisonContent } from '@/components/comparison/comparison-content'
 
 interface PageProps {
   params: { locale: string };

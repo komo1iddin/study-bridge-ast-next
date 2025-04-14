@@ -1,1 +1,1 @@
-export { default as SuccessPath } from './SuccessPath' 
+export { SuccessPath } from './success-path' 

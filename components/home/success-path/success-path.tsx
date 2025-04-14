@@ -9,7 +9,7 @@ import {
   CallToAction 
 } from './components'
 
-const SuccessPath = () => {
+export function SuccessPath() {
   const t = useTranslations('pages.home.successPath')
   const [visibleSteps, setVisibleSteps] = useState<number[]>([])
   
@@ -114,6 +114,4 @@ const SuccessPath = () => {
       </div>
     </section>
   )
-}
-
-export default SuccessPath 
+} 

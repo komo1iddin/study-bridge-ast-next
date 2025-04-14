@@ -12,13 +12,12 @@
  * 
  * See OUR_TEAM_PARTNERS_README.md for detailed documentation on team and partners components.
  */
-
+export { HeroSection } from './hero'
 export { default as OurTeam } from './our-team'
 export { default as OurPartners } from './our-partners'
-export { default as HowWeWork } from './how-we-work/HowWeWork'
-export { default as MissionStats } from './mission-stats/MissionStats'
-export { default as Testimonials } from './testimonials/Testimonials'
-export { HeroSection } from './hero'
+export { default as HowWeWork } from './how-we-work/how-we-work'
+export { default as MissionStats } from './mission-stats/mission-stats'
+export { default as Testimonials } from './testimonials/testimonials'
 export { AdvantagesStudyChina } from './advantages-stydy-china'
 export { ComparisonStudyBridge } from './comparison-study-bridge'
-export { UniversityFeature } from './university-feature/UniversityFeature' 
+export { UniversityFeature } from './university-feature/university-feature' 
