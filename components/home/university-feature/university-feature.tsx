@@ -55,6 +55,16 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [swipeAnimationActive, setSwipeAnimationActive] = useState(true)
   const [hasAutoplay, setHasAutoplay] = useState(false)
+  const [isSectionVisible, setIsSectionVisible] = useState(false)
+  const [isHeaderVisible, setIsHeaderVisible] = useState(false)
+  const [isCarouselVisible, setIsCarouselVisible] = useState(false)
+  const [isButtonVisible, setIsButtonVisible] = useState(false)
+
+  // Refs for Intersection Observer
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const headerRef = useRef<HTMLDivElement>(null)
+  const carouselRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLDivElement>(null)
 
   // Check if mobile at mount - do this before creating carousel
   useEffect(() => {
@@ -104,6 +114,73 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
     [handleResize]
   )
 
+  // Set up Intersection Observer for scroll animations
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px'
+    }
+
+    // Observer for the entire section
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsSectionVisible(true)
+          sectionObserver.unobserve(entry.target)
+        }
+      })
+    }, observerOptions)
+
+    // Observer for the header
+    const headerObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            setIsHeaderVisible(true)
+          }, 100)
+          headerObserver.unobserve(entry.target)
+        }
+      })
+    }, observerOptions)
+
+    // Observer for the carousel
+    const carouselObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            setIsCarouselVisible(true)
+          }, 200)
+          carouselObserver.unobserve(entry.target)
+        }
+      })
+    }, observerOptions)
+
+    // Observer for the button
+    const buttonObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            setIsButtonVisible(true)
+          }, 300)
+          buttonObserver.unobserve(entry.target)
+        }
+      })
+    }, observerOptions)
+
+    // Initialize observers
+    if (sectionRef.current) sectionObserver.observe(sectionRef.current)
+    if (headerRef.current) headerObserver.observe(headerRef.current)
+    if (carouselRef.current) carouselObserver.observe(carouselRef.current)
+    if (buttonRef.current) buttonObserver.observe(buttonRef.current)
+
+    return () => {
+      if (sectionRef.current) sectionObserver.unobserve(sectionRef.current)
+      if (headerRef.current) headerObserver.unobserve(headerRef.current)
+      if (carouselRef.current) carouselObserver.unobserve(carouselRef.current)
+      if (buttonRef.current) buttonObserver.unobserve(buttonRef.current)
+    }
+  }, [])
+
   // Effects
   useEffect(() => {
     // Listen for resize events
@@ -147,7 +224,12 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
 
   return (
     <div 
-      className="w-full bg-[#F5F9FB] py-12 relative"
+      ref={sectionRef}
+      className={cn(
+        "w-full bg-[#F5F9FB] py-12 relative",
+        "transition-opacity duration-700",
+        isSectionVisible ? "opacity-100" : "opacity-0"
+      )}
       style={{ 
         transform: 'translateZ(0)', 
         backfaceVisibility: 'hidden' 
@@ -156,7 +238,14 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
       <BackgroundDecoration />
       <div className="w-full max-w-[1920px] mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-8">
+        <div 
+          ref={headerRef}
+          className={cn(
+            "text-center mb-8",
+            "transition-all duration-700 transform",
+            isHeaderVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          )}
+        >
           <h2 className="text-3xl font-bold mb-2">
             {t('leadingUniversities')}
           </h2>
@@ -166,7 +255,11 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
         </div>
 
         {/* Swipe Indicator - GPU accelerated */}
-        <div className="flex justify-end mb-4">
+        <div className={cn(
+          "flex justify-end mb-4",
+          "transition-all duration-700",
+          isCarouselVisible ? "opacity-100" : "opacity-0"
+        )}>
           <div
             className={cn(
               "flex items-center gap-2 px-4 py-2 bg-white backdrop-blur-sm rounded-full shadow-sm transition-transform duration-700",
@@ -186,7 +279,12 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
 
         {/* Carousel with GPU acceleration */}
         <div 
-          className="relative mb-8 pb-6"
+          ref={carouselRef}
+          className={cn(
+            "relative mb-8 pb-6",
+            "transition-all duration-700 transform",
+            isCarouselVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          )}
           style={{ 
             transform: 'translateZ(0)', 
             backfaceVisibility: 'hidden' 
@@ -246,7 +344,11 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
           {/* Navigation Buttons */}
           {!isMobile && visibleUniversities.length > 0 && (
             <div 
-              className="absolute -bottom-2 left-4 flex items-center gap-2 z-10"
+              className={cn(
+                "absolute -bottom-2 left-4 flex items-center gap-2 z-10",
+                "transition-all duration-700",
+                isCarouselVisible ? "opacity-100" : "opacity-0"
+              )}
               style={{
                 transform: 'translateZ(0)'
               }}
@@ -270,7 +372,14 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-12">
+        <div 
+          ref={buttonRef}
+          className={cn(
+            "text-center mt-12",
+            "transition-all duration-700 transform",
+            isButtonVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          )}
+        >
           <Link
             href={`/${lang}/universities`}
             className={cn(

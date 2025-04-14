@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { ChevronRight, GraduationCap, MapPin } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { useEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
 import type { UniversityFeatureItem } from './types'
 
@@ -16,6 +17,32 @@ interface UniversityCardProps {
 export function UniversityCard({ university, lang, className }: UniversityCardProps) {
   const t = useTranslations('universityFeature')
   const router = useRouter()
+  const cardRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.2, rootMargin: '0px' }
+    )
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current)
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current)
+      }
+    }
+  }, [])
 
   const handleMoreInfo = () => {
     router.push(`/${lang}/universities/${university.slug || university.id}`)
@@ -23,16 +50,22 @@ export function UniversityCard({ university, lang, className }: UniversityCardPr
 
   return (
     <div 
+      ref={cardRef}
       className={cn(
-        "overflow-hidden group transition-all duration-300 rounded-xl max-w-[300px] w-full",
+        "overflow-hidden group transition-all duration-500 rounded-xl max-w-[300px] w-full",
         "border border-gray-200",
         "bg-[linear-gradient(to_bottom_right,rgba(255,255,255,0.9),rgba(255,255,255,0.8))]",
         "backdrop-blur-[10px]",
         "shadow-[0_1px_3px_0px_rgba(0,0,0,0.06)]",
         "hover:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)]",
         "hover:border-[rgba(59,130,246,0.2)]",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
         className
       )}
+      style={{ 
+        transform: 'translateZ(0)', 
+        backfaceVisibility: 'hidden'
+      }}
     >
       <div className="relative w-full aspect-[16/9] overflow-hidden">
         <Image 
