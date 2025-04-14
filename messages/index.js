@@ -33,6 +33,47 @@ import ourPartnersEn from './pages/home/components/ourPartners/en.json';
 import ourPartnersRu from './pages/home/components/ourPartners/ru.json';
 import ourPartnersUz from './pages/home/components/ourPartners/uz.json';
 
+// Import new home component translations
+import heroEn from './pages/home/components/hero/en.json';
+import heroRu from './pages/home/components/hero/ru.json';
+import heroUz from './pages/home/components/hero/uz.json';
+
+import metadataEn from './pages/home/components/metadata/en.json';
+import metadataRu from './pages/home/components/metadata/ru.json';
+import metadataUz from './pages/home/components/metadata/uz.json';
+
+import howWeWorkEn from './pages/home/components/howWeWork/en.json';
+import howWeWorkRu from './pages/home/components/howWeWork/ru.json';
+import howWeWorkUz from './pages/home/components/howWeWork/uz.json';
+
+import testimonialsEn from './pages/home/components/testimonials/en.json';
+import testimonialsRu from './pages/home/components/testimonials/ru.json';
+import testimonialsUz from './pages/home/components/testimonials/uz.json';
+
+import whyChinaCompEn from './pages/home/components/whyChina/en.json';
+import whyChinaCompRu from './pages/home/components/whyChina/ru.json';
+import whyChinaCompUz from './pages/home/components/whyChina/uz.json';
+
+import servicesEn from './pages/home/components/services/en.json';
+import servicesRu from './pages/home/components/services/ru.json';
+import servicesUz from './pages/home/components/services/uz.json';
+
+import universitiesCompEn from './pages/home/components/universities/en.json';
+import universitiesCompRu from './pages/home/components/universities/ru.json';
+import universitiesCompUz from './pages/home/components/universities/uz.json';
+
+import successPathEn from './pages/home/components/successPath/en.json';
+import successPathRu from './pages/home/components/successPath/ru.json';
+import successPathUz from './pages/home/components/successPath/uz.json';
+
+import ctaEn from './pages/home/components/cta/en.json';
+import ctaRu from './pages/home/components/cta/ru.json';
+import ctaUz from './pages/home/components/cta/uz.json';
+
+import missionStatsEn from './pages/home/components/missionStats/en.json';
+import missionStatsRu from './pages/home/components/missionStats/ru.json';
+import missionStatsUz from './pages/home/components/missionStats/uz.json';
+
 import whyChinaEn from './pages/why-china/en.json';
 import whyChinaRu from './pages/why-china/ru.json';
 import whyChinaUz from './pages/why-china/uz.json';
@@ -61,7 +102,16 @@ export const messages = {
     common: commonEn,
     pages: {
       home: {
-        ...homeEn,
+        metadata: metadataEn,
+        hero: heroEn,
+        howWeWork: howWeWorkEn,
+        missionStats: missionStatsEn,
+        testimonials: testimonialsEn,
+        whyChina: whyChinaCompEn,
+        services: servicesEn,
+        universities: universitiesCompEn,
+        successPath: successPathEn,
+        cta: ctaEn,
         components: {
           ourTeam: ourTeamEn,
           ourPartners: ourPartnersEn
@@ -81,7 +131,16 @@ export const messages = {
     common: commonRu,
     pages: {
       home: {
-        ...homeRu,
+        metadata: metadataRu,
+        hero: heroRu,
+        howWeWork: howWeWorkRu,
+        missionStats: missionStatsRu,
+        testimonials: testimonialsRu,
+        whyChina: whyChinaCompRu,
+        services: servicesRu,
+        universities: universitiesCompRu,
+        successPath: successPathRu,
+        cta: ctaRu,
         components: {
           ourTeam: ourTeamRu,
           ourPartners: ourPartnersRu
@@ -101,7 +160,16 @@ export const messages = {
     common: commonUz,
     pages: {
       home: {
-        ...homeUz,
+        metadata: metadataUz,
+        hero: heroUz,
+        howWeWork: howWeWorkUz,
+        missionStats: missionStatsUz,
+        testimonials: testimonialsUz,
+        whyChina: whyChinaCompUz,
+        services: servicesUz,
+        universities: universitiesCompUz,
+        successPath: successPathUz,
+        cta: ctaUz,
         components: {
           ourTeam: ourTeamUz,
           ourPartners: ourPartnersUz
