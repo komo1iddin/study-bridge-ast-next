@@ -6,6 +6,9 @@ import { CheckCircle2, XCircle } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useEffect, useState } from 'react'
 
+// Mobile breakpoint
+const MOBILE_BREAKPOINT = 768
+
 interface ComparisonStudyBridgeProps {
   className?: string
 }
@@ -13,10 +16,22 @@ interface ComparisonStudyBridgeProps {
 export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps) {
   const t = useTranslations('pages.home.comparison')
   const [isMounted, setIsMounted] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   // Mount effect to prevent hydration issues
   useEffect(() => {
     setIsMounted(true)
+    
+    // Check if mobile
+    const checkIfMobile = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT)
+    checkIfMobile()
+    
+    // Add resize listener
+    window.addEventListener('resize', checkIfMobile)
+    
+    return () => {
+      window.removeEventListener('resize', checkIfMobile)
+    }
   }, [])
 
   // Animation variants - optimized for performance
@@ -72,7 +87,10 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
       {/* Our Service Column - Highlighted */}
       <motion.div
         variants={itemVariants}
-        className="bg-gradient-to-b from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl p-8 shadow-lg relative z-10 -mt-4 md:mt-[-2rem] order-1 md:order-2"
+        className={cn(
+          "bg-gradient-to-b from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl p-8 shadow-lg relative z-10 -mt-4 md:mt-[-2rem] order-1 md:order-2",
+          !isMobile && "hover:shadow-xl"
+        )}
         style={{
           willChange: "opacity, transform",
           transform: "translateZ(0)",

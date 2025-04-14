@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl'
 import { GraduationCap, Brain, DollarSign, Globe, Rocket, BookOpen } from 'lucide-react'
 import { BackgroundElements } from './background-elements'
 import { CTA } from '@/components/shared'
-import Link from 'next/link'
 
 // Define icons to use for each reason
 const icons = [
@@ -37,7 +36,21 @@ interface ReasonProps {
 
 const Reason = ({ title, description, icon: Icon, color, index }: ReasonProps) => {
   const [isVisible, setIsVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const reasonRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // Check if mobile
+    const checkIfMobile = () => setIsMobile(window.innerWidth <= 768)
+    checkIfMobile()
+    
+    // Add resize listener
+    window.addEventListener('resize', checkIfMobile)
+    
+    return () => {
+      window.removeEventListener('resize', checkIfMobile)
+    }
+  }, [])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -84,7 +97,7 @@ const Reason = ({ title, description, icon: Icon, color, index }: ReasonProps) =
     <div
       ref={reasonRef}
       className={`flex-1 min-w-[calc(100%-2rem)] md:min-w-[calc(50%-1.5rem)] lg:min-w-[calc(33.333%-1.75rem)]
-                shadow-md hover:shadow-xl rounded-xl border border-blue-100 hover:border-blue-200
+                shadow-md ${!isMobile ? 'hover:shadow-xl hover:border-blue-200' : ''} rounded-xl border border-blue-100
                 bg-white p-6 transition-all duration-300
                 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
       style={{ 
@@ -140,7 +153,7 @@ export function AdvantagesStudyChina({ lang }: { lang: string }) {
     }
 
     const createObserver = (
-      ref: React.RefObject<HTMLElement>, 
+      ref: React.RefObject<HTMLDivElement>, 
       setVisibility: React.Dispatch<React.SetStateAction<boolean>>
     ) => {
       const observer = new IntersectionObserver((entries) => {
@@ -159,9 +172,9 @@ export function AdvantagesStudyChina({ lang }: { lang: string }) {
       return observer
     }
 
-    const badgeObserver = createObserver(badgeRef, setIsBadgeVisible)
-    const titleObserver = createObserver(titleRef, setIsTitleVisible)
-    const ctaObserver = createObserver(ctaRef, setIsCTAVisible)
+    const badgeObserver = createObserver(badgeRef as React.RefObject<HTMLDivElement>, setIsBadgeVisible)
+    const titleObserver = createObserver(titleRef as React.RefObject<HTMLDivElement>, setIsTitleVisible)
+    const ctaObserver = createObserver(ctaRef as React.RefObject<HTMLDivElement>, setIsCTAVisible)
 
     return () => {
       if (badgeRef.current) badgeObserver.unobserve(badgeRef.current)

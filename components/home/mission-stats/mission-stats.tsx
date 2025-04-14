@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { 
   Users, 
@@ -17,6 +17,9 @@ import { cn } from '@/lib/utils'
 interface MissionStatsProps {
   className?: string
 }
+
+// Mobile breakpoint
+const MOBILE_BREAKPOINT = 768
 
 // Define the stats data
 const stats = [
@@ -61,6 +64,20 @@ const advantages = [
 export default function MissionStats({ className }: MissionStatsProps) {
   const t = useTranslations('pages.home')
   const statsGridRef = useRef<HTMLDivElement>(null)
+  const [isMobile, setIsMobile] = useState(false)
+  
+  // Check if mobile device
+  useEffect(() => {
+    const checkIfMobile = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT)
+    checkIfMobile()
+    
+    // Add resize listener
+    window.addEventListener('resize', checkIfMobile)
+    
+    return () => {
+      window.removeEventListener('resize', checkIfMobile)
+    }
+  }, [])
   
   useEffect(() => {
     // Animation for counter - optimized for performance
@@ -151,7 +168,10 @@ export default function MissionStats({ className }: MissionStatsProps) {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-md border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1 flex flex-col h-full"
+              className={cn(
+                "bg-white rounded-2xl p-6 shadow-md border border-blue-100 transition-all duration-300 flex flex-col h-full",
+                !isMobile && "hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1"
+              )}
               style={{
                 transform: 'translateZ(0)', // Force GPU acceleration
                 willChange: 'transform',
@@ -193,9 +213,18 @@ export default function MissionStats({ className }: MissionStatsProps) {
                 transitionDelay: `${index * 50}ms` // Use CSS instead of data-aos
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
-              <div className="relative bg-white rounded-2xl p-8 shadow-md border border-blue-100 hover:border-blue-200 transition-all duration-300 group-hover:translate-y-[-2px] group-hover:shadow-xl h-full flex flex-col">
-                <div className="text-blue-600 mb-4 transition-transform duration-300 group-hover:scale-110">
+              <div className={cn(
+                "absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl opacity-0 blur transition-all duration-300",
+                !isMobile && "group-hover:opacity-100"
+              )}></div>
+              <div className={cn(
+                "relative bg-white rounded-2xl p-8 shadow-md border border-blue-100 transition-all duration-300 h-full flex flex-col",
+                !isMobile && "hover:border-blue-200 group-hover:translate-y-[-2px] group-hover:shadow-xl"
+              )}>
+                <div className={cn(
+                  "text-blue-600 mb-4 transition-transform duration-300",
+                  !isMobile && "group-hover:scale-110"
+                )}>
                   <advantage.icon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">

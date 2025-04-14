@@ -18,6 +18,10 @@ const config: Config = {
       },
     },
   	extend: {
+  		fontFamily: {
+  			sans: ["Montserrat", "Arial", "sans-serif"],
+  			raleway: ["Raleway", "Arial", "sans-serif"],
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
