@@ -8,7 +8,7 @@
  * MissionStats - Displays key statistics and advantages
  * Testimonials - Showcases student testimonials
  * HeroSection - Main hero section with application form
- * ComparisonSection - Compares our services with alternatives
+ * ComparisonStudyBridge - Compares our services with alternatives
  * 
  * See OUR_TEAM_PARTNERS_README.md for detailed documentation on team and partners components.
  */
@@ -19,6 +19,6 @@ export { default as HowWeWork } from './how-we-work/HowWeWork'
 export { default as MissionStats } from './mission-stats/MissionStats'
 export { default as Testimonials } from './testimonials/Testimonials'
 export { HeroSection } from './hero'
-export { WhyChina } from './advantages-stydy-china/WhyChina'
-export { ComparisonSection } from './comparison-section/ComparisonSection'
+export { AdvantagesStudyChina } from './advantages-stydy-china'
+export { ComparisonStudyBridge } from './comparison-section'
 export { UniversityFeature } from './university-feature/UniversityFeature' 

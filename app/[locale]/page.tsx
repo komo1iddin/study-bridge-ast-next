@@ -12,7 +12,7 @@ import { HeroSection } from "@/components/home/hero"
 import { SuccessPath } from "@/components/home/success-path"
 import { AdvantagesStudyChina } from "@/components/home/advantages-stydy-china"
 import { UniversityFeature } from "@/components/home/university-feature/UniversityFeature"
-import { OurTeam, OurPartners, HowWeWork, MissionStats, Testimonials, ComparisonSection } from "@/components/home"
+import { OurTeam, OurPartners, HowWeWork, MissionStats, Testimonials, ComparisonStudyBridge } from "@/components/home"
 
 // Sample universities data
 const sampleUniversities = [
@@ -189,7 +189,7 @@ export default async function Home(props: {
         />
 
         {/* Comparison Section */}
-        <ComparisonSection />
+        <ComparisonStudyBridge />
 
         {/* Success Path Section */}
         <SuccessPath />
