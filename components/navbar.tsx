@@ -58,7 +58,11 @@ export default function Navbar() {
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden'
+      // Add a slight delay to ensure body scroll lock happens after the menu appears
+      const timer = setTimeout(() => {
+        document.body.style.overflow = 'hidden'
+      }, 10)
+      return () => clearTimeout(timer)
     } else {
       document.body.style.overflow = ''
     }
@@ -69,7 +73,7 @@ export default function Navbar() {
   }, [isMenuOpen])
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
+    setIsMenuOpen(prev => !prev)
   }
 
   // Define navigation items to avoid repetition
@@ -100,7 +104,8 @@ export default function Navbar() {
         shouldRenderTransitions ? "transition-all duration-200" : "",
         scrolled 
           ? "border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm" 
-          : "bg-background/80 backdrop-blur-sm"
+          : "bg-background/80 backdrop-blur-sm",
+        isMenuOpen ? "menu-open" : ""
       )}
       style={{ 
         transform: 'translateZ(0)',
@@ -162,20 +167,26 @@ export default function Navbar() {
         </div>
       </div>
       
-      {/* Mobile menu - using opacity and visibility instead of max-height for better performance */}
+      {/* Mobile menu - using a combination of approaches for better compatibility */}
       <div 
         id="mobile-menu"
         className={cn(
-          "md:hidden fixed inset-x-0 top-16 bottom-0 bg-background z-30",
-          shouldRenderTransitions ? "transition-opacity duration-200" : "",
-          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          "md:hidden fixed inset-x-0 top-16 bottom-0 bg-background/95 backdrop-blur-sm z-40",
+          shouldRenderTransitions 
+            ? "transition-all duration-300 ease-in-out" 
+            : "",
+          isMenuOpen 
+            ? "opacity-100 visible translate-y-0" 
+            : "opacity-0 invisible translate-y-4 pointer-events-none"
         )}
         style={{ 
           transform: 'translateZ(0)',
-          willChange: isMenuOpen ? 'opacity, visibility' : 'auto' 
+          backfaceVisibility: 'hidden',
+          willChange: isMenuOpen ? 'opacity, visibility, transform' : 'auto',
+          height: isMenuOpen ? 'calc(100vh - 64px)' : '0'
         }}
       >
-        <div className="h-full overflow-y-auto overscroll-contain pb-safe">
+        <div className="h-full overflow-y-auto overscroll-contain pb-safe border-t">
           <div className="space-y-1 px-4 pb-3 pt-2">
             {navItems.map((item) => (
               <Link
