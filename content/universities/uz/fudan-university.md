@@ -1,9 +1,9 @@
 ---
 id: 2
-name: Fudan University
-logo: /universities/fudan-logo.jpg
-image: /universities/fudan-campus.jpg
-city: Shanghai
+name: Fudan Universiteti
+logo: /universities/fudan-logo.png
+image: /universities/fudan-university.jpg
+city: Shanxay
 description: One of China's most prestigious and selective universities, known for medicine, business, and international relations programs with a diverse global student community.
 educationType:
   - bachelor
