@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import { Clock } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
@@ -48,43 +47,32 @@ const TypingBadge = () => {
   }, [text, typingSpeed, pauseBeforeRepeat])
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
+    <div
       className={cn(
         'inline-flex items-center rounded-full bg-blue-100 py-1.5 px-4',
-        'border border-blue-200 shadow-sm'
+        'border border-blue-200 shadow-sm animate-fadeIn'
       )}
       style={{
+        animationDuration: '400ms',
         willChange: "opacity, transform",
         transform: "translateZ(0)"
       }}
     >
-      <motion.div
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-        style={{
-          willChange: "transform",
-          transform: "translateZ(0)"
-        }}
-      >
-        <Clock className="mr-2 h-4 w-4 text-blue-700 flex-shrink-0" />
-      </motion.div>
+      <div className="animate-pulse mr-2">
+        <Clock className="h-4 w-4 text-blue-700 flex-shrink-0" />
+      </div>
       <div className="font-medium text-sm text-blue-700 flex-grow text-left whitespace-nowrap">
         <div className="h-[1.2em] relative">
           {displayedText}
-          <motion.span 
-            animate={{ opacity: cursorVisible ? 1 : 0 }}
-            transition={{ duration: 0, repeat: Infinity, repeatType: "loop", ease: "linear" }}
-            className="absolute top-0 bottom-0 my-auto right-[-2px] inline-block w-[1.5px] h-[0.9em] bg-blue-700"
-            style={{
-              willChange: "opacity"
-            }}
+          <span 
+            className={cn(
+              "absolute top-0 bottom-0 my-auto right-[-2px] inline-block w-[1.5px] h-[0.9em] bg-blue-700 transition-opacity duration-100",
+              cursorVisible ? "opacity-100" : "opacity-0"
+            )}
           />
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 
