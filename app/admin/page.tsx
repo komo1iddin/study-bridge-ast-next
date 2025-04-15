@@ -9,6 +9,7 @@ function AdminPage() {
 
   useEffect(() => {
     let script: HTMLScriptElement | null = null
+    let configLink: HTMLLinkElement | null = null
 
     if (!scriptAdded.current && !document.getElementById(DECAP_SCRIPT_ID)) {
       script = document.createElement('script')
@@ -19,6 +20,15 @@ function AdminPage() {
       scriptAdded.current = true
     }
 
+    // Inject config link for Decap CMS
+    if (!document.querySelector('link[rel="cms-config-url"]')) {
+      configLink = document.createElement('link')
+      configLink.rel = 'cms-config-url'
+      configLink.href = '/admin/config.yml'
+      configLink.type = 'text/yaml'
+      document.head.appendChild(configLink)
+    }
+
     // Cleanup function: Check if the script is still a child before removing
     return () => {
       const scriptElement = document.getElementById(DECAP_SCRIPT_ID)
@@ -27,26 +37,17 @@ function AdminPage() {
         // If errors persist, consider removing this cleanup entirely.
         // document.body.removeChild(scriptElement);
       }
+      // Remove config link if it was added
+      if (configLink && configLink.parentNode === document.head) {
+        document.head.removeChild(configLink)
+      }
       // Reset ref if component unmounts and might remount
       // scriptAdded.current = false;
     }
   }, [])
 
   return (
-    <>
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Study Bridge Admin</title>
-        {/* Tell Decap CMS where to load the config file */}
-        <link href="/api/admin/config.yml" type="text/yaml" rel="cms-config-url" />
-        {/* Netlify Identity Widget script is already in the root layout */}
-      </head>
-      <body>
-        {/* The CMS will mount here */}
-        <div id="nc-root"></div>
-      </body>
-    </>
+    <div id='nc-root' />
   )
 }
 
