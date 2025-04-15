@@ -1,21 +1,35 @@
 ---
-id: 5
-name: University of Science and Technology of China
-logo: /universities/ustc-logo.jpg
-image: /universities/ustc-campus.jpg
 city: Hefei
-description: A top research institution focused on cutting-edge science and technology, known for its excellence in physics, mathematics, chemistry, and computer science, with a unique talent cultivation system for gifted students.
+description: A top research institution focused on cutting-edge science and technology,
+  known for its excellence in physics, mathematics, chemistry, and computer science,
+  with a unique talent cultivation system for gifted students.
 educationType:
-  - bachelor
-  - master
-  - phd
-  - 1+2
-hasGrants: true
+- bachelor
+- master
+- phd
+- 1+2
+faculties:
+- School of Science
+- School of Engineering
+- School of Medicine
+- School of Humanities
+- School of Social Sciences
+- School of Economics
+- School of Management
+- School of Law
+- School of Arts
+- School of Foreign Languages
+- School of Computer Science
 featured: true
-ranking: 7
 foundedYear: 1958
-studentsCount: 16000
+hasGrants: true
+id: 5
+image: /universities/university-of-science-and-technology-of-china.jpg
 internationalStudents: 1200
+logo: /universities/university-of-science-and-technology-of-china-logo.png
+name: University of Science and Technology of China
+ranking: 7
+studentsCount: 16000
 ---
 
 # University of Science and Technology of China
@@ -65,4 +79,4 @@ USTC is particularly renowned for breakthrough research in:
 
 USTC consistently ranks among the world's top universities in physical sciences. The university has produced numerous distinguished alumni, including renowned scientists, academicians, and technical innovators. USTC maintains research collaborations with top institutions worldwide, including MIT, Oxford, and the Max Planck Institutes.
 
-The university has contributed significantly to China's scientific advancement, playing key roles in the country's space program, quantum communication projects, and high-performance computing initiatives. 
+The university has contributed significantly to China's scientific advancement, playing key roles in the country's space program, quantum communication projects, and high-performance computing initiatives.

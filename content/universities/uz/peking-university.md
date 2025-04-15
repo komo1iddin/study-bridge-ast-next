@@ -1,20 +1,34 @@
 ---
-id: 1
-name: Peking University
-logo: /universities/peking.jpg
-image: /universities/peking-campus.jpg
 city: Beijing
-description: One of China's most prestigious educational institutions, offering a wide range of programs for international students with a beautiful campus in the heart of Beijing.
+description: One of China's most prestigious educational institutions, offering a
+  wide range of programs for international students with a beautiful campus in the
+  heart of Beijing.
 educationType:
-  - bachelor
-  - master
-  - 1+2
-hasGrants: true
+- bachelor
+- master
+- 1+2
+faculties:
+- School of Science
+- School of Engineering
+- School of Medicine
+- School of Humanities
+- School of Social Sciences
+- School of Economics
+- School of Management
+- School of Law
+- School of Arts
+- School of Foreign Languages
+- School of Computer Science
 featured: true
-ranking: 1
 foundedYear: 1898
-studentsCount: 42000
+hasGrants: true
+id: 1
+image: /universities/peking-university.jpg
 internationalStudents: 3000
+logo: /universities/peking-university-logo.png
+name: Peking University
+ranking: 1
+studentsCount: 42000
 ---
 
 # Peking University
@@ -38,4 +52,4 @@ The campus has been described as one of the most beautiful in China, with tradit
 
 ## International Recognition
 
-Peking University consistently ranks among the top universities in Asia and has produced numerous notable alumni, including Nobel laureates, political leaders, and influential scientists. 
+Peking University consistently ranks among the top universities in Asia and has produced numerous notable alumni, including Nobel laureates, political leaders, and influential scientists.

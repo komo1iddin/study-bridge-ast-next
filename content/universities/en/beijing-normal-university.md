@@ -1,21 +1,35 @@
 ---
-id: 7
-name: Beijing Normal University
-logo: /universities/bnu-logo.jpg
-image: /universities/bnu-campus.jpg
 city: Beijing
-description: A key national university with particular strengths in education, psychology, Chinese language and literature, and environmental sciences, known for training outstanding educators and researchers.
+description: A key national university with particular strengths in education, psychology,
+  Chinese language and literature, and environmental sciences, known for training
+  outstanding educators and researchers.
 educationType:
-  - bachelor
-  - master
-  - phd
-  - 1+2
-hasGrants: true
+- bachelor
+- master
+- phd
+- 1+2
+faculties:
+- School of Science
+- School of Engineering
+- School of Medicine
+- School of Humanities
+- School of Social Sciences
+- School of Economics
+- School of Management
+- School of Law
+- School of Arts
+- School of Foreign Languages
+- School of Computer Science
 featured: false
-ranking: 10
 foundedYear: 1902
-studentsCount: 24000
+hasGrants: true
+id: 7
+image: /universities/beijing-normal-university.jpg
 internationalStudents: 1800
+logo: /universities/beijing-normal-university-logo.png
+name: Beijing Normal University
+ranking: 10
+studentsCount: 24000
 ---
 
 # Beijing Normal University
@@ -76,4 +90,4 @@ The university hosts several international research centers and institutes, incl
 - International Center for Teacher Education
 - Collaborative Innovation Center for Educational Policy
 
-BNU's alumni include prominent educators, psychologists, linguists, writers, and government officials who have shaped educational practices both in China and internationally. 
+BNU's alumni include prominent educators, psychologists, linguists, writers, and government officials who have shaped educational practices both in China and internationally.

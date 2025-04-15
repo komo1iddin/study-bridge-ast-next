@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Users, Award, GraduationCap, Library } from "lucide-react"
+import { Users, Award, GraduationCap, Library, BookOpen } from "lucide-react"
 import type { University } from "@/components/universities/data"
 
 interface StatsCardProps {
@@ -11,39 +11,55 @@ interface StatsCardProps {
 }
 
 export function StatsCard({ university, t, lang }: StatsCardProps) {
-  // Stats data to match the image
-  const stats = [
+  // Basic stats that are always shown
+  const baseStats = [
     {
       key: "internationalStudents",
-      label: "Xalqaro talabalar",
-      value: "20%",
+      label: t?.stats?.internationalStudents || "International Students",
+      value: university.internationalStudents ? university.internationalStudents.toString() : "N/A",
       icon: Users
     },
     {
-      key: "acceptanceRate",
-      label: "Qabul darajasi",
-      value: "65%",
+      key: "students",
+      label: t?.stats?.totalStudents || "Total Students",
+      value: university.studentsCount ? university.studentsCount.toString() : "N/A",
       icon: GraduationCap
     },
     {
-      key: "graduationRate",
-      label: "Bitirish darajasi",
-      value: "94%",
+      key: "ranking",
+      label: t?.stats?.ranking || "Ranking",
+      value: university.ranking ? `#${university.ranking}` : "N/A",
       icon: Award
-    },
-    {
-      key: "facultyStudentRatio",
-      label: "O'qituvchi-talaba nisbati",
-      value: "1:12",
-      icon: Library
     }
   ];
+  
+  // Add faculties count if available
+  let stats = [...baseStats];
+  
+  if (university.faculties && university.faculties.length > 0) {
+    stats.push({
+      key: "faculties",
+      label: t?.stats?.faculties || "Faculties",
+      value: university.faculties.length.toString(),
+      icon: BookOpen
+    });
+  } else {
+    // Default stat if no faculties
+    stats.push({
+      key: "foundedYear",
+      label: t?.stats?.founded || "Founded",
+      value: university.foundedYear ? university.foundedYear.toString() : "N/A",
+      icon: Library
+    });
+  }
 
   return (
     <Card className="border-none shadow-md overflow-hidden">
       <CardContent className="p-0">
         <div className="border-b p-4">
-          <h3 className="font-semibold text-lg text-slate-800">Universitet statistikasi</h3>
+          <h3 className="font-semibold text-lg text-slate-800">
+            {t?.stats?.title || "University Statistics"}
+          </h3>
         </div>
         <div className="p-4">
           <div className="grid grid-cols-2 gap-4">

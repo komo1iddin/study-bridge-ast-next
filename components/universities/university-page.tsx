@@ -8,7 +8,8 @@ import { BackgroundDecoration } from './background-decoration'
 import { UniversityList } from './university-list'
 import { MobileFilters } from './mobile-filters'
 import { FilterSidebar } from './filter-sidebar'
-import { DEFAULT_FILTERS, type University, type Filters } from './data'
+import { DEFAULT_FILTERS, type Filters } from './data'
+import type { University } from '@/types/content'
 
 // Loading delay constant
 const LOADING_DELAY = 800

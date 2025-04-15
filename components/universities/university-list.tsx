@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { UniversityCard } from './university-card'
-import { RANKING_RANGES, ITEMS_PER_PAGE, type University, type Filters } from './data'
+import { RANKING_RANGES, ITEMS_PER_PAGE, type Filters } from './data'
+import type { University } from '@/types/content'
 import { Button } from '@/components/ui/button'
 import { ChevronUp } from 'lucide-react'
 

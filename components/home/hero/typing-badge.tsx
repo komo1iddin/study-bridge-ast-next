@@ -49,7 +49,7 @@ const TypingBadge = () => {
   return (
     <div
       className={cn(
-        'inline-flex items-center rounded-full bg-blue-100 py-1.5 px-4 sm:py-2 sm:px-5',
+        'inline-flex items-center rounded-full bg-blue-100 py-1.5 px-4',
         'border border-blue-200 shadow-sm animate-fadeIn'
       )}
       style={{
@@ -58,11 +58,11 @@ const TypingBadge = () => {
         transform: "translateZ(0)"
       }}
     >
-      <div className="animate-pulse mr-3">
-        <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-blue-700 flex-shrink-0" />
+      <div className="animate-pulse mr-2">
+        <Clock className="h-4 w-4 text-blue-700 flex-shrink-0" />
       </div>
-      <div className="font-medium text-sm sm:text-base text-blue-700 flex-grow text-left whitespace-nowrap">
-        <div className="h-[1.2em] sm:h-[1.3em] relative">
+      <div className="font-medium text-sm text-blue-700 flex-grow text-left whitespace-nowrap">
+        <div className="h-[1.2em] relative">
           {displayedText}
           <span 
             className={cn(

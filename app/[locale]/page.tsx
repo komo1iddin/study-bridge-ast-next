@@ -51,7 +51,7 @@ export default async function Home(props: {
     rating: u.ranking,
     programs: u.educationType?.length,
     students: u.studentsCount,
-    faculties: [], // You can map real faculties if available
+    faculties: u.faculties || [], // Use university faculties if available
   }))
 
   return (

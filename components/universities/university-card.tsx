@@ -8,7 +8,7 @@ import { MapPin, Award, Calendar, Users, Globe, ArrowRight } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import type { University } from './data'
+import type { University } from '@/types/content'
 
 interface UniversityCardProps {
   university: University
@@ -35,6 +35,7 @@ const UniversityCard = ({ university }: UniversityCardProps) => {
     ranking,
     foundedYear,
     studentsCount,
+    faculties
   } = university
 
   const defaultLogo = "/placeholder-university.svg"
@@ -100,6 +101,22 @@ const UniversityCard = ({ university }: UniversityCardProps) => {
                 </Badge>
               ))}
             </div>
+            
+            {faculties && faculties.length > 0 && (
+              <div className="mb-3">
+                <p className="text-xs text-slate-600 mb-1">{t('card.faculties') || 'Faculties'}:</p>
+                <div className="flex flex-wrap gap-1">
+                  {faculties.slice(0, 3).map((faculty, index) => (
+                    <Badge key={index} variant="outline" className="bg-blue-50 text-blue-700 text-xs">
+                      {faculty}
+                    </Badge>
+                  ))}
+                  {faculties.length > 3 && (
+                    <span className="text-xs text-slate-500">+{faculties.length - 3} more</span>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="border-t pt-4 mt-4 flex flex-col md:flex-row justify-between gap-3">
@@ -124,7 +141,7 @@ const UniversityCard = ({ university }: UniversityCardProps) => {
               className="whitespace-nowrap group bg-blue-600 hover:bg-blue-700 text-white"
               asChild
             >
-              <Link href={`/universities/${id}`}>
+              <Link href={`/universities/${university.slug}`}>
                 {t('card.details')}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>

@@ -19,6 +19,10 @@ import universityFeatureEn from './components/university-feature/en.json';
 import universityFeatureRu from './components/university-feature/ru.json';
 import universityFeatureUz from './components/university-feature/uz.json';
 
+import universityDetailEn from './components/university-detail/en.json';
+import universityDetailRu from './components/university-detail/ru.json';
+import universityDetailUz from './components/university-detail/uz.json';
+
 // Create empty objects to replace removed home translation files
 const homeEn = {};
 const homeRu = {};
@@ -108,6 +112,7 @@ export const messages = {
     contactForm: contactFormEn,
     faq: faqEn,
     universityFeature: universityFeatureEn,
+    'university-detail': universityDetailEn,
     common: commonEn,
     pages: {
       home: {
@@ -141,6 +146,7 @@ export const messages = {
     contactForm: contactFormRu,
     faq: faqRu,
     universityFeature: universityFeatureRu,
+    'university-detail': universityDetailRu,
     common: commonRu,
     pages: {
       home: {
@@ -174,6 +180,7 @@ export const messages = {
     contactForm: contactFormUz,
     faq: faqUz,
     universityFeature: universityFeatureUz,
+    'university-detail': universityDetailUz,
     common: commonUz,
     pages: {
       home: {

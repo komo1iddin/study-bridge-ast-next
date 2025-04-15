@@ -1,16 +1,16 @@
 ---
-id: 123
-name: Tsinghua University
-logo: /public/universities/chonqing-university-of-technology.png
-image: /public/universities/main.jpg
 city: Beijing
 description: Beijing city
 educationType:
-  - bachelor
-hasGrants: true
+- bachelor
 featured: true
-ranking: 15
 foundedYear: 1981
-studentsCount: 20000
+hasGrants: true
+id: 123
+image: /universities/tsinghua-university.jpg
 internationalStudents: 1470
+logo: /universities/tsinghua-university-logo.png
+name: Tsinghua University
+ranking: 15
+studentsCount: 20000
 ---

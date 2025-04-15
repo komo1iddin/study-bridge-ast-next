@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Home } from "lucide-react"
 import { useSearchParams } from "next/navigation"
+import { useTranslations } from "next-intl"
 import type { University } from "@/components/universities/data"
 
 // Import section components
@@ -26,60 +27,12 @@ interface UniversityDetailPageProps {
   lang?: string
 }
 
-// Define translation type
-interface UniversityDetailTranslations {
-  breadcrumb: {
-    universities: string
-  }
-  tabs: {
-    overview: string
-    programs: string
-    admission: string
-    facilities: string
-    images: string
-    dorms: string
-    faq: string
-  }
-  viewGallery: string
-  selectSection: string
-  badges: {
-    featured: string
-    grantsAvailable: string
-    rank: string
-  }
-}
-
 // Define valid tabs as a constant
 const VALID_TABS = ["overview", "programs", "admission", "facilities", "images", "dorms", "faq"]
 
-// Mock translations - in a real app these would come from i18n
-const getUniversityDetailTranslations = (lang: string): UniversityDetailTranslations => {
-  return {
-    breadcrumb: {
-      universities: "Universities",
-    },
-    tabs: {
-      overview: "Overview",
-      programs: "Programs",
-      admission: "Admission",
-      facilities: "Facilities",
-      images: "Gallery",
-      dorms: "Accommodation",
-      faq: "FAQ",
-    },
-    viewGallery: "View Gallery",
-    selectSection: "Select Section",
-    badges: {
-      featured: "Featured",
-      grantsAvailable: "Grants Available",
-      rank: "Rank: {rank}",
-    },
-  }
-}
-
 export function UniversityDetailPage({ university, lang = "en" }: UniversityDetailPageProps) {
   // Get translations
-  const t = getUniversityDetailTranslations(lang)
+  const t = useTranslations("university-detail")
   const searchParams = useSearchParams()
   
   // State
@@ -131,7 +84,7 @@ export function UniversityDetailPage({ university, lang = "en" }: UniversityDeta
               <div className="h-3 bg-slate-200 rounded w-5/6"></div>
               <div className="h-3 bg-slate-200 rounded w-4/6"></div>
             </div>
-            <div className="text-blue-600 font-medium">Loading university details...</div>
+            <div className="text-blue-600 font-medium">{t('loading')}</div>
           </div>
         </div>
       </div>
@@ -145,7 +98,7 @@ export function UniversityDetailPage({ university, lang = "en" }: UniversityDeta
     return (
       <div className="min-h-screen w-full flex items-center justify-center">
         <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center">
-          <div className="text-destructive font-medium">Error loading university data</div>
+          <div className="text-destructive font-medium">{t('error')}</div>
         </div>
       </div>
     )
@@ -160,7 +113,7 @@ export function UniversityDetailPage({ university, lang = "en" }: UniversityDeta
         <div className="flex items-center gap-2 text-sm text-slate-500 mb-4 sm:mb-6 overflow-x-auto whitespace-nowrap pb-2">
           <Home className="h-3.5 w-3.5 flex-shrink-0" />
           <span>/</span>
-          <span>{t.breadcrumb.universities}</span>
+          <span>{t('breadcrumb.universities')}</span>
           <span>/</span>
           <span className="text-slate-900 font-medium truncate">{university.name}</span>
         </div>
@@ -211,7 +164,7 @@ export function UniversityDetailPage({ university, lang = "en" }: UniversityDeta
               className="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
               onClick={showImages}
             >
-              {t.viewGallery}
+              {t('viewGallery')}
             </button>
           </div>
         </main>

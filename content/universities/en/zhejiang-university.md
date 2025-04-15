@@ -1,22 +1,36 @@
 ---
-id: 4
-name: Zhejiang University
-logo: /universities/zju-logo.jpg
-image: /universities/zju-campus.jpg
 city: Hangzhou
-description: A comprehensive C9 League university known for research excellence, innovative education, and its beautiful campus in the scenic city of Hangzhou, with particular strengths in engineering, computer science, and medicine.
+description: A comprehensive C9 League university known for research excellence, innovative
+  education, and its beautiful campus in the scenic city of Hangzhou, with particular
+  strengths in engineering, computer science, and medicine.
 educationType:
-  - bachelor
-  - master
-  - phd
-  - 1+2
-  - 2+2
-hasGrants: true
+- bachelor
+- master
+- phd
+- 1+2
+- 2+2
+faculties:
+- School of Science
+- School of Engineering
+- School of Medicine
+- School of Humanities
+- School of Social Sciences
+- School of Economics
+- School of Management
+- School of Law
+- School of Arts
+- School of Foreign Languages
+- School of Computer Science
 featured: true
-ranking: 4
 foundedYear: 1897
-studentsCount: 53000
+hasGrants: true
+id: 4
+image: /universities/zhejiang-university.jpg
 internationalStudents: 3600
+logo: /universities/zhejiang-university-logo.png
+name: Zhejiang University
+ranking: 4
+studentsCount: 53000
 ---
 
 # Zhejiang University
@@ -71,4 +85,4 @@ Zhejiang University has developed partnerships with over 190 institutions across
 - ZJU-Edinburgh Institute
 - Zhejiang University/University of Edinburgh Institute of Biomedical Sciences
 
-The university has nurtured numerous distinguished alumni who have made significant contributions in academia, business, and public service both in China and internationally. 
+The university has nurtured numerous distinguished alumni who have made significant contributions in academia, business, and public service both in China and internationally.

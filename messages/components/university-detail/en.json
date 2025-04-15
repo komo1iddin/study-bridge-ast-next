@@ -1,0 +1,32 @@
+{
+  "loading": "Loading university details...",
+  "error": "Error loading university data",
+  "breadcrumb": {
+    "universities": "Universities"
+  },
+  "tabs": {
+    "overview": "Overview",
+    "programs": "Programs",
+    "admission": "Admission",
+    "facilities": "Facilities",
+    "images": "Gallery",
+    "dorms": "Accommodation",
+    "faq": "FAQ"
+  },
+  "viewGallery": "View Gallery",
+  "selectSection": "Select Section",
+  "badges": {
+    "featured": "Featured",
+    "grantsAvailable": "Grants Available",
+    "rank": "Rank: {rank}"
+  },
+  "students": "Students",
+  "stats": {
+    "title": "University Statistics",
+    "internationalStudents": "International Students",
+    "totalStudents": "Total Students",
+    "ranking": "Ranking",
+    "faculties": "Faculties",
+    "founded": "Founded"
+  }
+} 

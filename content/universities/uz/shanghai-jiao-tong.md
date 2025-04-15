@@ -1,21 +1,45 @@
 ---
-id: 3
-name: Shanghai Jiao Tong University
-logo: /universities/sjtu-logo.jpg
-image: /universities/sjtu-campus.jpg
 city: Shanghai
-description: A leading public research university in China with a strong focus on engineering, medicine, and business, known for its rigorous academic standards and distinguished alumni network.
+description: A leading public research university in China with a strong focus on
+  engineering, medicine, and business, known for its rigorous academic standards and
+  distinguished alumni network.
 educationType:
-  - bachelor
-  - master
-  - phd
-  - 2+2
-hasGrants: true
+- bachelor
+- master
+- phd
+- 2+2
+faculties:
+- School of Medicine
+- School of Electronic, Information and Electrical Engineering
+- School of Mechanical Engineering
+- School of Naval Architecture, Ocean and Civil Engineering
+- School of Chemistry and Chemical Engineering
+- School of Materials Science and Engineering
+- School of Biomedical Engineering
+- School of Aeronautics and Astronautics
+- School of Physics and Astronomy
+- School of Mathematics
+- School of Economics and Management
+- School of Humanities
+- School of Foreign Languages
+- School of Media and Design
+- School of Law
+- School of International and Public Affairs
+- School of Agriculture and Biology
+- School of Environmental Science and Engineering
+- School of Pharmacy
+- School of Life Sciences and Biotechnology
+- School of Computer Science and Engineering
 featured: true
-ranking: 5
 foundedYear: 1896
-studentsCount: 38000
+hasGrants: true
+id: 3
+image: /universities/shanghai-jiao-tong-university.jpg
 internationalStudents: 2800
+logo: /universities/shanghai-jiao-tong-university-logo.png
+name: Shanghai Jiao Tong University
+ranking: 5
+studentsCount: 38000
 ---
 
 # Shanghai Jiao Tong University
@@ -57,4 +81,4 @@ The university operates over 200 research centers and institutes, including nati
 
 ## International Recognition
 
-SJTU is a founding member of the prestigious C9 League (China's equivalent to the Ivy League) and has established partnerships with more than 280 universities and institutions worldwide. The university has nurtured numerous distinguished alumni, including notable scientists, business leaders, and political figures who have made significant contributions globally. 
+SJTU is a founding member of the prestigious C9 League (China's equivalent to the Ivy League) and has established partnerships with more than 280 universities and institutions worldwide. The university has nurtured numerous distinguished alumni, including notable scientists, business leaders, and political figures who have made significant contributions globally.

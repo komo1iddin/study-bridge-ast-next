@@ -15,6 +15,7 @@ export interface University {
   internationalStudents: number;
   slug: string;
   content?: string;
+  faculties?: string[];
 }
 
 // Grant content type

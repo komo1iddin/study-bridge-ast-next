@@ -1,8 +1,4 @@
 ---
-id: 2
-name: Fudan Universiteti
-logo: /universities/fudan-logo.png
-image: /universities/fudan-university.jpg
 city: Shanxay
 description: One of China's most prestigious and selective universities, known for
   medicine, business, and international relations programs with a diverse global student
@@ -12,12 +8,6 @@ educationType:
 - master
 - phd
 - 1+2
-hasGrants: true
-featured: true
-ranking: 3
-foundedYear: 1905
-studentsCount: 36000
-internationalStudents: 3200
 faculties:
 - School of Philosophy
 - School of Economics
@@ -41,6 +31,16 @@ faculties:
 - School of Nursing
 - School of Public Health
 - College of Foreign Languages and Literatures
+featured: true
+foundedYear: 1905
+hasGrants: true
+id: 2
+image: /universities/fudan-university.jpg
+internationalStudents: 3200
+logo: /universities/fudan-universiteti-logo.png
+name: Fudan Universiteti
+ranking: 3
+studentsCount: 36000
 ---
 
 # Fudan University
@@ -72,4 +72,4 @@ The university has over 30 residence halls, extensive sports facilities, and ove
 
 Fudan University has partnerships with over 200 universities worldwide and hosts visiting scholars and exchange students from across the globe. It is a member of the prestigious C9 League (China's Ivy League) and Universitas 21, a global network of research universities.
 
-The university's Shanghai Medical College is particularly renowned, with affiliated hospitals that rank among the best in China. The Fudan School of Management holds AACSB, EQUIS, and AMBA accreditation, placing it among the elite business schools worldwide. 
+The university's Shanghai Medical College is particularly renowned, with affiliated hospitals that rank among the best in China. The Fudan School of Management holds AACSB, EQUIS, and AMBA accreditation, placing it among the elite business schools worldwide.

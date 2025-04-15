@@ -26,13 +26,13 @@ export function HeaderCard({ university, activeTab, lang, t, onTabChange }: Head
 
   // Define tabs using translations
   const tabs = [
-    { value: "overview", label: t.tabs.overview },
-    { value: "programs", label: t.tabs.programs },
-    { value: "admission", label: t.tabs.admission },
-    { value: "facilities", label: t.tabs.facilities },
-    { value: "images", label: t.tabs.images },
-    { value: "dorms", label: t.tabs.dorms },
-    { value: "faq", label: t.tabs.faq }
+    { value: "overview", label: t('tabs.overview') },
+    { value: "programs", label: t('tabs.programs') },
+    { value: "admission", label: t('tabs.admission') },
+    { value: "facilities", label: t('tabs.facilities') },
+    { value: "images", label: t('tabs.images') },
+    { value: "dorms", label: t('tabs.dorms') },
+    { value: "faq", label: t('tabs.faq') }
   ];
 
   return (
@@ -50,16 +50,16 @@ export function HeaderCard({ university, activeTab, lang, t, onTabChange }: Head
           <div className="flex flex-wrap gap-2">
             {university.featured && (
               <span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700">
-                {t.badges.featured}
+                {t('badges.featured')}
               </span>
             )}
             {university.hasGrants && (
               <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700">
-                {t.badges.grantsAvailable}
+                {t('badges.grantsAvailable')}
               </span>
             )}
             <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-2.5 py-0.5 text-xs font-semibold text-blue-700">
-              {t.badges.rank.replace('{rank}', String(university.ranking || 'N/A'))}
+              {t('badges.rank').replace('{rank}', String(university.ranking || 'N/A'))}
             </span>
           </div>
 
@@ -88,7 +88,7 @@ export function HeaderCard({ university, activeTab, lang, t, onTabChange }: Head
               {students && (
                 <div className="flex items-center gap-1">
                   <Users className="h-5 w-5" />
-                  <span>{students}</span>
+                  <span>{students} {t('students')}</span>
                 </div>
               )}
               <div className="flex items-center gap-1">
@@ -105,7 +105,7 @@ export function HeaderCard({ university, activeTab, lang, t, onTabChange }: Head
           <div className="p-2 bg-slate-100">
             <Select defaultValue={activeTab} onValueChange={onTabChange}>
               <SelectTrigger className="w-full bg-white border border-slate-200 rounded-md shadow-sm focus:outline-none text-slate-800 font-medium">
-                <SelectValue placeholder={t.selectSection} />
+                <SelectValue placeholder={t('selectSection')} />
               </SelectTrigger>
               <SelectContent>
                 {tabs.map((tab) => (

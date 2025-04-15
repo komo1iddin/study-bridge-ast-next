@@ -1,0 +1,32 @@
+{
+  "loading": "Universitet ma'lumotlari yuklanyapti...",
+  "error": "Universitet ma'lumotlarini yuklashda xatolik",
+  "breadcrumb": {
+    "universities": "Universitetlar"
+  },
+  "tabs": {
+    "overview": "Umumiy ma'lumot",
+    "programs": "Dasturlar",
+    "admission": "Qabul",
+    "facilities": "Infratuzilma",
+    "images": "Galereya",
+    "dorms": "Yotoqxonalar",
+    "faq": "Ko'p so'raladigan savollar"
+  },
+  "viewGallery": "Galereyani ko'rish",
+  "selectSection": "Bo'limni tanlang",
+  "badges": {
+    "featured": "Tavsiya etilgan",
+    "grantsAvailable": "Grantlar mavjud",
+    "rank": "Reyting: {rank}"
+  },
+  "students": "Talabalar",
+  "stats": {
+    "title": "Universitet statistikasi",
+    "internationalStudents": "Xalqaro talabalar",
+    "totalStudents": "Jami talabalar",
+    "ranking": "Reyting",
+    "faculties": "Fakultetlar",
+    "founded": "Ta'sis etilgan"
+  }
+} 

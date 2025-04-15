@@ -31,10 +31,11 @@
     "grants": "Стипендии",
     "ranking": "Рейтинг",
     "founded": "Основан",
-    "students": "Студентов",
-    "international": "Иностранных студентов",
+    "students": "Студенты",
+    "international": "Иностранные",
     "details": "Подробнее",
     "programs": "Программы",
-    "apply": "Подать заявку"
+    "apply": "Подать заявку",
+    "faculties": "Факультеты"
   }
 } 

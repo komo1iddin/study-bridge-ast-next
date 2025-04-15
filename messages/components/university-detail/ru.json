@@ -1,0 +1,32 @@
+{
+  "loading": "Загрузка данных университета...",
+  "error": "Ошибка загрузки данных университета",
+  "breadcrumb": {
+    "universities": "Университеты"
+  },
+  "tabs": {
+    "overview": "Обзор",
+    "programs": "Программы",
+    "admission": "Поступление",
+    "facilities": "Инфраструктура",
+    "images": "Галерея",
+    "dorms": "Общежития",
+    "faq": "Вопросы и ответы"
+  },
+  "viewGallery": "Просмотреть галерею",
+  "selectSection": "Выбрать раздел",
+  "badges": {
+    "featured": "Рекомендуемый",
+    "grantsAvailable": "Доступны гранты",
+    "rank": "Рейтинг: {rank}"
+  },
+  "students": "Студенты",
+  "stats": {
+    "title": "Статистика университета",
+    "internationalStudents": "Иностранные студенты",
+    "totalStudents": "Всего студентов",
+    "ranking": "Рейтинг",
+    "faculties": "Факультеты",
+    "founded": "Основан"
+  }
+} 

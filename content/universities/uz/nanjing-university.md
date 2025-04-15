@@ -1,21 +1,35 @@
 ---
-id: 6
-name: Nanjing University
-logo: /universities/nju-logo.jpg
-image: /universities/nju-campus.jpg
 city: Nanjing
-description: One of China's oldest and most prestigious comprehensive universities, known for its strengths in humanities, social sciences, and natural sciences, with a rich history dating back to 1902.
+description: One of China's oldest and most prestigious comprehensive universities,
+  known for its strengths in humanities, social sciences, and natural sciences, with
+  a rich history dating back to 1902.
 educationType:
-  - bachelor
-  - master
-  - phd
-  - 2+2
-hasGrants: true
+- bachelor
+- master
+- phd
+- 2+2
+faculties:
+- School of Science
+- School of Engineering
+- School of Medicine
+- School of Humanities
+- School of Social Sciences
+- School of Economics
+- School of Management
+- School of Law
+- School of Arts
+- School of Foreign Languages
+- School of Computer Science
 featured: true
-ranking: 6
 foundedYear: 1902
-studentsCount: 33000
+hasGrants: true
+id: 6
+image: /universities/nanjing-university.jpg
 internationalStudents: 2500
+logo: /universities/nanjing-university-logo.png
+name: Nanjing University
+ranking: 6
+studentsCount: 33000
 ---
 
 # Nanjing University
@@ -77,4 +91,4 @@ Nanjing University has established partnerships with over 250 universities and r
 - Nanjing-Nottingham Center
 - Sino-German Institute of Social Sciences
 
-NJU's alumni include numerous Nobel Prize winners, renowned scholars, business leaders, and government officials who have made significant contributions to China and the international community. 
+NJU's alumni include numerous Nobel Prize winners, renowned scholars, business leaders, and government officials who have made significant contributions to China and the international community.

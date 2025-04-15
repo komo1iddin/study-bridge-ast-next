@@ -33,6 +33,8 @@ export interface University {
   foundedYear?: number;
   studentsCount?: number;
   internationalStudents?: number;
+  faculties?: string[];
+  slug?: string;
 }
 
 export type Filters = {
