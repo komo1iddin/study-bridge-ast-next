@@ -116,7 +116,7 @@ export function UniversityList({ universities, filters }: UniversityListProps) {
         <div className="flex flex-col gap-4 sm:gap-6">
           {filteredUniversities.slice(0, visibleCount).map((university) => (
             <UniversityCard 
-              key={university.id}
+              key={`${university.id}-${university.name}`}
               university={university}
             />
           ))}
