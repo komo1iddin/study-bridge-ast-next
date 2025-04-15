@@ -25,8 +25,13 @@ export function UniversityPage({ universities, cities }: UniversityPageProps) {
   // Set up state
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS)
   const [isLoading, setIsLoading] = useState(true)
+  const [isClient, setIsClient] = useState(false)
 
   // Initialize component
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   useEffect(() => {
     // Simulate loading for better UX
     const timer = setTimeout(() => {
@@ -48,6 +53,8 @@ export function UniversityPage({ universities, cities }: UniversityPageProps) {
   const resetFilters = () => {
     setFilters(DEFAULT_FILTERS)
   }
+
+  if (!isClient) return null
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-slate-50 to-indigo-50 relative overflow-hidden">

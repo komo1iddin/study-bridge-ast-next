@@ -4,18 +4,43 @@ name: Fudan Universiteti
 logo: /universities/fudan-logo.png
 image: /universities/fudan-university.jpg
 city: Shanxay
-description: One of China's most prestigious and selective universities, known for medicine, business, and international relations programs with a diverse global student community.
+description: One of China's most prestigious and selective universities, known for
+  medicine, business, and international relations programs with a diverse global student
+  community.
 educationType:
-  - bachelor
-  - master
-  - phd
-  - 1+2
+- bachelor
+- master
+- phd
+- 1+2
 hasGrants: true
 featured: true
 ranking: 3
 foundedYear: 1905
 studentsCount: 36000
 internationalStudents: 3200
+faculties:
+- School of Philosophy
+- School of Economics
+- School of Management
+- School of Law
+- School of Social Development and Public Policy
+- School of International Relations & Public Affairs
+- School of Journalism
+- School of Arts and Humanities
+- School of Foreign Languages and Literature
+- School of Life Sciences
+- School of Information Science and Engineering
+- School of Computer Science
+- School of Software
+- School of Microelectronics
+- School of Physics
+- School of Chemistry
+- School of Mathematics
+- Shanghai Medical College
+- School of Pharmacy
+- School of Nursing
+- School of Public Health
+- College of Foreign Languages and Literatures
 ---
 
 # Fudan University

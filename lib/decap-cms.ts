@@ -8,7 +8,7 @@ export function getContentItems<T>(
   locale: string = 'en'
 ): T[] {
   try {
-    const contentDir = path.join(process.cwd(), 'content', contentType);
+    const contentDir = path.join(process.cwd(), 'content', contentType, locale);
     // Check if directory exists
     if (!fs.existsSync(contentDir)) {
       console.warn(`Content directory not found: ${contentDir}`);
@@ -49,7 +49,7 @@ export function getContentItem<T>(
   locale: string = 'en'
 ): T | null {
   try {
-    const contentDir = path.join(process.cwd(), 'content', contentType);
+    const contentDir = path.join(process.cwd(), 'content', contentType, locale);
     const filePath = path.join(contentDir, `${slug}.md`);
     
     // Check if file exists
