@@ -4,7 +4,9 @@ name: Fudan University
 logo: /universities/fudan-logo.jpg
 image: /universities/fudan-campus.jpg
 city: Shanghai
-description: One of China's most prestigious and selective universities, known for medicine, business, and international relations programs with a diverse global student community.
+description: One of China's most prestigious and selective universities, known
+  for medicine, business, and international relations programs with a diverse
+  global student community.
 educationType:
   - bachelor
   - master
