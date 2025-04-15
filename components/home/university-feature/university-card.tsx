@@ -54,25 +54,31 @@ export function UniversityCard({ university, lang, className }: UniversityCardPr
       <div className="p-4 sm:p-5 flex flex-col relative min-h-[280px]">
         {/* Logo */}
         <div className="absolute -top-8 left-4 sm:left-5 bg-white/90 p-1.5 rounded-full shadow-lg">
-          <Image 
-            src={university.logo} 
-            alt={`${university.name} logo`}
-            width={56}
-            height={56}
-            className="rounded-full object-contain"
-          />
+          {university.logo ? (
+            <Image 
+              src={university.logo} 
+              alt={`${university.name} logo`}
+              width={56}
+              height={56}
+              className="rounded-full object-contain"
+            />
+          ) : (
+            <div className="w-[56px] h-[56px] rounded-full bg-gray-200 flex items-center justify-center" />
+          )}
         </div>
         
         {/* Watermark */}
-        <div className="absolute bottom-0 right-0 opacity-10 pointer-events-none overflow-hidden">
-          <Image 
-            src={university.logo} 
-            alt=""
-            width={160}
-            height={160}
-            className="object-contain translate-x-1/3 translate-y-1/3"
-          />
-        </div>
+        {university.logo && (
+          <div className="absolute bottom-0 right-0 opacity-10 pointer-events-none overflow-hidden">
+            <Image 
+              src={university.logo} 
+              alt=""
+              width={160}
+              height={160}
+              className="object-contain translate-x-1/3 translate-y-1/3"
+            />
+          </div>
+        )}
 
         {/* Title section */}
         <div className="pl-14 sm:pl-16 pt-3 h-[50px] sm:h-[60px]">
