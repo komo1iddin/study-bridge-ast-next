@@ -15,124 +15,9 @@ import { SuccessPath } from "@/components/home/success-path"
 import { AdvantagesStudyChina } from "@/components/home/advantages-stydy-china"
 import { UniversityFeature } from "@/components/home/university-feature/university-feature"
 import { OurTeam, OurPartners, HowWeWork, MissionStats, Testimonials, ComparisonStudyBridge } from "@/components/home"
-
-// Sample universities data
-const sampleUniversities = [
-  {
-    id: "1",
-    name: "Shanghai Jiao Tong University",
-    location: "Shanghai, China",
-    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
-    slug: "shanghai-jiao-tong-university",
-    rating: 4.5,
-    programs: 160,
-    students: 42000,
-    faculties: [
-      "Engineering",
-      "Medicine",
-      "Science",
-      "Agriculture",
-      "Business",
-      "Law"
-    ]
-  },
-  {
-    id: "2",
-    name: "Shanghai Jiao Tong University",
-    location: "Shanghai, China",
-    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
-    slug: "shanghai-jiao-tong-university",
-    rating: 4.5,
-    programs: 160,
-    students: 42000,
-    faculties: [
-      "Engineering",
-      "Medicine",
-      "Science",
-      "Agriculture",
-      "Business",
-      "Law"
-    ]
-  },
-  {
-    id: "3",
-    name: "Shanghai Jiao Tong University",
-    location: "Shanghai, China",
-    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
-    slug: "shanghai-jiao-tong-university",
-    rating: 4.5,
-    programs: 160,
-    students: 42000,
-    faculties: [
-      "Engineering",
-      "Medicine",
-      "Science",
-      "Agriculture",
-      "Business",
-      "Law"
-    ]
-  },
-  {
-    id: "4",
-    name: "Shanghai Jiao Tong University",
-    location: "Shanghai, China",
-    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
-    slug: "shanghai-jiao-tong-university",
-    rating: 4.5,
-    programs: 160,
-    students: 42000,
-    faculties: [
-      "Engineering",
-      "Medicine",
-      "Science",
-      "Agriculture",
-      "Business",
-      "Law"
-    ]
-  },
-  {
-    id: "5",
-    name: "Shanghai Jiao Tong University",
-    location: "Shanghai, China",
-    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
-    slug: "shanghai-jiao-tong-university",
-    rating: 4.5,
-    programs: 160,
-    students: 42000,
-    faculties: [
-      "Engineering",
-      "Medicine",
-      "Science",
-      "Agriculture",
-      "Business",
-      "Law"
-    ]
-  },
-  {
-    id: "6",
-    name: "Shanghai Jiao Tong University",
-    location: "Shanghai, China",
-    image: "https://www.sangenbd.com/images/study-at-tsinghua-university-china-from-bangladesh.webp",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tsinghua_University_Logo.svg/2048px-Tsinghua_University_Logo.svg.png",
-    slug: "shanghai-jiao-tong-university",
-    rating: 4.5,
-    programs: 160,
-    students: 42000,
-    faculties: [
-      "Engineering",
-      "Medicine",
-      "Science",
-      "Agriculture",
-      "Business",
-      "Law"
-    ]
-  }
-]
+import { getContentItems } from '@/lib/decap-cms'
+import type { University } from '@/types/content'
+import type { UniversityFeatureItem } from '@/components/home/university-feature/types'
 
 export async function generateMetadata(
   { params: propsParams }: { params: { locale: string } }
@@ -149,19 +34,25 @@ export async function generateMetadata(
 export default async function Home(props: {
   params: { locale: string };
 }) {
-  // In Next.js 15, await the entire params object first
   const params = await props.params;
   const { locale } = params;
-  
   const t = await getTranslations({ locale, namespace: "pages.home" })
 
-  // Sample statistics data
-  // const statistics = [
-  //   { value: "100+", label: t("stats.universities"), icon: Building2 },
-  //   { value: "5000+", label: t("stats.students"), icon: Users },
-  //   { value: "10+", label: t("stats.experience"), icon: Clock },
-  //   { value: "200+", label: t("stats.programs"), icon: BookOpen },
-  // ]
+  // Fetch universities from CMS
+  const cmsUniversities = getContentItems<University>('universities', locale)
+  // Map to UniversityFeatureItem
+  const featureUniversities: UniversityFeatureItem[] = cmsUniversities.map(u => ({
+    id: String(u.id),
+    name: u.name,
+    location: u.city,
+    image: u.image?.startsWith('/') ? u.image : `/${u.image}`,
+    logo: u.logo?.startsWith('/') ? u.logo : `/${u.logo}`,
+    slug: u.slug,
+    rating: u.ranking,
+    programs: u.educationType?.length,
+    students: u.studentsCount,
+    faculties: [], // You can map real faculties if available
+  }))
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -188,7 +79,7 @@ export default async function Home(props: {
 
         {/* Featured Universities */}
         <UniversityFeature 
-          universities={sampleUniversities}
+          universities={featureUniversities}
           lang={locale}
         />
 
