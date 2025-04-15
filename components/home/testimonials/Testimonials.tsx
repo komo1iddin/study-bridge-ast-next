@@ -99,7 +99,7 @@ export default function Testimonials({ className }: TestimonialsProps) {
   }, [])
   
   return (
-    <section className={cn("w-full py-12 md:py-24 lg:py-32 bg-white", className)}>
+    <section className={cn("w-full py-12 md:py-24 lg:py-32", className)}>
       <div className="container px-4 md:px-6 mx-auto">
         {/* Section Header */}
         <motion.div 
@@ -139,7 +139,7 @@ export default function Testimonials({ className }: TestimonialsProps) {
               }}
             >
               <div className={cn(
-                "bg-gradient-to-br from-slate-50 to-blue-50 p-6 rounded-2xl shadow-lg border border-blue-100 h-full flex flex-col transition-all duration-300",
+                "bg-white p-6 rounded-2xl shadow-lg border border-blue-100 h-full flex flex-col transition-all duration-300",
                 !isMobile && "hover:shadow-xl hover:-translate-y-1"
               )}>
                 <div className="flex items-center mb-4">

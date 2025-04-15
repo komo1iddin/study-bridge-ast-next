@@ -88,7 +88,7 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
       <motion.div
         variants={itemVariants}
         className={cn(
-          "bg-gradient-to-b from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl p-8 shadow-lg relative z-10 -mt-4 md:mt-[-2rem] order-1 md:order-2",
+          "bg-white border-2 border-blue-200 rounded-xl p-8 shadow-lg relative z-10 -mt-4 md:mt-[-2rem] order-1 md:order-2",
           !isMobile && "hover:shadow-xl"
         )}
         style={{
@@ -148,7 +148,7 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
   // If not mounted yet, return a non-animated version to prevent flashing/disappearing
   if (!isMounted) {
     return (
-      <section className={cn("w-full py-16 md:py-24 bg-gray-50", className)}>
+      <section className={cn("w-full py-16 md:py-24", className)}>
         <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
@@ -167,7 +167,7 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
   }
 
   return (
-    <section className={cn("w-full py-16 md:py-24 bg-gray-50", className)}>
+    <section className={cn("w-full py-16 md:py-24", className)}>
       <div className="container px-4 md:px-6">
         {/* Section Title */}
         <motion.div 

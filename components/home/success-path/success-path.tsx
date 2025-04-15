@@ -84,7 +84,7 @@ export function SuccessPath() {
   ]
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-blue-50/30 to-white py-12 md:py-20 overflow-hidden">
+    <section className="relative py-12 md:py-20 overflow-hidden">
       {/* Background decorations */}
       <Background />
 

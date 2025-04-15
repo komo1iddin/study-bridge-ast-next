@@ -168,7 +168,7 @@ const OurPartners = ({ lang = 'en' }: OurPartnersProps) => {
     <section 
       ref={sectionRef}
       className={cn(
-        "w-full bg-[#F5F9FB] py-12 relative",
+        "w-full py-12 relative",
         "transition-opacity duration-700",
         isSectionVisible ? "opacity-100" : "opacity-0"
       )}

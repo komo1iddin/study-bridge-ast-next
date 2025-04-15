@@ -147,7 +147,7 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
     <div 
       ref={sectionRef}
       className={cn(
-        "w-full bg-[#F5F9FB] py-12 relative",
+        "w-full py-12 relative",
         "transition-opacity duration-700",
         "opacity-100 translate-y-0"
       )}
