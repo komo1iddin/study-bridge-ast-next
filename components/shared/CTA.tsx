@@ -16,8 +16,23 @@ export default function CTA({ className, lang, linkHref }: CTAProps) {
   return (
     <div 
       className={`bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-2xl p-8 md:p-10 shadow-xl 
-                 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/20
                  ${className || ''}`}
+      style={{ 
+        transform: 'translateZ(0)',
+        backfaceVisibility: 'hidden',
+        willChange: 'transform, box-shadow',
+        transition: 'transform 0.3s ease-out, box-shadow 0.3s ease-out'
+      }}
+      onMouseEnter={(e) => {
+        const target = e.currentTarget;
+        target.style.transform = 'translateZ(0) scale(1.01)';
+        target.style.boxShadow = '0 20px 25px -5px rgba(59, 130, 246, 0.2), 0 10px 10px -5px rgba(59, 130, 246, 0.1)';
+      }}
+      onMouseLeave={(e) => {
+        const target = e.currentTarget;
+        target.style.transform = 'translateZ(0) scale(1)';
+        target.style.boxShadow = '';
+      }}
     >
       <div className="max-w-3xl mx-auto text-center">
         <h3 className="text-2xl md:text-3xl font-bold mb-4">
@@ -28,7 +43,17 @@ export default function CTA({ className, lang, linkHref }: CTAProps) {
         </p>
         <Button 
           size="lg" 
-          className="bg-white text-blue-600 hover:bg-blue-50 transition-transform duration-300 hover:scale-105" 
+          className="bg-white text-blue-600 hover:bg-blue-50" 
+          style={{
+            transform: 'translateZ(0)',
+            transition: 'background-color 0.2s ease, transform 0.2s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateZ(0) scale(1.03)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateZ(0)';
+          }}
           asChild
         >
           <Link href={linkHref || `/${lang}/why-china`}>
