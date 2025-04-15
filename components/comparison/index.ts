@@ -1,4 +1,4 @@
-export * from './ComparisonContent'
+export * from './comparison-content'
 export * from './page-header'
 export * from './section-header'
 export * from './detailed-comparison'

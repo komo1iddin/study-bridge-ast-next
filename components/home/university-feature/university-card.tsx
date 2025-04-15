@@ -18,31 +18,6 @@ export function UniversityCard({ university, lang, className }: UniversityCardPr
   const t = useTranslations('universityFeature')
   const router = useRouter()
   const cardRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setIsVisible(true)
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.2, rootMargin: '0px' }
-    )
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current)
-    }
-
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current)
-      }
-    }
-  }, [])
 
   const handleMoreInfo = () => {
     router.push(`/${lang}/universities/${university.slug || university.id}`)
@@ -59,7 +34,7 @@ export function UniversityCard({ university, lang, className }: UniversityCardPr
         "shadow-[0_1px_3px_0px_rgba(0,0,0,0.06)]",
         "hover:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)]",
         "hover:border-[rgba(59,130,246,0.2)]",
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
+        "opacity-100 translate-y-0",
         className
       )}
       style={{ 
