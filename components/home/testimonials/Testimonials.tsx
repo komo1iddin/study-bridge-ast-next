@@ -99,7 +99,7 @@ export default function Testimonials({ className }: TestimonialsProps) {
   }, [])
   
   return (
-    <section className={cn("w-full py-12 md:py-24 lg:py-32", className)}>
+    <section className={cn("w-full py-10 md:py-16 lg:py-20", className)}>
       <div className="container px-4 md:px-6 mx-auto">
         {/* Section Header */}
         <motion.div 

@@ -215,7 +215,7 @@ export function AdvantagesStudyChina({ lang }: { lang: string }) {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-16 md:py-24 overflow-hidden">
+    <section ref={sectionRef} className="relative py-10 md:py-16 lg:py-20 overflow-hidden">
       <style jsx global>{`
         .hover-card {
           position: relative;

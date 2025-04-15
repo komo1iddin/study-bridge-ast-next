@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useInView } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
@@ -85,39 +85,61 @@ const TestimonialCards = () => {
   const rightColumnCards = extendedTestimonials.filter((_, idx) => idx % 2 === 1)
 
   return (
-    <motion.div
+    <div
       ref={containerRef}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className={cn('relative h-full w-full overflow-hidden')}
+      className={cn('relative h-full w-full overflow-hidden', isInView ? 'opacity-100' : 'opacity-0')}
       style={{
-        willChange: "opacity",
         transform: "translateZ(0)",
-        backfaceVisibility: "hidden"
+        backfaceVisibility: "hidden",
+        transition: "opacity 0.5s ease-in-out"
       }}
     >
+      <style jsx global>{`
+        @keyframes scrollDown1 {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(-900px); }
+        }
+        
+        @keyframes scrollDown2 {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(-500px); }
+        }
+        
+        @keyframes scrollDown3 {
+          0% { transform: translateY(-250px); }
+          100% { transform: translateY(-750px); }
+        }
+        
+        .scroll-animation-mobile {
+          animation: scrollDown1 35s linear infinite;
+          will-change: transform;
+        }
+        
+        .scroll-animation-left {
+          animation: scrollDown2 30s linear infinite;
+          will-change: transform;
+        }
+        
+        .scroll-animation-right {
+          animation: scrollDown3 30s linear infinite;
+          will-change: transform;
+        }
+      `}</style>
+      
       {/* Mobile view - single column scrolling */}
-      <motion.div 
+      <div 
         className={cn(
           'sm:hidden absolute left-0 w-full h-full overflow-hidden'
         )}
         style={{
-          maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
           transform: "translateZ(0)",
-          backfaceVisibility: "hidden"
+          backfaceVisibility: "hidden",
+          maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 5%, black 15%, black 85%, rgba(0, 0, 0, 0.8) 95%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 5%, black 15%, black 85%, rgba(0, 0, 0, 0.8) 95%, transparent 100%)'
         }}
       >
-        <motion.div
-          animate={{ y: [0, -900] }}
-          transition={{ 
-            duration: 30,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "linear"
-          }}
-          className="px-2"
+        <div
+          className="px-2 scroll-animation-mobile"
           style={{
             willChange: "transform",
             transform: "translateZ(0)"
@@ -130,31 +152,24 @@ const TestimonialCards = () => {
               isInView={isInView}
             />
           ))}
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
       {/* Left column container with padding - desktop only */}
-      <motion.div 
+      <div 
         className={cn(
           'hidden sm:block absolute left-0 w-[calc(50%+1rem)] pr-6 h-full overflow-hidden'
         )}
         style={{
-          maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
           transform: "translateZ(0)",
-          backfaceVisibility: "hidden"
+          backfaceVisibility: "hidden",
+          maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 5%, black 15%, black 85%, rgba(0, 0, 0, 0.8) 95%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 5%, black 15%, black 85%, rgba(0, 0, 0, 0.8) 95%, transparent 100%)'
         }}
       >
         {/* Scrolling content */}
-        <motion.div
-          animate={{ y: [0, -500] }}
-          transition={{ 
-            duration: 25,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "linear"
-          }}
-          className="pr-2"
+        <div
+          className="pr-2 scroll-animation-left"
           style={{
             willChange: "transform",
             transform: "translateZ(0)"
@@ -167,31 +182,24 @@ const TestimonialCards = () => {
               isInView={isInView}
             />
           ))}
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
       {/* Right column container with padding - desktop only */}
-      <motion.div 
+      <div 
         className={cn(
           'hidden sm:block absolute right-0 w-[calc(50%+1rem)] pl-6 h-full overflow-hidden'
         )}
         style={{
-          maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
           transform: "translateZ(0)",
-          backfaceVisibility: "hidden"
+          backfaceVisibility: "hidden",
+          maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 5%, black 15%, black 85%, rgba(0, 0, 0, 0.8) 95%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 5%, black 15%, black 85%, rgba(0, 0, 0, 0.8) 95%, transparent 100%)'
         }}
       >
         {/* Scrolling content */}
-        <motion.div
-          animate={{ y: [-250, -750] }}
-          transition={{ 
-            duration: 25,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "linear"
-          }}
-          className="pl-2"
+        <div
+          className="pl-2 scroll-animation-right"
           style={{
             willChange: "transform",
             transform: "translateZ(0)"
@@ -204,9 +212,9 @@ const TestimonialCards = () => {
               isInView={isInView}
             />
           ))}
-        </motion.div>
-      </motion.div>
-    </motion.div>
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -217,16 +225,13 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ testimonial, isInView }: TestimonialCardProps) => {
   return (
-    <motion.div
-      whileHover={{ scale: 1.03, y: -5 }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isInView ? 1 : 0 }}
-      transition={{ duration: 0.3 }}
+    <div
       className={cn(
-        'bg-white rounded-lg shadow-sm mb-4 p-3 sm:p-4 border border-gray-100'
+        'bg-white rounded-lg shadow-sm mb-4 p-3 sm:p-4 border border-gray-100',
+        isInView ? 'opacity-100' : 'opacity-0',
+        'transition-opacity duration-300'
       )}
       style={{
-        willChange: "transform, opacity",
         transform: "translateZ(0)"
       }}
     >
@@ -248,7 +253,7 @@ const TestimonialCard = ({ testimonial, isInView }: TestimonialCardProps) => {
         </div>
       </div>
       <p className={cn('text-gray-600 text-xs sm:text-sm')}>{testimonial.comment}</p>
-    </motion.div>
+    </div>
   )
 }
 

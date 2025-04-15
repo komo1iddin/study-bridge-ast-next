@@ -84,7 +84,7 @@ export function SuccessPath() {
   ]
 
   return (
-    <section className="relative py-12 md:py-20 overflow-hidden">
+    <section className="relative py-10 md:py-16 lg:py-20 overflow-hidden">
       {/* Background decorations */}
       <Background />
 

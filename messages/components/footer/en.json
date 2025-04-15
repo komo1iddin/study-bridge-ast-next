@@ -1,11 +1,22 @@
 {
-  "copyright": "© {year} EduChina. All rights reserved.",
+  "company": {
+    "description": "Your trusted partner for studying in China. We provide comprehensive support for students seeking quality education abroad."
+  },
   "navigation": {
+    "title": "Navigation",
     "home": "Home",
     "programs": "Programs",
-    "services": "Services",
-    "aboutUs": "About Us",
-    "contact": "Contact"
+    "universities": "Universities",
+    "blog": "Blog",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "resources": {
+    "title": "Resources",
+    "scholarships": "Scholarships",
+    "visaSupport": "Visa Support",
+    "languageCourses": "Language Courses",
+    "faq": "FAQ"
   },
   "legal": {
     "privacyPolicy": "Privacy Policy",
@@ -13,7 +24,7 @@
   },
   "contact": {
     "title": "Contact",
-    "address": "Address",
+    "address": "Tashkent, Uzbekistan",
     "phone": "Phone",
     "email": "Email"
   },
@@ -28,6 +39,13 @@
     "title": "Subscribe to Newsletter",
     "placeholder": "Enter your email",
     "button": "Subscribe",
+    "description": "Get updates on scholarships and opportunities in China",
     "success": "Thank you for subscribing!"
+  },
+  "copyright": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "sitemap": "Sitemap"
   }
 } 

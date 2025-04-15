@@ -1,11 +1,22 @@
 {
-  "copyright": "© {year} EduChina. Barcha huquqlar himoyalangan.",
+  "company": {
+    "description": "Xitoyda ta'lim olish uchun ishonchli hamkoringiz. Biz chet elda sifatli ta'lim olishni xohlovchi talabalar uchun har tomonlama yordam ko'rsatamiz."
+  },
   "navigation": {
+    "title": "Navigatsiya",
     "home": "Bosh sahifa",
     "programs": "Dasturlar",
-    "services": "Xizmatlar",
-    "aboutUs": "Biz haqimizda",
+    "universities": "Universitetlar",
+    "blog": "Blog",
+    "about": "Biz haqimizda",
     "contact": "Aloqa"
+  },
+  "resources": {
+    "title": "Resurslar",
+    "scholarships": "Stipendiyalar",
+    "visaSupport": "Viza bo'yicha yordam",
+    "languageCourses": "Til kurslari",
+    "faq": "Ko'p so'raladigan savollar"
   },
   "legal": {
     "privacyPolicy": "Maxfiylik siyosati",
@@ -13,7 +24,7 @@
   },
   "contact": {
     "title": "Aloqa",
-    "address": "Manzil",
+    "address": "Toshkent, O'zbekiston",
     "phone": "Telefon",
     "email": "Email"
   },
@@ -28,6 +39,13 @@
     "title": "Yangiliklar ro'yxatiga yoziling",
     "placeholder": "Email manzilingizni kiriting",
     "button": "Obuna bo'lish",
+    "description": "Xitoyda stipendiyalar va imkoniyatlar haqida yangilanishlarni oling",
     "success": "Obuna bo'lganingiz uchun rahmat!"
+  },
+  "copyright": {
+    "rights": "Barcha huquqlar himoyalangan.",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari",
+    "sitemap": "Sayt xaritasi"
   }
 } 

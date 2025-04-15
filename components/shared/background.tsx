@@ -15,7 +15,7 @@ function lerp(a: number, b: number, t: number) {
 
 export function SeamlessBackground({ className }: BackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number | undefined>(undefined)
 
   useEffect(() => {
     const canvas = canvasRef.current

@@ -2,107 +2,215 @@
 
 import Link from "next/link"
 import { useTranslations } from "next-intl"
-import { GraduationCap, Mail, Phone, MapPin } from "lucide-react"
+import { 
+  GraduationCap, 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Instagram, 
+  MessageCircle, 
+  Send,
+  Users,
+  BookOpen,
+  Landmark,
+  FileText
+} from "lucide-react"
 import { cn } from '@/lib/utils'
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+
+// Navigation types
+type NavigationItem = {
+  name: string
+  href: string
+  icon?: React.ElementType
+}
 
 export default function Footer() {
   const t = useTranslations("footer")
   const currentYear = new Date().getFullYear()
 
+  // Navigation structure based on the legacy Astro footer
+  const navigation = {
+    main: [
+      { name: t('navigation.about'), href: '/about', icon: Users },
+      { name: t('navigation.programs'), href: '/programs', icon: BookOpen },
+      { name: t('navigation.universities'), href: '/universities', icon: Landmark },
+      { name: t('navigation.blog'), href: '/blog', icon: FileText },
+      { name: t('navigation.contact'), href: '/contact', icon: Phone }
+    ],
+    resources: [
+      { name: t('resources.scholarships'), href: '/scholarships' },
+      { name: t('resources.visaSupport'), href: '/visa-support' },
+      { name: t('resources.languageCourses'), href: '/language-courses' },
+      { name: t('resources.faq'), href: '/faq' }
+    ],
+    social: [
+      {
+        name: 'Instagram',
+        href: 'https://instagram.com/educhina.uz',
+        icon: Instagram
+      },
+      {
+        name: 'Telegram',
+        href: 'https://t.me/studybridgeuz',
+        icon: MessageCircle
+      }
+    ]
+  }
+
   return (
-    <footer className={cn('bg-slate-900 text-white')}>
-      <div className={cn('container mx-auto px-4 py-12')}>
-        <div className={cn('grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8')}>
-          {/* Logo and About */}
-          <div className={cn('space-y-4')}>
-            <div className={cn('flex items-center space-x-2')}>
-              <GraduationCap className={cn('h-6 w-6 text-blue-400')} />
-              <span className={cn('text-xl font-bold')}>Study Bridge</span>
+    <footer className={cn('bg-white border-t border-gray-100')}>
+      <div className={cn('container mx-auto px-4 py-10')}>
+        <div className={cn('flex flex-col md:flex-row md:items-start md:justify-between gap-10')}>
+          {/* Brand and Social */}
+          <div className={cn('flex-1 min-w-[220px] flex flex-col gap-4')}>
+            <div className={cn('flex items-center gap-2 mb-2')}>
+              <GraduationCap className={cn('h-7 w-7 text-blue-600')} />
+              <span className={cn('text-xl font-bold text-blue-600')}>Study Bridge</span>
             </div>
-            <p className={cn('text-slate-300 text-sm')}>
-              Your trusted partner for studying in China
+            
+            <p className={cn('text-gray-600 text-sm leading-relaxed')}>
+              {t('company.description')}
             </p>
+            
+            <div className={cn('flex gap-3 mt-2')}>
+              {navigation.social.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    'flex items-center justify-center h-10 w-10 rounded-full bg-white shadow hover:shadow-md text-gray-600 hover:text-blue-600 transition'
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.name}
+                >
+                  {item.icon && <item.icon className="h-5 w-5" />}
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Navigation Links */}
-          <div>
-            <h3 className={cn('text-lg font-semibold mb-4')}>{t('navigation.home')}</h3>
-            <ul className={cn('space-y-2')}>
-              <li>
-                <Link href="/" className={cn('text-slate-300 hover:text-white transition')}>
-                  {t('navigation.home')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/programs" className={cn('text-slate-300 hover:text-white transition')}>
-                  {t('navigation.programs')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className={cn('text-slate-300 hover:text-white transition')}>
-                  {t('navigation.services')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className={cn('text-slate-300 hover:text-white transition')}>
-                  {t('navigation.aboutUs')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className={cn('text-slate-300 hover:text-white transition')}>
-                  {t('navigation.contact')}
-                </Link>
-              </li>
-            </ul>
+          {/* Navigation and Resources */}
+          <div className={cn('flex-[2] flex flex-col sm:flex-row gap-8')}>
+            <div>
+              <h3 className={cn('text-base font-semibold text-gray-900 mb-3')}>
+                {t('navigation.title')}
+              </h3>
+              <ul className={cn('space-y-2')}>
+                {navigation.main.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        'text-gray-600 hover:text-blue-600 transition-colors duration-200 flex items-center gap-2'
+                      )}
+                    >
+                      {item.icon && <item.icon className="h-4 w-4" />}
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className={cn('text-base font-semibold text-gray-900 mb-3')}>
+                {t('resources.title')}
+              </h3>
+              <ul className={cn('space-y-2')}>
+                {navigation.resources.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        'text-gray-600 hover:text-blue-600 transition-colors duration-200'
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Legal */}
-          <div>
-            <h3 className={cn('text-lg font-semibold mb-4')}>{t('legal.privacyPolicy')}</h3>
-            <ul className={cn('space-y-2')}>
-              <li>
-                <Link href="/privacy" className={cn('text-slate-300 hover:text-white transition')}>
-                  {t('legal.privacyPolicy')}
-                </Link>
+          {/* Contact and Newsletter */}
+          <div className={cn('flex-1 min-w-[220px] flex flex-col gap-4')}>
+            <h3 className={cn('text-base font-semibold text-gray-900 mb-3')}>
+              {t('contact.title')}
+            </h3>
+            
+            <ul className={cn('space-y-2 text-gray-600 text-sm')}>
+              <li className={cn('flex items-center gap-2')}>
+                <Phone className={cn('h-4 w-4 text-blue-600')} />
+                <a href="tel:+998901234567" className={cn('hover:text-blue-600 transition-colors duration-200')}>
+                  +998 90 123 4567
+                </a>
               </li>
-              <li>
-                <Link href="/terms" className={cn('text-slate-300 hover:text-white transition')}>
-                  {t('legal.termsOfService')}
-                </Link>
+              <li className={cn('flex items-center gap-2')}>
+                <Mail className={cn('h-4 w-4 text-blue-600')} />
+                <a href="mailto:info@educhina.uz" className={cn('hover:text-blue-600 transition-colors duration-200')}>
+                  info@educhina.uz
+                </a>
               </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className={cn('text-lg font-semibold mb-4')}>{t('contact.title')}</h3>
-            <ul className={cn('space-y-3')}>
-              <li className={cn('flex items-start')}>
-                <MapPin className={cn('h-5 w-5 text-blue-400 mr-2 mt-0.5')} />
-                <span className={cn('text-slate-300')}>Tashkent, Uzbekistan</span>
-              </li>
-              <li className={cn('flex items-center')}>
-                <Phone className={cn('h-5 w-5 text-blue-400 mr-2')} />
-                <span className={cn('text-slate-300')}>+998 90 123 45 67</span>
-              </li>
-              <li className={cn('flex items-center')}>
-                <Mail className={cn('h-5 w-5 text-blue-400 mr-2')} />
-                <span className={cn('text-slate-300')}>info@educhina.uz</span>
+              <li className={cn('flex items-center gap-2')}>
+                <MapPin className={cn('h-4 w-4 text-blue-600')} />
+                <span>{t('contact.address')}</span>
               </li>
             </ul>
+            
+            {/* Newsletter */}
+            <div className={cn('mt-4')}>
+              <h4 className={cn('text-sm font-semibold text-gray-800 mb-2')}>
+                {t('newsletter.title')}
+              </h4>
+              <form className={cn('flex items-center gap-2')}>
+                <Input
+                  type="email"
+                  required
+                  placeholder={t('newsletter.placeholder')}
+                  className={cn(
+                    'rounded-full border border-gray-300 bg-white px-4 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:ring-offset-2 transition-all duration-200'
+                  )}
+                />
+                <Button
+                  type="submit"
+                  className={cn(
+                    'rounded-full bg-blue-600 p-2 text-white hover:bg-blue-700 transition-all duration-200 shadow-sm'
+                  )}
+                  aria-label={t('newsletter.button')}
+                  size="icon"
+                >
+                  <Send className="h-4 w-4" />
+                </Button>
+              </form>
+              <p className={cn('mt-1 text-xs text-gray-500')}>
+                {t('newsletter.description')}
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Copyright and Social */}
-        <div className={cn('border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center')}>
-          <p className={cn('text-slate-400 text-sm')}>
-            {t('copyright', { year: currentYear })}
-          </p>
-          <div className={cn('flex space-x-4 mt-4 md:mt-0')}>
-            <a href="#" className={cn('text-slate-400 hover:text-blue-400 transition')}>Facebook</a>
-            <a href="#" className={cn('text-slate-400 hover:text-blue-400 transition')}>Twitter</a>
-            <a href="#" className={cn('text-slate-400 hover:text-blue-400 transition')}>Instagram</a>
-            <a href="#" className={cn('text-slate-400 hover:text-blue-400 transition')}>LinkedIn</a>
+        {/* Copyright */}
+        <div className={cn('mt-10 pt-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-2')}>
+          <p className={cn('text-xs text-gray-500')}>&copy; {currentYear} Study Bridge. {t('copyright.rights')}</p>
+          <div className={cn('flex gap-4 text-xs text-gray-500')}>
+            <Link
+              href="/privacy"
+              className={cn('hover:text-blue-600 transition-colors duration-200')}>
+              {t('copyright.privacy')}
+            </Link>
+            <Link
+              href="/terms"
+              className={cn('hover:text-blue-600 transition-colors duration-200')}>
+              {t('copyright.terms')}
+            </Link>
+            <Link
+              href="/sitemap"
+              className={cn('hover:text-blue-600 transition-colors duration-200')}>
+              {t('copyright.sitemap')}
+            </Link>
           </div>
         </div>
       </div>

@@ -56,7 +56,7 @@ const OurTeam = ({ lang = 'en' }: OurTeamProps) => {
   ]
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16 lg:py-20">
       {/* Section header */}
       <SectionHeader
         title={t('team.title')}
