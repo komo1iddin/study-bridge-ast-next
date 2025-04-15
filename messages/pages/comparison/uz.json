@@ -3,9 +3,13 @@
     "title": "Ta'lim solishtirmasi - Xitoy va mahalliy ta'lim",
     "description": "Xitoydagi ta'limni mahalliy ta'lim imkoniyatlari bilan solishtiring. Akademik, moliyaviy, yashash, karyera va madaniy farqlarni ko'rib chiqing."
   },
-  "metadata": {
-    "title": "Ta'lim solishtirmasi - Xitoy va mahalliy ta'lim",
-    "description": "Xitoydagi ta'limni mahalliy ta'lim imkoniyatlari bilan solishtiring. Akademik, moliyaviy, yashash, karyera va madaniy farqlarni ko'rib chiqing."
+  "pages": {
+    "comparison": {
+      "metadata": {
+        "title": "Solishtirma: Xitoydagi ta'lim va mahalliy ta'lim",
+        "description": "Xitoydagi ta'limni mahalliy ta'lim imkoniyatlari bilan batafsil solishtirish. Akademik jihatlar, xarajatlar, turmush tarzi, karyera yo'llari va madaniyatni o'rganing."
+      }
+    }
   },
   "pageHeader": {
     "badge": "Solishtirma",

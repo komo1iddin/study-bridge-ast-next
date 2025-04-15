@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
@@ -64,7 +65,9 @@ export default async function UniversityPage({ params }: PageProps) {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
-      <UniversityDetail university={university} lang={locale} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <UniversityDetail university={university} lang={locale} />
+      </Suspense>
       <Footer />
     </div>
   )

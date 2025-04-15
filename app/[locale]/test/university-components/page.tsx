@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
@@ -38,33 +39,12 @@ const mockUniversity = {
   internationalStudents: 2500
 }
 
-// Mock translations
-const mockTranslations = {
-  breadcrumb: {
-    universities: "Universities",
-  },
-  tabs: {
-    overview: "Overview",
-    programs: "Programs",
-    admission: "Admission",
-    facilities: "Facilities",
-    images: "Gallery",
-    dorms: "Accommodation",
-    faq: "FAQ",
-  },
-  viewGallery: "View Gallery",
-  selectSection: "Select Section",
-  badges: {
-    featured: "Featured",
-    grantsAvailable: "Grants Available",
-    rank: "Rank: {rank}",
-  },
-}
-
 export default function TestUniversityComponents() {
   const [activeTab, setActiveTab] = useState("overview")
   const [activeComponent, setActiveComponent] = useState("all")
   
+  const t = useTranslations('university-detail')
+
   // Function to handle tab changes for the HeaderCard component
   const handleTabChange = (tab: string) => {
     setActiveTab(tab)
@@ -128,7 +108,7 @@ export default function TestUniversityComponents() {
                 university={mockUniversity}
                 activeTab={activeTab}
                 lang="en"
-                t={mockTranslations}
+                t={t}
                 onTabChange={handleTabChange}
               />
 
@@ -158,16 +138,16 @@ export default function TestUniversityComponents() {
 
             {/* Sidebar */}
             <div className="space-y-4 sm:space-y-6">
-              <ApplicationCard university={mockUniversity} t={mockTranslations} lang="en" />
-              <StatsCard university={mockUniversity} t={mockTranslations} lang="en" />
-              <ContactCard university={mockUniversity} t={mockTranslations} lang="en" />
+              <ApplicationCard university={mockUniversity} t={t} lang="en" />
+              <StatsCard university={mockUniversity} t={t} lang="en" />
+              <ContactCard university={mockUniversity} t={t} lang="en" />
               
               {/* Button to view gallery */}
               <Button 
                 className="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                 onClick={() => handleTabChange("images")}
               >
-                {mockTranslations.viewGallery}
+                {t('viewGallery')}
               </Button>
             </div>
           </div>
@@ -178,7 +158,7 @@ export default function TestUniversityComponents() {
             university={mockUniversity}
             activeTab={activeTab}
             lang="en"
-            t={mockTranslations}
+            t={t}
             onTabChange={handleTabChange}
           />
         )}
@@ -213,19 +193,19 @@ export default function TestUniversityComponents() {
         
         {activeComponent === "application" && (
           <div className="max-w-sm mx-auto">
-            <ApplicationCard university={mockUniversity} t={mockTranslations} lang="en" />
+            <ApplicationCard university={mockUniversity} t={t} lang="en" />
           </div>
         )}
         
         {activeComponent === "stats" && (
           <div className="max-w-sm mx-auto">
-            <StatsCard university={mockUniversity} t={mockTranslations} lang="en" />
+            <StatsCard university={mockUniversity} t={t} lang="en" />
           </div>
         )}
         
         {activeComponent === "contact" && (
           <div className="max-w-sm mx-auto">
-            <ContactCard university={mockUniversity} t={mockTranslations} lang="en" />
+            <ContactCard university={mockUniversity} t={t} lang="en" />
           </div>
         )}
       </div>

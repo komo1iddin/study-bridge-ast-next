@@ -3,6 +3,14 @@
     "title": "Education Comparison - China vs Local Education",
     "description": "Compare studying in China with local education options. Review academic, financial, living, career and cultural differences."
   },
+  "pages": {
+    "comparison": {
+      "metadata": {
+        "title": "Compare: China vs Local Education",
+        "description": "Detailed comparison of studying in China versus local educational opportunities. Explore academics, costs, lifestyle, career paths, and culture."
+      }
+    }
+  },
   "pageHeader": {
     "badge": "Comparison",
     "title": "China vs Local Education: Complete Comparison",
@@ -242,7 +250,7 @@
     "badge": "Fun Facts",
     "title": "Interesting Facts About Studying in China",
     "subtitle": "Interesting information you should know about studying in China",
-    "factTitle": "Fun Fact #{{number}}",
+    "factTitle": "Fun Fact #{number}",
     "0": "China has more than 40 universities in the global top 500 rankings, offering world-class education.",
     "1": "Many international students in China receive full scholarships covering tuition, accommodation, and monthly stipends.",
     "2": "China is investing heavily in becoming an education hub with over $10 billion annually in international education.",
