@@ -225,19 +225,19 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
                 Array.from({ length: 4 }).map((_, index) => (
                   <div
                     key={index}
-                    className="min-w-[280px] md:min-w-[320px] lg:min-w-[300px] xl:min-w-[320px] px-2 pb-4"
+                    className="min-w-[280px] md:min-w-[320px] lg:min-w-[300px] xl:min-w-[320px] px-2 pb-4 h-[520px] flex"
                   >
-                    <div className="animate-pulse">
-                      <div className="bg-gray-200 h-48 rounded-t-2xl" />
-                      <div className="p-4 bg-white rounded-b-2xl">
+                    <div className="animate-pulse w-full bg-white rounded-xl">
+                      <div className="bg-gray-200 h-48 rounded-t-xl" />
+                      <div className="p-4 bg-white rounded-b-xl flex flex-col h-[calc(520px-12rem)]">
                         <div className="h-6 bg-gray-200 rounded mb-2" />
                         <div className="h-4 bg-gray-200 rounded mb-4 w-2/3" />
-                        <div className="grid grid-cols-3 gap-2 mb-4">
-                          {[1, 2, 3].map((i) => (
+                        <div className="grid grid-cols-2 gap-2 mb-4">
+                          {[1, 2, 3, 4].map((i) => (
                             <div key={i} className="h-4 bg-gray-200 rounded" />
                           ))}
                         </div>
-                        <div className="h-10 bg-gray-200 rounded" />
+                        <div className="mt-auto h-10 bg-gray-200 rounded" />
                       </div>
                     </div>
                   </div>
@@ -246,11 +246,12 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
                 visibleUniversities.map((university) => (
                   <div
                     key={university.id}
-                    className="min-w-[280px] md:min-w-[320px] lg:min-w-[300px] xl:min-w-[320px] px-2 pb-4"
+                    className="min-w-[280px] md:min-w-[320px] lg:min-w-[300px] xl:min-w-[320px] px-2 pb-4 h-[520px] flex"
                   >
                     <UniversityCard
                       university={university}
                       lang={lang}
+                      className="w-full"
                     />
                   </div>
                 ))
