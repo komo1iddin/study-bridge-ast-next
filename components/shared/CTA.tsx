@@ -25,12 +25,12 @@ export default function CTA({ className, lang, linkHref }: CTAProps) {
       }}
       onMouseEnter={(e) => {
         const target = e.currentTarget;
-        target.style.transform = 'translateZ(0) scale(1.01)';
-        target.style.boxShadow = '0 20px 25px -5px rgba(59, 130, 246, 0.2), 0 10px 10px -5px rgba(59, 130, 246, 0.1)';
+        target.style.transform = 'translateZ(0)';
+        target.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
       }}
       onMouseLeave={(e) => {
         const target = e.currentTarget;
-        target.style.transform = 'translateZ(0) scale(1)';
+        target.style.transform = 'translateZ(0)';
         target.style.boxShadow = '';
       }}
     >
@@ -49,7 +49,7 @@ export default function CTA({ className, lang, linkHref }: CTAProps) {
             transition: 'background-color 0.2s ease, transform 0.2s ease'
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateZ(0) scale(1.03)';
+            e.currentTarget.style.transform = 'translateZ(0)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateZ(0)';
