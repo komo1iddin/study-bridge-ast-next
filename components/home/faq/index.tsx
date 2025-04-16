@@ -2,11 +2,12 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Card } from "@/components/ui/card"
+import { ChevronDown } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { HomeFAQ } from "@/types/content"
 import { Button } from "@/components/ui/button"
 import { Mail } from "lucide-react"
-import { HomeFAQ } from "@/types/content"
 
 interface HomeFAQSectionProps {
   faqs: HomeFAQ[]
@@ -14,6 +15,7 @@ interface HomeFAQSectionProps {
 
 export function HomeFAQSection({ faqs }: HomeFAQSectionProps) {
   const t = useTranslations("components.home.faq")
+  const [openItems, setOpenItems] = useState<string[]>([])
   
   // Group FAQs by category
   const [categories] = useState(() => {
@@ -45,50 +47,66 @@ export function HomeFAQSection({ faqs }: HomeFAQSectionProps) {
       items
     }));
   });
+
+  const toggleItem = (id: string) => {
+    setOpenItems(current => 
+      current.includes(id) 
+        ? current.filter(item => item !== id)
+        : [...current, id]
+    )
+  }
   
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold tracking-tight">{t("title")}</h2>
         <p className="mt-4 text-lg text-muted-foreground">{t("subtitle")}</p>
       </div>
       
       {categories.map(category => (
-        <Card key={category.id} className="shadow-md">
-          <CardHeader>
-            <CardTitle className="text-xl">{category.title}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Accordion type="single" collapsible className="w-full">
-              {category.items.map((faq) => (
-                <AccordionItem key={faq.id} value={faq.id}>
-                  <AccordionTrigger className="text-left font-medium text-slate-800">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-slate-600">
-                    <p>{faq.answer}</p>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </CardContent>
-        </Card>
+        <div key={category.id} className="mb-8">
+          <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
+          <div className="bg-white rounded-lg shadow divide-y">
+            {category.items.map((faq) => (
+              <div key={faq.id} className="py-1">
+                <button
+                  onClick={() => toggleItem(faq.id)}
+                  className="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none"
+                >
+                  <span className="font-medium text-gray-900">{faq.question}</span>
+                  <ChevronDown 
+                    className={cn(
+                      "h-5 w-5 text-gray-500 transition-transform duration-200",
+                      openItems.includes(faq.id) ? "transform rotate-180" : ""
+                    )}
+                  />
+                </button>
+                <div 
+                  className={cn(
+                    "px-6 pb-4 transition-all duration-200 overflow-hidden",
+                    openItems.includes(faq.id) ? "max-h-96" : "max-h-0"
+                  )}
+                >
+                  <p className="text-gray-600">{faq.answer}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       ))}
 
-      <Card className="bg-blue-50 border-blue-100">
-        <CardContent className="p-6">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div>
-              <h3 className="text-lg font-medium text-blue-700 mb-2">{t("contact.title")}</h3>
-              <p className="text-slate-600">{t("contact.description")}</p>
-            </div>
-            <Button className="shrink-0" size="lg">
-              <Mail className="mr-2 h-4 w-4" />
-              {t("contact.button")}
-            </Button>
+      <div className="bg-blue-50 border border-blue-100 rounded-lg p-6 mt-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h3 className="text-lg font-medium text-blue-700 mb-2">{t("contact.title")}</h3>
+            <p className="text-slate-600">{t("contact.description")}</p>
           </div>
-        </CardContent>
-      </Card>
+          <Button className="shrink-0" size="lg">
+            <Mail className="mr-2 h-4 w-4" />
+            {t("contact.button")}
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }
