@@ -16,35 +16,20 @@ export function HomeFAQSection({ faqs }: HomeFAQSectionProps) {
   const t = useTranslations("components.home.faq")
   const [openItems, setOpenItems] = useState<string[]>([])
   
-  // Group FAQs by category
-  const [categories] = useState(() => {
-    const categoryMap = new Map<string, HomeFAQ[]>();
-    
-    faqs.forEach(faq => {
-      if (!categoryMap.has(faq.category)) {
-        categoryMap.set(faq.category, []);
+  // Group FAQs by category but only for ordering purposes
+  const [orderedFaqs] = useState(() => {
+    // Sort FAQs by category and then by order within each category
+    return faqs.sort((a, b) => {
+      // First sort by category name
+      const categoryCompare = a.category.localeCompare(b.category);
+      if (categoryCompare !== 0) return categoryCompare;
+      
+      // Then sort by order within category
+      if (a.order !== undefined && b.order !== undefined) {
+        return a.order - b.order;
       }
-      categoryMap.get(faq.category)?.push(faq);
+      return 0;
     });
-    
-    // Sort FAQs by order within each category if available
-    categoryMap.forEach((items, category) => {
-      categoryMap.set(
-        category,
-        items.sort((a, b) => {
-          if (a.order !== undefined && b.order !== undefined) {
-            return a.order - b.order;
-          }
-          return 0;
-        })
-      );
-    });
-    
-    return Array.from(categoryMap.entries()).map(([category, items]) => ({
-      id: category,
-      title: t(`categories.${category}`, { default: category }),
-      items
-    }));
   });
 
   const toggleItem = (id: string) => {
@@ -62,34 +47,27 @@ export function HomeFAQSection({ faqs }: HomeFAQSectionProps) {
         <p className="mt-4 text-lg text-muted-foreground">{t("subtitle")}</p>
       </div>
       
-      <div className="space-y-4">
-        {categories.map(category => (
-          <div key={category.id} className="mb-8">
-            <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
-            <div className="bg-white rounded-lg shadow">
-              {category.items.map((faq) => (
-                <div key={faq.id} className="border-b border-gray-100 last:border-b-0">
-                  <button
-                    onClick={() => toggleItem(faq.id)}
-                    className="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none"
-                    aria-expanded={openItems.includes(faq.id)}
-                  >
-                    <span className="font-medium text-gray-900">{faq.question}</span>
-                    <ChevronDown 
-                      className={cn(
-                        "h-5 w-5 text-gray-500 transition-transform duration-200",
-                        openItems.includes(faq.id) ? "transform rotate-180" : ""
-                      )}
-                    />
-                  </button>
-                  {openItems.includes(faq.id) && (
-                    <div className="px-6 pb-4">
-                      <p className="text-gray-600">{faq.answer}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+      <div className="bg-white rounded-lg shadow">
+        {orderedFaqs.map((faq) => (
+          <div key={faq.id} className="border-b border-gray-100 last:border-b-0">
+            <button
+              onClick={() => toggleItem(faq.id)}
+              className="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none"
+              aria-expanded={openItems.includes(faq.id)}
+            >
+              <span className="font-medium text-gray-900">{faq.question}</span>
+              <ChevronDown 
+                className={cn(
+                  "h-5 w-5 text-gray-500 transition-transform duration-200",
+                  openItems.includes(faq.id) ? "transform rotate-180" : ""
+                )}
+              />
+            </button>
+            {openItems.includes(faq.id) && (
+              <div className="px-6 pb-4">
+                <p className="text-gray-600">{faq.answer}</p>
+              </div>
+            )}
           </div>
         ))}
       </div>
