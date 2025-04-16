@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { Card } from "@/components/ui/card"
 import { ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { HomeFAQ } from "@/types/content"
@@ -63,37 +62,37 @@ export function HomeFAQSection({ faqs }: HomeFAQSectionProps) {
         <p className="mt-4 text-lg text-muted-foreground">{t("subtitle")}</p>
       </div>
       
-      {categories.map(category => (
-        <div key={category.id} className="mb-8">
-          <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
-          <div className="bg-white rounded-lg shadow divide-y">
-            {category.items.map((faq) => (
-              <div key={faq.id} className="py-1">
-                <button
-                  onClick={() => toggleItem(faq.id)}
-                  className="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none"
-                >
-                  <span className="font-medium text-gray-900">{faq.question}</span>
-                  <ChevronDown 
-                    className={cn(
-                      "h-5 w-5 text-gray-500 transition-transform duration-200",
-                      openItems.includes(faq.id) ? "transform rotate-180" : ""
-                    )}
-                  />
-                </button>
-                <div 
-                  className={cn(
-                    "px-6 pb-4 transition-all duration-200 overflow-hidden",
-                    openItems.includes(faq.id) ? "max-h-96" : "max-h-0"
+      <div className="space-y-4">
+        {categories.map(category => (
+          <div key={category.id} className="mb-8">
+            <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
+            <div className="bg-white rounded-lg shadow">
+              {category.items.map((faq) => (
+                <div key={faq.id} className="border-b border-gray-100 last:border-b-0">
+                  <button
+                    onClick={() => toggleItem(faq.id)}
+                    className="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none"
+                    aria-expanded={openItems.includes(faq.id)}
+                  >
+                    <span className="font-medium text-gray-900">{faq.question}</span>
+                    <ChevronDown 
+                      className={cn(
+                        "h-5 w-5 text-gray-500 transition-transform duration-200",
+                        openItems.includes(faq.id) ? "transform rotate-180" : ""
+                      )}
+                    />
+                  </button>
+                  {openItems.includes(faq.id) && (
+                    <div className="px-6 pb-4">
+                      <p className="text-gray-600">{faq.answer}</p>
+                    </div>
                   )}
-                >
-                  <p className="text-gray-600">{faq.answer}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
       <div className="bg-blue-50 border border-blue-100 rounded-lg p-6 mt-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
