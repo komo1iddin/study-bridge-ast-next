@@ -23,6 +23,9 @@ import universityDetailEn from './components/university-detail/en.json';
 import universityDetailRu from './components/university-detail/ru.json';
 import universityDetailUz from './components/university-detail/uz.json';
 
+// Import home FAQ translations
+import { faq as homeFaq } from './components/home/faq';
+
 // Create empty objects to replace removed home translation files
 const homeEn = {};
 const homeRu = {};
@@ -114,6 +117,11 @@ export const messages = {
     universityFeature: universityFeatureEn,
     'university-detail': universityDetailEn,
     common: commonEn,
+    components: {
+      home: {
+        faq: homeFaq.en
+      }
+    },
     pages: {
       home: {
         ...homeEn,
@@ -148,6 +156,11 @@ export const messages = {
     universityFeature: universityFeatureRu,
     'university-detail': universityDetailRu,
     common: commonRu,
+    components: {
+      home: {
+        faq: homeFaq.ru
+      }
+    },
     pages: {
       home: {
         ...homeRu,
@@ -182,6 +195,11 @@ export const messages = {
     universityFeature: universityFeatureUz,
     'university-detail': universityDetailUz,
     common: commonUz,
+    components: {
+      home: {
+        faq: homeFaq.uz
+      }
+    },
     pages: {
       home: {
         ...homeUz,

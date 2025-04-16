@@ -75,4 +75,17 @@ collections:
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Summary", name: "summary", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" } 
+      - { label: "Tags", name: "tags", widget: "list" }
+
+  - name: "home-faqs"
+    label: "Home FAQs"
+    folder: "content/home-faqs"
+    create: true
+    slug: "faq-{{slug}}"
+    i18n: true
+    fields:
+      - { label: "ID", name: "id", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["application", "financial", "academic", "life"] }
+      - { label: "Question", name: "question", widget: "string" }
+      - { label: "Answer", name: "answer", widget: "text" }
+      - { label: "Order", name: "order", widget: "number", required: false } 

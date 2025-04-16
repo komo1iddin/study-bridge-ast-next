@@ -40,4 +40,13 @@ export interface BlogPost {
   tags: string[];
   slug: string;
   content: string;
+}
+
+// Home FAQ content type
+export interface HomeFAQ {
+  id: string;
+  category: string;
+  question: string;
+  answer: string;
+  order?: number;
 } 

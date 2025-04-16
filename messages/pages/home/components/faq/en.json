@@ -1,0 +1,45 @@
+{
+  "title": "Frequently Asked Questions",
+  "subtitle": "Find answers to the most common questions about studying in China",
+  "searchPlaceholder": "Search for a question...",
+  "questions": {
+    "cost": {
+      "question": "How much does it cost to study in China?",
+      "answer": "The cost of studying in China varies depending on the university and program. On average, annual tuition fees for bachelor's programs range from $2,000-$4,000, and for master's programs from $3,000-$6,000. Living expenses are around $300-$600 per month depending on the city."
+    },
+    "scholarship": {
+      "question": "What are the scholarship opportunities?",
+      "answer": "The Chinese government and universities offer numerous scholarships. The most famous is the Chinese Government Scholarship (CSC), which covers full tuition, accommodation, and medical insurance. Additionally, Confucius Institute scholarships, university scholarships, and other opportunities are available."
+    },
+    "language": {
+      "question": "Do I need to know Chinese?",
+      "answer": "It depends on the program. Many universities offer programs taught in English, especially at the master's and doctoral levels. However, learning Chinese will give you a significant advantage and make your daily life easier. Many students first study in one-year language courses."
+    },
+    "visa": {
+      "question": "How does the visa process work?",
+      "answer": "To obtain a Chinese study visa (X1 or X2), you need an admission letter from the university, JW201/JW202 form, and other documents. Our agency provides full support in the visa process and helps prepare all necessary documents."
+    },
+    "work": {
+      "question": "Can students work in China?",
+      "answer": "Yes, international students can work in a limited capacity during their studies. Typically, on-campus jobs, English teaching, or internship opportunities are available. However, it's important to focus on your studies."
+    },
+    "accommodation": {
+      "question": "What are the accommodation options?",
+      "answer": "Most universities offer on-campus dormitories for international students, which is usually the most convenient and affordable option. Alternatively, you can rent an apartment off-campus, which gives more freedom but tends to be more expensive."
+    },
+    "application": {
+      "question": "What is the application process?",
+      "answer": "The application process typically involves submitting your academic transcripts, proof of language proficiency, personal statement, recommendation letters, and other documents specified by the university. Our agency guides you through each step and helps prepare and submit your application."
+    },
+    "timeframe": {
+      "question": "When should I apply?",
+      "answer": "For programs starting in September, most universities accept applications from December to May. For programs starting in March, applications are usually accepted from July to November. However, it's recommended to apply as early as possible, especially if you're seeking scholarships."
+    }
+  },
+  "actions": {
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "viewAll": "View all FAQ",
+    "contactUs": "Still have questions? Contact us"
+  }
+} 

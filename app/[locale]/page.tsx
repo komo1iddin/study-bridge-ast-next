@@ -14,7 +14,7 @@ import { ClientHeroSection } from "@/components/home/hero/client-hero"
 import { SuccessPath } from "@/components/home/success-path"
 import { AdvantagesStudyChina } from "@/components/home/advantages-stydy-china"
 import { UniversityFeature } from "@/components/home/university-feature/university-feature"
-import { OurTeam, OurPartners, HowWeWork, MissionStats, Testimonials, ComparisonStudyBridge } from "@/components/home"
+import { OurTeam, OurPartners, HowWeWork, MissionStats, Testimonials, ComparisonStudyBridge, FAQSection } from "@/components/home"
 import { getContentItems } from '@/lib/decap-cms'
 import type { University } from '@/types/content'
 import type { UniversityFeatureItem } from '@/components/home/university-feature/types'
@@ -92,7 +92,12 @@ export default async function Home(props: {
         <OurTeam lang={locale} />
         {/* Our Partners Section */}
         <OurPartners lang={locale} />
-        {/* CTA Section */}
+        {/* FAQ Section */}
+        <section className="w-full py-12 md:py-24 bg-gray-50">
+          <div className="container mx-auto px-4 md:px-6">
+            <FAQSection lang={locale} />
+          </div>
+        </section>
       </main>
       <Footer />
       <SpeedInsights />
