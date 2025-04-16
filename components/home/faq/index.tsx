@@ -1,12 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { useTranslations } from "next-intl"
 import { ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { HomeFAQ } from "@/types/content"
 import { Button } from "@/components/ui/button"
 import { Mail } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion"
 
 interface HomeFAQSectionProps {
   faqs: HomeFAQ[]
@@ -14,7 +15,7 @@ interface HomeFAQSectionProps {
 
 export function HomeFAQSection({ faqs }: HomeFAQSectionProps) {
   const t = useTranslations("components.home.faq")
-  const [openItems, setOpenItems] = useState<string[]>([])
+  const [openItem, setOpenItem] = useState<string | null>(null)
   
   // Group FAQs by category but only for ordering purposes
   const [orderedFaqs] = useState(() => {
@@ -33,11 +34,7 @@ export function HomeFAQSection({ faqs }: HomeFAQSectionProps) {
   });
 
   const toggleItem = (id: string) => {
-    setOpenItems(current => 
-      current.includes(id) 
-        ? current.filter(item => item !== id)
-        : [...current, id]
-    )
+    setOpenItem(current => current === id ? null : id)
   }
   
   return (
@@ -52,22 +49,36 @@ export function HomeFAQSection({ faqs }: HomeFAQSectionProps) {
           <div key={faq.id} className="border-b border-gray-100 last:border-b-0">
             <button
               onClick={() => toggleItem(faq.id)}
-              className="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none"
-              aria-expanded={openItems.includes(faq.id)}
+              className={cn(
+                "flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none transition-colors duration-200",
+                openItem === faq.id ? "bg-gray-50" : ""
+              )}
+              aria-expanded={openItem === faq.id}
             >
               <span className="font-medium text-gray-900">{faq.question}</span>
-              <ChevronDown 
-                className={cn(
-                  "h-5 w-5 text-gray-500 transition-transform duration-200",
-                  openItems.includes(faq.id) ? "transform rotate-180" : ""
-                )}
-              />
+              <motion.div
+                animate={{ rotate: openItem === faq.id ? 180 : 0 }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+                className="flex items-center justify-center"
+              >
+                <ChevronDown className="h-5 w-5 text-gray-500" />
+              </motion.div>
             </button>
-            {openItems.includes(faq.id) && (
-              <div className="px-6 pb-4">
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            )}
+            <AnimatePresence>
+              {openItem === faq.id && (
+                <motion.div 
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 pb-4 pt-1 text-gray-600">
+                    <p>{faq.answer}</p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         ))}
       </div>
