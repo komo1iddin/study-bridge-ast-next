@@ -10,14 +10,14 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Navbar from "@/components/layout/navbar"
 import Footer from "@/components/layout/footer"
-import { ClientHeroSection } from "@/components/home/hero/client-hero"
-import { SuccessPath } from "@/components/home/success-path"
-import { AdvantagesStudyChina } from "@/components/home/advantages-stydy-china"
-import { UniversityFeature } from "@/components/home/university-feature/university-feature"
-import { OurTeam, OurPartners, HowWeWork, MissionStats, Testimonials, ComparisonStudyBridge, FAQSection } from "@/components/home"
+import { ClientHeroSection } from "./home/components/hero/client-hero"
+import { SuccessPath } from "./home/components/success-path"
+import { AdvantagesStudyChina } from "./home/components/advantages-stydy-china"
+import { UniversityFeature } from "./home/components/university-feature/university-feature"
+import { OurTeam, OurPartners, HowWeWork, MissionStats, Testimonials, ComparisonStudyBridge, FAQSection } from "./home/components"
 import { getContentItems } from '@/lib/decap-cms'
 import type { University } from '@/types/content'
-import type { UniversityFeatureItem } from '@/components/home/university-feature/types'
+import type { UniversityFeatureItem } from './home/components/university-feature/types'
 import { SeamlessBackground } from '@/components/common'
 
 export async function generateMetadata(

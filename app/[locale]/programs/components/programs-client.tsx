@@ -2,12 +2,12 @@
 
 import { useState } from "react"
 
-import { Filters } from "@/components/programs/filters"
-import { FeaturedPrograms, Program } from "@/components/programs/featured-programs"
-import { Categories } from "@/components/programs/categories"
-import { AllPrograms } from "@/components/programs/all-programs"
-import { ApplicationProcess } from "@/components/programs/application-process"
-import { CtaSection } from "@/components/programs/cta-section"
+import { Filters } from "./filters"
+import { FeaturedPrograms, Program } from "./featured-programs"
+import { Categories } from "./categories"
+import { AllPrograms } from "./all-programs"
+import { ApplicationProcess } from "./application-process"
+import { CtaSection } from "./cta-section"
 
 interface ProgramsClientProps {
   programs: Program[]
@@ -49,7 +49,7 @@ export default function ProgramsClient({ programs }: ProgramsClientProps) {
     <>
       {/* Filters Section */}
       <Filters
-        onSearch={setSearchQuery}
+        onSearchChange={setSearchQuery}
         onCategoryChange={setSelectedCategory}
         onLevelChange={setSelectedLevel}
         onLanguageChange={setSelectedLanguage}
