@@ -8,8 +8,8 @@ import { Suspense } from "react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
+import Navbar from "@/components/layout/navbar"
+import Footer from "@/components/layout/footer"
 import { ClientHeroSection } from "@/components/home/hero/client-hero"
 import { SuccessPath } from "@/components/home/success-path"
 import { AdvantagesStudyChina } from "@/components/home/advantages-stydy-china"
@@ -18,7 +18,7 @@ import { OurTeam, OurPartners, HowWeWork, MissionStats, Testimonials, Comparison
 import { getContentItems } from '@/lib/decap-cms'
 import type { University } from '@/types/content'
 import type { UniversityFeatureItem } from '@/components/home/university-feature/types'
-import { SeamlessBackground } from '@/components/shared'
+import { SeamlessBackground } from '@/components/common'
 
 export async function generateMetadata(
   { params: propsParams }: { params: { locale: string } }

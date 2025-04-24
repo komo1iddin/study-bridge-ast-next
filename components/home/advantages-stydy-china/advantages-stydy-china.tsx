@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { GraduationCap, Brain, DollarSign, Globe, Rocket, BookOpen } from 'lucide-react'
 import { BackgroundElements } from './background-elements'
-import { CTA } from '@/components/shared'
+import { CTA } from '@/components/common'
 import { cn } from '@/lib/utils'
 
 // Define icons to use for each reason
