@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl"
 import { usePathname } from "next/navigation"
 import { GraduationCap, Phone, Menu, X, ChevronDown, MoreHorizontal } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import LanguageSwitcher from "@/components/language-switcher"
+import LanguageSwitcher from "@/components/common/language-switcher"
 import { cn } from "@/lib/utils"
 import {
   DropdownMenu,
