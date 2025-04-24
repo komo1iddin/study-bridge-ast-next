@@ -91,7 +91,6 @@ export default function Navbar() {
     { href: "/programs", label: t("programs") },
     { href: "/universities", label: t("universities") },
     { href: "/why-china", label: t("whyChina") },
-    { href: "/comparison", label: t("comparison") },
   ]
 
   // Define secondary navigation items for the dropdown

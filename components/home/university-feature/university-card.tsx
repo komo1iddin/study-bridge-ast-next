@@ -46,7 +46,7 @@ export function UniversityCard({ university, lang, className }: UniversityCardPr
       <div className="relative w-full aspect-[16/9] overflow-hidden flex-shrink-0">
         <Image 
           src={university.image} 
-          alt={university.name}
+          alt={`${university.name} - University campus view`}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -75,7 +75,7 @@ export function UniversityCard({ university, lang, className }: UniversityCardPr
           <div className="absolute bottom-0 right-0 opacity-10 pointer-events-none overflow-hidden">
             <Image 
               src={university.logo} 
-              alt=""
+              alt={`${university.name} watermark`}
               width={160}
               height={160}
               className="object-contain translate-x-1/3 translate-y-1/3"
