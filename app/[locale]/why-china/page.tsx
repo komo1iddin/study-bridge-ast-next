@@ -1,16 +1,16 @@
 import { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
 
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
-import { HeroSection } from "@/components/why-china/hero-section"
-import { Statistics } from "@/components/why-china/statistics"
-import { Benefits } from "@/components/why-china/benefits"
-import { TopUniversities } from "@/components/why-china/top-universities"
-import { CostComparison } from "@/components/why-china/cost-comparison"
-import { StudyOptions } from "@/components/why-china/study-options"
-import { FactsSection } from "@/components/why-china/facts-section"
-import { CtaSection } from "@/components/why-china/cta-section"
+import Navbar from "@/components/layout/navbar"
+import Footer from "@/components/layout/footer"
+import { HeroSection } from "./components/hero-section"
+import { Statistics } from "./components/statistics"
+import { Benefits } from "./components/benefits"
+import { TopUniversities } from "./components/top-universities"
+import { CostComparison } from "./components/cost-comparison"
+import { StudyOptions } from "./components/study-options"
+import { FactsSection } from "./components/facts-section"
+import { CtaSection } from "./components/cta-section"
 
 export async function generateMetadata(
   props: {

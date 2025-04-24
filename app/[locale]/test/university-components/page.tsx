@@ -7,20 +7,20 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 // Import section components
-import { HeaderCard } from '@/components/features/university/university-detail-page/components/header-card'
-import { OverviewSection } from '@/components/features/university/university-detail-page/components/overview-section'
-import { ProgramsSection } from '@/components/features/university/university-detail-page/components/programs-section'
-import { AdmissionSection } from '@/components/features/university/university-detail-page/components/admission-section'
-import { FacilitiesSection } from '@/components/features/university/university-detail-page/components/facilities-section'
-import { ImagesSection } from '@/components/features/university/university-detail-page/components/images-section'
-import { DormsSection } from '@/components/features/university/university-detail-page/components/dorms-section'
-import { FAQSection } from '@/components/features/university/university-detail-page/components/faq-section'
-import { BackgroundDecoration } from '@/components/features/university/university-detail-page/components/background-decoration'
+import { HeaderCard } from '@/app/[locale]/universities/[slug]/components/components/header-card'
+import { OverviewSection } from '@/app/[locale]/universities/[slug]/components/components/overview-section'
+import { ProgramsSection } from '@/app/[locale]/universities/[slug]/components/components/programs-section'
+import { AdmissionSection } from '@/app/[locale]/universities/[slug]/components/components/admission-section'
+import { FacilitiesSection } from '@/app/[locale]/universities/[slug]/components/components/facilities-section'
+import { ImagesSection } from '@/app/[locale]/universities/[slug]/components/components/images-section'
+import { DormsSection } from '@/app/[locale]/universities/[slug]/components/components/dorms-section'
+import { FAQSection } from '@/app/[locale]/universities/[slug]/components/components/faq-section'
+import { BackgroundDecoration } from '@/app/[locale]/universities/[slug]/components/components/background-decoration'
 
 // Import sidebar components
-import { ApplicationCard } from '@/components/features/university/university-detail-page/components/sidebar/application-card'
-import { StatsCard } from '@/components/features/university/university-detail-page/components/sidebar/stats-card'
-import { ContactCard } from '@/components/features/university/university-detail-page/components/sidebar/contact-card'
+import { ApplicationCard } from '@/app/[locale]/universities/[slug]/components/components/sidebar/application-card'
+import { StatsCard } from '@/app/[locale]/universities/[slug]/components/components/sidebar/stats-card'
+import { ContactCard } from '@/app/[locale]/universities/[slug]/components/components/sidebar/contact-card'
 
 // Mock university data for testing
 const mockUniversity = {

@@ -1,0 +1,15 @@
+export { UniversityDetailPage } from './university-detail-page'
+export { HeaderCard } from './components/header-card'
+export { OverviewSection } from './components/overview-section'
+export { ProgramsSection } from './components/programs-section'
+export { AdmissionSection } from './components/admission-section'
+export { FacilitiesSection } from './components/facilities-section'
+export { ImagesSection } from './components/images-section'
+export { DormsSection } from './components/dorms-section'
+export { FAQSection } from './components/faq-section'
+export { BackgroundDecoration } from './components/background-decoration'
+
+// Sidebar components
+export { ApplicationCard } from './components/sidebar/application-card'
+export { StatsCard } from './components/sidebar/stats-card'
+export { ContactCard } from './components/sidebar/contact-card'

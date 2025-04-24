@@ -1,8 +1,8 @@
 import React from 'react'
 import { getTranslations } from 'next-intl/server'
-import { UniversityPage } from '@/components/universities'
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
+import { UniversityPage } from './components'
+import Navbar from '@/components/layout/navbar'
+import Footer from '@/components/layout/footer'
 import { getContentItems } from '@/lib/decap-cms'
 import { University } from '@/types/content'
 

@@ -1,0 +1,6 @@
+export { UniversityPage } from './university-page'
+export { BackgroundDecoration } from './background-decoration'
+export { FilterSidebar } from './filter-sidebar'
+export { MobileFilters } from './mobile-filters'
+export { UniversityCard } from './university-card'
+export { UniversityList } from './university-list' 

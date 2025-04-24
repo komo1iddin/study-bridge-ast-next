@@ -1,0 +1,8 @@
+export { HeroSection } from './hero-section'
+export { Statistics } from './statistics'
+export { Benefits } from './benefits'
+export { TopUniversities } from './top-universities'
+export { CostComparison } from './cost-comparison'
+export { StudyOptions } from './study-options'
+export { FactsSection } from './facts-section'
+export { CtaSection } from './cta-section'

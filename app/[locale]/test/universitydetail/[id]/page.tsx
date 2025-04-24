@@ -1,4 +1,4 @@
-import { UniversityDetailPage } from "@/components/features/university/university-detail-page/university-detail-page"
+import { UniversityDetailPage } from "@/app/[locale]/universities/[slug]/components/university-detail-page"
 
 // Mock university data for testing
 const mockUniversity = {

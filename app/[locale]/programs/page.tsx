@@ -1,11 +1,11 @@
 import { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
 
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
-import { HeroSection } from "@/components/programs/hero-section"
-import { Program } from "@/components/programs/featured-programs"
-import ProgramsClient from "@/components/programs/programs-client"
+import Navbar from "@/components/layout/navbar"
+import Footer from "@/components/layout/footer"
+import { HeroSection } from "./components/hero-section"
+import { Program } from "./components/featured-programs"
+import ProgramsClient from "./components/programs-client"
 import { Locale } from "@/i18n/navigation"
 
 export async function generateMetadata(
