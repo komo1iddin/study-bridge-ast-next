@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '@/lib/utils';
+import { GlobalErrorBoundary } from '@/components/common/error-boundary';
 
 export const metadata: Metadata = {
   title: 'Study Bridge',
@@ -20,7 +21,9 @@ export default function RootLayout({
         {/* <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script> */}
       </head>
       <body className={cn('')}>
-        {children}
+        <GlobalErrorBoundary>
+          {children}
+        </GlobalErrorBoundary>
         
         {/* Script to redirect to admin after login - REMOVED */}
         {/* <script dangerouslySetInnerHTML={{

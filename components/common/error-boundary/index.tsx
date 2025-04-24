@@ -59,4 +59,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
     return this.props.children
   }
-} 
+}
+
+export { GlobalErrorBoundary } from './global-error-boundary'
+export { default as PageError } from './page-error' 
