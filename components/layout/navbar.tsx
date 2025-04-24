@@ -85,28 +85,35 @@ export default function Navbar() {
     setIsMenuOpen(prev => !prev)
   }
 
+  // Get the current locale from the pathname
+  const locale = pathname.split('/')[1];
+
   // Define primary navigation items (most important)
   const primaryNavItems = [
-    { href: "/", label: t("home") },
-    { href: "/programs", label: t("programs") },
-    { href: "/universities", label: t("universities") },
-    { href: "/why-china", label: t("whyChina") },
+    { href: `/${locale}`, label: t("home") },
+    { href: `/${locale}/programs`, label: t("programs") },
+    { href: `/${locale}/universities`, label: t("universities") },
+    { href: `/${locale}/why-china`, label: t("whyChina") },
   ]
 
   // Define secondary navigation items for the dropdown
   const secondaryNavItems = [
-    { href: "/#services", label: t("services") },
-    { href: "/#testimonials", label: t("testimonials") },
-    { href: "/#about", label: t("aboutUs") },
-    { href: "/#contact", label: t("contact") },
+    { href: `/${locale}#services`, label: t("services") },
+    { href: `/${locale}#testimonials`, label: t("testimonials") },
+    { href: `/${locale}#about`, label: t("aboutUs") },
+    { href: `/${locale}#contact`, label: t("contact") },
   ]
 
   // All nav items for mobile menu
   const allNavItems = [...primaryNavItems, ...secondaryNavItems]
 
   const isActive = (href: string): boolean => {
-    if (href === "/") return pathname === href
-    return pathname?.startsWith(href)
+    // For the home page
+    if (href === `/${locale}`) return pathname === href || pathname === `/${locale}`
+    
+    // For other pages, check if the pathname starts with the href (excluding fragment identifiers)
+    const hrefWithoutFragment = href.split('#')[0]
+    return pathname?.startsWith(hrefWithoutFragment)
   }
 
   // Check if any item in the more menu is active
@@ -152,7 +159,7 @@ export default function Navbar() {
 
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
         <div className="flex gap-6 md:gap-10">
-          <Link href="/" className="flex items-center space-x-2" aria-label="EduChina home">
+          <Link href={`/${locale}`} className="flex items-center space-x-2" aria-label="EduChina home">
             <GraduationCap className="h-6 w-6 text-blue-600" aria-hidden="true" />
             <span className="inline-block font-bold">EduChina</span>
           </Link>

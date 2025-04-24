@@ -1,10 +1,10 @@
 'use client'
 
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { ChevronRight, GraduationCap, MapPin } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-import { useEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
 import type { UniversityFeatureItem } from './types'
 

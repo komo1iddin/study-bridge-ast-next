@@ -8,7 +8,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server"
 import type { Metadata } from 'next'
 
 import "../globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/common/theme"
 import messages from "@/messages"
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] })
