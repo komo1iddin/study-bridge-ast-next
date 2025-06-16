@@ -159,9 +159,9 @@ export default function Navbar() {
 
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
         <div className="flex gap-6 md:gap-10">
-          <Link href={`/${locale}`} className="flex items-center space-x-2" aria-label="EduChina home">
+          <Link href={`/${locale}`} className="flex items-center space-x-2" aria-label="Study Bridge home">
             <GraduationCap className="h-6 w-6 text-blue-600" aria-hidden="true" />
-            <span className="inline-block font-bold">EduChina</span>
+            <span className="inline-block font-bold">Study Bridge</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
             {primaryNavItems.map((item) => (

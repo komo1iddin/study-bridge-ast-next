@@ -1,14 +1,14 @@
 {
-  "title": "<underline>O'zbekiston</underline> va <underline>Xitoy</underline> o'rtasidagi <highlight>ishonchli ko'prik</highlight>",
-  "subtitle": "O'zbek talabalar uchun Xitoyning eng yaxshi universitetlarida ta'lim olish. Hujjatlarni topshirishdan to diplomni olishgacha to'liq ko'mak.",
+  "title": "<underline>O'zbekiston</underline> va <underline>Xitoy</underline> o'rtasidagi <highlight>ko'prik</highlight>",
+  "subtitle": "O'zbek talabalar uchun Xitoyning nufuzli universitetlarida tahsil olish imkoniyati. Hujjat topshirishdan to bitirguncha to'liq yordam.",
   "cta": "Dasturlarni ko'rish",
-  "contactUs": "Bog'lanish",
+  "contactUs": "Biz bilan bog'lanish",
   "leaveRequest": "Ariza qoldirish",
-  "viewUniversities": "Universitetlarni ko'rish",
-  "typingBadge": "Qabul 2025-yil 15-maygacha ochiq",
+  "viewUniversities": "Universitetlar",
+  "typingBadge": "Qabul 2026-yil 31-dekabrgacha ochiq",
   "stats": {
     "students": {
-      "value": "5000+",
+      "value": "200+",
       "label": "Talabalar"
     },
     "universities": {
@@ -16,7 +16,7 @@
       "label": "Universitetlar"
     },
     "experience": {
-      "value": "10+",
+      "value": "5+",
       "label": "Yillik tajriba"
     },
     "programs": {

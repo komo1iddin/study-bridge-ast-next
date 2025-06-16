@@ -37,7 +37,7 @@ hasGrants: true
 id: 2
 image: /universities/fudan-university.jpg
 internationalStudents: 3200
-logo: /universities/fudan-universiteti-logo.png
+logo: /universities/fudan-logo.png
 name: Fudan Universiteti
 ranking: 3
 studentsCount: 36000

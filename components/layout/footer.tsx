@@ -48,7 +48,7 @@ export default function Footer() {
     social: [
       {
         name: 'Instagram',
-        href: 'https://instagram.com/educhina.uz',
+        href: 'https://instagram.com/studybridge.uz',
         icon: Instagram
       },
       {
@@ -150,8 +150,8 @@ export default function Footer() {
               </li>
               <li className={cn('flex items-center gap-2')}>
                 <Mail className={cn('h-4 w-4 text-blue-600')} />
-                <a href="mailto:info@educhina.uz" className={cn('hover:text-blue-600 transition-colors duration-200')}>
-                  info@educhina.uz
+                <a href="mailto:info@studybridge.uz" className={cn('hover:text-blue-600 transition-colors duration-200')}>
+                  info@studybridge.uz
                 </a>
               </li>
               <li className={cn('flex items-center gap-2')}>

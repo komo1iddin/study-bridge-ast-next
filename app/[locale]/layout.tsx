@@ -26,7 +26,7 @@ export async function generateMetadata(
   const t = await getTranslations({ locale, namespace: "pages.home" })
 
   return {
-    title: "EduChina - Educational Agency",
+    title: "Study Bridge - Educational Agency",
     description: t("hero.subtitle"),
     generator: "Next.js",
   }

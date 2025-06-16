@@ -286,7 +286,7 @@ export default async function ProgramDetailPage(props: { params: Promise<{ id: s
           <div className="flex gap-6 md:gap-10">
             <Link href="/" className="flex items-center space-x-2">
               <GraduationCap className="h-6 w-6 text-blue-600" />
-              <span className="inline-block font-bold">EduChina</span>
+              <span className="inline-block font-bold">Study Bridge</span>
             </Link>
             <nav className="hidden md:flex gap-6">
               <Link href="/" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
@@ -670,10 +670,10 @@ export default async function ProgramDetailPage(props: { params: Promise<{ id: s
         <div className="container flex flex-col items-center justify-center gap-4 px-4 md:px-6 md:flex-row md:justify-between">
           <div className="flex items-center gap-2">
             <GraduationCap className="h-6 w-6 text-blue-600" />
-            <span className="font-bold">EduChina</span>
+            <span className="font-bold">Study Bridge</span>
           </div>
           <p className="text-center text-sm text-muted-foreground md:text-left">
-            &copy; {new Date().getFullYear()} EduChina. Barcha huquqlar himoyalangan.
+            &copy; {new Date().getFullYear()} Study Bridge. Barcha huquqlar himoyalangan.
           </p>
           <div className="flex gap-4">
             <Link href="#" className="text-sm text-muted-foreground hover:underline">
