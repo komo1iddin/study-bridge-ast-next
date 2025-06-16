@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation"
 import { GraduationCap, Phone, Menu, X, ChevronDown, MoreHorizontal } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import LanguageSwitcher from "@/components/common/language-switcher"
+import ApplicationFormModal from "@/components/common/application-form-modal"
 import { cn } from "@/lib/utils"
 import {
   DropdownMenu,
@@ -37,6 +38,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
+  const [isFormOpen, setIsFormOpen] = useState(false)
   const moreButtonRef = useRef<HTMLButtonElement>(null)
 
   // Throttled scroll handler to prevent excessive updates
@@ -223,7 +225,12 @@ export default function Navbar() {
               <span>+998 90 123 45 67</span>
             </Button>
             <LanguageSwitcher />
-            <Button className="hidden md:flex">{t("applyNow")}</Button>
+            <Button 
+              className="hidden md:flex" 
+              onClick={() => setIsFormOpen(true)}
+            >
+              {t("applyNow")}
+            </Button>
             <Button 
               variant="ghost" 
               size="icon" 
@@ -283,11 +290,26 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="pt-4">
-              <Button className="w-full">{t("applyNow")}</Button>
+              <Button 
+                className="w-full"
+                onClick={() => {
+                  setIsFormOpen(true)
+                  setIsMenuOpen(false) // Close mobile menu when opening form
+                }}
+              >
+                {t("applyNow")}
+              </Button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Application Form Modal */}
+      <ApplicationFormModal 
+        open={isFormOpen} 
+        onOpenChange={setIsFormOpen}
+        onSubmitSuccess={() => setIsFormOpen(false)}
+      />
     </header>
   )
 }

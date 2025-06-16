@@ -1,17 +1,21 @@
 'use client'
 
+import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import ApplicationFormModal from '@/components/common/application-form-modal'
 
 interface CTAProps {
   className?: string
   lang: string
   linkHref?: string // Optional custom link path, defaults to `/${lang}/why-china`
+  useModal?: boolean // Whether to use modal or navigate to linkHref
 }
 
-export default function CTA({ className, lang, linkHref }: CTAProps) {
+export default function CTA({ className, lang, linkHref, useModal = true }: CTAProps) {
   const t = useTranslations('pages.home.cta')
+  const [isFormOpen, setIsFormOpen] = useState(false)
   
   return (
     <div 
@@ -41,25 +45,53 @@ export default function CTA({ className, lang, linkHref }: CTAProps) {
         <p className="text-lg mb-6 text-blue-100">
           {t('subtitle')}
         </p>
-        <Button 
-          size="lg" 
-          className="bg-white text-blue-600 hover:bg-blue-50" 
-          style={{
-            transform: 'translateZ(0)',
-            transition: 'background-color 0.2s ease, transform 0.2s ease'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateZ(0) scale(1.03)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'translateZ(0)';
-          }}
-          asChild
-        >
-          <Link href={linkHref || `/${lang}/why-china`}>
-            {t('button')}
-          </Link>
-        </Button>
+        {useModal ? (
+          <>
+            <Button 
+              size="lg" 
+              className="bg-white text-blue-600 hover:bg-blue-50" 
+              style={{
+                transform: 'translateZ(0)',
+                transition: 'background-color 0.2s ease, transform 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateZ(0) scale(1.03)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateZ(0)';
+              }}
+              onClick={() => setIsFormOpen(true)}
+            >
+              {t('button')}
+            </Button>
+            
+            <ApplicationFormModal
+              open={isFormOpen}
+              onOpenChange={setIsFormOpen}
+              onSubmitSuccess={() => setIsFormOpen(false)}
+            />
+          </>
+        ) : (
+          <Button 
+            size="lg" 
+            className="bg-white text-blue-600 hover:bg-blue-50" 
+            style={{
+              transform: 'translateZ(0)',
+              transition: 'background-color 0.2s ease, transform 0.2s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateZ(0) scale(1.03)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateZ(0)';
+            }}
+            asChild
+          >
+            <Link href={linkHref || `/${lang}/why-china`}>
+              {t('button')}
+            </Link>
+          </Button>
+        )}
       </div>
     </div>
   )
