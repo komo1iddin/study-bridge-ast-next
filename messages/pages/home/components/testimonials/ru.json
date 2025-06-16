@@ -1,4 +1,57 @@
 {
   "title": "Что говорят наши студенты",
-  "subtitle": "Отзывы студентов, которые успешно поступили в китайские университеты с нашей помощью"
+  "subtitle": "Отзывы студентов, которые успешно поступили в китайские университеты с нашей помощью",
+  "testimonialCards": {
+    "students": [
+      {
+        "id": 1,
+        "name": "Алишер К.",
+        "university": "Университет Янчжоу",
+        "comment": "Лучшее решение в моей жизни! Уже 2 года учусь в Китае.",
+        "imageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 2,
+        "name": "Малика Н.",
+        "university": "Шаньдунский Педагогический Университет",
+        "comment": "Получила стипендию благодаря агентству!",
+        "imageUrl": "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 3,
+        "name": "Рустам Д.",
+        "university": "Цзянсуский Университет",
+        "comment": "Теперь работаю в международной компании в Китае!",
+        "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 4,
+        "name": "Нодира И.",
+        "university": "Сианьский Университет Цзяо Тун-Ливерпуль",
+        "comment": "Прекрасная поддержка от команды на каждом этапе!",
+        "imageUrl": "https://images.unsplash.com/photo-1464863979621-258859e62245?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 5,
+        "name": "Азиз Т.",
+        "university": "Хэбэйский Университет",
+        "comment": "Уже второй год изучаю медицину в Китае!",
+        "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 6,
+        "name": "Сабина М.",
+        "university": "Аньхойский Университет",
+        "comment": "Получила полную стипендию! Очень благодарна!",
+        "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 7,
+        "name": "Темур П.",
+        "university": "Нинбоский Университет",
+        "comment": "Изучаю IT и стажируюсь в китайской компании!",
+        "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop"
+      }
+    ]
+  }
 } 

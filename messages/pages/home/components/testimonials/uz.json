@@ -1,4 +1,57 @@
 {
   "title": "Talabalarimiz nima deyishadi",
-  "subtitle": "Bizning yordamimiz bilan Xitoy universitetlariga muvaffaqiyatli qabul qilingan talabalar fikrlari"
+  "subtitle": "Bizning yordamimiz bilan Xitoy universitetlariga muvaffaqiyatli qabul qilingan talabalar fikrlari",
+  "testimonialCards": {
+    "students": [
+      {
+        "id": 1,
+        "name": "Alisher K.",
+        "university": "Yangzhou Universiteti",
+        "comment": "Hayotimdagi eng yaxshi qaror! Xitoyda 2 yildan beri o'qiyapman.",
+        "imageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 2,
+        "name": "Malika N.",
+        "university": "Shandong Normal Universiteti",
+        "comment": "Agentlik yordamida stipendiya oldim!",
+        "imageUrl": "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 3,
+        "name": "Rustam D.",
+        "university": "Jiangsu Universiteti",
+        "comment": "Hozir Xitoydagi xalqaro kompaniyada ishlayman!",
+        "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 4,
+        "name": "Nodira I.",
+        "university": "Xi'an Jiaotong-Liverpool Universiteti",
+        "comment": "Jamoadan har bosqichda ajoyib yordam!",
+        "imageUrl": "https://images.unsplash.com/photo-1464863979621-258859e62245?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 5,
+        "name": "Aziz T.",
+        "university": "Hebei Universiteti",
+        "comment": "Xitoyda tibbiyot bo'yicha ikkinchi yilim!",
+        "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 6,
+        "name": "Sabina M.",
+        "university": "Anhui Universiteti",
+        "comment": "To'liq stipendiya oldim! Juda minnatdorman!",
+        "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 7,
+        "name": "Temur P.",
+        "university": "Ningbo Universiteti",
+        "comment": "IT o'qiyapman va Xitoy kompaniyasida amaliyot o'tayapman!",
+        "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop"
+      }
+    ]
+  }
 } 

@@ -1,4 +1,57 @@
 {
   "title": "What Our Students Say",
-  "subtitle": "Hear from students who successfully enrolled in Chinese universities with our help"
+  "subtitle": "Hear from students who successfully enrolled in Chinese universities with our help",
+  "testimonialCards": {
+    "students": [
+      {
+        "id": 1,
+        "name": "Alisher K.",
+        "university": "Yangzhou University",
+        "comment": "Best decision of my life! I've been studying in China for 2 years now.",
+        "imageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 2,
+        "name": "Malika N.",
+        "university": "Shandong Normal University",
+        "comment": "Got a scholarship thanks to the agency!",
+        "imageUrl": "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 3,
+        "name": "Rustam D.",
+        "university": "Jiangsu University",
+        "comment": "Now working at an international company in China!",
+        "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 4,
+        "name": "Nodira I.",
+        "university": "Xi'an Jiaotong-Liverpool University",
+        "comment": "Excellent support from the team at every stage!",
+        "imageUrl": "https://images.unsplash.com/photo-1464863979621-258859e62245?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 5,
+        "name": "Aziz T.",
+        "university": "Hebei University",
+        "comment": "Already in my second year studying medicine in China!",
+        "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 6,
+        "name": "Sabina M.",
+        "university": "Anhui University",
+        "comment": "Received a full scholarship! Very grateful!",
+        "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100&auto=format&fit=crop"
+      },
+      {
+        "id": 7,
+        "name": "Temur P.",
+        "university": "Ningbo University",
+        "comment": "Studying IT and interning at a Chinese company!",
+        "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop"
+      }
+    ]
+  }
 } 
