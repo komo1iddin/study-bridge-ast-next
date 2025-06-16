@@ -12,7 +12,7 @@ import Navbar from "@/components/layout/navbar"
 import Footer from "@/components/layout/footer"
 import { ClientHeroSection } from "./home/components/hero/client-hero"
 import { SuccessPath } from "./home/components/success-path"
-import { AdvantagesStudyChina } from "./home/components/advantages-stydy-china"
+import { AdvantagesStudyChina } from "./home/components/advantages-study-china"
 import { UniversityFeature } from "./home/components/university-feature/university-feature"
 import { OurTeam, OurPartners, HowWeWork, MissionStats, Testimonials, ComparisonStudyBridge, FAQSection } from "./home/components"
 import { getContentItems } from '@/lib/decap-cms'

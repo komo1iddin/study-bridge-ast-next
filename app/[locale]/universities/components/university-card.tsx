@@ -44,7 +44,7 @@ const UniversityCard = ({ university }: UniversityCardProps) => {
     <div 
       className={cn(
         "w-full border rounded-lg shadow-sm overflow-hidden bg-white transition-all hover:shadow-md hover:-translate-y-0.5",
-        featured && "border-blue-200"
+        featured ? "border-gray-200" : "border-gray-200"
       )}
     >
       <div className="flex flex-col md:flex-row md:min-h-[260px]">

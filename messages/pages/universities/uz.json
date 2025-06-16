@@ -6,36 +6,35 @@
   },
   "filters": {
     "title": "Filtrlar",
-    "all": "Barchasi",
     "reset": "Tozalash",
+    "all": "Barchasi",
     "educationType": "Ta'lim darajasi",
     "city": "Shahar",
-    "hasGrants": "Stipendiya mavjud",
     "ranking": "Reytingi",
+    "hasGrants": "Stipendiya mavjud",
     "featured": "Tavsiya etilgan"
   },
   "sidebar": {
-    "title": "Universitetingizni toping",
-    "needHelp": "Tanlashda yordam kerakmi?",
-    "contactUs": "Ta'lim maslahatchilarimiz sizga eng mos universitetni topishga yordam berishga tayyor.",
+    "needHelp": "Yordam kerakmi?",
+    "contactUs": "Universitet arizasini topshirishda shaxsiy yordam olish uchun biz bilan bog'laning.",
     "getConsultation": "Bepul maslahat olish"
   },
   "list": {
-    "title": "Xitoydagi universitetlar",
-    "found": "universitet topildi",
-    "noResults": "Sizning filtringizga mos universitet topilmadi. Mezonlarni o'zgartirib ko'ring.",
-    "loadMore": "Ko'proq yuklash"
+    "title": "Universitetlar",
+    "found": "ta universitet topildi",
+    "noResults": "Sizning mezoningiz bo'yicha universitet topilmadi",
+    "itemsPerPage": "Sahifada",
+    "perPage": "ta",
+    "page": "Sahifa",
+    "of": "dan"
   },
   "card": {
     "featured": "Tavsiya etilgan",
-    "grants": "Stipendiyalar",
     "ranking": "Reyting",
+    "grants": "Stipendiya mavjud",
+    "faculties": "Fakultetlar",
     "founded": "Asos solingan",
     "students": "Talabalar",
-    "international": "Xalqaro",
-    "details": "Batafsil",
-    "programs": "Dasturlar",
-    "apply": "Ariza topshirish",
-    "faculties": "Fakultetlar"
+    "details": "Batafsil"
   }
 } 

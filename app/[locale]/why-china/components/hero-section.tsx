@@ -12,7 +12,7 @@ interface HeroSectionProps {
   imageUrl?: string
 }
 
-export function HeroSection({ className, imageUrl = "/placeholder.svg?height=600&width=800" }: HeroSectionProps) {
+export function HeroSection({ className, imageUrl = "/images/why-china/hero.webp?height=600&width=800" }: HeroSectionProps) {
   const t = useTranslations("pages.whyChina")
   
   return (

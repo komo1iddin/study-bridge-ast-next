@@ -6,36 +6,35 @@
   },
   "filters": {
     "title": "Filters",
-    "all": "All",
     "reset": "Reset",
-    "educationType": "Education Level",
+    "all": "All",
+    "educationType": "Education Type",
     "city": "City",
-    "hasGrants": "Scholarships Available",
     "ranking": "Ranking",
+    "hasGrants": "Has Grants",
     "featured": "Featured"
   },
   "sidebar": {
-    "title": "Find Your University",
-    "needHelp": "Need Help Choosing?",
-    "contactUs": "Our education consultants are ready to help you find the perfect university.",
+    "needHelp": "Need Help?",
+    "contactUs": "Contact us for personalized assistance with your university application.",
     "getConsultation": "Get Free Consultation"
   },
   "list": {
-    "title": "Universities in China",
+    "title": "Universities",
     "found": "universities found",
-    "noResults": "No universities match your filters. Try adjusting your criteria.",
-    "loadMore": "Load More"
+    "noResults": "No universities found matching your criteria",
+    "itemsPerPage": "Items per page",
+    "perPage": "items",
+    "page": "Page",
+    "of": "of"
   },
   "card": {
     "featured": "Featured",
-    "grants": "Scholarships",
     "ranking": "Rank",
+    "grants": "Grants Available",
+    "faculties": "Faculties",
     "founded": "Founded",
     "students": "Students",
-    "international": "Int'l Students",
-    "details": "Details",
-    "programs": "Programs",
-    "apply": "Apply Now",
-    "faculties": "Faculties"
+    "details": "View Details"
   }
 } 

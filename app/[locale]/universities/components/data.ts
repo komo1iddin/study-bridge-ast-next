@@ -37,12 +37,22 @@ export interface University {
   slug?: string;
 }
 
+export const ITEMS_PER_PAGE_OPTIONS = [
+  { value: "5", label: "5" },
+  { value: "10", label: "10" },
+  { value: "15", label: "15" },
+  { value: "20", label: "20" },
+]
+
+export const DEFAULT_ITEMS_PER_PAGE = 5
+
 export type Filters = {
   educationType: string
   city: string
   hasGrants: string
   ranking: string
   featured: string
+  itemsPerPage: string
 }
 
 export const RANKING_RANGES = {
@@ -58,6 +68,7 @@ export const DEFAULT_FILTERS: Filters = {
   hasGrants: "all",
   ranking: "all",
   featured: "all",
+  itemsPerPage: "5",
 }
 
 export const ITEMS_PER_PAGE = 4; 

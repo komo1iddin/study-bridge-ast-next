@@ -3,10 +3,17 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { UniversityCard } from './university-card'
-import { RANKING_RANGES, ITEMS_PER_PAGE, type Filters } from './data'
+import { RANKING_RANGES, ITEMS_PER_PAGE_OPTIONS, type Filters } from './data'
 import type { University } from '@/types/content'
 import { Button } from '@/components/ui/button'
-import { ChevronUp } from 'lucide-react'
+import { ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 // Constants
 const SCROLL_THRESHOLD = 500
@@ -14,14 +21,15 @@ const SCROLL_THRESHOLD = 500
 interface UniversityListProps {
   universities: University[]
   filters: Filters
+  onFilterChange: (key: keyof Filters, value: string) => void
 }
 
-export function UniversityList({ universities, filters }: UniversityListProps) {
+export function UniversityList({ universities, filters, onFilterChange }: UniversityListProps) {
   // Get translations for the page
   const t = useTranslations('pages.universities')
   
   const [filteredUniversities, setFilteredUniversities] = useState<University[]>([])
-  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)
+  const [currentPage, setCurrentPage] = useState(1)
   const [showScrollTop, setShowScrollTop] = useState(false)
 
   // Apply filters
@@ -78,8 +86,8 @@ export function UniversityList({ universities, filters }: UniversityListProps) {
     })
 
     setFilteredUniversities(result)
-    // Reset visible count on filter change
-    setVisibleCount(ITEMS_PER_PAGE)
+    // Reset to first page when filters change
+    setCurrentPage(1)
   }, [universities, filters])
 
   // Handle scroll events
@@ -92,30 +100,55 @@ export function UniversityList({ universities, filters }: UniversityListProps) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const loadMore = () => {
-    setVisibleCount(prev => prev + ITEMS_PER_PAGE)
-  }
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  // Pagination calculations
+  const itemsPerPage = parseInt(filters.itemsPerPage)
+  const totalPages = Math.ceil(filteredUniversities.length / itemsPerPage)
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const currentUniversities = filteredUniversities.slice(startIndex, endIndex)
+
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage)
+    scrollToTop()
+  }
+
   return (
     <div>
-      {/* List header with counts */}
+      {/* List header with counts and items per page selector */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <h2 className="text-xl font-bold text-gray-900 hidden sm:block">
           {t('list.title')}
         </h2>
+        <div className="flex items-center gap-4">
         <div className="text-sm text-gray-500">
           {filteredUniversities.length} {t('list.found')}
+          </div>
+          <Select
+            value={filters.itemsPerPage}
+            onValueChange={(value) => onFilterChange('itemsPerPage', value)}
+          >
+            <SelectTrigger className="w-[100px]">
+              <SelectValue placeholder={t('list.itemsPerPage')} />
+            </SelectTrigger>
+            <SelectContent>
+              {ITEMS_PER_PAGE_OPTIONS.map((option) => (
+                <SelectItem key={option.value} value={option.value}>
+                  {option.label} {t('list.perPage')}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
       </div>
 
       {/* University cards */}
       {filteredUniversities.length > 0 ? (
         <div className="flex flex-col gap-4 sm:gap-6">
-          {filteredUniversities.slice(0, visibleCount).map((university) => (
+          {currentUniversities.map((university) => (
             <UniversityCard 
               key={`${university.id}-${university.name}`}
               university={university}
@@ -131,16 +164,46 @@ export function UniversityList({ universities, filters }: UniversityListProps) {
         </div>
       )}
 
-      {/* Load more button */}
-      {filteredUniversities.length > visibleCount && (
-        <div className="mt-6 text-center">
+      {/* Pagination */}
+      {filteredUniversities.length > itemsPerPage && (
+        <div className="mt-6 flex justify-between items-center">
+          <div className="text-sm text-gray-500">
+            {t('list.page')} {currentPage} {t('list.of')} {totalPages}
+          </div>
+          
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            
+            <div className="flex items-center gap-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <Button
+                  key={page}
+                  variant={page === currentPage ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => handlePageChange(page)}
+                  className="min-w-[32px]"
+                >
+                  {page}
+                </Button>
+              ))}
+            </div>
+
           <Button 
             variant="outline" 
-            onClick={loadMore}
-            className="px-8"
+              size="sm"
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
           >
-            {t('list.loadMore')}
+              <ChevronRight className="h-4 w-4" />
           </Button>
+          </div>
         </div>
       )}
 
