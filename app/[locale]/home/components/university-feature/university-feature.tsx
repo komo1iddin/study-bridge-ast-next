@@ -6,6 +6,7 @@ import { Hand, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
+import SectionHeader from '@/components/ui/section-header'
 
 import { UniversityCard } from './university-card'
 import { BackgroundDecoration } from './background-decoration'
@@ -162,17 +163,14 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
         <div 
           ref={headerRef}
           className={cn(
-            "text-center mb-8",
             "transition-all duration-700 transform",
             "opacity-100 translate-y-0"
           )}
         >
-          <h2 className="text-3xl font-bold mb-2">
-            {t('leadingUniversities')}
-          </h2>
-          <p className="text-gray-600">
-            {t('discoverText')}
-          </p>
+          <SectionHeader
+            title={t('leadingUniversities')}
+            subtitle={t('discoverText')}
+          />
         </div>
 
         {/* Swipe Indicator - GPU accelerated */}

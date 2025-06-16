@@ -9,7 +9,7 @@ interface OurTeamProps {
   lang?: string
 }
 
-const OurTeam = ({ lang = 'en' }: OurTeamProps) => {
+export function OurTeam({ lang = 'en' }: OurTeamProps) {
   const t = useTranslations('pages.home.components.ourTeam')
 
   // Team members data
@@ -91,10 +91,14 @@ const OurTeam = ({ lang = 'en' }: OurTeamProps) => {
 
       {/* Values section */}
       <div className="mt-12 mb-12">
-        <SectionHeader
-          title={t('values.mainTitle')}
-          subtitle={t('values.description')}
-        />
+        <div className="text-center mb-10" data-aos="fade-up">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            {t('values.mainTitle')}
+          </h3>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            {t('values.description')}
+          </p>
+        </div>
         
         <div className="grid md:grid-cols-3 gap-6">
           {values.map((value, index) => {
@@ -120,4 +124,5 @@ const OurTeam = ({ lang = 'en' }: OurTeamProps) => {
   )
 }
 
+// Default export for backward compatibility
 export default OurTeam 

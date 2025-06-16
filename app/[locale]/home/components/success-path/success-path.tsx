@@ -4,10 +4,10 @@ import React, { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { 
   StepItem, 
-  SectionHeader, 
   Background, 
   CallToAction 
 } from './components'
+import SectionHeader from '@/components/ui/section-header'
 
 export function SuccessPath() {
   const t = useTranslations('pages.home.successPath')
@@ -93,6 +93,7 @@ export function SuccessPath() {
         <SectionHeader 
           title={t('title')} 
           subtitle={t('subtitle')} 
+          alignment="center"
         />
 
         {/* Steps Timeline */}

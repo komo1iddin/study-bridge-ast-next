@@ -13,6 +13,7 @@ import {
   BookOpen
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import SectionHeader from '@/components/ui/section-header'
 
 interface MissionStatsProps {
   className?: string
@@ -149,16 +150,11 @@ export default function MissionStats({ className }: MissionStatsProps) {
     <section className={cn("w-full py-10 md:py-16 lg:py-20", className)}>
       <div className="container px-4 md:px-6">
         {/* Section Title */}
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-10">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              {t('missionStats.title')}
-            </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {t('missionStats.subtitle')}
-            </p>
-          </div>
-        </div>
+        <SectionHeader
+          title={t('missionStats.title')}
+          subtitle={t('missionStats.subtitle')}
+          alignment="center"
+        />
         
         {/* Stats Grid */}
         <div 
@@ -201,39 +197,24 @@ export default function MissionStats({ className }: MissionStatsProps) {
           ))}
         </div>
 
-        {/* Advantages */}
+        {/* Advantages Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {advantages.map((advantage, index) => (
             <div 
               key={index}
-              className="relative group h-full"
-              style={{
-                transform: 'translateZ(0)', // Force GPU acceleration
-                willChange: 'transform, opacity',
-                transitionDelay: `${index * 50}ms` // Use CSS instead of data-aos
-              }}
+              className="bg-white rounded-xl p-6 shadow-md border border-blue-100 transition-all duration-300 hover:shadow-lg"
             >
-              <div className={cn(
-                "absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl opacity-0 blur transition-all duration-300",
-                !isMobile && "group-hover:opacity-100"
-              )}></div>
-              <div className={cn(
-                "relative bg-white rounded-2xl p-8 shadow-md border border-blue-100 transition-all duration-300 h-full flex flex-col",
-                !isMobile && "hover:border-blue-200 group-hover:translate-y-[-2px] group-hover:shadow-xl"
-              )}>
-                <div className={cn(
-                  "text-blue-600 mb-4 transition-transform duration-300",
-                  !isMobile && "group-hover:scale-110"
-                )}>
-                  <advantage.icon className="w-8 h-8" />
+              <div className="flex items-center gap-4 mb-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                  <advantage.icon className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-gray-900">
                   {t(`missionStats.advantages.${advantage.translationKey}.title`)}
                 </h3>
-                <p className="text-gray-600 flex-grow mt-auto">
-                  {t(`missionStats.advantages.${advantage.translationKey}.description`)}
-                </p>
               </div>
+              <p className="text-gray-600">
+                {t(`missionStats.advantages.${advantage.translationKey}.description`)}
+              </p>
             </div>
           ))}
         </div>

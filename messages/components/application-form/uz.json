@@ -1,0 +1,38 @@
+{
+  "title": "Ariza qoldirish",
+  "subtitle": "Formani to'ldiring va maslahatchilarimiz siz bilan tez orada bog'lanadi.",
+  "fields": {
+    "fullName": {
+      "label": "To'liq ism-sharif",
+      "placeholder": "To'liq ismingizni kiriting"
+    },
+    "phoneNumber": {
+      "label": "Telefon raqami",
+      "placeholder": "+998 XX XXX XX XX"
+    },
+    "level": {
+      "label": "Ta'lim darajasi",
+      "placeholder": "Ta'lim darajasini tanlang",
+      "options": {
+        "chinese_language": "Xitoy tili",
+        "college": "Kollej",
+        "bachelor": "Bakalavr",
+        "master": "Magistratura",
+        "phd": "Doktorantura"
+      }
+    }
+  },
+  "actions": {
+    "submit": "Arizani yuborish"
+  },
+  "notifications": {
+    "success": {
+      "title": "Ariza yuborildi!",
+      "description": "Maslahatchilarimiz siz bilan tez orada bog'lanadi."
+    },
+    "error": {
+      "title": "Yuborish xatosi",
+      "description": "Arizani yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko'ring."
+    }
+  }
+} 

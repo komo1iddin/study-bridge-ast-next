@@ -7,13 +7,21 @@ interface SectionHeaderProps {
   subtitle?: string
   alignment?: 'left' | 'center' | 'right'
   className?: string
+  titleClassName?: string
+  subtitleClassName?: string
+  badge?: string
+  badgeClassName?: string
 }
 
 const SectionHeader = ({
   title,
   subtitle,
   alignment = 'center',
-  className
+  className,
+  titleClassName,
+  subtitleClassName,
+  badge,
+  badgeClassName
 }: SectionHeaderProps) => {
   return (
     <div 
@@ -27,13 +35,33 @@ const SectionHeader = ({
         className
       )}
     >
+      {badge && (
+        <div className="mb-4 flex justify-center">
+          <div className={cn(
+            "bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-semibold",
+            alignment === 'left' && "ml-0 mr-auto",
+            alignment === 'right' && "mr-0 ml-auto",
+            badgeClassName
+          )}>
+            {badge}
+          </div>
+        </div>
+      )}
       <h2 
-        className="text-2xl md:text-3xl font-bold text-gray-900 mb-4"
+        className={cn(
+          "text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl text-gray-900 mb-4",
+          titleClassName
+        )}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className={cn(
+          "text-lg text-gray-600 max-w-3xl mx-auto",
+          alignment === 'left' && "ml-0 mr-auto",
+          alignment === 'right' && "mr-0 ml-auto",
+          subtitleClassName
+        )}>
           {subtitle}
         </p>
       )}

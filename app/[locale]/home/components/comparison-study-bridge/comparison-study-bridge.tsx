@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { CheckCircle2, XCircle } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useEffect, useState } from 'react'
+import SectionHeader from '@/components/ui/section-header'
 
 // Mobile breakpoint
 const MOBILE_BREAKPOINT = 768
@@ -150,14 +151,10 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
     return (
       <section className={cn("w-full py-10 md:py-16 lg:py-20", className)}>
         <div className="container px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">
-              {t('title.main')} <span className="text-blue-600">{t('title.highlight')}</span>
-            </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              {t('subtitle')}
-            </p>
-          </div>
+          <SectionHeader
+            title={`${t('title.main')} ${t('title.highlight')}`}
+            subtitle={t('subtitle')}
+          />
           <div>
             <ComparisonTable />
           </div>
@@ -171,18 +168,16 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
       <div className="container px-4 md:px-6">
         {/* Section Title */}
         <motion.div 
-          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
           style={{ willChange: "opacity, transform", transform: "translateZ(0)" }}
         >
-          <h2 className="text-3xl font-bold mb-4">
-            {t('title.main')} <span className="text-blue-600">{t('title.highlight')}</span>
-          </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            {t('subtitle')}
-          </p>
+          <SectionHeader
+            title={t('title.main') + " " + t('title.highlight')}
+            subtitle={t('subtitle')}
+            titleClassName="with-highlight"
+          />
         </motion.div>
         
         {/* Comparison Table */}

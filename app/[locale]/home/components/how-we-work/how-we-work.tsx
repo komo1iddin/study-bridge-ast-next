@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { UserRound, Files, Languages, Send } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import SectionHeader from '@/components/ui/section-header'
 
 // Define interface for component props
 interface HowWeWorkProps {
@@ -22,11 +23,9 @@ const stepsWithIcons = [
 export default function HowWeWork({ className }: HowWeWorkProps) {
   const t = useTranslations('pages.home')
   const [features, setFeatures] = useState<any[]>([])
-  const [isTitleVisible, setIsTitleVisible] = useState(false)
   const [visibleSteps, setVisibleSteps] = useState<number[]>([])
   const [isLineVisible, setIsLineVisible] = useState(false)
   
-  const titleRef = useRef<HTMLDivElement>(null)
   const progressLineRef = useRef<HTMLDivElement>(null)
   
   // This would be replaced with actual API fetch in a real implementation
@@ -45,16 +44,6 @@ export default function HowWeWork({ className }: HowWeWorkProps) {
       rootMargin: '0px'
     }
     
-    // Observer for the title section
-    const titleObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setIsTitleVisible(true)
-          titleObserver.unobserve(entry.target)
-        }
-      })
-    }, observerOptions)
-    
     // Observer for the progress line
     const lineObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -68,16 +57,11 @@ export default function HowWeWork({ className }: HowWeWorkProps) {
     }, { threshold: 0.1 })
     
     // Initialize observers
-    if (titleRef.current) {
-      titleObserver.observe(titleRef.current)
-    }
-    
     if (progressLineRef.current) {
       lineObserver.observe(progressLineRef.current)
     }
     
     return () => {
-      if (titleRef.current) titleObserver.unobserve(titleRef.current)
       if (progressLineRef.current) lineObserver.unobserve(progressLineRef.current)
     }
   }, [])
@@ -167,37 +151,11 @@ export default function HowWeWork({ className }: HowWeWorkProps) {
     <section className={cn("w-full py-10 md:py-16 lg:py-20", className)}>
       <div className="container px-4 md:px-6">
         {/* Section Title */}
-        <div 
-          ref={titleRef}
-          className={`flex flex-col items-center justify-center space-y-4 text-center mb-10
-                     transition-opacity duration-500 ${isTitleVisible ? 'opacity-100' : 'opacity-0'}`}
-        >
-          <div className="space-y-2">
-            <h2 
-              className={`text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl
-                         transform transition-all duration-500`}
-              style={{ 
-                transform: isTitleVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.95)',
-                transitionDelay: '100ms' 
-              }}
-            >
-              {t('howWeWork.title')}
-            </h2>
-            
-            <p 
-              className={`max-w-[900px] text-muted-foreground md:text-xl/relaxed 
-                        lg:text-base/relaxed xl:text-xl/relaxed
-                        transition-all duration-500 transform`}
-              style={{ 
-                opacity: isTitleVisible ? 1 : 0,
-                transform: isTitleVisible ? 'translateY(0)' : 'translateY(20px)',
-                transitionDelay: '200ms' 
-              }}
-            >
-              {t('howWeWork.subtitle')}
-            </p>
-          </div>
-        </div>
+        <SectionHeader
+          title={t('howWeWork.title')}
+          subtitle={t('howWeWork.subtitle')}
+          alignment="center"
+        />
         
         {/* Steps */}
         <div 

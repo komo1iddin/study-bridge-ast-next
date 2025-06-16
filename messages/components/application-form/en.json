@@ -1,0 +1,38 @@
+{
+  "title": "Submit Application",
+  "subtitle": "Fill out the form and our consultant will contact you shortly.",
+  "fields": {
+    "fullName": {
+      "label": "Full Name",
+      "placeholder": "Enter your full name"
+    },
+    "phoneNumber": {
+      "label": "Phone Number",
+      "placeholder": "+998 XX XXX XX XX"
+    },
+    "level": {
+      "label": "Education Level",
+      "placeholder": "Select your education level",
+      "options": {
+        "chinese_language": "Chinese Language",
+        "college": "College",
+        "bachelor": "Bachelor",
+        "master": "Master",
+        "phd": "PhD"
+      }
+    }
+  },
+  "actions": {
+    "submit": "Submit Application"
+  },
+  "notifications": {
+    "success": {
+      "title": "Application Submitted!",
+      "description": "Our consultant will contact you shortly."
+    },
+    "error": {
+      "title": "Submission Failed",
+      "description": "There was an error submitting your application. Please try again."
+    }
+  }
+} 

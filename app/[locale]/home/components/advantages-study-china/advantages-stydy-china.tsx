@@ -1,11 +1,12 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { GraduationCap, Brain, DollarSign, Globe, Rocket, BookOpen } from 'lucide-react'
 import { BackgroundElements } from './background-elements'
 import { CTA } from '@/components/common'
 import { cn } from '@/lib/utils'
+import SectionHeader from '@/components/ui/section-header'
 
 // Define icons to use for each reason
 const icons = [
@@ -155,11 +156,10 @@ const Reason = ({ title, description, icon: Icon, color, index }: ReasonProps) =
   )
 }
 
-export function AdvantagesStudyChina({ lang }: { lang: string }) {
+export function AdvantagesStudyChina({ className }: { className?: string }) {
   const t = useTranslations('pages.home.components.advantagesStudyChina')
+  const locale = useLocale()
   const [reasons, setReasons] = useState<any[]>([])
-  const [isTitleVisible, setIsTitleVisible] = useState(false)
-  const [isBadgeVisible, setIsBadgeVisible] = useState(false)
   const [isCTAVisible, setIsCTAVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
 
@@ -177,57 +177,8 @@ export function AdvantagesStudyChina({ lang }: { lang: string }) {
     setReasons(reasonsData)
   }, [t])
 
-  useEffect(() => {
-    // Single observer for all animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        
-        const target = entry.target;
-        
-        if (target.id === 'advantages-badge') {
-          setIsBadgeVisible(true);
-        } else if (target.id === 'advantages-title') {
-          setIsTitleVisible(true);
-        } else if (target.id === 'advantages-cta') {
-          setIsCTAVisible(true);
-        }
-        
-        observer.unobserve(target);
-      });
-    }, {
-      threshold: 0.2,
-      rootMargin: '0px'
-    });
-
-    // Observer elements
-    if (sectionRef.current) {
-      const badgeElement = sectionRef.current.querySelector('#advantages-badge');
-      const titleElement = sectionRef.current.querySelector('#advantages-title');
-      const ctaElement = sectionRef.current.querySelector('#advantages-cta');
-      
-      if (badgeElement) observer.observe(badgeElement);
-      if (titleElement) observer.observe(titleElement);
-      if (ctaElement) observer.observe(ctaElement);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="relative py-10 md:py-16 lg:py-20 overflow-hidden">
-      <style jsx global>{`
-        .hover-card {
-          position: relative;
-          isolation: isolate;
-          will-change: transform;
-        }
-        .hover-card:hover {
-          transform: translateZ(0) scale(1.01);
-          transition: transform 200ms ease-out;
-        }
-      `}</style>
-      
+    <section ref={sectionRef} className={cn("w-full py-10 md:py-16 lg:py-20", className)}>
       <BackgroundElements />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -237,74 +188,41 @@ export function AdvantagesStudyChina({ lang }: { lang: string }) {
           className="flex justify-center mb-4"
         >
           <div 
-            className="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-semibold transform"
-            style={{
-              opacity: isBadgeVisible ? 1 : 0,
-              transition: 'opacity 300ms ease-out, transform 300ms ease-out',
-              transform: isBadgeVisible ? 'translateZ(0) translateY(0)' : 'translateZ(0) translateY(-10px)'
-            }}
+            className="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-medium"
           >
             {t('badge')}
           </div>
         </div>
-        
-        {/* Section Title */}
-        <div 
-          id="advantages-title"
-          className="text-center mb-12"
-          style={{
-            opacity: isTitleVisible ? 1 : 0,
-            transition: 'opacity 500ms ease-out'
-          }}
-        >
-          <h2 
-            className="text-3xl md:text-4xl font-bold mb-4"
-            style={{ 
-              transform: isTitleVisible ? 'translateY(0)' : 'translateY(20px)',
-              transition: 'transform 500ms ease-out',
-              transitionDelay: '100ms' 
-            }}
-          >
-            {t('title.main')} <span className="text-blue-600">{t('title.highlight')}</span>
-          </h2>
-          <p 
-            className="text-lg text-gray-600 max-w-3xl mx-auto"
-            style={{ 
-              transform: isTitleVisible ? 'translateY(0)' : 'translateY(20px)',
-              transition: 'transform 500ms ease-out',
-              transitionDelay: '200ms' 
-            }}
-          >
-            {t('subtitle')}
-          </p>
-        </div>
-        
-        {/* Reasons Flex Container */}
-        <div className="flex flex-wrap gap-8 mb-12">
+
+        {/* Section Header */}
+        <SectionHeader
+          title={`${t('title.main')} ${t('title.highlight')}`}
+          subtitle={t('subtitle')}
+          className="text-center"
+        />
+
+        {/* Advantages Grid */}
+        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {reasons.map((reason, index) => (
             <Reason
               key={index}
-              title={reason.title}
-              description={reason.description}
-              icon={reason.icon}
-              color={reason.color}
+              {...reason}
               index={index}
             />
           ))}
         </div>
 
         {/* CTA Section */}
-        <div
+        <div 
           id="advantages-cta"
+          className="mt-12 text-center"
           style={{
-            opacity: isCTAVisible ? 1 : 0,
-            transform: isCTAVisible ? 'translateY(0)' : 'translateY(10px)',
-            transition: 'opacity 500ms ease-out, transform 500ms ease-out',
+            opacity: isCTAVisible ? 1 : 1,
+            transform: `translateY(${isCTAVisible ? '0' : '20px'})`,
+            transition: 'opacity 500ms ease-out, transform 500ms ease-out'
           }}
         >
-          <CTA 
-            lang={lang} 
-          />
+          <CTA lang={locale} />
         </div>
       </div>
     </section>

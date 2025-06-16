@@ -7,6 +7,7 @@ import { useLocale } from 'next-intl'
 import { Star } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { motion, useInView } from 'framer-motion'
+import SectionHeader from '@/components/ui/section-header'
 
 // Mobile breakpoint
 const MOBILE_BREAKPOINT = 768
@@ -107,17 +108,12 @@ export default function Testimonials({ className }: TestimonialsProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center justify-center space-y-4 text-center mb-10"
           style={{ willChange: "opacity, transform" }}
         >
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              {t('testimonials.title')}
-            </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {t('testimonials.subtitle')}
-            </p>
-          </div>
+          <SectionHeader
+            title={t('testimonials.title')}
+            subtitle={t('testimonials.subtitle')}
+          />
         </motion.div>
 
         {/* Testimonials Grid */}
