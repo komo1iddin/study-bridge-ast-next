@@ -8,6 +8,7 @@ import { HomeFAQ } from "@/types/content"
 import { Button } from "@/components/ui/button"
 import { Mail } from "lucide-react"
 import { AnimatePresence, motion } from "framer-motion"
+import ApplicationFormModal from "@/components/common/application-form-modal"
 
 interface HomeFAQSectionProps {
   faqs: HomeFAQ[]
@@ -16,6 +17,7 @@ interface HomeFAQSectionProps {
 export function HomeFAQSection({ faqs }: HomeFAQSectionProps) {
   const t = useTranslations("components.home.faq")
   const [openItem, setOpenItem] = useState<string | null>(null)
+  const [isFormOpen, setIsFormOpen] = useState(false)
   
   // Group FAQs by category but only for ordering purposes
   const [orderedFaqs] = useState(() => {
@@ -89,12 +91,23 @@ export function HomeFAQSection({ faqs }: HomeFAQSectionProps) {
             <h3 className="text-lg font-medium text-blue-700 mb-2">{t("contact.title")}</h3>
             <p className="text-slate-600">{t("contact.description")}</p>
           </div>
-          <Button className="shrink-0" size="lg">
+          <Button 
+            className="shrink-0" 
+            size="lg"
+            onClick={() => setIsFormOpen(true)}
+          >
             <Mail className="mr-2 h-4 w-4" />
             {t("contact.button")}
           </Button>
         </div>
       </div>
+
+      {/* Application Form Modal */}
+      <ApplicationFormModal 
+        open={isFormOpen} 
+        onOpenChange={setIsFormOpen}
+        onSubmitSuccess={() => setIsFormOpen(false)}
+      />
     </div>
   );
 }
