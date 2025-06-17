@@ -7,6 +7,11 @@
       "home": "Home",
       "services": "Our Services"
     },
+    "hero": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive support throughout your educational journey in China"
+    },
+
     "sections": {
       "services": {
         "title": "Our Services",

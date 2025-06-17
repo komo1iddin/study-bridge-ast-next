@@ -7,6 +7,10 @@
       "home": "Bosh Sahifa",
       "services": "Bizning Xizmatlarimiz"
     },
+    "hero": {
+      "title": "Bizning xizmatlarimiz",
+      "subtitle": "Xitoyda ta'lim olish jarayonida har tomonlama qo'llab-quvvatlash"
+    },
     "sections": {
       "services": {
         "title": "Bizning xizmatlarimiz",

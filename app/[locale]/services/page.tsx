@@ -4,6 +4,7 @@ import { Locale } from "@/i18n/navigation"
 
 import { ServicesContent } from "./components"
 
+
 export async function generateMetadata({
   params: { locale }
 }: {
@@ -24,7 +25,7 @@ export default function ServicesPage({
 }) {
   return (
     <main>
-      <ServicesContent lang={locale as Locale} />
+              <ServicesContent lang={locale as Locale} />
     </main>
   )
 }

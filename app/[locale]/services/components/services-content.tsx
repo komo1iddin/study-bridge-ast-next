@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 
+import { HeroSection } from "./hero-section"
 import { ServicesSection } from "./services-section"
 import { ExpensesSection } from "./expenses-section"
 import { NotesSection } from "./notes-section"
@@ -34,6 +35,9 @@ export function ServicesContent({ lang }: ServicesContentProps) {
         </div>
       </div>
       
+      {/* Hero Section */}
+      <HeroSection />
+
       {/* Main Content */}
       <div className="container px-4 md:px-6 py-16 md:py-20 lg:py-24">
         <div className="flex flex-col gap-32">
