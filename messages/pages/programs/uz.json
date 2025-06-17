@@ -8,6 +8,9 @@
     "subtitle": "Xitoyning eng yaxshi universitetlarida xalqaro talabalar uchun keng ko'lamli o'quv dasturlarini o'rganing."
   },
   "filters": {
+    "mobileButtonLabel": "Filtrlar",
+    "mobileTitle": "Dasturlarni filtrlash",
+    "closeButton": "Yopish",
     "search": {
       "label": "Qidirish",
       "placeholder": "Dastur nomi..."

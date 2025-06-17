@@ -8,6 +8,9 @@
     "subtitle": "Explore a wide range of study programs at China's top universities for international students."
   },
   "filters": {
+    "mobileButtonLabel": "Filters",
+    "mobileTitle": "Filter Programs",
+    "closeButton": "Close",
     "search": {
       "label": "Search",
       "placeholder": "Program name..."
