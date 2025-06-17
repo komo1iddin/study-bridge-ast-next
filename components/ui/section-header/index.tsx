@@ -26,7 +26,7 @@ const SectionHeader = ({
   return (
     <div 
       className={cn(
-        'mb-16 last:mb-0',
+        'mb-12 md:mb-16',
         {
           'text-center': alignment === 'center',
           'text-left': alignment === 'left',
@@ -51,7 +51,7 @@ const SectionHeader = ({
       )}
       <h2 
         className={cn(
-          "text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl text-gray-900 mb-4",
+          "text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl text-gray-900 mb-4 md:mb-6",
           titleClassName
         )}
       >
@@ -59,9 +59,10 @@ const SectionHeader = ({
       </h2>
       {subtitle && (
         <p className={cn(
-          "text-lg text-gray-600 max-w-3xl mx-auto",
+          "text-lg text-gray-600 max-w-3xl",
           alignment === 'left' && "ml-0 mr-auto",
           alignment === 'right' && "mr-0 ml-auto",
+          alignment === 'center' && "mx-auto",
           subtitleClassName
         )}>
           {subtitle}

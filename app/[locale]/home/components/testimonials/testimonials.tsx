@@ -100,7 +100,7 @@ export default function Testimonials({ className }: TestimonialsProps) {
   }, [])
   
   return (
-    <section className={cn("w-full py-10 md:py-16 lg:py-20", className)}>
+    <section className={cn("w-full py-12 md:py-16 lg:py-24", className)}>
       <div className="container px-4 md:px-6 mx-auto">
         {/* Section Header */}
         <motion.div 
@@ -117,7 +117,7 @@ export default function Testimonials({ className }: TestimonialsProps) {
         </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 md:mt-12">
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={testimonial.id}

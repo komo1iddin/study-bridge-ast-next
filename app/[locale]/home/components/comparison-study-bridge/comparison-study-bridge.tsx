@@ -149,13 +149,13 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
   // If not mounted yet, return a non-animated version to prevent flashing/disappearing
   if (!isMounted) {
     return (
-      <section className={cn("w-full py-10 md:py-16 lg:py-20", className)}>
+      <section className={cn("w-full py-12 md:py-16 lg:py-24", className)}>
         <div className="container px-4 md:px-6">
           <SectionHeader
             title={`${t('title.main')} ${t('title.highlight')}`}
             subtitle={t('subtitle')}
           />
-          <div>
+          <div className="mt-8 md:mt-12">
             <ComparisonTable />
           </div>
         </div>
@@ -164,7 +164,7 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
   }
 
   return (
-    <section className={cn("w-full py-10 md:py-16 lg:py-20", className)}>
+    <section className={cn("w-full py-12 md:py-16 lg:py-24", className)}>
       <div className="container px-4 md:px-6">
         {/* Section Title */}
         <motion.div 
@@ -186,6 +186,7 @@ export function ComparisonStudyBridge({ className }: ComparisonStudyBridgeProps)
           initial="hidden"
           animate="visible"
           style={{ willChange: "opacity", transform: "translateZ(0)" }}
+          className="mt-8 md:mt-12"
         >
           <ComparisonTable />
         </motion.div>
