@@ -10,7 +10,7 @@ export function HeroSection({ className }: HeroSectionProps) {
   const t = useTranslations("pages.services")
 
   return (
-    <section className={`w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-blue-50 to-blue-100 ${className || ""}`}> 
+    <section className={`w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-blue-50 to-blue-100 ${className || ""}`}>
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">

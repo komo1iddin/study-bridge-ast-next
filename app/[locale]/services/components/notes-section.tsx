@@ -11,31 +11,27 @@ interface NotesSectionProps {
   hideHeader?: boolean
 }
 
-type NoteData = { icon: React.ElementType; type: "warning" | "info" | "default" | "destructive"; title: string; description: string }
+type NoteData = { icon: React.ElementType; type: "warning" | "info" | "default" | "destructive"; key: string }
 const NOTES: NoteData[] = [
     { 
       icon: AlertCircle, 
       type: "warning",
-      title: "programRestriction",
-      description: "program1Plus4" 
+      key: "programRestriction" 
     },
     { 
       icon: Info, 
       type: "info",
-      title: "visaInfo",
-      description: "visaDetails" 
+      key: "visaInfo" 
     },
     { 
       icon: HelpCircle, 
       type: "default",
-      title: "accommodationInfo",
-      description: "accommodationDetails" 
+      key: "accommodationInfo" 
     },
     { 
       icon: AlertTriangle, 
       type: "destructive",
-      title: "importantDeadlines",
-      description: "deadlineDetails" 
+      key: "importantDeadlines"
     }
   ]
   
@@ -43,7 +39,7 @@ export function NotesSection({ hideHeader = false }: NotesSectionProps) {
   const t = useTranslations("pages.services.notesSection")
   
   return (
-    <section id="notes" className="py-12 md:py-16 lg:py-20">
+    <section id="notes" className="py-6 md:py-8 mb-10">
       {!hideHeader && (
         <SectionHeader
           title={t("title")}
@@ -52,79 +48,65 @@ export function NotesSection({ hideHeader = false }: NotesSectionProps) {
         />
       )}
       
-      <div className="space-y-8 mt-10">
-        {NOTES.map((note, index) => (
-          <motion.div
-            key={note.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -3, transition: { duration: 0.2 } }}
+      <div className="grid gap-6 md:grid-cols-2">
+        {NOTES.map((note) => (
+          <div
+            key={note.key}
+            className={cn(
+              "p-5 rounded-xl border shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-1",
+              note.type === "warning" ? "bg-amber-50 border-amber-200" :
+              note.type === "destructive" ? "bg-red-50 border-red-200" :
+              note.type === "info" ? "bg-blue-50 border-blue-200" :
+              "bg-slate-50 border-slate-200"
+            )}
           >
-            <Alert 
-              variant={note.type as any} 
-              className="border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden"
-            >
-              <div className="flex gap-3 items-start">
-                <div className={cn(
-                  "flex h-10 w-10 items-center justify-center rounded-full",
-                  note.type === "warning" ? "bg-amber-100 text-amber-600" :
-                  note.type === "destructive" ? "bg-red-100 text-red-600" :
-                  note.type === "info" ? "bg-blue-100 text-blue-600" :
-                  "bg-slate-100 text-slate-600"
-                )}>
-                  <note.icon className="h-5 w-5" />
-                </div>
-                <div className="flex-1">
-                  <AlertTitle className="text-lg font-semibold mb-2">
-                    {t(`${note.title}.title`)}
-                  </AlertTitle>
-                  <AlertDescription className="text-muted-foreground">
-                    {t(`${note.title}.description`)}
-                  </AlertDescription>
-                </div>
-              </div>
-            </Alert>
-          </motion.div>
-        ))}
-        
-        {/* Removed highlighted duplication; programRestriction note already emphasized via variant */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-14"
-          whileHover={{ scale: 1.02 }}
-        >
-          <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 p-8 rounded-xl shadow-lg relative overflow-hidden">
-            <div className="absolute -right-6 -top-6 w-24 h-24 bg-amber-100 rounded-full opacity-50"></div>
-            <div className="absolute -right-3 -bottom-3 w-16 h-16 bg-amber-100 rounded-full opacity-30"></div>
-            
-            <div className="flex items-center gap-4">
-              <div className="bg-amber-100 h-16 w-16 rounded-full flex items-center justify-center shadow-inner border border-amber-200">
-                <AlertCircle className="h-8 w-8 text-amber-600" />
+            <div className="flex gap-4">
+              <div className={cn(
+                "flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-full",
+                note.type === "warning" ? "bg-amber-100 text-amber-600" :
+                note.type === "destructive" ? "bg-red-100 text-red-600" :
+                note.type === "info" ? "bg-blue-100 text-blue-600" :
+                "bg-slate-100 text-slate-600"
+              )}>
+                <note.icon className="h-6 w-6" />
               </div>
               <div>
-                <span className="inline-block bg-amber-200/70 text-amber-800 text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-2">
-                  {t("important")}
-                </span>
-                <h3 className="text-xl font-bold text-amber-900">{t("restriction.title")}</h3>
-              </div>
-            </div>
-            
-            <div className="mt-6 pl-20">
-              <p className="text-amber-800 text-lg font-medium leading-relaxed">
-                {t("restriction.description")}
-              </p>
-              <div className="mt-4 flex items-center gap-2 text-amber-700">
-                <AlertTriangle className="h-5 w-5" />
-                <span className="text-sm">{t("restrictionNote")}</span>
+                <h3 className="text-lg font-semibold mb-2">
+                  {t(`${note.key}.title`)}
+                </h3>
+                <p className="text-muted-foreground">
+                  {t(`${note.key}.description`)}
+                </p>
               </div>
             </div>
           </div>
-        </motion.div>
+        ))}
+        
+        {/* Important notice - spans full width */}
+        <div className="md:col-span-2 mt-4">
+          <div className="bg-gradient-to-r from-amber-50 to-amber-100 border border-amber-200 p-6 rounded-xl shadow-md transition-all duration-200 hover:shadow-lg">
+            <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+              <div className="flex-shrink-0 flex items-center justify-center h-16 w-16 bg-amber-100 rounded-full shadow border border-amber-200">
+                <AlertCircle className="h-8 w-8 text-amber-600" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="bg-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full">
+                    {t("important")}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-amber-900 mb-2">{t("restriction.title")}</h3>
+                <p className="text-amber-800 text-lg font-medium">
+                  {t("restriction.description")}
+                </p>
+                <div className="mt-3 flex items-center gap-2 text-amber-700">
+                  <AlertTriangle className="h-5 w-5" />
+                  <span className="text-sm">{t("restrictionNote")}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

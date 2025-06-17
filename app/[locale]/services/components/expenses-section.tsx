@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl"
 import { motion } from "framer-motion"
-import { Building, CreditCard, Plane, FileCheck, Activity, ShieldCheck, MapPin, ShoppingBag } from "lucide-react"
+import { Building, CreditCard, Plane, FileCheck, Activity, ShieldCheck, MapPin, ShoppingBag, DollarSign } from "lucide-react"
 import { cn } from "@/lib/utils"
 import SectionHeader from "@/components/ui/section-header"
 
@@ -17,7 +17,7 @@ interface ExpensesSectionProps {
   hideHeader?: boolean
 }
 
-// Static expense data moved outside component to avoid re-creation on every render
+// Static expense data moved outside component
 type ExpenseData = { icon: React.ElementType; key: string }
 
 const UZBEKISTAN_EXPENSES: ExpenseData[] = [
@@ -40,208 +40,105 @@ export function ExpensesSection({ hideHeader = false }: ExpensesSectionProps) {
   const tUz = useTranslations("pages.services.expensesSection.uzbekistan")
   const tChina = useTranslations("pages.services.expensesSection.china")
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  }
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 }
-    }
-  }
-
   return (
-    <section id="expenses" className="py-12 md:py-16 lg:py-20">
+    <section id="expenses" className="py-6 md:py-8 mb-10">
       {!hideHeader && (
         <SectionHeader
           title={t("title")}
           subtitle={t("subtitle")}
           alignment="center"
-          className="mb-16"
         />
       )}
 
       <div className="grid gap-8 lg:grid-cols-2">
         {/* Uzbekistan Expenses */}
-        <motion.div
-          variants={cardVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="h-full"
-        >
-          <div className="relative h-full rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden group">
-            {/* Decorative accent */}
-            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 to-blue-600" />
-
-            {/* Flag decoration */}
-            <div className="absolute top-6 right-6 w-16 h-16 opacity-5" aria-hidden="true">
-              <div className="w-full h-2/3 bg-blue-600"></div>
-              <div className="w-full h-1/3 bg-green-600"></div>
-              <div className="w-full h-1/3 bg-red-600"></div>
-            </div>
-
-            <div className="p-8">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="p-2.5 bg-blue-100 rounded-xl text-blue-600">
-                  <span className="text-2xl">🇺🇿</span>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">{t("uzbekistanTitle")}</h3>
-                  <p className="text-sm text-gray-500">{t("notIncludedNote")}</p>
-                </div>
+        <div className="flex flex-col bg-white rounded-xl shadow-md overflow-hidden border border-blue-100 transition-all duration-200 hover:shadow-lg h-full">
+          <div className="bg-gradient-to-r from-blue-500 to-blue-600 py-4 px-6">
+            <div className="flex items-center gap-3">
+              <div className="flex-shrink-0 w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                <span className="text-xl">🇺🇿</span>
               </div>
-
-              <motion.ul
-                className="space-y-3"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-              >
-                {UZBEKISTAN_EXPENSES.map((expense) => (
-                  <ExpenseCard
-                    key={expense.key}
-                    icon={expense.icon}
-                    name={tUz(`title.${expense.key}`)}
-                    amountLabel={tUz(`amounts.${expense.key}`)}
-                    country="uzbekistan"
-                  />
-                ))}
-              </motion.ul>
-
-              <motion.div
-                className="mt-8 pt-6 border-t border-gray-100"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-medium text-gray-700">{t("totalEstimated")}</span>
-                  <span className="text-xl font-bold text-blue-700">{tUz("amounts.total")}</span>
-                </div>
-              </motion.div>
+              <div>
+                <h3 className="text-xl font-bold text-white">{t("uzbekistanTitle")}</h3>
+                <p className="text-blue-100 text-sm">{t("notIncludedNote")}</p>
+              </div>
             </div>
           </div>
-        </motion.div>
+
+          <div className="flex flex-col flex-1 p-6">
+            <ul className="flex-1 space-y-3">
+              {UZBEKISTAN_EXPENSES.map((expense) => (
+                <li 
+                  key={expense.key}
+                  className="flex items-center justify-between p-3 rounded-lg bg-blue-50 border border-blue-100 transition-all duration-200 hover:bg-blue-100"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                      <expense.icon className="w-5 h-5" />
+                    </div>
+                    <span className="font-medium text-gray-900">{tUz(`title.${expense.key}`)}</span>
+                  </div>
+                  <span className="px-3 py-1 bg-white rounded-full text-blue-700 font-semibold text-sm shadow-sm">
+                    {tUz(`amounts.${expense.key}`)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6 pt-4 border-t border-blue-100 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <DollarSign className="w-5 h-5 text-blue-600" />
+                <span className="font-medium text-gray-900">{t("totalEstimated")}</span>
+              </div>
+              <span className="text-xl font-bold text-blue-700">{tUz("amounts.total")}</span>
+            </div>
+          </div>
+        </div>
 
         {/* China Expenses */}
-        <motion.div
-          variants={cardVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ delay: 0.1 }}
-          className="h-full"
-        >
-          <div className="relative h-full rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden group">
-            {/* Decorative accent */}
-            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-red-500 to-red-600" />
-
-            {/* Flag decoration */}
-            <div className="absolute top-6 right-6 w-16 h-16 opacity-5" aria-hidden="true">
-              <div className="w-full h-1/2 bg-red-600"></div>
-              <div className="w-full h-1/2 bg-yellow-500"></div>
-            </div>
-
-            <div className="p-8">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="p-2.5 bg-red-100 rounded-xl text-red-600">
-                  <span className="text-2xl">🇨🇳</span>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">{t("chinaTitle")}</h3>
-                  <p className="text-sm text-gray-500">{t("notIncludedNote")}</p>
-                </div>
+        <div className="flex flex-col bg-white rounded-xl shadow-md overflow-hidden border border-red-100 transition-all duration-200 hover:shadow-lg h-full">
+          <div className="bg-gradient-to-r from-red-500 to-red-600 py-4 px-6">
+            <div className="flex items-center gap-3">
+              <div className="flex-shrink-0 w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                <span className="text-xl">🇨🇳</span>
               </div>
-
-              <motion.ul
-                className="space-y-3"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-              >
-                {CHINA_EXPENSES.map((expense) => (
-                  <ExpenseCard
-                    key={expense.key}
-                    icon={expense.icon}
-                    name={tChina(`title.${expense.key}`)}
-                    amountLabel={tChina(`amounts.${expense.key}`)}
-                    country="china"
-                  />
-                ))}
-              </motion.ul>
-
-              <motion.div
-                className="mt-8 pt-6 border-t border-gray-100"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-medium text-gray-700">{t("totalEstimated")}</span>
-                  <span className="text-xl font-bold text-red-700">{tChina("amounts.total")}</span>
-                </div>
-              </motion.div>
+              <div>
+                <h3 className="text-xl font-bold text-white">{t("chinaTitle")}</h3>
+                <p className="text-red-100 text-sm">{t("notIncludedNote")}</p>
+              </div>
             </div>
           </div>
-        </motion.div>
+
+          <div className="flex flex-col flex-1 p-6">
+            <ul className="flex-1 space-y-3">
+              {CHINA_EXPENSES.map((expense) => (
+                <li 
+                  key={expense.key}
+                  className="flex items-center justify-between p-3 rounded-lg bg-red-50 border border-red-100 transition-all duration-200 hover:bg-red-100"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+                      <expense.icon className="w-5 h-5" />
+                    </div>
+                    <span className="font-medium text-gray-900">{tChina(`title.${expense.key}`)}</span>
+                  </div>
+                  <span className="px-3 py-1 bg-white rounded-full text-red-700 font-semibold text-sm shadow-sm">
+                    {tChina(`amounts.${expense.key}`)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6 pt-4 border-t border-red-100 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <DollarSign className="w-5 h-5 text-red-600" />
+                <span className="font-medium text-gray-900">{t("totalEstimated")}</span>
+              </div>
+              <span className="text-xl font-bold text-red-700">{tChina("amounts.total")}</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-  )
-}
-
-function ExpenseCard({ icon: Icon, name, amountLabel, country }: ExpenseCardProps) {
-  const isUzbekistan = country === "uzbekistan";
-  const accentLightBg = isUzbekistan ? "bg-blue-50" : "bg-red-50";
-  const accentText = isUzbekistan ? "text-blue-700" : "text-red-700";
-
-  return (
-    <motion.li
-      variants={{
-        hidden: { opacity: 0, y: 10 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 0.3,
-            ease: [0.16, 1, 0.3, 1]
-          }
-        }
-      }}
-      className={
-        cn(
-          "group relative flex items-center justify-between gap-4 p-4 rounded-2xl bg-white/70 backdrop-blur-md border border-gray-100 hover:shadow-md transition-shadow", 
-          isUzbekistan ? "hover:border-blue-200" : "hover:border-red-200"
-        )
-      }
-      whileHover={{ y: -2 }}
-    >
-      {/* accent bar */}
-      <span className={cn("absolute left-0 top-0 h-full w-1.5 rounded-l-2xl", isUzbekistan ? "bg-blue-500" : "bg-red-500")} aria-hidden="true" />
-
-      <div className="flex items-center gap-4 flex-1">
-        <div className={cn("flex h-10 w-10 items-center justify-center rounded-xl", accentLightBg, accentText)}>
-          <Icon className="w-5 h-5" />
-        </div>
-        <span className="font-medium text-gray-800 truncate">{name}</span>
-      </div>
-      <span className={cn("ml-auto px-3 py-0.5 rounded-full text-sm font-semibold", accentLightBg, accentText)}>
-        {amountLabel}
-      </span>
-    </motion.li>
   )
 }

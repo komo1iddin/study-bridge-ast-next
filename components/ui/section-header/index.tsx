@@ -26,7 +26,7 @@ const SectionHeader = ({
   return (
     <div 
       className={cn(
-        'mb-12 md:mb-16',
+        'mb-8',
         {
           'text-center': alignment === 'center',
           'text-left': alignment === 'left',
@@ -38,7 +38,7 @@ const SectionHeader = ({
       )}
     >
       {badge && (
-        <div className="mb-4 flex justify-center">
+        <div className="mb-3 flex justify-center">
           <div className={cn(
             "bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-semibold",
             alignment === 'left' && "ml-0 mr-auto",
@@ -51,7 +51,7 @@ const SectionHeader = ({
       )}
       <h2 
         className={cn(
-          "text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl text-gray-900 mb-4 md:mb-6",
+          "text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl text-gray-900 mb-3 md:mb-4",
           titleClassName
         )}
       >

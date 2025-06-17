@@ -1,4 +1,4 @@
- "use client"
+"use client"
 
 import { useTranslations } from "next-intl"
 import { motion } from "framer-motion"
@@ -38,22 +38,14 @@ export function ServicesSection({ hideHeader = false }: ServicesSectionProps) {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.05,
+        delayChildren: 0.1
       }
-    }
-  }
-  
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.3 }
     }
   }
 
   return (
-    <section id="services" className="py-12 md:py-16 lg:py-20">
+    <section id="services" className="py-6 md:py-8 mb-10">
       {!hideHeader && (
         <SectionHeader
           title={t("title")}
@@ -64,7 +56,7 @@ export function ServicesSection({ hideHeader = false }: ServicesSectionProps) {
       )}
       
       <motion.div 
-        className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-10"
+        className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -85,15 +77,6 @@ export function ServicesSection({ hideHeader = false }: ServicesSectionProps) {
 }
 
 function ServiceCard({ icon: Icon, title, description, index }: ServiceCardProps) {
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.3 }
-    }
-  }
-
   // Create a gradient based on the index
   const gradients = [
     "from-blue-50 to-indigo-50",
@@ -130,13 +113,19 @@ function ServiceCard({ icon: Icon, title, description, index }: ServiceCardProps
 
   return (
     <motion.div
-      variants={itemVariants}
+      variants={{
+        hidden: { opacity: 0, y: 10 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.2 }
+        }
+      }}
       className={cn(
-        "group relative flex flex-col items-start gap-4 rounded-2xl p-8 bg-gradient-to-br border border-gray-200 shadow-sm hover:shadow-md transition-transform hover:-translate-y-1",
+        "group relative flex flex-col items-start gap-4 rounded-2xl p-8 bg-gradient-to-br border border-gray-200 shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-1",
         gradients[index % gradients.length],
         borderColors[index % borderColors.length]
       )}
-      whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
     >
       <div className="space-y-4 w-full">
         <div className={cn(
