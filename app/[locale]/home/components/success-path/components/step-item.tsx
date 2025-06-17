@@ -1,9 +1,10 @@
 'use client'
 
 import React, { useRef, useEffect } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useInView } from 'framer-motion'
 import { CheckCircle2 } from 'lucide-react'
 import StepBenefit from './step-benefit'
+import { cn } from '@/lib/utils'
 
 const STEP_COLORS = [
   "#2563eb", // Blue
@@ -48,15 +49,14 @@ const StepItem = ({ step, index, isLast, visibleSteps, setVisibleSteps }: StepIt
       className="relative"
       data-step-id={step.id}
     >
-      <motion.div 
-        className="flex items-start gap-6 md:gap-8 mb-8 md:mb-12"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.4, delay: index * 0.08 }}
+      <div 
+        className={cn(
+          "flex items-start gap-6 md:gap-8 mb-8 md:mb-12 transition-all duration-400",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+        )}
         style={{
-          willChange: "opacity, transform", 
-          transform: "translateZ(0)", 
-          backfaceVisibility: "hidden"
+          transitionDelay: `${index * 80}ms`,
+          willChange: "opacity, transform"
         }}
       >
         {/* Step Number and Line */}
@@ -78,8 +78,7 @@ const StepItem = ({ step, index, isLast, visibleSteps, setVisibleSteps }: StepIt
             className="bg-white rounded-xl p-5 md:p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
             style={{ 
               borderLeftColor: stepColor, 
-              borderLeftWidth: '4px',
-              transform: "translateZ(0)"  
+              borderLeftWidth: '4px'
             }}
           >
             <div className="flex items-center gap-4 mb-4">
@@ -103,7 +102,7 @@ const StepItem = ({ step, index, isLast, visibleSteps, setVisibleSteps }: StepIt
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }

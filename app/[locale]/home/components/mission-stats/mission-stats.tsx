@@ -66,72 +66,97 @@ export default function MissionStats({ className }: MissionStatsProps) {
   const t = useTranslations('pages.home')
   const statsGridRef = useRef<HTMLDivElement>(null)
   const [isMobile, setIsMobile] = useState(false)
+  const [hasAnimated, setHasAnimated] = useState(false)
+  const [countersInitialized, setCountersInitialized] = useState(false)
   
-  // Check if mobile device
+  // Check if mobile device - using throttled resize listener
   useEffect(() => {
     const checkIfMobile = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT)
+    
+    // Initial check
     checkIfMobile()
     
-    // Add resize listener
-    window.addEventListener('resize', checkIfMobile)
+    // Throttle resize events for better performance
+    let resizeTimer: NodeJS.Timeout
+    const handleResize = () => {
+      clearTimeout(resizeTimer)
+      resizeTimer = setTimeout(checkIfMobile, 100)
+    }
+    
+    // Use passive event listener for better performance
+    window.addEventListener('resize', handleResize, { passive: true })
     
     return () => {
-      window.removeEventListener('resize', checkIfMobile)
+      window.removeEventListener('resize', handleResize)
+      clearTimeout(resizeTimer)
     }
   }, [])
   
   useEffect(() => {
-    // Animation for counter - optimized for performance
+    // More performant counter animation implementation
     const initCounters = () => {
-      const counterElements = statsGridRef.current?.querySelectorAll('.counter-value')
+      if (countersInitialized) return
       
+      const counterElements = statsGridRef.current?.querySelectorAll('.counter-value')
       if (!counterElements) return
+      
+      setCountersInitialized(true)
       
       counterElements.forEach(element => {
         if (element instanceof HTMLElement) {
           const target = parseInt(element.dataset.target?.replace(/\D/g, '') || '0')
-          const duration = 1500 // Slightly longer duration to reduce CPU usage
-          const frames = 20 // Reduced number of frames to improve performance
-          const frameStep = duration / frames
-          const valueStep = target / frames
-          let current = 0
-          let frame = 0
           
-          // Use fewer animation frames for better performance
+          // Reduce animation complexity
+          const frames = 12 // Use even fewer frames for better performance
+          const duration = 1000 // Faster animation
+          const frameStep = Math.ceil(duration / frames)
+          const valueStep = target / frames
+          
+          // Start with reasonable value instead of 0
+          let current = Math.floor(target * 0.2)
+          element.textContent = current.toLocaleString() + '+'
+          
+          // Counter loop with frame skipping for performance
+          let frameCount = 0
+          
           const updateCounter = () => {
-            frame++
-            if (frame <= frames) {
-              current = Math.ceil(valueStep * frame)
-              element.textContent = Math.min(current, target).toLocaleString() + '+'
+            if (frameCount < frames) {
+              frameCount++
+              current = Math.min(Math.floor(target * 0.2 + (valueStep * frameCount)), target)
+              element.textContent = current.toLocaleString() + '+'
               
-              // Schedule next frame with less frequent updates
-              setTimeout(updateCounter, frameStep)
-            } else {
-              element.textContent = target.toLocaleString() + '+'
+              // Use requestAnimationFrame with frame skipping for smoother performance
+              if (frameCount < frames) {
+                setTimeout(() => requestAnimationFrame(updateCounter), frameStep)
+              }
             }
           }
           
-          updateCounter()
+          // Start animation after a small delay to ensure browser isn't overloaded
+          setTimeout(updateCounter, 100)
         }
       })
     }
     
-    // Use Intersection Observer to trigger counter animation when visible
+    // Use Intersection Observer with proper options
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Small delay to help with overall page performance
-            setTimeout(() => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true)
+            
+            // Delay counter animation until after the grid items have appeared
+            const timer = setTimeout(() => {
               initCounters()
-            }, 100)
-            observer.unobserve(entry.target)
+            }, 300)
+            
+            return () => clearTimeout(timer)
           }
         })
       },
       {
-        threshold: 0.2, // Higher threshold to ensure element is more visible
-        rootMargin: '0px' // Reduced margin
+        threshold: 0.15, // Lower threshold so it triggers a bit earlier
+        rootMargin: '0px 0px 100px 0px' // Preload a bit before it's visible
       }
     )
     
@@ -144,7 +169,7 @@ export default function MissionStats({ className }: MissionStatsProps) {
         observer.unobserve(statsGridRef.current)
       }
     }
-  }, [])
+  }, [hasAnimated, countersInitialized])
   
   return (
     <section className={cn("w-full py-10 md:py-16 lg:py-20", className)}>
@@ -156,10 +181,17 @@ export default function MissionStats({ className }: MissionStatsProps) {
           alignment="center"
         />
         
-        {/* Stats Grid */}
+        {/* Stats Grid - Apply fade-in animation to avoid layout shifts */}
         <div 
           ref={statsGridRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 stats-grid"
+          className={cn(
+            "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 stats-grid",
+            hasAnimated ? "opacity-100" : "opacity-0"
+          )}
+          style={{ 
+            transition: "opacity 0.5s ease-out",
+            willChange: hasAnimated ? "auto" : "opacity"
+          }}
         >
           {stats.map((stat, index) => (
             <div 
@@ -169,9 +201,8 @@ export default function MissionStats({ className }: MissionStatsProps) {
                 !isMobile && "hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1"
               )}
               style={{
-                transform: 'translateZ(0)', // Force GPU acceleration
-                willChange: 'transform',
-                transitionDelay: `${index * 50}ms` // Use CSS instead of data-aos
+                transitionDelay: `${Math.min(index * 50, 200)}ms`, // Cap delay for better performance
+                transform: 'translateZ(0)'
               }}
             >
               <div className="flex items-start gap-4 mb-4">
@@ -183,7 +214,8 @@ export default function MissionStats({ className }: MissionStatsProps) {
                     className="text-3xl font-bold text-gray-900 counter-value tabular-nums" 
                     data-target={stat.value}
                   >
-                    0+
+                    {/* Start with a reasonable initial value for perceived performance */}
+                    {Math.floor(stat.value * 0.2).toLocaleString()}+
                   </div>
                   <div className="text-sm font-medium text-gray-500 whitespace-pre-line">
                     {t(`missionStats.stats.${stat.translationKey}.label`)}
@@ -197,12 +229,20 @@ export default function MissionStats({ className }: MissionStatsProps) {
           ))}
         </div>
 
-        {/* Advantages Grid */}
+        {/* Advantages Grid - Conditionally render once near viewport */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {advantages.map((advantage, index) => (
             <div 
               key={index}
-              className="bg-white rounded-xl p-6 shadow-md border border-blue-100 transition-all duration-300 hover:shadow-lg"
+              className={cn(
+                "bg-white rounded-xl p-6 shadow-md border border-blue-100 transition-all duration-300 hover:shadow-lg",
+                // Add staggered entrance animation
+                hasAnimated ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8" 
+              )}
+              style={{
+                transition: "opacity 0.4s ease, transform 0.4s ease",
+                transitionDelay: `${Math.min(300 + index * 100, 500)}ms` // Cap maximum delay
+              }}
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">

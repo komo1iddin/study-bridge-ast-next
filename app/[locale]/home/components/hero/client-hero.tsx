@@ -1,50 +1,57 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import { LazyMotion, domAnimation, m, MotionConfig } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import TypingBadge from './typing-badge'
-import TestimonialCards from './testimonial-cards'
-import HeroButtons from './hero-buttons'
-import ApplicationForm from './application-form'
 import { StatItem } from './stat-item'
 import { cn } from '@/lib/utils'
 import { Building2, Users, Clock, BookOpen } from 'lucide-react'
 
+// Dynamically import heavier components
+const TestimonialCards = dynamic(() => import('./testimonial-cards'), {
+  ssr: false,
+  loading: () => <div className="min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[600px] bg-gray-50/50 animate-pulse rounded-lg"></div>
+})
+
+const HeroButtons = dynamic(() => import('./hero-buttons'))
+const ApplicationForm = dynamic(() => import('./application-form'))
+
 // Define the type for rich text elements
 type RichTextElements = {
-  highlight: (chunks: React.ReactNode) => JSX.Element;
-  underline: (chunks: React.ReactNode) => JSX.Element;
-  br: () => JSX.Element;
+  highlight: (chunks: React.ReactNode) => React.ReactElement;
+  underline: (chunks: React.ReactNode) => React.ReactElement;
+  br: () => React.ReactElement;
 }
 
-// Animation variants
+// Optimized animation variants - reduced complexity
 const CONTAINER_VARIANTS = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.05
+      staggerChildren: 0.08, // Reduced stagger time
+      delayChildren: 0.03  // Reduced delay
     }
   }
 }
 
 const ITEM_VARIANTS = {
-  hidden: { opacity: 0, y: 15 },
+  hidden: { opacity: 0, y: 10 }, // Reduced distance
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.4 }
+    transition: { duration: 0.3 } // Shorter duration
   }
 }
 
 const DECORATIVE_VARIANTS = {
-  hidden: { opacity: 0, scale: 0.9 },
+  hidden: { opacity: 0, scale: 0.95 }, // Less dramatic scale
   visible: { 
-    opacity: 1, 
+    opacity: 0.8, // Lower opacity for better performance
     scale: 1,
-    transition: { duration: 0.5, delay: 0.2 }
+    transition: { duration: 0.4, delay: 0.15 } // Shorter duration
   }
 }
 
@@ -52,10 +59,26 @@ export function ClientHeroSection() {
   const t = useTranslations('pages.home.hero')
   const [isFormOpen, setIsFormOpen] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
+  const [isAboveFold, setIsAboveFold] = useState(true) // Track if component is above fold
 
   // Wait for hydration to complete before animations
   useEffect(() => {
-    setIsMounted(true)
+    // Set mounted state after a short delay to ensure hydration is complete
+    const timer = setTimeout(() => {
+      setIsMounted(true)
+    }, 10)
+    
+    return () => clearTimeout(timer)
+  }, [])
+  
+  // Check if hero section is above fold to optimize rendering
+  useEffect(() => {
+    const checkVisibility = () => {
+      setIsAboveFold(window.scrollY < window.innerHeight)
+    }
+    
+    window.addEventListener('scroll', checkVisibility, { passive: true })
+    return () => window.removeEventListener('scroll', checkVisibility)
   }, [])
 
   // Statistics data
@@ -77,7 +100,8 @@ export function ClientHeroSection() {
           style={{
             transform: "translateZ(0)",
             backfaceVisibility: "hidden",
-            perspective: 1000
+            perspective: 1000,
+            willChange: "transform"
           }}
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8 pt-1 pb-8 md:pt-4 md:pb-12 lg:pt-8 lg:pb-20 relative px-4 md:px-6 lg:px-0">
@@ -86,7 +110,6 @@ export function ClientHeroSection() {
               <m.div 
                 variants={ITEM_VARIANTS} 
                 className="w-full flex justify-center lg:justify-start"
-                style={{ willChange: "opacity, transform" }}
               >
                 <TypingBadge />
               </m.div>
@@ -97,9 +120,7 @@ export function ClientHeroSection() {
                   'text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 sm:mt-6 leading-tight text-center lg:text-left'
                 )}
                 style={{ 
-                  fontFamily: "'Raleway', sans-serif",
-                  willChange: "opacity, transform",
-                  transform: "translateZ(0)"
+                  fontFamily: "'Raleway', sans-serif"
                 }}
               >
                 {t.rich('title', {
@@ -142,41 +163,41 @@ export function ClientHeroSection() {
                     key={stat.key}
                     value={t(`stats.${stat.key}.value`)}
                     label={t(`stats.${stat.key}.label`)}
-                    delay={0.1 * (index + 1)}
+                    delay={0.05 * (index + 1)} // Reduced delay
                   />
                 ))}
               </m.div>
             </div>
 
-            {/* Right Side - Scrolling Testimonials */}
-            <m.div 
-              variants={ITEM_VARIANTS}
-              className="lg:col-span-5 relative min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[600px] mt-4 lg:mt-0"
-              style={{ 
-                willChange: "transform, opacity",
-                transform: "translateZ(0)",
-                backfaceVisibility: "hidden",
-                perspective: 1000
-              }}
-            >
-              <TestimonialCards />
+            {/* Right Side - Scrolling Testimonials - Only render if it's likely to be in viewport */}
+            {isAboveFold && (
+              <m.div 
+                variants={ITEM_VARIANTS}
+                className="lg:col-span-5 relative min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[600px] mt-4 lg:mt-0"
+              >
+                <TestimonialCards />
 
-              {/* Decorative elements */}
-              <m.div 
-                variants={DECORATIVE_VARIANTS}
-                className="absolute top-[10%] right-[10%] w-20 h-20 md:w-32 md:h-32 bg-blue-100/50 rounded-full hidden sm:block"
-                style={{ willChange: "opacity, transform" }}
-              />
-              <m.div 
-                variants={DECORATIVE_VARIANTS}
-                className="absolute bottom-[20%] right-[30%] w-10 h-10 md:w-16 md:h-16 bg-amber-100/40 rounded-full hidden sm:block"
-                style={{ willChange: "opacity, transform" }}
-              />
-            </m.div>
+                {/* Reduced decorative elements */}
+                {isMounted && (
+                  <>
+                    <m.div 
+                      variants={DECORATIVE_VARIANTS}
+                      className="absolute top-[10%] right-[10%] w-20 h-20 md:w-32 md:h-32 bg-blue-100/40 rounded-full hidden sm:block"
+                    />
+                    <m.div 
+                      variants={DECORATIVE_VARIANTS}
+                      className="absolute bottom-[20%] right-[30%] w-10 h-10 md:w-16 md:h-16 bg-amber-100/30 rounded-full hidden sm:block"
+                    />
+                  </>
+                )}
+              </m.div>
+            )}
           </div>
 
-          {/* Application Form Dialog */}
-          <ApplicationForm open={isFormOpen} onOpenChange={setIsFormOpen} />
+          {/* Application Form Dialog - Only loaded when needed */}
+          {isFormOpen && (
+            <ApplicationForm open={isFormOpen} onOpenChange={setIsFormOpen} />
+          )}
         </m.div>
       </MotionConfig>
     </LazyMotion>
