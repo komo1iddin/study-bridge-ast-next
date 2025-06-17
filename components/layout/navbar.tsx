@@ -100,7 +100,7 @@ export default function Navbar() {
 
   // Define secondary navigation items for the dropdown
   const secondaryNavItems = [
-    { href: `/${locale}#services`, label: t("services") },
+    { href: `/${locale}/services`, label: t("services") },
     { href: `/${locale}#testimonials`, label: t("testimonials") },
     { href: `/${locale}#about`, label: t("aboutUs") },
     { href: `/${locale}#contact`, label: t("contact") },

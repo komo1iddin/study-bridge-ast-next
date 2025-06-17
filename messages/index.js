@@ -94,6 +94,12 @@ import whyChinaEn from './pages/why-china/en.json';
 import whyChinaRu from './pages/why-china/ru.json';
 import whyChinaUz from './pages/why-china/uz.json';
 
+// Import services page translations
+import servicesPageEn from './pages/services/en.json';
+import servicesPageRu from './pages/services/ru.json';
+import servicesPageUz from './pages/services/uz.json';
+
+// Import programs page translations
 import programsEn from './pages/programs/en.json';
 import programsRu from './pages/programs/ru.json';
 import programsUz from './pages/programs/uz.json';
@@ -145,7 +151,8 @@ export const messages = {
       whyChina: whyChinaEn,
       programs: programsEn,
       universities: universitiesEn,
-      comparison: comparisonPageEn
+      comparison: comparisonPageEn,
+      services: servicesPageEn
     }
   },
   ru: {
@@ -184,7 +191,8 @@ export const messages = {
       whyChina: whyChinaRu,
       programs: programsRu,
       universities: universitiesRu,
-      comparison: comparisonPageRu
+      comparison: comparisonPageRu,
+      services: servicesPageRu
     }
   },
   uz: {
@@ -223,9 +231,10 @@ export const messages = {
       whyChina: whyChinaUz,
       programs: programsUz,
       universities: universitiesUz,
-      comparison: comparisonPageUz
+      comparison: comparisonPageUz,
+      services: servicesPageUz
     }
   },
 };
 
-export default messages; 
+export default messages;

@@ -1,0 +1,129 @@
+{
+    "meta": {
+      "title": "Bizning xizmatlarimiz - Study Bridge",
+      "description": "Xitoyda o'qiyotgan talabalar uchun har tomonlama qo'llab-quvvatlash - arizadan to bitirishgacha."
+    },
+    "breadcrumb": {
+      "home": "Bosh Sahifa",
+      "services": "Bizning Xizmatlarimiz"
+    },
+    "sections": {
+      "services": {
+        "title": "Bizning xizmatlarimiz",
+        "subtitle": "Xitoyda ta'lim olish jarayonida har tomonlama qo'llab-quvvatlash"
+      },
+      "expenses": {
+        "title": "Kutilayotgan Xarajatlar",
+        "subtitle": "Shaffoflik biz uchun muhim - agentlik to'lovidan tashqari qanday to'lovlar kutilishini ko'ring"
+      },
+      "notes": {
+        "title": "Muhim ma'lumotlar",
+        "subtitle": "Ariza topshirishdan oldin e'tiborga olish lozim bo'lgan ma'lumotlar"
+      }
+    },
+    "servicesSection": {
+      "title": "Bizning xizmatlarimiz",
+      "subtitle": "Xitoyda ta'lim olish jarayonida har tomonlama qo'llab-quvvatlash",
+      "badge": "Agentlik narxiga kiritilgan",
+      "services": {
+        "consultation": {
+          "title": "Maslahat",
+          "description": "Sizning maqsadlaringiz va malakangizga qarab shaxsiy ta'lim rejasini tuzish va dasturni moslashtirish."
+        },
+        "offerDatabase": {
+          "title": "Takliflar Bazasi",
+          "description": "Dasturlar va universitetlar bo'yicha keng ma'lumotlar bazamizga kirish va shaxsiy tavsiyalar olish."
+        },
+        "documentReview": {
+          "title": "Hujjatlarni ko'rib chiqish",
+          "description": "Barcha kerakli ariza hujjatlarini tayyorlash va tarjima qilishda ekspert xulosasi."
+        },
+        "universityApplication": {
+          "title": "Universitetga ariza topshirish",
+          "description": "Ariza topshirish jarayonini to'liq boshqarish va universitetlarga to'g'ridan-to'g'ri yuborish."
+        },
+        "communication": {
+          "title": "Universitetlar bilan aloqa",
+          "description": "Sizning nomingizdan universitet qabul bo'limlari bilan bevosita muloqot."
+        },
+        "admissionLetter": {
+          "title": "Qabul xati",
+          "description": "Viza maqsadlari uchun rasmiy qabul va taklif xatlarini olish va qayta ishlash."
+        },
+        "preDeparture": {
+          "title": "Jo'nashdan oldin ko'rsatmalar",
+          "description": "Xitoyga sayohatingiz uchun keng qamrovli tayyorgarlik va ma'lumot."
+        },
+        "afterArrival": {
+          "title": "Kelgandan keyingi yordam",
+          "description": "Yangi muhitga moslashishingizga yordam berish uchun bir oylik maxsus qo'llab-quvvatlash."
+        }
+      }
+    },
+    "expensesSection": {
+      "title": "Kutilayotgan xarajatlar",
+      "subtitle": "Shaffoflik biz uchun muhim - agentlik to'lovidan tashqari qanday to'lovlar kutilishini ko'ring",
+      "notIncludedNote": "Bu xarajatlar agentlik to'loviga kiritilmagan va alohida to'lanishi kerak",
+      "totalEstimated": "Taxminiy umumiy xarx",
+      "uzbekistanTitle": "O'zbekistondagi mahalliy xarajatlar",
+      "chinaTitle": "Xitoydagi xarajatlar",
+      "uzbekistan": {
+        "title": {
+          "visa": "Viza",
+          "bankStatement": "Bank ko'chirmasi",
+          "flightTickets": "Aviachiptalar",
+          "documents": "Notarial Tasdiqlash va Tarjima"
+        },
+        "amounts": {
+          "visa": "$100",
+          "bankStatement": "$50",
+          "flightTickets": "$300",
+          "documents": "$50",
+          "total": "$500"
+        }
+      },
+      "china": {
+        "title": {
+          "medicalCheckup": "Tibbiy ko'rik",
+          "insurance": "Sug'urta",
+          "residentPermit": "Yashash Ruxsatnomasi",
+          "airportPickup": "Aeroportdan Kutib Olish",
+          "dailyExpenses": "Kundalik Xarajatlar"
+        },
+        "amounts": {
+          "medicalCheckup": "$50",
+          "insurance": "$50",
+          "residentPermit": "$50",
+          "airportPickup": "$100",
+          "dailyExpenses": "Har xil",
+          "total": "$250+"
+        }
+      }
+    },
+    "notesSection": {
+      "title": "Muhim ma'lumotlar",
+      "subtitle": "Ariza topshirishdan oldin e'tiborga olish lozim bo'lgan ma'lumotlar",
+      "important": "MUHIM",
+      "restrictionNote": "Iltimos, ariza topshirishdan oldin ushbu ma'lumotni diqqat bilan o'qing",
+      "restriction": {
+        "title": "Dastur cheklovlari to'g'risida bildirishnoma",
+        "description": "1+4 dasturiga qabul qilingan talabalar o'qishning birinchi yilida Xitoyni tark eta olmaydilar. Iltimos, ariza topshirishdan oldin ushbu cheklovni e'tiborga oling."
+      },
+      "programRestriction": {
+        "title": "Dastur cheklovlari",
+        "description": "Ba'zi dasturlar maxsus talablar va cheklovlarga ega. Ariza topshirishdan oldin bularni tushunishga yordam beramiz."
+      },
+      "visaInfo": {
+        "title": "Viza ma'lumotlari",
+        "description": "Talabalar vizasini odatda har yili uzaytirish kerak, va bu jarayon oldindan rejalashtirish talab qiladi."
+      },
+      "accommodationInfo": {
+        "title": "Yashash joyi variantlari",
+        "description": "Ko'pchilik universitetlar xalqaro talabalar uchun kampus ichida yashash joylarini taklif qiladi, lekin joylar cheklangan."
+      },
+      "importantDeadlines": {
+        "title": "Muhim muddatlar",
+        "description": "Ariza topshirish muddatlarini o'tkazib yuborish o'qishni bir semestr yoki to'liq bir yilga kechiktirishi mumkin."
+      }
+    }
+  }

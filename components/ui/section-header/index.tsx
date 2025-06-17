@@ -26,11 +26,13 @@ const SectionHeader = ({
   return (
     <div 
       className={cn(
-        'mb-10',
+        'mb-16 last:mb-0',
         {
           'text-center': alignment === 'center',
           'text-left': alignment === 'left',
-          'text-right': alignment === 'right'
+          'text-right': alignment === 'right',
+          'max-w-4xl mx-auto': alignment === 'center',
+          'max-w-4xl': alignment !== 'center'
         },
         className
       )}

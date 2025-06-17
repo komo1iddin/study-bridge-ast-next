@@ -1,0 +1,129 @@
+{
+    "meta": {
+      "title": "Our Services - Study Bridge",
+      "description": "Comprehensive support services for students studying in China - from application to graduation."
+    },
+    "breadcrumb": {
+      "home": "Home",
+      "services": "Our Services"
+    },
+    "sections": {
+      "services": {
+        "title": "Our Services",
+        "subtitle": "Comprehensive support throughout your educational journey in China"
+      },
+      "expenses": {
+        "title": "Expected Expenses",
+        "subtitle": "Transparency is important to us - here's what you can expect to pay beyond our agency fee"
+      },
+      "notes": {
+        "title": "Important Notes",
+        "subtitle": "Essential information to consider before applying"
+      }
+    },
+    "servicesSection": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive support throughout your educational journey in China",
+      "badge": "Included in agency fee",
+      "services": {
+        "consultation": {
+          "title": "Consultation",
+          "description": "Personalized education planning and program matching tailored to your goals and qualifications."
+        },
+        "offerDatabase": {
+          "title": "Offer Database",
+          "description": "Access to our extensive database of programs and universities with customized recommendations."
+        },
+        "documentReview": {
+          "title": "Document Review",
+          "description": "Expert review and preparation of all required application documents and translations."
+        },
+        "universityApplication": {
+          "title": "University Application",
+          "description": "Complete handling of the application process with direct submission to universities."
+        },
+        "communication": {
+          "title": "University Communication",
+          "description": "Direct communication with university admissions offices on your behalf."
+        },
+        "admissionLetter": {
+          "title": "Admission Letter",
+          "description": "Securing and processing of official admission and invitation letters for visa purposes."
+        },
+        "preDeparture": {
+          "title": "Pre-departure Guidance",
+          "description": "Comprehensive preparation sessions and information for your journey to China."
+        },
+        "afterArrival": {
+          "title": "Post-arrival Support",
+          "description": "One month of dedicated support to help you settle into your new environment."
+        }
+      }
+    },
+    "expensesSection": {
+      "title": "Expected Expenses",
+      "subtitle": "Transparency is important to us - here's what you can expect to pay beyond our agency fee",
+      "notIncludedNote": "These expenses are not included in the agency fee and must be paid separately",
+      "totalEstimated": "Total Estimated Cost",
+      "uzbekistanTitle": "Local Expenses in Uzbekistan",
+      "chinaTitle": "Expenses in China",
+      "uzbekistan": {
+        "title": {
+          "visa": "Visa",
+          "bankStatement": "Bank Statement",
+          "flightTickets": "Flight Tickets",
+          "documents": "Notarization & Translation"
+        },
+        "amounts": {
+          "visa": "$100",
+          "bankStatement": "$50",
+          "flightTickets": "$300",
+          "documents": "$50",
+          "total": "$500"
+        }
+      },
+      "china": {
+        "title": {
+          "medicalCheckup": "Medical Check-up",
+          "insurance": "Insurance",
+          "residentPermit": "Resident Permit",
+          "airportPickup": "Airport Pickup",
+          "dailyExpenses": "Daily Expenses"
+        },
+        "amounts": {
+          "medicalCheckup": "$50",
+          "insurance": "$50",
+          "residentPermit": "$50",
+          "airportPickup": "$100",
+          "dailyExpenses": "Varies",
+          "total": "$250+"
+        }
+      }
+    },
+    "notesSection": {
+      "title": "Important Notes",
+      "subtitle": "Essential information to consider before applying",
+      "important": "IMPORTANT",
+      "restrictionNote": "Please read this information carefully before proceeding with your application",
+      "restriction": {
+        "title": "Program Restriction Notice",
+        "description": "Students admitted to the 1+4 program cannot leave China during the first year of study. Please consider this restriction before applying."
+      },
+      "programRestriction": {
+        "title": "Program Restrictions",
+        "description": "Some programs have specific requirements and restrictions. We'll help you understand these before application."
+      },
+      "visaInfo": {
+        "title": "Visa Information",
+        "description": "Student visas typically need to be renewed annually, and the process requires planning ahead."
+      },
+      "accommodationInfo": {
+        "title": "Accommodation Options",
+        "description": "Most universities offer on-campus accommodation for international students, but spots are limited."
+      },
+      "importantDeadlines": {
+        "title": "Critical Deadlines",
+        "description": "Missing application deadlines can delay your studies by a full semester or year."
+      }
+    }
+  }
