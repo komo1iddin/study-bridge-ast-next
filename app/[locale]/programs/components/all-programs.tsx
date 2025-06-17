@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { useTranslations } from "next-intl"
 
 import { Card, CardContent } from "@/components/ui/card"
@@ -13,6 +12,28 @@ interface AllProgramsProps {
   programs: Program[]
   filteredPrograms?: Program[]
 }
+
+// Function to get category color
+const getCategoryColor = (category: string): string => {
+  switch (category.toLowerCase()) {
+    case 'business': return 'from-blue-400/80 via-blue-500/50 to-cyan-400/80';
+    case 'it': return 'from-purple-400/80 via-purple-500/50 to-pink-400/80';
+    case 'medicine': return 'from-green-400/80 via-green-500/50 to-emerald-400/80';
+    case 'engineering': return 'from-orange-400/80 via-orange-500/50 to-amber-400/80';
+    default: return 'from-gray-400/80 via-gray-500/50 to-slate-400/80';
+  }
+};
+
+// Function to get category icon
+const getCategoryIcon = (category: string): string => {
+  switch (category.toLowerCase()) {
+    case 'business': return '💼';
+    case 'it': return '💻';
+    case 'medicine': return '🩺';
+    case 'engineering': return '🔧';
+    default: return '📚';
+  }
+};
 
 export function AllPrograms({ className, programs, filteredPrograms }: AllProgramsProps) {
   const t = useTranslations("pages.programs.allPrograms")
@@ -34,31 +55,30 @@ export function AllPrograms({ className, programs, filteredPrograms }: AllProgra
         <div className="grid gap-6 pt-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {displayPrograms.map((program) => (
             <Link href={`/programs/${program.id}`} key={program.id} className="group">
-              <Card className="overflow-hidden transition-all duration-200 hover:shadow-lg">
-                <div className="relative">
-                  <Image
-                    src={program.image || "/placeholder.svg"}
-                    alt={program.title}
-                    width={400}
-                    height={200}
-                    className="aspect-[2/1] w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  {program.scholarship && (
-                    <Badge className="absolute right-2 top-2 bg-blue-600">{t("scholarshipAvailable")}</Badge>
-                  )}
-                </div>
+              <Card className="overflow-hidden transition-all duration-200 hover:shadow-lg h-full">
+                <div className={`h-1.5 bg-gradient-to-r ${getCategoryColor(program.category)} group-hover:opacity-90 transition-opacity duration-200`} />
                 <CardContent className="grid gap-2 p-4">
-                  <h3 className="line-clamp-1 text-xl font-bold">{program.title}</h3>
-                  <p className="line-clamp-1 text-sm text-muted-foreground">{program.university}</p>
+                  <div className="flex justify-between items-start">
+                    <div className="flex-1">
+                      <h3 className="line-clamp-1 text-xl font-bold">{program.title}</h3>
+                      <p className="line-clamp-1 text-sm text-muted-foreground">{program.university}</p>
+                    </div>
+                    <span className="text-2xl ml-2" role="img" aria-label={program.category}>
+                      {getCategoryIcon(program.category)}
+                    </span>
+                  </div>
                   <div className="flex flex-wrap gap-2 pt-2">
                     <Badge variant="outline">{program.level}</Badge>
                     <Badge variant="outline">{program.duration}</Badge>
                     <Badge variant="outline">{program.language}</Badge>
                   </div>
-                  <div className="pt-4">
+                  <div className="flex justify-between items-center pt-4">
                     <span className="text-sm font-medium text-blue-600 underline-offset-4 hover:underline">
                       {t("viewDetails")} →
                     </span>
+                    {program.scholarship && (
+                      <Badge className="bg-blue-600">{t("scholarshipAvailable")}</Badge>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -68,4 +88,4 @@ export function AllPrograms({ className, programs, filteredPrograms }: AllProgra
       </div>
     </section>
   )
-} 
+}
