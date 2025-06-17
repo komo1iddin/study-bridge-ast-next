@@ -31,8 +31,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import standardized typography system */
+@import './typography.css';
+
+/* Import standardized spacing system */
+@import './spacing.css';
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
