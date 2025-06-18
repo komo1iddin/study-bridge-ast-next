@@ -6,16 +6,16 @@ import { useTranslations } from 'next-intl'
 import TypingBadge from './typing-badge'
 import TestimonialCards from './testimonial-cards'
 import HeroButtons from './hero-buttons'
-import ApplicationForm from './application-form'
+import ApplicationFormModal from '@/components/common/application-form-modal'
 import { StatItem } from './stat-item'
 import { cn } from '@/lib/utils'
 import { Building2, Users, Clock, BookOpen } from 'lucide-react'
 
 // Define the type for rich text elements more explicitly if needed
 type RichTextElements = {
-  highlight: (chunks: React.ReactNode) => JSX.Element;
-  underline: (chunks: React.ReactNode) => JSX.Element;
-  br: () => JSX.Element;
+  highlight: (chunks: React.ReactNode) => React.ReactElement;
+  underline: (chunks: React.ReactNode) => React.ReactElement;
+  br: () => React.ReactElement;
 }
 
 const CONTAINER_VARIANTS = {
@@ -147,7 +147,7 @@ export function HeroSection() {
       </div>
 
       {/* Application Form Dialog */}
-      <ApplicationForm open={isFormOpen} onOpenChange={setIsFormOpen} />
+      <ApplicationFormModal open={isFormOpen} onOpenChange={setIsFormOpen} />
     </motion.div>
   )
 } 

@@ -8,6 +8,7 @@ import TypingBadge from './typing-badge'
 import { StatItem } from './stat-item'
 import { cn } from '@/lib/utils'
 import { Building2, Users, Clock, BookOpen } from 'lucide-react'
+import ApplicationFormModal from '@/components/common/application-form-modal'
 
 // Dynamically import heavier components
 const TestimonialCards = dynamic(() => import('./testimonial-cards'), {
@@ -16,7 +17,6 @@ const TestimonialCards = dynamic(() => import('./testimonial-cards'), {
 })
 
 const HeroButtons = dynamic(() => import('./hero-buttons'))
-const ApplicationForm = dynamic(() => import('./application-form'))
 
 // Define the type for rich text elements
 type RichTextElements = {
@@ -89,6 +89,8 @@ export function ClientHeroSection() {
     { key: 'programs', icon: BookOpen }
   ]
 
+  // Removed form submit handler - will use default handler from ApplicationFormModal
+
   return (
     <LazyMotion features={domAnimation}>
       <MotionConfig reducedMotion="user">
@@ -104,7 +106,7 @@ export function ClientHeroSection() {
             willChange: "transform"
           }}
         >
-          <div className="section-container grid grid-cols-1 lg:grid-cols-12 grid-gap lg:gap-8 pt-1 pb-8 md:pt-4 md:pb-12 lg:pt-8 lg:pb-20 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8 pt-1 pb-8 md:pt-4 md:pb-12 lg:pt-8 lg:pb-20 relative px-4 md:px-6 lg:px-0">
             {/* Left Content */}
             <div className="lg:col-span-7 z-10 flex flex-col items-center lg:items-start">
               <m.div 
@@ -117,8 +119,11 @@ export function ClientHeroSection() {
               <m.h1
                 variants={ITEM_VARIANTS}
                 className={cn(
-                  'h1 mt-4 sm:mt-6 text-center lg:text-left'
+                  'text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 sm:mt-6 leading-tight text-center lg:text-left'
                 )}
+                style={{ 
+                  fontFamily: "'Raleway', sans-serif"
+                }}
               >
                 {t.rich('title', {
                   highlight: (chunks) => <span className="text-blue-600">{chunks}</span>,
@@ -135,7 +140,7 @@ export function ClientHeroSection() {
               <m.p
                 variants={ITEM_VARIANTS}
                 className={cn(
-                  'body-lg mt-4 sm:mt-6 text-gray-600 max-w-lg text-center lg:text-left mx-auto lg:mx-0'
+                  'mt-4 sm:mt-6 text-gray-600 text-sm sm:text-lg leading-relaxed max-w-lg text-center lg:text-left mx-auto lg:mx-0'
                 )}
               >
                 {t('subtitle')}
@@ -152,7 +157,7 @@ export function ClientHeroSection() {
               <m.div
                 variants={ITEM_VARIANTS}
                 className={cn(
-                  'flex flex-wrap justify-center lg:justify-start flex-gap-sm sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12'
+                  'flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12'
                 )}
               >
                 {statistics.map((stat, index) => (
@@ -191,10 +196,11 @@ export function ClientHeroSection() {
             )}
           </div>
 
-          {/* Application Form Dialog - Only loaded when needed */}
-          {isFormOpen && (
-            <ApplicationForm open={isFormOpen} onOpenChange={setIsFormOpen} />
-          )}
+          {/* Application Form Modal - Always included in the component tree */}
+          <ApplicationFormModal 
+            open={isFormOpen} 
+            onOpenChange={setIsFormOpen} 
+          />
         </m.div>
       </MotionConfig>
     </LazyMotion>
