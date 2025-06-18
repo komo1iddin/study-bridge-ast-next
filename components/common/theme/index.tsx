@@ -1,27 +1,49 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { usePreferencesStore } from "@/store/usePreferencesStore"
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const { theme } = usePreferencesStore()
-  
+  const [mounted, setMounted] = useState(false)
+
+  // Set mounted state on client
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Apply theme changes
+  useEffect(() => {
+    if (!mounted) return
+
     const root = window.document.documentElement
-    
-    // Remove existing classes
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+    const currentTheme = theme === "system" ? systemTheme : theme
+
+    // Remove all theme classes first
     root.classList.remove("light", "dark")
+    // Add the current theme class
+    root.classList.add(currentTheme)
     
-    // Add the appropriate class based on the theme preference
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light"
-      root.classList.add(systemTheme)
+    // Update data-theme attribute for CSS variable scoping
+    root.setAttribute("data-theme", currentTheme)
+    
+    // Update color-scheme meta tag
+    const existingMeta = document.querySelector('meta[name="color-scheme"]')
+    if (existingMeta) {
+      existingMeta.setAttribute('content', currentTheme)
     } else {
-      root.classList.add(theme)
+      const meta = document.createElement('meta')
+      meta.name = 'color-scheme'
+      meta.content = currentTheme
+      document.head.appendChild(meta)
     }
-  }, [theme])
-  
-  return children
+  }, [theme, mounted])
+
+  // Prevent rendering until mounted on client to avoid hydration mismatch
+  if (!mounted) {
+    return null
+  }
+
+  return <>{children}</>
 }

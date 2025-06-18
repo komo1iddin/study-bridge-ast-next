@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { GlobalErrorBoundary } from '@/components/common/error-boundary';
+import { ThemeProvider } from '@/components/common/theme';
+import { ThemeScript } from '@/components/common/theme/theme-script';
 
 export const metadata: Metadata = {
   title: 'Study Bridge',
@@ -15,15 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <ThemeScript />
         {/* Netlify Identity Widget - REMOVED */}
         {/* <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script> */}
       </head>
-      <body className={cn('')}>
-        <GlobalErrorBoundary>
-          {children}
-        </GlobalErrorBoundary>
+      <body className={cn('min-h-screen bg-background font-sans antialiased')}>
+        <ThemeProvider>
+          <GlobalErrorBoundary>
+            {children}
+          </GlobalErrorBoundary>
+        </ThemeProvider>
         
         {/* Script to redirect to admin after login - REMOVED */}
         {/* <script dangerouslySetInnerHTML={{
