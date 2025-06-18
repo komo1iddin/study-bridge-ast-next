@@ -76,7 +76,7 @@ export function OurPartners({ lang = 'en' }: OurPartnersProps) {
     <section 
       ref={sectionRef}
       className={cn(
-        "w-full py-10 md:py-16 lg:py-20 relative",
+        "w-full py-10 md:py-16 lg:py-20 relative overflow-hidden isolate",
         "transition-opacity duration-700",
         isSectionVisible ? "opacity-100" : "opacity-0"
       )}
