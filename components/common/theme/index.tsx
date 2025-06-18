@@ -1,49 +1,27 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { usePreferencesStore } from "@/store/usePreferencesStore"
+import { useEffect } from "react"
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const { theme } = usePreferencesStore()
-  const [mounted, setMounted] = useState(false)
-
-  // Set mounted state on client
   useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  // Apply theme changes
-  useEffect(() => {
-    if (!mounted) return
-
     const root = window.document.documentElement
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-    const currentTheme = theme === "system" ? systemTheme : theme
-
-    // Remove all theme classes first
-    root.classList.remove("light", "dark")
-    // Add the current theme class
-    root.classList.add(currentTheme)
     
-    // Update data-theme attribute for CSS variable scoping
-    root.setAttribute("data-theme", currentTheme)
+    // Ensure only light theme is applied
+    root.classList.remove("dark")
+    root.classList.add("light")
+    root.setAttribute('data-theme', 'light')
     
-    // Update color-scheme meta tag
-    const existingMeta = document.querySelector('meta[name="color-scheme"]')
-    if (existingMeta) {
-      existingMeta.setAttribute('content', currentTheme)
-    } else {
-      const meta = document.createElement('meta')
-      meta.name = 'color-scheme'
-      meta.content = currentTheme
-      document.head.appendChild(meta)
-    }
-  }, [theme, mounted])
-
-  // Prevent rendering until mounted on client to avoid hydration mismatch
-  if (!mounted) {
-    return null
-  }
-
-  return <>{children}</>
+    // Set color scheme meta tag
+    const meta = document.createElement('meta');
+    meta.name = 'color-scheme';
+    meta.content = 'light';
+    document.head.appendChild(meta);
+    
+    return () => {
+      // Cleanup if needed
+      document.head.removeChild(meta);
+    };
+  }, [])
+  
+  return children
 }

@@ -8,7 +8,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server"
 import type { Metadata } from 'next'
 
 import "../globals.css"
-import { ThemeProvider } from "@/components/common/theme"
 import messages from "@/messages"
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] })
@@ -29,6 +28,9 @@ export async function generateMetadata(
     title: "Study Bridge - Educational Agency",
     description: t("hero.subtitle"),
     generator: "Next.js",
+    // Force light theme
+    themeColor: '#ffffff',
+    colorScheme: 'light',
   }
 }
 
@@ -51,12 +53,15 @@ export default async function RootLayout(props: {
   if (!localeMessages) notFound()
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
+    <html lang={locale} className="light" data-theme="light">
+      <head>
+        {/* Force light theme on mobile browsers */}
+        <meta name="color-scheme" content="light" />
+        <meta name="theme-color" content="#ffffff" />
+      </head>
+      <body className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={localeMessages}>
-          <ThemeProvider>
-            {props.children}
-          </ThemeProvider>
+          {props.children}
         </NextIntlClientProvider>
       </body>
     </html>
