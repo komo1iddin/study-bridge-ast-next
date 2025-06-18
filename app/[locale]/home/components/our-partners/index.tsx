@@ -168,10 +168,14 @@ const OurPartners = ({ lang = 'en' }: OurPartnersProps) => {
     <section 
       ref={sectionRef}
       className={cn(
-        "w-full py-10 md:py-16 lg:py-20 relative",
+        "w-full py-10 md:py-16 lg:py-20 relative overflow-hidden",
         "transition-opacity duration-700",
         isSectionVisible ? "opacity-100" : "opacity-0"
       )}
+      style={{
+        isolation: 'isolate',
+        zIndex: 1
+      }}
     >
       <BackgroundDecoration />
       <div className="w-full max-w-[1920px] mx-auto px-4 relative z-10">
