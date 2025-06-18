@@ -33,9 +33,9 @@ interface Testimonial {
 const sampleTestimonials: Testimonial[] = [
   {
     id: '1',
-    name: 'Ali Abdullaev',
-    university: 'Tsinghua University',
-    image: '/images/testimonials/placeholder.jpeg',
+    name: 'Dilfuza Ismoilova',
+    university: 'Xinjiang University',
+    image: '/images/testimonials/avatar-1.webp',
     quote: {
       en: 'Study Bridge helped me get into my dream university with a full scholarship! Their guidance was invaluable.',
       ru: 'Study Bridge помог мне поступить в университет моей мечты с полной стипендией! Их руководство было бесценным.',
@@ -46,9 +46,9 @@ const sampleTestimonials: Testimonial[] = [
   },
   {
     id: '2',
-    name: 'Maria Li',
-    university: 'Zhejiang University',
-    image: '/images/testimonials/placeholder.jpeg',
+    name: 'Doston Aminov',
+    university: 'Lanzhou University',
+    image: '/images/testimonials/avatar-2.webp',
     quote: {
       en: 'The application process was smooth and efficient thanks to Study Bridge. They were with me every step of the way.',
       ru: 'Процесс подачи заявки был гладким и эффективным благодаря Study Bridge. Они были со мной на каждом этапе пути.',
@@ -59,9 +59,9 @@ const sampleTestimonials: Testimonial[] = [
   },
   {
     id: '3',
-    name: 'Ahmed Rashidov',
-    university: 'Fudan University',
-    image: '/images/testimonials/placeholder.jpeg',
+    name: 'Go\'zal Askarova',
+    university: 'Harbin Institute of Technology',
+    image: '/images/testimonials/avatar-3.webp',
     quote: {
       en: "Study Bridge made my dream of studying in China a reality. Their team's expertise and support were exceptional.",
       ru: 'Study Bridge сделал мою мечту об учебе в Китае реальностью. Опыт и поддержка их команды были исключительными.',
@@ -139,11 +139,18 @@ export default function Testimonials({ className }: TestimonialsProps) {
                 !isMobile && "hover:shadow-xl hover:-translate-y-1"
               )}>
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md">
                     <img 
                       src={testimonial.image} 
                       alt={testimonial.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top"
+                      style={{
+                        minWidth: '100%',
+                        minHeight: '100%',
+                        width: '100%',
+                        height: 'auto',
+                        objectPosition: 'top'
+                      }}
                       loading="lazy"
                     />
                   </div>
