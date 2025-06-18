@@ -8,6 +8,7 @@ import { BackgroundDecoration } from './background-decoration'
 import { UniversityList } from './university-list'
 import { MobileFilters } from './mobile-filters'
 import { FilterSidebar } from './filter-sidebar'
+import { CtaSection } from './cta-section'
 import { DEFAULT_FILTERS, type Filters } from './data'
 import type { University } from '@/types/content'
 
@@ -17,9 +18,10 @@ const LOADING_DELAY = 800
 interface UniversityPageProps {
   universities: University[]
   cities: string[]
+  lang: string
 }
 
-export function UniversityPage({ universities, cities }: UniversityPageProps) {
+export function UniversityPage({ universities, cities, lang }: UniversityPageProps) {
   // Get translations for the page
   const t = useTranslations('pages.universities')
 
@@ -143,11 +145,15 @@ export function UniversityPage({ universities, cities }: UniversityPageProps) {
                 <UniversityList
                   universities={universities}
                   filters={filters}
+                  onFilterChange={handleFilterChange}
                 />
               )}
             </main>
           </div>
         </div>
+        
+        {/* CTA Section */}
+        <CtaSection lang={lang} />
       </div>
     </div>
   )

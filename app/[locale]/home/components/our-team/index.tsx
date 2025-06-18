@@ -17,22 +17,22 @@ const OurTeam = ({ lang = 'en' }: OurTeamProps) => {
     {
       name: "Avaz Nishonboyev",
       position: t('positions.position1'),
-      image: "/images/team/Avaz_Nishonboyev.jpg"
+      image: "/images/team/Avaz_Nishonboyev.webp"
     },
     {
       name: "Maxmud Maxmudov",
       position: t('positions.position2'),
-      image: "/images/team/Maxmud_Maxmudov.jpg"
+      image: "/images/team/Maxmud_Maxmudov.webp"
+    },
+    {
+      name: "Javohir Zokirov",
+      position: t('positions.position4'),
+      image: "/images/team/Javohir_Zokirov.webp"
     },
     {
       name: "Shuxrat Usmonov",
       position: t('positions.position3'),
-      image: "/images/team/Shuxrat_Usmonov.jpg"
-    },
-    {
-      name: "Dilnoza Gulyamova",
-      position: t('positions.position4'),
-      image: "/images/team/Dilnoza_Gulyamova.jpg"
+      image: "/images/team/Shuxrat_Usmonov.webp"
     }
   ]
 

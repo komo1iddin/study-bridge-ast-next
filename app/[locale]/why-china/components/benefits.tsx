@@ -5,6 +5,7 @@ import {
   Building2, Languages, PenTool, LucideIcon 
 } from "lucide-react"
 import { useTranslations } from "next-intl"
+import { cn } from "@/lib/utils"
 
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -34,6 +35,26 @@ export function Benefits({ className }: BenefitsProps) {
     ...benefit,
     icon: iconNames[index % iconNames.length]
   }))
+  
+  // Colors for icons based on index
+  const iconColors = [
+    "text-blue-600",
+    "text-purple-600", 
+    "text-amber-600",
+    "text-green-600",
+    "text-sky-600",
+    "text-indigo-600",
+  ]
+  
+  // Border colors for cards
+  const borderColors = [
+    "border-blue-200",
+    "border-purple-200",
+    "border-amber-200",
+    "border-green-200",
+    "border-sky-200",
+    "border-indigo-200",
+  ]
 
   return (
     <section className={`w-full py-12 md:py-24 bg-gray-50 ${className || ""}`}>
@@ -52,11 +73,17 @@ export function Benefits({ className }: BenefitsProps) {
             return (
               <Card 
                 key={index}
-                className="border-2 border-blue-100 transition-all duration-200 hover:border-blue-600"
+                className={cn(
+                  "border shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1",
+                  borderColors[index % borderColors.length]
+                )}
               >
                 <CardContent className="p-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 mb-4">
-                    <Icon className="h-6 w-6 text-blue-600" />
+                  <div className={cn(
+                    "flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm mb-4",
+                    "ring-1 ring-inset ring-gray-100/50"
+                  )}>
+                    <Icon className={cn("h-7 w-7", iconColors[index % iconColors.length])} />
                   </div>
                   <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
                   <p className="text-gray-500">{benefit.description}</p>

@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { GraduationCap, BookOpen, Users, Award } from "lucide-react"
+import { GraduationCap, BookOpen, Users, Award, Check } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
@@ -32,6 +33,14 @@ export function StudyOptions({ className }: StudyOptionsProps) {
       id: "language",
       icon: BookOpen,
     }
+  ]
+  
+  // Colors for items
+  const itemColors = [
+    "bg-blue-100 text-blue-600",
+    "bg-purple-100 text-purple-600",
+    "bg-amber-100 text-amber-600",
+    "bg-green-100 text-green-600",
   ]
   
   return (
@@ -72,14 +81,20 @@ export function StudyOptions({ className }: StudyOptionsProps) {
                     <p className="text-gray-500">{t(`studyOptions.tabs.${tab.id}.description`)}</p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                      {Array.from({ length: 4 }).map((_, i) => (
-                        <div key={i} className="flex items-start gap-2">
-                          <div className="h-5 w-5 rounded-full bg-blue-100 flex items-center justify-center mt-0.5">
-                            <div className="h-2 w-2 rounded-full bg-blue-600"></div>
+                      {Array.from({ length: 4 }).map((_, i) => {
+                        const colorClass = itemColors[i % itemColors.length];
+                        return (
+                          <div key={i} className="flex items-start gap-3">
+                            <div className={cn(
+                              "flex h-5 w-5 items-center justify-center rounded-full ring-1 ring-inset ring-gray-100/50 shadow-sm",
+                              colorClass.split(' ')[0].replace('bg-', 'bg-white')
+                            )}>
+                              <Check className={cn("h-3 w-3", colorClass.split(' ')[1])} />
+                            </div>
+                            <span>{t(`studyOptions.tabs.${tab.id}.features.${i}`)}</span>
                           </div>
-                          <span>{t(`studyOptions.tabs.${tab.id}.features.${i}`)}</span>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 </CardContent>

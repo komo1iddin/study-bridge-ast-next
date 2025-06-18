@@ -144,13 +144,13 @@ export default function Footer() {
             <ul className={cn('space-y-2 text-gray-600 text-sm')}>
               <li className={cn('flex items-center gap-2')}>
                 <Phone className={cn('h-4 w-4 text-blue-600')} />
-                <a href="tel:+998901234567" className={cn('hover:text-blue-600 transition-colors duration-200')}>
-                  +998 90 123 4567
+                <a href="tel:+998903595454" className={cn('hover:text-blue-600 transition-colors duration-200')}>
+                  +998 90 359 54 54
                 </a>
               </li>
               <li className={cn('flex items-center gap-2')}>
                 <Mail className={cn('h-4 w-4 text-blue-600')} />
-                <a href="mailto:info@studybridge.uz" className={cn('hover:text-blue-600 transition-colors duration-200')}>
+                <a href={`mailto:${'info@studybridge.uz'}`} className={cn('hover:text-blue-600 transition-colors duration-200')}>
                   info@studybridge.uz
                 </a>
               </li>
@@ -196,6 +196,7 @@ export default function Footer() {
         <div className={cn('mt-10 pt-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-2')}>
           <p className={cn('text-xs text-gray-500')}>&copy; {currentYear} Study Bridge. {t('copyright.rights')}</p>
           <div className={cn('flex gap-4 text-xs text-gray-500')}>
+            <a href="tel:+998903595454" className={cn('hover:text-blue-600 transition-colors duration-200')}>+998 90 359 54 54</a>
             <Link
               href="/privacy"
               className={cn('hover:text-blue-600 transition-colors duration-200')}>

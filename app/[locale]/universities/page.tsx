@@ -49,6 +49,7 @@ export default async function UniversitiesPage({ params }: { params: { locale: s
       <UniversityPage 
         universities={universities}
         cities={cities}
+        lang={resolvedParams.locale}
       />
       <Footer />
     </div>

@@ -148,10 +148,12 @@ export default function Navbar() {
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
-            <Button variant="outline" size="sm" className="hidden sm:flex mr-2">
-              <Phone className="mr-2 h-4 w-4" aria-hidden="true" />
-              <span>+998 90 123 45 67</span>
-            </Button>
+            <a href="tel:+998903595454" className="hidden sm:flex mr-2">
+              <Button variant="outline" size="sm" className="w-full">
+                <Phone className="mr-2 h-4 w-4" aria-hidden="true" />
+                <span>+998 90 359 54 54</span>
+              </Button>
+            </a>
             <LanguageSwitcher />
             <Button 
               className="hidden md:flex" 

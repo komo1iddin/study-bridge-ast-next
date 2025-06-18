@@ -8,6 +8,12 @@ import { Program } from "./components/featured-programs"
 import ProgramsClient from "./components/programs-client"
 import { Locale } from "@/i18n/navigation"
 
+interface ProgramsPageProps {
+  params: {
+    locale: Locale
+  }
+}
+
 export async function generateMetadata(
   props: {
     params: Promise<{ locale: string }>;
@@ -123,7 +129,9 @@ const programs: Program[] = [
   },
 ]
 
-export default function ProgramsPage() {
+export default function ProgramsPage({ params }: ProgramsPageProps) {
+  const { locale } = params
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
@@ -133,7 +141,7 @@ export default function ProgramsPage() {
         <HeroSection />
         
         {/* Render the client component for filtering and program lists */}
-        <ProgramsClient programs={programs} />
+        <ProgramsClient programs={programs} lang={locale} />
       </main>
 
       <Footer />

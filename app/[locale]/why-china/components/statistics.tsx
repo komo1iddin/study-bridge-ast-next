@@ -5,6 +5,7 @@ import {
   BarChart3, LucideIcon 
 } from "lucide-react"
 import { useTranslations } from "next-intl"
+import { cn } from "@/lib/utils"
 
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -39,6 +40,14 @@ export function Statistics({ className }: StatisticsProps) {
     ...stat,
     icon: iconNames[index % iconNames.length]
   }))
+  
+  // Colors for icons based on index
+  const iconColors = [
+    "text-blue-600",
+    "text-purple-600", 
+    "text-amber-600",
+    "text-green-600",
+  ]
 
   return (
     <section className={`w-full py-12 md:py-16 ${className || ""}`}>
@@ -52,8 +61,11 @@ export function Statistics({ className }: StatisticsProps) {
                 className="border-2 border-blue-100 transition-all duration-200 hover:border-blue-600"
               >
                 <CardContent className="p-6 text-center">
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                    <Icon className="h-8 w-8 text-blue-600" />
+                  <div className={cn(
+                    "mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm",
+                    "ring-1 ring-inset ring-gray-100/50"
+                  )}>
+                    <Icon className={cn("h-7 w-7", iconColors[index % iconColors.length])} />
                   </div>
                   <div className="text-3xl font-bold text-blue-600">{stat.value}</div>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>

@@ -11,9 +11,10 @@ import { CtaSection } from "./cta-section"
 
 interface ProgramsClientProps {
   programs: Program[]
+  lang: string
 }
 
-export default function ProgramsClient({ programs }: ProgramsClientProps) {
+export default function ProgramsClient({ programs, lang }: ProgramsClientProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [selectedLevel, setSelectedLevel] = useState("all")
@@ -68,7 +69,7 @@ export default function ProgramsClient({ programs }: ProgramsClientProps) {
       <ApplicationProcess />
 
       {/* CTA Section */}
-      <CtaSection />
+      <CtaSection lang={lang} />
     </>
   )
 } 

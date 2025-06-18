@@ -27,7 +27,15 @@ export async function generateMetadata(
   }
 }
 
-export default function WhyChinaPage() {
+interface WhyChinaPageProps {
+  params: {
+    locale: string
+  }
+}
+
+export default function WhyChinaPage({ params }: WhyChinaPageProps) {
+  const { locale } = params;
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
@@ -55,7 +63,7 @@ export default function WhyChinaPage() {
         <FactsSection />
 
         {/* CTA Section */}
-        <CtaSection />
+        <CtaSection lang={locale} />
       </main>
 
       <Footer />
