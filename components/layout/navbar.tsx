@@ -156,7 +156,7 @@ export default function Navbar() {
             </a>
             <LanguageSwitcher />
             <Button 
-              className="hidden md:flex" 
+              className="hidden md:flex bg-blue-600 hover:bg-blue-700" 
               onClick={() => setIsFormOpen(true)}
             >
               {t("applyNow")}
