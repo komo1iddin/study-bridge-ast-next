@@ -7,7 +7,7 @@ interface CallToActionProps {
   buttonLink?: string
 }
 
-const CallToAction = ({ buttonText, buttonLink = '/student-path' }: CallToActionProps) => {
+const CallToAction = ({ buttonText, buttonLink = '/services' }: CallToActionProps) => {
   return (
     <div className="text-center mt-12 md:mt-16">
       <Button 
