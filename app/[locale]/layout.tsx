@@ -1,7 +1,6 @@
 "use server"
 
 import type React from "react"
-import { Inter } from "next/font/google"
 import { notFound } from "next/navigation"
 import { NextIntlClientProvider } from "next-intl"
 import { getTranslations, setRequestLocale } from "next-intl/server"
@@ -9,8 +8,6 @@ import type { Metadata } from 'next'
 import "../globals.css"
 import messages from "@/messages"
 import FacebookPixelClient from "@/components/analytics/FacebookPixelClient"
-
-const inter = Inter({ subsets: ["latin", "cyrillic"] })
 
 export async function generateStaticParams() {
   return [{ locale: "uz" }, { locale: "ru" }, { locale: "en" }]
@@ -53,10 +50,10 @@ export default async function RootLayout(props: {
   if (!localeMessages) notFound()
 
   return (
-    <body className={inter.className}>
+    <>
       <NextIntlClientProvider locale={locale} messages={localeMessages}>
         {props.children}
       </NextIntlClientProvider>
-    </body>
+    </>
   )
 }

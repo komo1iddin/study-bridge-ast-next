@@ -1,8 +1,11 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { GlobalErrorBoundary } from '@/components/common/error-boundary';
+
+const inter = Inter({ subsets: ["latin", "cyrillic"], variable: '--font-inter' });
 
 export const metadata: Metadata = {
   title: 'Study Bridge',
@@ -26,7 +29,7 @@ export default function RootLayout({
         {/* Netlify Identity Widget - REMOVED */}
         {/* <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script> */}
       </head>
-      <body className={cn('min-h-screen bg-white')}>
+      <body className={cn(inter.className, 'min-h-screen bg-white')}>
         <GlobalErrorBoundary>
           {children}
         </GlobalErrorBoundary>
