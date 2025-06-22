@@ -53,18 +53,10 @@ export default async function RootLayout(props: {
   if (!localeMessages) notFound()
 
   return (
-    <html lang={locale} className="light" data-theme="light">
-      <head>
-        {/* Force light theme on mobile browsers */}
-        <meta name="color-scheme" content="light" />
-        <meta name="theme-color" content="#ffffff" />
-        <FacebookPixelClient />
-      </head>
-      <body className={inter.className}>
-        <NextIntlClientProvider locale={locale} messages={localeMessages}>
-          {props.children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <body className={inter.className}>
+      <NextIntlClientProvider locale={locale} messages={localeMessages}>
+        {props.children}
+      </NextIntlClientProvider>
+    </body>
   )
 }

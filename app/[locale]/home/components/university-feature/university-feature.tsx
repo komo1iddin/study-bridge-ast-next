@@ -241,9 +241,9 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
                   </div>
                 ))
               ) : visibleUniversities.length > 0 ? (
-                visibleUniversities.map((university) => (
+                visibleUniversities.map((university, index) => (
                   <div
-                    key={university.id}
+                    key={`${university.id}-${index}`}
                     className="min-w-[280px] md:min-w-[320px] lg:min-w-[300px] xl:min-w-[320px] px-2 pb-4 h-[520px] flex"
                   >
                     <UniversityCard
