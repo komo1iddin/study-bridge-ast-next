@@ -1,16 +1,28 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Raleway } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { GlobalErrorBoundary } from '@/components/common/error-boundary';
 
-const inter = Inter({ subsets: ["latin", "cyrillic"], variable: '--font-inter' });
+// Configure Inter font
+const inter = Inter({ 
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+// Configure Raleway font
+const raleway = Raleway({
+  subsets: ['latin'],
+  variable: '--font-raleway',
+  display: 'swap',
+  weight: ['400', '500', '600', '700', '800', '900'],
+});
 
 export const metadata: Metadata = {
   title: 'Study Bridge',
   description: 'Find your perfect university in China',
-  // Force light theme
   themeColor: '#ffffff',
   colorScheme: 'light',
 };
@@ -21,33 +33,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="light" data-theme="light">
+    <html lang="en" className={`${inter.variable} ${raleway.variable}`}>
       <head>
-        {/* Force light theme on all browsers */}
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content="#ffffff" />
-        {/* Netlify Identity Widget - REMOVED */}
-        {/* <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script> */}
       </head>
-      <body className={cn(inter.className, 'min-h-screen bg-white')}>
+      <body className="min-h-screen bg-white font-sans">
         <GlobalErrorBoundary>
           {children}
         </GlobalErrorBoundary>
-        
-        {/* Script to redirect to admin after login - REMOVED */}
-        {/* <script dangerouslySetInnerHTML={{
-          __html: `
-            if (window.netlifyIdentity) {
-              window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                  window.netlifyIdentity.on("login", () => {
-                    document.location.href = "/admin/";
-                  });
-                }
-              });
-            }
-          `
-        }} /> */}
       </body>
     </html>
   );

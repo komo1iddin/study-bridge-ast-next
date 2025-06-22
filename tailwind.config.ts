@@ -19,8 +19,8 @@ const config: Config = {
     },
   	extend: {
   		fontFamily: {
-  			sans: ["Montserrat", "Arial", "sans-serif"],
-  			raleway: ["Raleway", "Arial", "sans-serif"],
+  			sans: ['var(--font-inter)', "Arial", "sans-serif"],
+  			raleway: ['var(--font-raleway)', "Arial", "sans-serif"],
   		},
   		colors: {
   			background: 'hsl(var(--background))',

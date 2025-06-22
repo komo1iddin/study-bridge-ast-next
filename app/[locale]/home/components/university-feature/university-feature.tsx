@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
 import SectionHeader from '@/components/ui/section-header'
+import { Button } from '@/components/ui/button'
 
 import { UniversityCard } from './university-card'
 import { BackgroundDecoration } from './background-decoration'
@@ -300,39 +301,32 @@ export function UniversityFeature({ universities, lang }: UniversityFeatureProps
             "opacity-100 translate-y-0"
           )}
         >
-          <Link
-            href={`/${lang}/universities`}
-            className={cn(
-              "inline-flex items-center justify-center",
-              "px-6 py-3 rounded-lg",
-              "bg-primary text-white font-medium",
-              "hover:bg-primary/90 transition-colors duration-200",
-              "md:hidden" // Mobile version
-            )}
-            style={{ transform: 'translateZ(0)' }}
+          <Button 
+            asChild
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700 md:hidden"
           >
-            {t('viewAll')}
-          </Link>
-          <Link
-            href={`/${lang}/universities`}
-            className={cn(
-              "hidden md:inline-flex items-center justify-center",
-              "px-8 py-4 rounded-lg",
-              "bg-primary text-white font-medium",
-              "hover:bg-primary/90 transition-colors duration-200"
-            )}
-            style={{ transform: 'translateZ(0)' }}
+            <Link href={`/${lang}/universities`}>
+              {t('viewAll')}
+            </Link>
+          </Button>
+          <Button 
+            asChild
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700 hidden md:inline-flex"
           >
-            {t('viewAll')}
-          </Link>
+            <Link href={`/${lang}/universities`}>
+              {t('viewAll')}
+            </Link>
+          </Button>
         </div>
-      </div>
 
-      {error && (
-        <div className="text-center text-red-500 p-4">
-          {error}
-        </div>
-      )}
+        {error && (
+          <div className="text-center text-red-500 p-4">
+            {error}
+          </div>
+        )}
+      </div>
     </div>
   )
 } 

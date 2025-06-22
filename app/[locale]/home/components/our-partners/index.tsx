@@ -283,12 +283,20 @@ const OurPartners = ({ lang = 'en' }: OurPartnersProps) => {
             isButtonVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}
         >
-          <Button asChild className="hidden md:inline-flex">
+          <Button 
+            asChild
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700 hidden md:inline-flex"
+          >
             <Link href={`/${lang}/partners`}>
               {t('viewAllPartners')}
             </Link>
           </Button>
-          <Button asChild className="md:hidden inline-flex">
+          <Button 
+            asChild
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700 md:hidden inline-flex"
+          >
             <Link href={`/${lang}/partners`}>
               {t('viewAllPartners')}
             </Link>

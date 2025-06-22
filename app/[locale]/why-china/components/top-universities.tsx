@@ -104,7 +104,11 @@ export function TopUniversities({ className }: TopUniversitiesProps) {
         </div>
         
         <div className="flex justify-center mt-8">
-          <Button asChild>
+          <Button 
+            asChild
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700"
+          >
             <Link href="/universities">
               {t("topUniversities.viewAll")}
             </Link>
