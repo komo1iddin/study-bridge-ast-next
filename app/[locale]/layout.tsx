@@ -6,9 +6,9 @@ import { notFound } from "next/navigation"
 import { NextIntlClientProvider } from "next-intl"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 import type { Metadata } from 'next'
-
 import "../globals.css"
 import messages from "@/messages"
+import FacebookPixelClient from "@/components/analytics/FacebookPixelClient"
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] })
 
@@ -58,6 +58,7 @@ export default async function RootLayout(props: {
         {/* Force light theme on mobile browsers */}
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content="#ffffff" />
+        <FacebookPixelClient />
       </head>
       <body className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={localeMessages}>
