@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${raleway.variable}`}>
+    <html lang="en" className={`${inter.variable} ${raleway.variable} font-sans`}>
       <head>
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content="#ffffff" />
