@@ -27,13 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} font-sans`}>
+    <html lang="en" className={`${inter.variable}`}>
       <head>
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content="#ffffff" />
       
       </head>
-      <body className="min-h-screen bg-white font-sans">
+      <body className="min-h-screen bg-white font-inter">
         <GlobalErrorBoundary>
           {children}
         </GlobalErrorBoundary>
