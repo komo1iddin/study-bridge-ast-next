@@ -52,6 +52,8 @@ export default async function RootLayout(props: {
   return (
     <>
       <NextIntlClientProvider locale={locale} messages={localeMessages}>
+        {/* Facebook Pixel */}
+        <FacebookPixelClient />
         {props.children}
       </NextIntlClientProvider>
     </>
