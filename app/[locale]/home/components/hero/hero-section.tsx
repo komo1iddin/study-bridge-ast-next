@@ -77,8 +77,7 @@ export function HeroSection() {
           <motion.h1
             variants={ITEM_VARIANTS}
             className={cn(
-              'text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-bold mt-4 sm:mt-6 leading-tight text-center lg:text-left',
-              'font-raleway' // Apply Raleway font using the CSS variable
+              'text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-raleway font-bold mt-4 sm:mt-6 leading-tight text-center lg:text-left'
             )}
           >
             {t.rich('title', {
