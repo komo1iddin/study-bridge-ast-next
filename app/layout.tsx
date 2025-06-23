@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Inter, Raleway } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { GlobalErrorBoundary } from '@/components/common/error-boundary';
@@ -12,15 +12,7 @@ const inter = Inter({
   display: 'swap',
 });
 
-// Configure Raleway font with explicit subsets and preload
-export const raleway = Raleway({
-  subsets: ['latin', 'cyrillic'],
-  variable: '--font-raleway',
-  display: 'swap',
-  weight: ['400', '500', '600', '700', '800', '900'],
-  preload: true,
-  fallback: ['system-ui', 'sans-serif'],
-});
+// Raleway is loaded via external Google Fonts link (see <head>)
 
 export const metadata: Metadata = {
   title: 'Study Bridge',
@@ -35,10 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${raleway.variable} font-sans`}>
+    <html lang="en" className={`${inter.variable} font-sans`}>
       <head>
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content="#ffffff" />
+              {/* Google Fonts link for Raleway */}
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        {/* Define CSS variable for Raleway */}
+        <style>{`:root { --font-raleway: 'Raleway', Arial, sans-serif; }`}</style>
       </head>
       <body className="min-h-screen bg-white font-sans">
         <GlobalErrorBoundary>
