@@ -12,12 +12,14 @@ const inter = Inter({
   display: 'swap',
 });
 
-// Configure Raleway font
-const raleway = Raleway({
-  subsets: ['latin'],
+// Configure Raleway font with explicit subsets and preload
+export const raleway = Raleway({
+  subsets: ['latin', 'cyrillic'],
   variable: '--font-raleway',
   display: 'swap',
   weight: ['400', '500', '600', '700', '800', '900'],
+  preload: true,
+  fallback: ['system-ui', 'sans-serif'],
 });
 
 export const metadata: Metadata = {
